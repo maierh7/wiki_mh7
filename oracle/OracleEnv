@@ -1,0 +1,24 @@
+
+** Environment Variables
+
+  - = EPC_DISABLED (TRUE|FALSE)= Disables Oracle Trace
+  - = NLS_LANG = = Language_Territory.Charset =
+
+  - = ORA_NLS33 = Directory to the linguistic definition files. If
+    the creation of a database chooses a other language as english
+    then this variable needs to be set.
+
+  - = ORA_TZFILE = File name to the time zone file
+  - = ORACLE_BASE = Base directory of a *OFA* compilant database
+  - = ORACLE_HOME = Directory that contains a special oracle software
+  - = ORACLE_PATH = Path to search for *SQL+, Oracle Forms and
+    Oracle Report*
+  - = ORACLE_SID = Specifies the system identifier
+  - = ORACLE_TRACE (T) = Enables tracing in Oracle shell scripts
+  - = SQLPATH = Specifies a directory or a directory list where to 
+    find the *login.sql* file
+  - = TNS_ADMIN = Directory where to find the ORACLE Net Services
+    configuration files
+  - = TWO_TASK = default connect identifier
+  - = USE_SHARED_SOCKETS = TRUE = for firewall configurations
+

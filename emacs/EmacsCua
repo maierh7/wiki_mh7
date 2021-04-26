@@ -1,0 +1,28 @@
+
+** C-x
+
+  - Use additional the *shift* key.
+  - Press fast the C-x prefix *twice*.
+  - Press fast the C-x following key.
+
+** Rectangle
+
+  - *S-return* starts rectangle mode.
+
+  - A self-inserting key in rectangle mode inserts on the whole current
+    side the character of the key. The current side/edge can be
+    choosed with *return*.
+
+  - *M-a* align to the left
+  - *M-b* fill rectangle with spaces
+  - *M-c* remove on the left the spaces
+  - *M-f* fill rectangle with char
+  - *M-i* increase number at the left with prefix arg
+  - *M-l* downcase
+  - *M-u* upcase
+
+** Global Mark
+
+  - *[ch]* insert character at GM
+  - *C-x*  cut region at point and insert it at GM
+  - *C-C*  copy region to GM

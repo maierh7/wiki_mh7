@@ -1,0 +1,15 @@
+
+** Layout1
+
+  - D1: log_dest_1
+  - D2: log_dest_2
+  - D2: data and arch
+
+** Good Layout
+
+  - D1: system and log1
+  - D2: oracle and log2
+  - D3: archived logs and other data
+  - D4: data
+  - D5: indices
+

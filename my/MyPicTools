@@ -1,0 +1,37 @@
+
+** Create Html Picture Page
+
+Use either pic_get.sh or pic_rename.sh. pic_rename.sh renames all the
+pics in the current directory to a file name with <prefix>_nnn.jpg.
+
+** Piclist
+
+The piclist may not include double quotes. Use instead double quotes
+single quotes.
+
+** Example
+
+<example>
+
+$ pic_get.sh     aa ~/photo/2002/dana
+$ pic_rename.sh  aa
+
+$ pic_reduce.sh  aa
+$ pic_small.sh   aa
+$ pic_piclist.sh aa
+$ pic_album.sh -t 'Title' aa < piclist
+
+</example>
+
+** Todo
+
+Expand piclist to use references to the real pictures. The piclist
+should be in a pictures directory. The script will look for the
+pictures too in sibling directories.
+
+Allow too html code at top and bottom of the album.html file.
+
+<example>
+p0001535 This is the text for the picture 'p0001535'.
+p0001634 Another example for a description.
+</example>

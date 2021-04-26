@@ -1,0 +1,20 @@
+
+** General Trigger Types
+
+  - dml events
+  - ddl events
+  - database events
+
+** Trigger Types
+
+  - ... after logon on database
+
+** Database Events
+
+  - servererror
+  - logon    (after)
+  - logoff   (before)
+  - startup  (after)
+  - shutdown (before)
+  - suspend  (after)
+

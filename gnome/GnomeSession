@@ -1,0 +1,14 @@
+
+** idle-delay
+
+  gsettings get org.gnome.desktop.session idle-delay
+  gsettings set org.gnome.desktop.session idle-delay 172800
+  
+** Workspaces
+
+  gnome-tweak-tool
+  
+** Restart
+
+  A-F2 r
+  

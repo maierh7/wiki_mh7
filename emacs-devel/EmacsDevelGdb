@@ -1,0 +1,37 @@
+
+Both the new mingw and the cygwin debugger are possible. To debug
+emacs inside a emacs **gud** buffer use the mingw port. The cygwin port is
+the **insight** gdb debugger.
+
+Requirements:
+
+  - *emacs_dir* environment variable
+  - Go to the *src* directory.
+
+** Tips
+
+*** Watching a Lisp Symbol by Stefan Monnier
+
+Sadly there is no such thing as a "watcher" for variables in elisp.
+So the only way I can think of is to use GDB to put a watchpoint on
+the memory cell.  From GDB you can call
+
+   print intern ("ispell-dictionary")
+
+and then use
+
+   xsymbol
+
+to deal with the tag bits and get at the underlying Lisp_Symbol
+pointer.  Then a
+
+   watch $2->value
+
+should do trick.
+
+
+*** Analyse Looping
+
+  - *gdb emacs*
+  - *kill -TSTP PID*
+  - *xbacktrace*

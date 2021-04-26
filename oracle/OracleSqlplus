@@ -1,0 +1,118 @@
+
+** Invoking other command files
+
+  - *$HOME* environment variables are allowed in file names.
+
+  - *@?/* references =$ORACLE_HOME/=
+
+  - *@@* invokes the file in the interactive mode from the current
+    working directory. in a command file it runs the file from the same
+    directory as the command file.
+
+** Qouting
+
+   - = 'O''Reily' = '' quotes the single quote character. Another
+     possibility is to use = chr(39) =.
+
+** define
+
+  - *define* displays the current defined and predefined variables.
+
+  <example><verbatim>
+  sql> define
+  define _connect_identifier = "nine" (char)
+  define _editor             = "gnuclient" (char)
+  </verbatim></example>
+
+** copy
+
+  <example>
+    SQL> copy from ops$maierh/maierh@nine to scott/tiger@nine 
+         create test using select * from ops$maierh.test;
+  </example>
+
+
+** exec
+
+  - Executes a single PL/SQL statement or a stored procedure. It's a
+    synonym for 'begin <statement> end;/'.
+
+** variable
+
+  - Allows to create sqlplus bind variables. The variables can be set
+    or used in PL/SQL. See also $IMPOS/sqlplus/test/var.sql
+
+** ed
+
+  - *ed* starts the editor.
+
+** autotrace
+
+  <example>
+    sqlplus '/ as sysdba'
+    SYSDBA> @?/sqlplus/admin/plustrce.sql
+    SYSDBA> grant plustrace to ops$maierh;
+  </example>
+
+  <example>
+    sqlplus 'scott/tiger'
+    SQL> @?/rdbms/admin/utlxplan.sql
+    SQL> set autotrace on
+  </example>
+
+** column
+
+  - =heading=
+  - =noprint=
+  - =new_value=
+  - =old_value=
+
+** Other Commands
+
+  - break on <col> [skip n|page]
+  - clear screen  -- only in a terminal
+  - clear columns -- reset all columns
+  - clear buffer
+  - title
+  - btitle
+  - repheader
+  - repfooter
+  - help index
+  - help topics
+
+** Options
+
+  - /NOLOG needs a connect statement inside the script.
+
+** Help
+
+  - If help is not available it can be build with 'helpbld.sql'.
+
+** Using of & ampersand
+
+  - set define off
+  - set define ^
+  - set escape on
+  - set escape off
+
+** Compute
+
+<example>
+  SQL> break on report
+  SQL> compute sum label "Summe" of byt on report
+  SQL> select segment_name, segment_type, bytes /(1024*1024*1024) BYT 
+       from user_segments order by 1;
+</example>
+
+** NEW_VALUE
+
+<example>
+define TS = "MM";
+column TSS noprint new_value TSS;
+
+
+select '&&TS' || '_RMS' TSS from dual;
+
+create synonym abc for &TSS .abc;
+drop synonym abc;
+</example>

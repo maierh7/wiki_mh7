@@ -1,0 +1,49 @@
+* EXP
+
+** 9 to 8*
+
+  - Export the 9 database with the 8 export tool and import it too
+    with the 9 import tool.
+
+** 9 to 7
+
+  - Not supported.
+
+** Pipe Import
+
+
+  <example>
+    #   Create a pipe.
+    $ mknod exp.pipe p
+    #   Needs the character single ampersand character.
+    $ gunzip -c > exp.dmp.gz & \
+      imp 'userid=ops$midba/midba' file=exp.pipe \
+      'fromuser=ops$midba' 'touser=ops$midba'
+  </example>
+
+** Pipe Export
+
+  <example>
+    $ mknod exp.pipe p
+    $ gzip dumpfile.dmp < exp.pipe &
+    $ exp uid/pwd file=exp.pipe ...
+  </example>
+
+** Compress
+
+  - Places all data into one extent.
+
+* EXPDP
+
+  - exp of the midba-Schema did no longer work with 10.2.0.3 so we
+    switched to the data pump utility.
+
+** Default Direcotry On Server Side
+
+  - $ORACLE_HOME/rdbms/log
+  - see too the two files dba-expdp.sh and dba-impdp.sh
+
+** Drop Failed Export Job
+
+SQL> select job_name from dba_datapump_jobs;
+SQL> drop table <job_name>;

@@ -1,0 +1,10 @@
+
+** Clusterware
+
+  - The clusterware patchset is too in the database patchset. First
+    install in the apropriate ORACLE_HOME the clusterware patchset and
+    afterwards the database patchset.
+
+** Database
+
+  - See the patchest notes.

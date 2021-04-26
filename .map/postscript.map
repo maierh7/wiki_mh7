@@ -1,0 +1,136 @@
+*abs
+Absolute.
+*add
+Addition.
+*aload
+Loads array to the stack.
+*and
+And.
+*array
+Create an array.
+*astore
+Store values in array.
+*atan
+Atan.
+*bitshift
+Bitwise shift.
+*ceiling
+Ceil.
+*clear
+Clear the stack.
+*cleartomark
+Clear stack to mark.
+*copy
+Duplicate objects.
+*cos
+Co sinus.
+*count
+Counts the number of the stack.
+*counttomark
+Return stack count for mark.
+*currentgstate
+Return current context.
+*cvs
+Convert string.
+*div
+Division.
+*dup
+Duplicate object on the stack.
+*eq
+Equal. Return true if the two operands are equal.
+*exch
+Swap the top two objects of the stack.
+*exp
+Exp.
+*false
+False.
+*floor
+Floor.
+*forall
+Process string, array, dict ...
+*ge
+Greater equal.
+*get
+Return index of array.
+*grestore
+Restore the last stored context. See gsave.
+*gsave
+Save the current context.
+*gt
+Greater than.
+*idiv
+Integer division.
+*if
+If.
+*ifelse
+If then else.
+*index
+Duplicate object. Access the stack by index.
+*le
+Lesser equal.
+*length
+Return length of array.
+*ln
+Natural logarithm.
+*log
+Logarithm.
+*lt
+Lesser than.
+*mark
+Mark a position on the stack.
+*mod
+Rest.
+*moveto
+Move absolute to the current origin.
+*mul
+Multiplication.
+*ne
+Not equal.
+*neg
+Negotiation.
+*newpath
+Open a new path. An error occurs without this command.
+*not
+Not.
+*or
+Or.
+*pop
+Remove the top element from the stack.
+*put
+Put value into array.
+*rand
+Random.
+*repeat
+7 { } repeat.
+*rmoveto
+Move relative to the current position.
+*roll
+Move object on the stack.
+*round
+Round.
+*rrand
+Return random number seed.
+*selectfont
+Select a new font.
+*setgstate
+Set current context. See currentgstate.
+*show
+Show string.
+*sin
+Sinus.
+*sqrt
+Square root.
+*srand
+Set random number seed.
+*stringwidth
+Return the string width.
+*sub
+subtraction.
+*translate
+New origin.
+*true
+True.
+*truncate
+Truncate.
+*xor
+Xor.

@@ -1,0 +1,21 @@
+
+*** Possible values for os-type=windows
+
+win2k3 win2k vista winxp
+
+*** Possible values for os-type=unix
+
+solaris9 solaris10 freebsd6 openbsd4
+
+*** Possible values for os-type=other
+
+netware6 generic netware4 msdos netware5
+
+*** Possible values for os-type=linux
+
+generic24 generic26 generic26_64  
+fedora6_64 fedora7_64  fedora6 fedora7 fedora5 
+centos5_64 centos5 
+sles10 sles10_64 
+rhel2.1 rhel4 rhel5 rhel4_64 rhel3 rhel5_64 fedora5_64 
+el4 el4_64 el5 el5_64

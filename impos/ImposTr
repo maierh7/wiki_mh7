@@ -1,0 +1,21 @@
+
+** Contact
+
+My-Number: 07335/921186
+IP-Addr  : 210.8.2.4
+IP-Addr  : 10.148.31.31
+Auth.    : impos/den8hj9
+Phone    : 08669/8680
+
+H. Lange    : 08669/30-2826
+H. Mallinger: 08669/30-2747
+
+H. Wendt    : 030/386-29251
+
+
+** Windows
+
+  - rasdial bsh impos den8hj9
+  - In XTerm:
+    - ssh -X -l maierh trtlimpos xterm
+  - rasdial bsh /disconnect

@@ -1,0 +1,24 @@
+
+** cx_Oracle
+
+*** Connection
+
+  - version => (Oracle Version)
+  - autocommit
+
+  - commit ()
+  - close ()
+  - cursor ()
+  - ping ()
+  - prepare ()
+  - rollback ()
+
+** Cursor
+
+  - arraysize => (100)
+  - bindvars
+
+  - bindnames ()
+  - close ()
+  - execute ()
+  - prepare

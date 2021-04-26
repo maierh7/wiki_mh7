@@ -1,0 +1,10 @@
+
+** Privileges
+
+  SQL> grant sysdba to c##ms_sysdba container=all;
+  
+** PDB
+
+  SQL> alter session set container=all;
+  SQL> alter session set container=ora54t;
+  

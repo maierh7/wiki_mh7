@@ -1,0 +1,6 @@
+
+** Pure-Ftpd
+
+  - pure-ftpd in SuSE 8.2 is compiled without inetd support. This
+    means that the service needs to be installed with the runlevel
+    editor.

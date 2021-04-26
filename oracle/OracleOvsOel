@@ -1,0 +1,23 @@
+
+** Current Version 5.5
+
+*** Installation of the System
+
+- Install developer version
+
+- Disable Firewall and SELinux
+
+- Change after the installation the ip-address to a address greater
+  192.168.1.20, but see the other VMs
+
+- Change the hostname in /etc/sysctl/network
+
+- Add /etc/hosts entries for
+
+  - ate
+  - ovs
+  - and the new VM
+
+- Build emacs
+
+  scp ovs:/OVS/tgz/emacs/emacs-23.2.tar.gz .

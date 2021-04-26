@@ -1,0 +1,13 @@
+
+
+;; Codepage Mapping:
+;;
+;; Windows-1250: ISO-8859-2 (Central Europe) - differs in some positions
+;; Windows-1251: ISO-8859-5 (Cyrillic)       - differs wildly
+;; Windows-1252: ISO-8859-1 (West Europe)    - exact match
+;; Windows-1253: ISO-8859-7 (Greek)          - differs in some positions
+;; Windows-1254: ISO-8859-9 (Turkish)        - exact match
+;; Windows-1255: ISO-8859-8 (Hebrew)         - exact match
+;; Windows-1256: ISO-8859-6 (Arabic)         - half match
+;; Windows-1257: ISO-8859-4 (Baltic)         - differs, future Latin-7
+;; Windows-1258: VISCII (Vietnamese)         - Completely different

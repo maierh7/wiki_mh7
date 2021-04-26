@@ -1,0 +1,5 @@
+
+** Wildcard expansion
+
+Under emacs-21.1 the wildcard expansion with the msvc port did not
+work. With the mingw port it works.

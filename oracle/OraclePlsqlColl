@@ -1,0 +1,38 @@
+
+** Index Method
+
+  - Not zero based as in other languages.
+
+** Types
+
+  - varray (dense)
+  - nested tables (sparse)
+  - indexed by tables
+
+** Nested Table
+
+  - can be null
+  - can be stored in the database
+
+** Functions
+
+  - exists 
+  - count 
+  - limit 
+  - first and last 
+  - prior and next 
+  - extend 
+  - trim 
+  - delete
+
+** Bulk Bind IN
+
+  - forall
+
+** Bulk Bind OUT
+
+  - bulk collect into
+  - fetch ... bulk collect into ... limit <rows>
+
+** Bulk Returns
+

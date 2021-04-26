@@ -1,0 +1,4 @@
+
+** CVS Archive
+
+  - cvs -z3 -d:ext:anoncvs@savannah.gnu.org:/cvsroot/aspell co aspell

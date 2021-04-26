@@ -1,0 +1,48 @@
+
+** Config
+
+http://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64
+http://yum.oracle.com/repo/OracleLinux/OL8/appstream/x86_64
+
+Workstation
+
+RedhatChrony
+
+** Packages
+
+See dnf-inst.py
+
+*** Needs Codeready_Builder enabled
+giflib-devel
+
+** Edit
+
+/etc/hosts
+/etc/hostname
+/etc/dnf/dnf.conf
+  Proxy
+
+** Edit User
+
+.Xresources
+.profile.local
+
+** SCP
+
+cvs*
+.gitconfig
+
+** CVS
+
+local
+
+** Emacs
+
+RedhatEmacs
+
+** Oracle Instantclient
+
+cd /opt
+mkdir oracle
+cd oracle
+unzip ...

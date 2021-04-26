@@ -1,0 +1,15 @@
+
+** Hardware
+
+  - LinuxDebianSharp
+
+** ACPI
+
+  - Put into /etc/modules
+
+  <example>
+    ospm_busmgr
+    ospm_system
+    ospm_button
+  </example>
+

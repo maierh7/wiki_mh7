@@ -1,0 +1,4 @@
+
+** Errors
+
+  SQL> select * from ctx_user_index_errors;

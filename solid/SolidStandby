@@ -1,0 +1,17 @@
+
+** Go Back to Backup
+
+  - net stop "JBoss"
+  - net stop "solid"
+  - cp backup/* /cygdrive/e/Solid/data
+  
+  - SOLCON> hsb state
+    "primary alone"
+    "secondary alone"
+
+  - SOLCON> hsb switch primary
+  - SOLCON> hsb switch secondary
+
+  - SOLCON> hsb netcopy
+  - SOLCON> hsb connect
+

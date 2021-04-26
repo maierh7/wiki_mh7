@@ -1,0 +1,34 @@
+
+** Set Transaction
+
+  - SQL> set transaction name 'abc';
+  - SQL> set transaction set isolation level commited 'abc';
+
+** Autonomous Transactions
+
+  - This type of transaction is not nested. It's not rollbacked if
+    the main transaction rollbacks.
+
+  <example>
+    declare
+      PRAGMA AUTONOMOUS_TRANSACTION;
+    ...
+    end;
+  </example>
+
+  - Triggers that uses AT can perform DDL statements.
+
+** User Transactions
+
+  - v$transaction
+
+  - To join with v$session use the TADDR from v$session
+
+** All Transactions
+
+  - v$rollstat
+
+** DDL Statement
+
+  - DDL statement are using the system rollback segment.
+

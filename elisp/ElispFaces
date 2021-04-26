@@ -1,0 +1,20 @@
+
+** default
+
+<example>
+
+(set-face-font
+  'default
+  (w32-select-font))
+
+</example>
+
+
+** defface
+
+<example>
+(defface kill-ring-menu-separator '((t :inherit bold))
+  "The face in which to highlight the `kill-ring-menu-separator'."
+   :group 'killing)
+</example>
+

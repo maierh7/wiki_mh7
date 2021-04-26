@@ -1,0 +1,30 @@
+
+** Lokal Partitioned Indexes
+
+  - For OLTP systems local partitioned indexes preferred
+  - They correspondent to the table partition
+
+** Global Partitioned Indexes
+
+  - Range
+  - Hash
+
+A global partitioned index is normally not equipartitioned with the
+underlying table.
+
+** Partition pruning
+
+*** Execution Plan
+
+  - PSTART, PSTOP (dbms_xplan.display)
+  - If KEY in PSTART and PSTOP then dynamic pruning is used
+
+
+  - partition range single (TRUE)
+  - partition range all    (FALSE)
+
+*** Dictionary Tables
+
+  - user_part_tables
+  - user_part_key_columns
+

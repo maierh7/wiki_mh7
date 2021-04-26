@@ -1,0 +1,24 @@
+
+** Fedora 15
+
+*** Install
+
+  yum update
+  yum install gcc
+  yum install kernel-headers kernel-devel
+
+  reboot
+
+  yum install xterm
+  yum install emacs
+
+** Emacs
+
+  yum groupinstall "X Software Development"
+  yum install ncurses-devel
+  yum install gtk3-devel.x86_64
+  yum install gtk2-devel.x86_64
+
+** Others
+
+  yum install cvs

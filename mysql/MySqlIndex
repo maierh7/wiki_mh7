@@ -1,0 +1,5 @@
+
+** Show Indexes
+
+  mysql> SHOW INDEX FROM mydb.mytable;
+

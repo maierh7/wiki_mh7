@@ -1,0 +1,21 @@
+
+** IBuffer
+
+  - Get too the buffers that starts with a *space*. Use 'C-u 1 g'
+
+** Buffer Local Variables
+
+Combining let-binding and buffer-local values is a difficult exercise.
+The behavior of the above depends on whether mode-line-format is
+currently buffer-local in the current buffer.  Some Elisp variables are
+never buffer-local (e.g. the ones that are frame-local), others (most)
+are by default global can be made buffer-local to a particular buffer by
+calling `make-local-variable', others are buffer-local by default, which
+means that they become buffer-local as soon as you use `setq' on them
+(but not `let'), and finally yet others are simply always buffer-local
+(e.g. default-directory).
+
+It seems that mode-line-format was "always buffer-local" in Emacs-20 and
+changed to "buffer-local by default" in Emacs-21.  I don't know what was
+the reason for it, but in any case an explicit call to
+`make-local-variable' before the let will clear up any ambiguity.

@@ -1,0 +1,17 @@
+
+** Find Time
+
+  - -mtime   60 (= sydate  -  60m)
+  - -mtime  +60 (< sysdate -  60m)
+  - -mtime -240 (> sysdate - 240m)
+
+** Find Files in Date Range
+
+The following command finds files greater 100 and lower than 1000 days.
+
+  - find . -mtime +100 -mtime -1000
+
+** Find Files with Write Permission For Group and Others
+
+  - find /etc -type f -perm +2
+

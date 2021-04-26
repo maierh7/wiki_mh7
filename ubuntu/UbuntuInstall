@@ -1,0 +1,79 @@
+
+** Install additional Packages
+
+  - edit /etc/apt/sources.list
+
+  - afterwards "apt-get update" needs to be called
+
+  - ssh, cvs, rcs, make, gcc
+
+
+** Search Packages
+
+  - apt-cache search <string>
+  - aptitude  search <string>
+
+** Emacs
+  - apt-get install ...
+
+    - build-essential
+    - texinfo
+    - libx11-dev
+    - libgtk2.0-dev
+    - libxpm-dev
+    - libjpeg62-dev
+    - libtiff4-dev
+    - libungif4-dev
+    - libpng-dev
+    - libncurses-dev
+
+    - libxt-dev
+    - libxaw-headers
+
+    - imagemagick
+    - perl-doc
+
+  - Make sure that the --x-includes and the --x-libraries are pointing
+    to the right directories. E.g.
+
+  - --x-includes=/usr/include/X11
+  - --x-libraries=/usr/lib
+
+** Other Programs
+
+  - ncftp
+
+** X11
+
+  - Use ~/.Xresources
+
+** Access to User
+
+  - sudo passwd root
+  - sudo passwd oracle
+
+** Oracle Reinstall
+
+  - apt-get install libaio-dev
+
+  - reinstall the package with the --force-all option. This will
+    reinstall the seed database.
+
+  - dpkg --force-all -i oracle-xe-universal-*.deb
+  - afterwards call config/script/XE.sh
+
+** IMPOS
+
+  - libxt-dev
+
+
+** SSH
+
+  - sudo apt-get install ssh
+or
+  - sudo apt-get install openssh-server
+
+** Firewall
+
+  - sudo ufw status
+

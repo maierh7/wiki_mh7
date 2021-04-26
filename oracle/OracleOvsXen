@@ -1,0 +1,25 @@
+
+** Monitoring
+
+  xm top
+
+  xm info
+
+  xm log
+
+  xm dmesg
+
+  xm list [-l] [<domid>]
+
+  xm consoe <domid>
+Exit with C+]
+See also vncviewer
+
+  xm start    <domname>
+  xm pause    <domid>
+  xm unpause  <domid>
+  xm reboot   <domid>
+  xm resume   <domname>
+  xm suspend
+  xm shutdown 
+  xm destroy  <domid>

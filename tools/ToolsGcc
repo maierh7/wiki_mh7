@@ -1,0 +1,15 @@
+
+** Predefined Macros
+
+  - The following lists the predefined macros of gcc.
+
+  <example>
+    $  gcc -E -dM -xc /dev/null
+  </example>
+
+** gcc-4.4.1
+
+  - Under SLES 11 configure of gcc fails if not root user
+
+** Fix Headers
+

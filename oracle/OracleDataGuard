@@ -1,0 +1,93 @@
+
+** Modes
+
+  - maximum protection   - Waits for commits and if the standby
+                           database is unavailable processing stops on
+                           the primary server.
+
+  - maximum availability - Ignores unavailability of a standby
+                           machine. If a fail-over happens before
+                           the standby server is resynchronized, some
+                           data may be lost. Redo data is shipped
+                           synchronously if the standby database is 
+                           available.
+
+  - maximum performance  - Ignores unavailability of a standby
+                           machine. Redo data is shipped
+                           asynchronously. 
+
+** Physical Standby Database
+
+  - The database schemas must be the same.
+
+  - Managed recovery and open read-only cannot be used the same
+    time. But switching between the two modes is possible.
+
+** Logical Standby Database
+
+  - The redos are applied with SQL.
+  - A LSD has some restrictions about datatypes. See chapter 4.1.4.
+  - It can be opened in read-only mode always.
+
+** Tools
+
+  - SQL*PLUS commands with the STANDBY keyword
+  - Data Guard Broker (CLI)
+  - Data Guard Manager (GUI)
+
+** Steps
+
+  - Backup the database.
+  - alter database create standby controlfile as '';
+  - Create an actual pfile from the spfile.
+
+  - Copy the backup, the control file and the initialization file to
+    th standby server.
+
+** Init Parameter for the Standby Database
+
+  - standby_archive_dest - Location of the archived logs that will be
+                           received from the primary server.
+
+  - db_file_name_convert - If different directory structure on server.
+  - log_file_name_convert - dito.
+
+  - log_archive_dest_1 - There should the archives stored in the case
+                         of a switch over.
+
+  - standby_file_management (auto)
+  - remote_archive_enable (true)
+
+  - instance_name   - Only use a different name if the standby resides
+                      on the same machine.
+  - lock_name_space - Ppoints to the name of the primary instance name.
+                      Only in use if the standby is on the same
+                      machine.
+
+** Listener Configuration
+
+  - On both machine there must be a listener. Configure the databases 
+    statically.
+
+  - Enable Dead Connection Detection (sqnet.expire_time=2) on the 
+    standby machine.
+
+  - Define the net service names on both machines for the primary and
+    the standby database. These names will be used by the log
+    transport services.
+
+** Commands
+
+  - SQL> startup nomount;
+  - SQL> alter database mount standby database;
+
+
+  - -- Foreground
+  - SQL> alter database recover managed standby database;
+
+  - -- Background
+  - SQL> alter database recover managed standby database
+         disconnect from session;
+
+  - -- Cancel Recovery
+  - SQL> alter database recover managed standby database cancel;

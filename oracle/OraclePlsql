@@ -1,0 +1,150 @@
+
+** PL/SQL objects
+
+  - package
+  - package body
+  - type
+  - type ... as object
+  - function
+  - procedure
+  - trigger
+
+** Errors
+
+  <example>
+    SQL> show errors procedure <name>
+  </example>
+
+
+** Packages
+
+  - OraclePlsqlPackages
+
+** Built-in Functions
+
+  - OraclePlsqlBuiltin
+
+** Functions versus Procedures
+
+  - Use the *call* command in sqlplus to perform a procedure. A
+    function can only be executed inside a sql statedment or inside a
+    PL/SQL block.
+
+  <example>
+    select fact(3) from dual;
+    begin
+      num := fact(3);
+    end;
+  </example>
+
+
+** Output
+
+  - Enabling of *serveroutput* should be enabled for each executed
+    statement.
+
+  <example><verbatim>
+    set serveroutput on;
+    ...
+    dbms_output.put_line( 'Test of Foo' );
+    ..
+  </verbatim></example>
+  
+** Trigger
+
+  - *:new* and *:old* are pseudo records
+
+** Cursor
+
+  - cur%rowtype
+  - cur%notfound
+
+** SQL Cursor
+
+  A implicit cursor for the sql engine. It returns useful information
+  about the recently executed sql statement.
+
+  - sql%found
+  - sql%isopen		always false for implicit cursors
+  - sql%notfound
+  - sql%rowcount
+  - sql%bulk_rowcount
+
+** Attributes
+
+  - constant
+  - not null
+  - *%type*, takes the type of a previously defined type.
+  - *%rowtype*, takes the type of a database table.
+
+** Control
+
+  - null
+
+  - if then ... else ... end if
+  - case when ... then ... end case
+
+  - loop ... end loop
+  - loop ... exit ... end loop
+  - loop ... exit when ... end loop
+  - loop ... exit <<loop label>>> ... end loop
+
+  - while ... <loop>
+  - for num in 1..10 <loop>
+  - for rec in cur <loop>
+
+** Exception
+
+  - = no_data_found =
+  - OraclePlsqlExceptions
+s
+
+** Quoting
+
+  - If a table contains a attribute that is equal a PL/SQL reserved
+    word then the attribute needs to be quoted in the SQL statement.
+
+  <example>
+     select name, "type" from abc;
+  </example>
+
+** Types
+
+  - Subtype
+  - Collections OraclePlsqlColl
+  - Objects OraclePlsqlObjects
+
+** Delimiters
+
+  - % attribute indicator
+  - : host variable idicator
+  - " quoted identifier
+  - := assignment
+  - => association
+  - ** exponentation
+  - <<>> label
+
+** Pragmas
+
+  - autonomous_transaction
+  - restrict_refereneces
+  - exception_init
+
+** Dynamic SQL
+
+  - OraclePlsqlDyn
+
+** Not Supported
+
+  - *decode* not supported on Oracle 8.
+
+** Hide Source Code
+
+  - Look for the wrap utility.
+
+** Different Schemas
+
+Normally the plsql code runs with the privileges who creates the
+procedure, function or package (definer's rights). To run it under the
+user rights (invoker's rights) it's neccessary to use "authid current
+user". Default is "authid definer".

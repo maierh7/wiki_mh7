@@ -1,0 +1,20 @@
+
+- *defun** name arglist body
+- *defsubst** name arglist body
+- *demacro** name arglist body
+- *function** symbol or lambda
+- *eval-when* (eval compile load) forms
+- *eval-when-compile* forms
+- *load-time-value* form
+
+- *typep* obj type
+- *coerce* obj type
+- *deftype* name arglist forms
+
+- *case* ElispClCase
+- *loop* ElispClLoop
+
+- *delete-if*
+- *delete-if-not*
+
+- *position* returns the position of value in sequence

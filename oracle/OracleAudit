@@ -1,0 +1,9 @@
+
+** Parameter
+
+  - audit_trail = db
+
+** SQL
+
+  - SQL> audit session;
+

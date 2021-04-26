@@ -1,0 +1,13 @@
+
+Bootstrapping generates a new loaddefs.el file. Eli suggested to do
+emacs bootstrapping very rarely.
+
+<example>
+
+$ make autoloads
+$ make recopmile
+
+$ make bootstrap
+
+</example>
+

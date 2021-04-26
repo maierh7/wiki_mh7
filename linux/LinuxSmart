@@ -1,0 +1,9 @@
+
+** Switch On
+
+  - smartctl -s on /dev/hda
+
+** Status
+
+  - smartctl -A /dev/hda
+

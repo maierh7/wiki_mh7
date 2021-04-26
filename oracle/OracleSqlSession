@@ -1,0 +1,32 @@
+
+** Alter Session
+
+  - Needs to be assigned with the grant command. 
+
+  - SQL> grant alter session to <user>;
+
+  - For the sql trace setting it might be better to use the various
+    dbms packages as dbms_support (not enabled at default)
+
+** Examples
+
+<example>
+  SQL> alter session set SQL_TRACE true;
+</example>
+
+<example>
+  --  4 bind variables
+  --  8 wait events
+  -- 12 both
+  SQL> alter session set events '10046
+       trace name context forever, level 12';
+  SQL> alter session set events '10046
+       trace name context off';
+</example>
+
+<example>
+  -- This sets the european week calculation. But not the nls_sort
+  -- parameter. This parameter can only be set in the init ora file
+  -- or with alter session.
+  SQL> alter session set nls_territory = germany;
+</example>

@@ -1,0 +1,47 @@
+
+** Unpack
+
+  = cpio -idm <lnx_920_disk1.cpio = 
+
+** dbstart (9.2.0) problem 
+
+
+  dbstart looks for the pfile in a different place. Workaround
+  is to create a link *init{ORASID}.ora* to the *spfile{ORASID}.ora* file
+  in the 9.2.0/dbs directory.
+
+** httpd
+
+  - Starting of httpd at boot time fails because the *DISPLAY*
+  environment is not defined.
+
+  - Edit the file = $ORACLE_HOME/Apache/Jserv/etc/jserv.properties =
+  and then set the following line in comments:
+
+  <example>
+  wrapper.env.copy=DISPLAY
+  </example>
+
+** httpd ssl
+
+  - apachectl startssl
+
+** Patch Set 9.2.0.3 
+
+  - First install the *Label Security* Option.
+
+  1. runInstaller
+  2. Use products.jar file from 9.2.0 distribution
+  3. Select as product *Oracle 9i Database 9.2.0.1.0*
+  4. Select *Custom*
+  5. Select *Oracle Label Security* Option
+
+  - Then install again the patch set.
+
+See also OracleInstallEight.
+See alas OracleInstallSolaris.
+
+** Linking of the Products
+
+  - relink
+

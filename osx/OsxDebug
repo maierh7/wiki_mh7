@@ -1,0 +1,10 @@
+
+** Examine Cores
+
+  - see /cores
+  - use "otool -c <core file>"
+
+  - see too the article in 
+
+    http://developer.apple.com/technotes/tn2004/tn2124.html
+

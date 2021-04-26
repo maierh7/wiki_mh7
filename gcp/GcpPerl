@@ -1,0 +1,12 @@
+
+** Perl5
+
+git clone -b maint-5.30 https://github.com/Perl/perl5
+
+
+** DBD::Oracle
+
+This need "http_proxy"
+sudo /usr/local/bin/perl -MCPAN -e 'install DBI'
+
+https://github.com/perl5-dbi/DBD-Oracle

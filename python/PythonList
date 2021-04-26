@@ -1,0 +1,27 @@
+
+** List
+
+- list (iterable)
+- append (x)		-> append x at the end
+- extend (iterable)
+- insert (i,x) 		-> (0,x) at the beginning
+- remove (x)		-> remove x from list
+- pop([i])		-> remove i elems from the end
+- clear
+- index(x,[,start[, end]])
+- count(x)		-> count x in list
+- sort (key=None, reverse=False)
+- reverse
+- copy
+
+** Stack
+
+- append
+- pop
+
+** Queue
+
+from collections import deque (Performance)
+
+- appen
+- popleft

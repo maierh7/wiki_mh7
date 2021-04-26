@@ -1,0 +1,39 @@
+
+** Maximize
+
+  - Alt Space
+  
+** bash_profile
+
+PATH=~/local/bin:$PATH
+
+PS1='\u@\h ($ORACLE_SID) [\w]\n$ '
+
+** Info about current Environment
+
+gcloud info
+gcloud config list
+gcloud conifg list project
+
+** List Projects
+
+gcloud projects list
+
+** Set Project
+
+gcloud config set project v135-4509-dp-networking-dev
+
+** gcloud Command
+
+gcloud GROUP | COMMAND
+  --help
+  --account=ACCOUNT
+  --configuratioin=CONF
+  --flatten=[KEY,...]
+  --format=FORMAT
+  --project=PROJECT_ID
+  --version, -v
+
+** components
+
+gcloud components list

@@ -1,0 +1,17 @@
+
+** Reading a File
+
+   - *BufferedReader*
+   - *InputStreamReader*
+   - *FileInputStream*
+ 
+   /home/maierh/java/testNet/TestFile.java
+
+<example>
+
+BufferedReader in 
+  = new BufferedReader( 
+      new InputStreamReader(
+        new FileInputStream( "abc", "UTF-8" )));
+
+</example>

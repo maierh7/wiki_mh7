@@ -1,0 +1,16 @@
+
+** Enabling of a ATAPI CDROM Drive to Burn CDs
+
+The ide cd drive is here called hdc. If it is another character
+e.g. hdd then replace hdc with hdc.
+
+  - *ide-scsi* this should be loaded by insmod
+
+  - *modules.conf* add line "options ide-cd ignore=hdc". This is not
+    a requirement. See athene there the modules.conf file did not
+    contain this option.
+
+  - *append* the kernel command line to use the ide-scsi interface.
+    E.g. add in **/etc/lilo.conf** the line "append hdc=ide-scsi" to the
+    actual kernel. After editing create a new boot record with
+    **/sbin/lilo**.

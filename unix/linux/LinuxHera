@@ -1,0 +1,5 @@
+
+** Problems
+
+- *dhcpcd* make problems if I switch from the HDI network to the
+  private network.

@@ -1,0 +1,15 @@
+
+** xset
+
+  See also XtoolsFs. Note *localhost* as host name did not werk.
+
+  In a Exceed context this will perhaps be best in a .profile. 
+  For the LOCAL setup the best solution in the '*.profile.local*'. 
+  Another solution can be the '*local/profile*' file.
+
+<example>
+
+  $ xset -fp tcp/vsun03:7100
+  $ xset fp rehash
+
+</example>

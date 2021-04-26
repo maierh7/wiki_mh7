@@ -1,0 +1,9 @@
+
+** Choose UTF-8
+
+<example>
+  ...
+  binmode STDOUT, ":utf8";
+  ...
+</example>
+

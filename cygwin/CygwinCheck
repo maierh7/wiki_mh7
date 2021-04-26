@@ -1,0 +1,6 @@
+
+** cygcheck
+
+  - A program that reports information about version and the system.
+
+  - *cygcheck -c cygwin* displays the current cygwin version number.

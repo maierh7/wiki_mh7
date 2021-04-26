@@ -1,0 +1,10 @@
+
+** VMware
+
+Install the complete VMware directory in 
+
+  /OVS/running_pool
+
+Afterward import the VM with "Resource -> Virutal Machine Images".
+
+Only OracleOvsTypes are supported.

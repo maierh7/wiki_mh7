@@ -1,0 +1,9 @@
+
+** Show Max Number of Allowed Processes
+
+  lsattr -E -lsys0 -a maxuproc
+
+** Set New Value for Max Number of Allowed Processes
+
+  chdev -lsys0 -a maxuproc=250
+

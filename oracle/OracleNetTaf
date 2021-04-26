@@ -1,0 +1,26 @@
+
+The following tnsnames.ora entry demonstrates TAF.
+
+<pre>
+<verbatim>
+
+taf_test=
+(description=
+ (failover=on)
+ (load_balance=on) 
+ (address=
+  (protocol=tcp)
+  (host=hp3)
+  (port=20020))
+ (address=
+  (protocol=tcp)
+  (host=hp4)
+  (port=20020))
+ (connect_data=
+  (service_name=TAF.us.oracle.com)
+  (failover_mode=
+   (type=session)
+   (method=basic))))
+
+</verbatim>
+</pre>

@@ -1,0 +1,8 @@
+
+** Deregistrieren von DLLs
+
+  - regsvr32 -u %windir%\system32\shimgvw.dll
+
+** Registrieren von DLLs
+
+  - regsvr32 %windir%\system32\shimgvw.dll

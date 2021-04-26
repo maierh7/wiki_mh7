@@ -1,0 +1,6 @@
+
+For running a command in auctex see also the command
+*TeX-command-list*. This list contains command that can be executed for
+the current document. See also the variable *TeX-command-default*.
+Do invoke _xdvi_ see the variable *TeX-view-style*
+

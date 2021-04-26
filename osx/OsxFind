@@ -1,0 +1,62 @@
+
+** mdfind
+
+  - Metadata Find for OSX.
+
+  -onlyin <directory>
+  -literal  
+  -interpret
+
+** mdls
+
+$ mdls "/Users/maierh/Music/iTunes/iTunes Music/Steely Dan/Countdown To Ecstasy/01 Bodhisattva.mp3"
+kMDItemAlbum                   = "Countdown To Ecstasy"
+kMDItemAudioBitRate            = 128
+kMDItemAudioChannelCount       = 2
+kMDItemAudioSampleRate         = 44100
+kMDItemAudioTrackNumber        = "1"
+kMDItemAuthors                 = (
+    "Steely Dan"
+)
+kMDItemComment                 = "Made with RealJukebox (tm)"
+kMDItemContentCreationDate     = 2006-05-11 08:54:13 +0200
+kMDItemContentModificationDate = 2006-05-11 08:54:13 +0200
+kMDItemContentType             = "public.mp3"
+kMDItemContentTypeTree         = (
+    "public.mp3",
+    "public.audio",
+    "public.audiovisual-content",
+    "public.data",
+    "public.item",
+    "public.content"
+)
+kMDItemDisplayName             = "01 Bodhisattva.mp3"
+kMDItemDurationSeconds         = 319
+kMDItemFSContentChangeDate     = 2006-05-11 08:54:13 +0200
+kMDItemFSCreationDate          = 2006-05-11 08:54:13 +0200
+kMDItemFSCreatorCode           = ""
+kMDItemFSFinderFlags           = 0
+kMDItemFSHasCustomIcon         = 0
+kMDItemFSInvisible             = 0
+kMDItemFSIsExtensionHidden     = 0
+kMDItemFSIsStationery          = 0
+kMDItemFSLabel                 = 0
+kMDItemFSName                  = "01 Bodhisattva.mp3"
+kMDItemFSNodeCount             = 0
+kMDItemFSOwnerGroupID          = 501
+kMDItemFSOwnerUserID           = 501
+kMDItemFSSize                  = 5147054
+kMDItemFSTypeCode              = ""
+kMDItemKind                    = "MP3 Audiodatei"
+kMDItemLastUsedDate            = 2006-05-11 08:54:13 +0200
+kMDItemMediaTypes              = (
+    Sound
+)
+kMDItemMusicalGenre            = "Rock"
+kMDItemRecordingYear           = 2000
+kMDItemTitle                   = "Bodhisattva"
+kMDItemTotalBitRate            = 128
+kMDItemUsedDates               = (
+    2006-05-11 00:00:00 +0200
+)
+

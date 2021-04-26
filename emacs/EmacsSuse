@@ -1,0 +1,34 @@
+
+** Packages
+
++ - texinfo
++ - xorg-x11-devel
++ - jpeg, gif ...
++ - ncurses-devel
++ - java-1_8_0-openjdk-devel
+
+** CVS
+
++ docs
+  esb
++ java
++ local
+  nmn
++ orahm
+  py
++ remote
+
+** GIT
+
++ emacs
+
+** Build
+
++ ncftp  (use ftp direcly)
++ perl
++	DBI
++	DBD-Oracle
++	DBD-mysql
+	DBD-Pg
++ python
++	PythonPackages

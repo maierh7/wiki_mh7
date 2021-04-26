@@ -1,0 +1,18 @@
+
+** HP Tapes at ATE
+
+<pre>
+<verbatim>
+
+  +------------+
+  |DDS 2/3 125m|
+  |LU3 /dev/st1|
+  +------------+
+  +------------+
+  |DDS 1/2  90m|
+  |LU2 /dev/st0|
+  +------------+
+
+</verbatim>
+</pre>
+

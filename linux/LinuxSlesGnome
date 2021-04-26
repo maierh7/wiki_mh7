@@ -1,0 +1,11 @@
+
+** Workspaces
+
+  - Add to the panel the workspace chooser
+
+** Win-Key
+
+  - For VMware Fusion disable in gconf-editor 
+
+    /apps/metacity/general/enable_windows_key
+

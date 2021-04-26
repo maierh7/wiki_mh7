@@ -1,0 +1,8 @@
+
+** default.el
+
+  - This should contain code that users don't like.
+
+** site-start.el
+
+  - That should contain code that for all users necessary.

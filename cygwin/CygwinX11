@@ -1,0 +1,4 @@
+
+** X11 Icon
+
+  C:\cygwin64\bin\run.exe --quote /usr/bin/bash.exe -l -c "cd; exec /usr/bin/startxwin"

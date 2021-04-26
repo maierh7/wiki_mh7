@@ -1,0 +1,9 @@
+
+** TZ Format
+
+  - See man *tzset*.
+
+** Change Time for Session
+
+  - export TZ=EST
+  - export TZ=<Area>/<City>

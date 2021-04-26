@@ -1,0 +1,4 @@
+
+** No scaning in the odbc driver
+
+  - SQLSetStmtAttr(hstmt,SQL_ATTR_NOSCAN,SQL_NOSCAN_ON,0);

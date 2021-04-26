@@ -1,0 +1,5 @@
+
+How to unpack a package
+
+  - latex foiltex.ins
+  - latex foiltex.dtx

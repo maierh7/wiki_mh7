@@ -1,0 +1,11 @@
+
+** Players
+
+  - *mpg123*
+
+  - *mp3blaster*
+
+  - *xmms* (equal to winamp). xmms supports m3u files in a similar way
+    as winamp. With -e the new m3u playlist will be appended to the
+    actual playlist.
+

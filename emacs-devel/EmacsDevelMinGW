@@ -1,0 +1,18 @@
+
+This describes how to build emacs with the mingw package. Get the
+mingw package from http://www.mingw.org and set the path to the mingw
+bin directory. Then go to emacs-21.1/nt directory and call
+configure.bat for gcc.
+
+<example>
+
+  [nt] $ mingw 
+
+               # mingw is a bash function that puts in front of the
+               # path the mingw bin directory.
+
+  [nt] $ ./configure.bat --with-gcc
+  [nt] $ make  
+  [nt] $ make install INSTALL_DIR=d:/Programme/emacs-21.1-mingw
+
+</example>

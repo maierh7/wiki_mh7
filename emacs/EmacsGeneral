@@ -1,0 +1,17 @@
+
+This page describes general concepts an functions in emacs.
+
+*zap-to-char* ARG CHAR. Acts as an kill function. It removes from point
+to the first occurrence of char. ARG is the repeat count for char. It
+tells the function how much the character have to occur.
+
+*zap-to-string* This function did not exist but can be reached with the
+following key sequence. C-SPC C-s <pattern> RET C-w. First set the
+active mark. Then search interactively for the desired pattern. And
+then use the kill-region command (C-w) to remove the part between the
+mark and including the searched pattern.
+
+*shell-command-to-string* returns the command output as string.
+
+*make-indirect-buffer* creates an indirect buffer. This allows to
+narrow a region and then apply a different mode.

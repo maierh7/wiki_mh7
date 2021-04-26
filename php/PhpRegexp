@@ -1,0 +1,16 @@
+
+** Functions
+
+  - ereg
+  - ereg_replace
+  - eregi
+  - eregi_replace
+  - mb_ereg_*
+  - mb_eregi_*
+  - split
+
+  - preg_match
+  - preg_replace
+  - preg_split
+  - preg_quote
+ 

@@ -1,0 +1,5 @@
+
+** Server Test
+
+  - telnet auth.mail.onlinehome.de 25 (smtp)
+  - telnet news.online.de 119         (nntp)

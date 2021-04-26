@@ -1,0 +1,39 @@
+
+** Installation 8.1.7.4
+
+  - Preconditions: orarun.rpm gcc_old, java2-jdk - /usr/lib/java
+
+  - *mount* cd
+  - cd to DISK1
+  - *runInstaller*
+  - Do always only a custom installation, do not a Database
+    installation
+
+  - Install the patchset. *runInstaller*
+  - Select the products.jar file from the <patch>/stage directory.
+
+  - cd $ORACLE HOME
+  - gtar $SOURCE/glibc-2.1.3-stubs.tar.gz
+  - = ./setup_stubs.sh =
+  
+  - dbasist (custom)
+    1. choose charset
+
+  - netca (network configuration) # Did not work properly.
+
+  - dba-create-midba-920.sh # 8.1.7.4 is the same as 9.2.0
+    
+  - dba-add-user.sh -d sid -r -a maierh
+
+  - tns: $ORACLE_HOME/network/admin/listener.ora
+         $ORACLE_HOME/network/admin/tnsnames.ora
+
+
+** Installation 9.2.0
+
+  - as root / rpm -i orarun.rpm
+  - mount cd
+  - cd Disk1
+  - *runInstaller*
+  - default installation should be fine but needs the orarun.rpm
+    for the recommended SHMMAX parameter

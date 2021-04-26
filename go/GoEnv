@@ -1,0 +1,12 @@
+
+** Environment
+
+*** GOPATH
+
+If not set then ~/go!
+
+*** GOBIN
+
+Where "go install hello.go" installs the binary.
+
+

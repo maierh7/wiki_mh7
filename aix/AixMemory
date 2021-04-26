@@ -1,0 +1,8 @@
+
+** svmon
+
+  svmon -P -O summary=basic
+
+** nmon
+
+  - t and 4

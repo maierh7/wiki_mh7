@@ -1,0 +1,8 @@
+
+** Sticky Bit
+
+The *sticky bit* is useful only on directories and can be set by 
+
+  'chmod +t tmp'
+
+This allows deletion of files only by users that owns the file.

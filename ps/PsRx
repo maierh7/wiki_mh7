@@ -1,0 +1,18 @@
+
+** Select-String
+
+  -i is default
+
+  - CaseSensitive
+
+** Where, ?
+
+  - match
+  - cmatch
+
+** split
+
+  "abc def" -split " "
+  "abc def" -match "^abc"
+  "abc def" -replace "^[a-c]+ [d-f]+" '$2 $1'
+  

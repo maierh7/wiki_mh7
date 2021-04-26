@@ -1,0 +1,32 @@
+
+** ISO
+
+  mount -o loop <file>.iso /mnt
+
+** DVDROM on Redhat
+
+  mount /dev/dvd /mnt
+
+
+** Bind
+
+  - *bind* allows to rebind parts of the file hierarchy somewhere else.
+
+  <example>
+  # mount --bind /O1/home /home
+  </example>
+
+  - *bind* in /etc/fstab
+
+  <pre>
+  <verbatim>
+  --- /etc/fstab ---
+  /O1/home	/home	none	bind	0 0
+  </verbatim>
+  </pre>
+
+** Windows-Mount
+
+
+  - mount -t cifs -o user=maierha,domain=dom_mediasat  \
+                     172.17.136.46:/jeder /mnt/jeder

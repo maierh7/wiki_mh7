@@ -1,0 +1,48 @@
+
+** Ask Tom answers
+
+<pre>
+<verbatim>
+A latch is a type of lock.
+
+A latch is a light weight serialization device, typically used to
+serialize access to a shared data structure. It is normally
+implemented as a single "test and set" instruction although this
+varies by OS.
+
+A latch is a lock in that respect.
+
+In Oracle the other major type of lock is called an enqueue. They are
+implemented differently from latches and are somewhat "heavier".  A
+session that is waiting for a row that is being updated by another
+session is "enqueued" on that other sessions transaction -- it is
+waiting for that session to commit.
+
+
+An exclusive lock is a lock that only one session at a time can have.
+If I lock a table in exclusive mode -- no other session can.
+Subordinate locks, like a "share lock" on the table are prohibited as
+well.
+
+
+A shared lock is a lock that ma ny people can get at the same time.
+Two sessions can simultaneously lock a table in share mode.
+
+
+A dead lock is when two sessions are blocked on eachother waiting for
+a resource the other has.  For example:
+
+
+Session 1           Session 2
+lock table t1
+in exclusive mode;
+                    lock table t2
+                    in exclusive mode;
+lock table t2
+in exclusive mode;                       <<<<<====== he is blocked
+                    lock table t1 
+                    in exclusive mode;   <<<<<------ they are deadlocked
+
+the system will detect that and fail one of the above last two statements.
+</verbatim>
+</pre>

@@ -1,0 +1,6 @@
+
+** cut
+
+  cut -c5- <file>	prints from column 5
+  cut -c1- <file>	same as cat
+  cut -c1-10 <file>     from 1 to 10, whitespaces at the beginning ignored

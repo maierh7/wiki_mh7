@@ -1,0 +1,4 @@
+
+** LDD
+
+  - otool -L <executable>

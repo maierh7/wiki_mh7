@@ -1,0 +1,15 @@
+
+** Beispiel 
+
+  $ pavuk -nostore_index 
+          -ftpdir -ftplist
+          -cdir /home/maierha/tmp  
+          ftp://maierha:34Thaele@localhost/impos-3.0/impos
+
+
+  - nostore_index	Does not create html index files
+  - ftpdir		Get all recursive
+  - ftplist             This ignores symbolic links
+  - cdir                Where to place the directory
+
+  - created directory is  <prot>/<host>_<port>/

@@ -1,0 +1,5 @@
+
+** PLSQL Debugging
+
+ - SQL> grant debug connect session to ...;
+ - SQL> grant debug any procedure to ...;

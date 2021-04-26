@@ -1,0 +1,15 @@
+
+** Backup Location
+
+  - RMAN> configure channel 1 device type disk 
+          format='/O2/tmp/rman/%d/%U' maxpiecesize 2g;
+
+  - The format specifiers are described in the RMAN Reference
+
+  - Note the directory '%d' must exist with upper letters. E.g.
+    '/O2/tmp/rman/MANUAL'.
+
+  - %d database name
+  - %U uniuqe name
+
+Back to OracleRman.

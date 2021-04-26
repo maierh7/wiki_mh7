@@ -1,0 +1,11 @@
+
+** Package Problems
+
+  - If a package from ActiveState has problems then see too the ppm
+    side perl+tk+win32 http://cpan.uwinnipeg.ca/
+
+** -MCPAN
+
+  - Do not use the -MCPAN module. Install the precompiled packages
+    with the ppm tool.
+

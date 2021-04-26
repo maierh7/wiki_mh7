@@ -1,0 +1,7 @@
+
+** oradim
+
+  - registrates windows services
+
+  - oradim -NEW -SID orabase -STARTMODE manual
+

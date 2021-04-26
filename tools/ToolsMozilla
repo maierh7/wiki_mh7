@@ -1,0 +1,12 @@
+
+** config
+
+  - url: about:config
+
+** keys
+
+  - */* incremental search
+
+** acrobat
+
+  - On Linux: ln -s /usr/X11R6/lib/Acrobat5/Browsers/intellinux/nppdf.so

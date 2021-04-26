@@ -1,0 +1,6 @@
+
+** ldapsearch
+
+  - ldapsearch -h ffm04ortroid1 -p 389 "objectclass=*"
+  - ldapsearch -b "cn=users,dc=media-saturn,dc=com" "objectclass=*"
+  - ldapsearch -b "cn=users,dc=media-saturn,dc=com" "cn=maierha"

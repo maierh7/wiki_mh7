@@ -1,0 +1,39 @@
+
+** Packages
+
+  - dbms_aqadm
+  - dbms_aq
+
+
+** To Know
+
+  - througput of enqueuing is higher than by dequeuing, because
+    dequeue performs select, delete update
+
+** Limits
+
+  - max. 1000 local subscriber
+  - max. 32 remote subscriber
+  - no synonyms
+  - Tablespace Point in Time Recovery. Regual PITR is possible.
+  - job_queue_processes must be set appropriate
+
+**
+
+OBJECT_NAME
+------------------------------
+ETITEMSFROMRMSTABLE
+AQ$ETITEMSFROMRMSTABLE
+AQ$ETITEMSFROMRMSTABLE_R
+AQ$ETITEMSFROMRMSTABLE_S  The subscribers
+AQ$_ETITEMSFROMRMSTABLE_D
+AQ$_ETITEMSFROMRMSTABLE_E
+AQ$_ETITEMSFROMRMSTABLE_F
+AQ$_ETITEMSFROMRMSTABLE_G
+AQ$_ETITEMSFROMRMSTABLE_H The history IOT
+AQ$_ETITEMSFROMRMSTABLE_I The dequeue IOT
+AQ$_ETITEMSFROMRMSTABLE_N
+AQ$_ETITEMSFROMRMSTABLE_P
+AQ$_ETITEMSFROMRMSTABLE_S
+AQ$_ETITEMSFROMRMSTABLE_T The time management IOT
+AQ$_ETITEMSFROMRMSTABLE_V

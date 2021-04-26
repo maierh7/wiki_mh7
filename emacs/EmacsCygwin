@@ -1,0 +1,15 @@
+
+This page describes the emacs setup so that it works inside the cygwin
+environment and the maierh local environment. This means primarily
+starting emacs from a bash environment. Make sure that the *OSTYPE*
+environment variable is exported and also create for each drive letter
+a cygwin mount point. The cygwin-mount.el lisp file will be start
+later in the w32.el lisp file.
+
+<example>
+
+  $  mount c: /c
+  $  mount d: /d 
+
+</example>
+

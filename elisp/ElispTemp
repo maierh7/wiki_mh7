@@ -1,0 +1,4 @@
+
+** With-Temp-Buffer
+
+  - with no argument the function uses the buffer \*tmp\*.

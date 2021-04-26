@@ -1,0 +1,21 @@
+
+** List
+
+  -   S1) Fire-and-forget to single receiver
+  -   S2) Fire-and-forget to multiple receivers
+  -   S3) Request/Response
+  -   S4) Remote Procedure Call
+  -   S5) Request with acknowledgement
+  -   S6) Request with encrypted payload
+  -   S7) Third party intermdiary
+  -   S8) Conversational message exchange
+  -  S10) Message header and payload encryption
+  -  S11) Communication via multiple intermediaries
+  - DS17) Asynchronous messaging
+  -  S19) Sending non-XML data
+  -  S20) Multiple asynchonous responses
+  -  S21) Incremental parsing/processing of SOAP messages
+  -  S23) Event notification
+  - DS24) Caching
+  - S805) Routing
+  - S807) Tracking

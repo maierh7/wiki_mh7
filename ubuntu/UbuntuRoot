@@ -1,0 +1,8 @@
+
+* Enable Root
+
+  $ sudo passwd root
+
+* Problems with Authentication
+
+  - see the file /etc/PolicyKit/PolicyKit.conf

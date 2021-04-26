@@ -1,0 +1,26 @@
+
+** selfupdate
+
+  - sudo port selfupdate
+
+** install
+
+  - sudo port install wget
+  - sudo port uninstall wget
+  - port search wget
+  - port clean wget
+  - port info wget
+
+on usage 'install' afterwards the package is normally cleaned. use
+
+  - $ find ~/build/cvs/darwinports/dports -name "*.o" 
+
+for uncleaned packages.
+
+** outdated
+
+  - port outdated
+  - port [-f] -u upgrade outdated
+
+    -u uninstall non-active ports
+    -f force mode

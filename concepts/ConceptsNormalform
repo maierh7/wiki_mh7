@@ -1,0 +1,28 @@
+
+** 1. Normalform
+
+    - Nur atomare Datentypen
+
+** 2. Normalform
+
+    - Relation befindet sich in der 1. Normalform. Jedes nicht zum
+      Schlüssel gehörende Attribut ist funktional abhängig von diesem
+      Schlüssel.
+
+** 3. Normalform
+
+    - Relation befindet sich in der 2. Noramlform. Jedes nicht zum
+      Schlüssel gehörende Attribut ist transitiv abhängig vom diesem
+      Schlüssel.
+
+** Transitive Abhängigkeit
+
+    - Gegeben ist eine Relation R mit Primärschlüssel A.
+
+    - B und C sind weitere Attribute von R.
+
+    - C ist transitive Abhängig von A, wenn
+
+      * B funktional Abhängig von A ist,
+      * C funktional Abhängig von B ist und
+      * A nicht funktional Abhängig von C ist.

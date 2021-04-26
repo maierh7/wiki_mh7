@@ -1,0 +1,4 @@
+
+** Linux
+
+  - Decrease the vm.swappiness paramter to a slower value (e.g. 10 or 0)

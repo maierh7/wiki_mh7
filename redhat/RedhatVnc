@@ -1,0 +1,9 @@
+
+** Pwd
+
+vncpasswd for each user
+
+** See also
+
+~root/sh/vnc_start.sh
+~root/sh/list_vnc.py

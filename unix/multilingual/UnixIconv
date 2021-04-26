@@ -1,0 +1,21 @@
+
+Paul Eggert wrote at emacs-devel@gnu.org:
+
+*iconv* translates from one character encoding to another. For example,
+to convert a buffer from Shift-JIS to EUC-JP:
+
+<example>
+
+#include <iconv.h>
+iconv_tconversion_descriptor = iconv_open ("EUC-JP", "SHIFT-JIS");
+size_t chars_converted = iconv (conversion_descriptor,
+                                &inbuf, &insize, &outbuf, &outsize);
+iconv_close (conversion_descriptor);
+
+</example>
+
+*iconv* is becoming the standard way to convert encodings on GNU and on
+Unix systems.  It is specified by POSIX 1003.1-2001, which was just
+approved last week.  Unfortunately, though, the POSIX standard is
+incomplete, as the character encoding names themselves are not
+standardized.

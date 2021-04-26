@@ -1,0 +1,35 @@
+*.asf
+*.cfg
+*.el
+emacs lisp
+*.elc
+emacs lisp compiled,emacs byte code
+*.mp3
+*.pdf
+portable document format
+*.so
+unix shared object,unix dynamic library
+*.txt
+normal ascii file
+*.wav
+windows audio volume
+*.wma
+*.wmf
+*.pps
+power point show
+*.rtf
+rich text format
+*.am
+automake
+*.plt
+gnuplot
+*.cpl
+control panel applet,executable
+*.pll
+Oracle Forms Library
+*.fmx
+Oracle Forms File
+*.chm
+compiled HTML
+*.xz
+LZMA compression

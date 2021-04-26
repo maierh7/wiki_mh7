@@ -1,0 +1,5 @@
+
+** Password
+
+  set password for 'root'@'ing04dbaora02t.media-saturn.com' \
+    = password ('aiB1ohhoo7');

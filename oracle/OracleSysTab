@@ -1,0 +1,49 @@
+
+AUD$ 	Audit
+COL$	Columns
+COM$	Comments
+CON$	Constraints
+CPOOL$	Connection Pool
+DIR$	Directories
+FILE$   Files
+ICOL$
+ILM$
+IND$
+INDOP$
+JOB$
+KOPM$
+LINK$
+LOB$
+LOC$
+LOG$
+MLOG$
+MODEL$
+NOEXP$
+NTAB$
+OBJ$
+OID$
+OPARG$
+PROPS$
+PS$
+RADM$
+REDEF$
+REG$
+RLS$
+RMTAB$
+RULE$
+SEG$
+SEQ$
+SLOG$
+SNAP$
+SQL$
+SUM$
+SUMQB$
+SYN$
+TAB$
+TS$
+TSQ$
+TYPE$
+UET$
+UNDO$
+USER$
+VIEW$

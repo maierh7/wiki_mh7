@@ -1,0 +1,11 @@
+
+** Bash (ulimit)
+
+  - see too bash *info*
+
+  - -a displays the current limits
+
+  - -n sets the open file descriptios. Default is 1024, but for
+    media management system this value should be 4096.
+
+

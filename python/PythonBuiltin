@@ -1,0 +1,81 @@
+
+** Functions
+
+- abs (x)
+- all (iterable)
+- any (iterable)
+- ascii (object)	-> repr
+? basestring -> str, unicode
+- bin (x)
+c bool (x)
+c bytearray (...)
+- callable (object)
+- chr(i)
+- classmethod (function)
+? cmp(x,y)
+- compile (...)
+c complex (real,imag)
+- delattr
+c dict
+- dir
+- divmod
+- enumerate
+- eval
+- exec
+? execfile
+? file 		-> prefered is the open function
+- filter
+c float
+- format
+- frozenset
+- getattr
+- globals
+- hasattr
+- hash
+- help
+- hex
+- id
+- input
+c int
+- isinstance
+- issubclass
+- iter
+- len(s)
+c list
+- locals
+? long
+- map
+- max
+- memoryview
+- min
+- next
+c object
+- oct
+- open
+- ord
+- pow, **
+- print
+- property
+- range (start = 0)
+? raw_input
+? reduce
+? reload
+- repr (object)
+- reversed
+- round
+c set
+- setattr
+c slice
+- sorted
+- staticmethod
+c str
+- sum
+- super
+- tuple
+c type
+? unichr (i)
+? unicode
+- vars(module)		-> see also dir (module)
+? xrange
+- zip
+- __import__ ()

@@ -1,0 +1,69 @@
+
+** Setup
+
+  OracleOemTenSetup
+
+** OMA (agent)
+
+  - For each host.
+
+  - emctl upload
+  - emctl reload (targets.xml)
+  - emctl config agent listtargets
+  - emctl status blackout (lists blackouts on the current managed host)
+  - emctl secure oms -sysman_pwd 
+
+** OMA Discover
+
+  - agentca -d
+
+If the targets.xml file needs to be edit, then substitute the
+AGETN_TOKEN with an AGENT_SEED. The seed number is in the
+emd.properties file and reinvoke 'agentca -d'. Best would be if the
+targets in the OMS are first deleted. After uploading delete again the
+targets that are not necessary.
+
+** OMS (service)
+
+  - Collect data from the OMAs and stores it in the OMR.
+
+** OMR (repository)
+
+*** Remote Repoitory
+
+The connection settings need to be changed in:
+
+  /app/oracle/product/OracleHomes/oms10g/sysman/config/emoms.properties
+
+** Grid Control
+
+** Database Control
+
+  - Installed for each installation.
+
+** Database Control Framework
+
+  - OMA local
+  - OMS local
+  - OMR local
+
+** AS Control
+
+  - Available by each AS installation.
+
+** AS Control Framework
+
+  - DMS  (Dynamic Monitoring Service)
+  - OPMN (Oracle Process Management Notification)
+  - DCM  (Distributed Configuration Management)
+  - OMA  local
+
+** Managed Targets
+
+  - hosts
+  - databases
+  - listeners
+  - application servers
+
+
+

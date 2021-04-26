@@ -1,0 +1,6 @@
+
+** SuSE 9.0: How to specify another DEVICE
+
+  - See the ide.opts file and there specify an additional device. E.g.
+    'DEVICE=hdc1'. For debugging add at front of the ide.opts file a
+    line as follows: 'echo "$ADDRESS" > /tmp/pcmcia'.

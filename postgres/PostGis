@@ -1,0 +1,21 @@
+
+** PostGIS
+
+  psql -d postgis -f postgis.sql
+  createlang plpgsql postgis
+  psql -d postgis -f postgis_comments.sql
+  psql -d postgis -f spatial_ref_sys.sql
+  psql -d postgis -f topology.sql
+  psql -d postgis -f topology_comments.sql
+  psql -d postgis -f rtpostgis.sql
+  psql -d postgis -f raster_comments.sql
+  psql -d postgis -f sfcgal.sql
+  psql -d postgis -f sfcgal_comments.sql
+
+** List Extensions
+
+select name, default_version,installed_version FROM
+pg_available_extensions WHERE name LIKE 'postgis%' or name LIKE
+'address%';
+
+select postgis_full_version ();

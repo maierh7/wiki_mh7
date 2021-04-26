@@ -1,0 +1,30 @@
+
+** Subqueries
+
+  <example>
+    select * 
+    from emp 
+    where (empno, sal) in (
+      select empno, sal
+      from emp
+      where empno = 7900
+      and   sal   = 950
+    );
+  </example>
+
+** Subqueries Exists
+
+  - The **exists** operator is *true* if the subquery at least returns
+    *one* row. Below the result is all columns from emp if one
+    employee exists that meets the two values.
+
+  <example>
+    select * 
+    from emp
+    where exists (
+      select empno, sal
+      from emp
+      where empno = 7900
+      and   sal   = 950
+    ); 
+  </example>

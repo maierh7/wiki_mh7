@@ -1,0 +1,6 @@
+
+** Application Exception
+
+  - *raise_application_exception*, The error should between -20000 and
+    -29999.
+

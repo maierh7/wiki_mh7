@@ -1,0 +1,11 @@
+
+** Build a complex String
+
+<example>
+(with-temp-buffer
+  (insert "abc")
+  (insert "def")
+  (buffer-string)
+  )
+</example>
+

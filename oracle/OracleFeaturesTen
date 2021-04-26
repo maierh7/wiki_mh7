@@ -1,0 +1,11 @@
+
+** Purge
+
+  - SQL> purge tablespace midba;
+  - SQL> drop table test purge;
+  - SQL> purge table md00_planungen_;
+  - SQL> show recyclebin;
+  - SQL> purge recyclebin;
+
+** Undo
+

@@ -1,0 +1,76 @@
+
+** OVM
+
+  https://<host>:4443/OVS
+
+  service oc4j stop
+  service oc4j start
+
+** OVS
+
+  - Version 2.2: Centos 5.3
+
+  OracleOvsTypes
+
+** Images
+
+  OracleOvmImages
+
+** Xen
+
+  OracleOvsXen
+
+  - xm list
+  - xm list <domid> -l | grep location
+(location 0.0.0.0:5900)
+(location 0.0.0.0:5901)
+
+  - vncviewer 0.0.0.0:5900
+See the vncpasswd in the /OVS/running_pool/*/vm.cfg
+
+  - vncports.sh
+
+** OVS Agent
+
+  - service ovs-agent configure
+
+** Templates
+
+Should be placed untared into 
+
+  /OVS/seed-pool
+
+*** Password Defaults
+
+  root/ovsroot
+  oracle/oracle
+
+** OEL
+
+See OracleOvsOel
+
+** OEL 5.4
+
+*** Packages for Emacs
+
+./3/Server/libX11-devel-1.0.3-11.el5.x86_64.rpm
+./2/Server/libXau-devel-1.0.1-3.1.x86_64.rpm
+./3/Server/libXdmcp-devel-1.0.1-2.1.x86_64.rpm
+./3/Server/xorg-x11-proto-devel-7.1-13.el5.x86_64.rpm
+./3/Server/mesa-libGL-devel-6.5.1-7.7.el5.x86_64.rpm --nodeps
+
+./3/Server/libXaw-devel-1.0.2-8.1.x86_64.rpm
+./3/Server/libXmu-devel-1.0.2-5.x86_64.rpm
+./3/Server/libXt-devel-1.0.2-3.1.fc6.x86_64.rpm
+./3/Server/libSM-devel-1.0.1-3.1.x86_64.rpm
+./3/Server/libICE-devel-1.0.1-2.1.x86_64.rpm
+./2/Server/xorg-x11-util-macros-1.0.2-4.fc6.x86_64.rpm
+./3/Server/libXpm-devel-3.5.5-3.x86_64.rpm
+./3/Server/libXext-devel-1.0.1-2.1.x86_64.rpm
+
+** OEL 5.5
+
+*** Packages for Emacs
+
+All is installed even the GTK packages.
+

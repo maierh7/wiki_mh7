@@ -1,0 +1,19 @@
+
+To load the table.el library type in load-library *table* or use the two
+functions *table-insert* or *table-recognize*.
+
+** Commands
+
+- *table-recognize*     [H-z H-t t] recognizes tables in buffer
+- *table-insert*        [H-z H-t i] inserts a new table at point
+- *table-insert-row*    [H-z H-t r] inserts a new row before point
+- *table-insert-column* [H-z H-t c] inserts a new column before point
+- *table-justify*       [H-z H-t j] justifies a row, column or cell
+
+
+** Standard Commands
+
+ - *C-+* - insert row/column
+ - *C-<* - narrow cell
+ - *C->* - widen cell
+ - *C-^* - generates from source another language

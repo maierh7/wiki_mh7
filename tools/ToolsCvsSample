@@ -1,0 +1,25 @@
+
+** Setting up the Repository as user who has right access
+
+  - cvs *init*
+  - cvs *import* -m <file> <vendor tag> <release tag> 
+
+** Maninpulation
+
+  - cvs *checkout* <file>
+  - cvs *add* <file>
+  - cvs *rm*  <file>
+  - cvs *remove* <file>
+  - cvs *update* -p [-r<rev>] <file> > tmpfie
+
+  - cvs *edit* <file>
+  - cvs *unedit* <file>
+
+** Commit
+
+  - cvs *commit*
+
+** See also
+
+  - ToolsCvs
+  - EmacsCvs

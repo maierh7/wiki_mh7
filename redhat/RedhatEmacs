@@ -1,0 +1,18 @@
+
+** Install Manually
+
+texinfo*.tar.gz
+giflib-devel-5.1.4-3.el8.x86_64.rpm
+
+** Devel Packages
+
+libXpm-devel
+libtiff-devel
+libjpeg-turbo-devel
+
+** configure
+
+git clone http://github.com/emacs-mirror/emacs
+cd emacs
+./autogen.sh
+./configure --with-gnutls=ifavailable

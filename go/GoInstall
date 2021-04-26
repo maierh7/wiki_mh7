@@ -1,0 +1,8 @@
+
+** Look for Latest Version
+
+https://golang.org/dl/
+
+https://golang.org/dl/go1.14.1.src.tar.gz
+
+See go-list.sh, go-inst.sh (sudo)

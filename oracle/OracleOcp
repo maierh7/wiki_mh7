@@ -1,0 +1,333 @@
+
+* Fundamentals I
+
+- Describe the Oracle architecture and its main components
+
+- Describe the structure involved in connecting a user to an Oracle
+  instance
+
+- Identify common database administrative tools available to a DBA
+
+- Identify the features of the Oracle Universal Installer
+
+- Explain the benefits of Optimal Flexible Architecture
+
+- Set up password file authentication
+
+- List the main components of the OEM and their uses
+
+- Create and manage initialization parameter files
+
+- Configure OMF
+
+- Startup and shutdown and instance
+
+- Monitor the use of diagnostic files
+
+- Describe the prerequisites necessary for database creation
+
+- Create a database using Oracle Database Configuration Assistant
+
+- Create a database manually
+
+- Identify key data dictionary components
+
+- Identify the contents and uses of the data dictionary
+
+- Query the data dictionary
+
+- Explain the uses of the control file
+
+- Describe the contents of the control file
+
+- Multiplex and manage the control file
+
+- Obtain control file information
+
+- Manage the control file with OMF
+
+- Explain the purposes of online redo log files
+
+- Describe the structure of online redo log files
+
+- Control log switches and checkpoints
+
+- Multiplex and maintain online redo log files
+
+- Manage online redo log files with OMF
+
+- Describe the logical structure of the database
+
+- Create tablespace
+
+- Change the size of tablespaces
+
+- Allocate space for temporary segments
+
+- Change the status of tablespaces
+
+- Change the storage settings of tablespaces
+
+- Implement Oracle Managed Files
+
+- Describe the logical structure of tablespaces within the database
+
+- List the segment types and their uses
+
+- Obtain information about storage structures from the data dictionary
+
+- Describe the logical structure of segments within the database
+
+- Describe the purposes of the undo data
+
+- Implement automatic undo management
+
+- Identify various methods of storing data
+
+- Describe Oracle data types
+
+- Distinguish between an extended versus a restricted ROWID
+
+- Describe the structure of a row
+
+- Create regular and temporary tables
+
+- Manage storage structures within a table
+
+- Reorganize, truncate, drop a table
+
+- Drop a column within a table
+
+- Describe the different types of indexes and their uses
+
+- Create various types of indexes
+
+- Reorganize indexes
+
+- Drop indexes
+
+- Get index information from the data dictionary
+
+- Monitor the usage of an index
+
+- Implement data integrity constraints
+
+- Maintain integrity constraints
+
+- Obtain constraints information from the data dictionary
+
+- Manage passwords using profiles
+
+- Administer profiles
+
+- Control of resources using profiles
+
+- Obtain information about profiles, password management and
+  resources
+
+- Create a new database user
+
+- Alter and drop existing database users
+
+- Monitor information about existing users
+
+- Identify system and object privileges
+
+- Grant and revoke privileges
+
+- Identify auditing capabilities
+
+- Create and modify roles
+
+- Control availability of roles
+
+- Remove roles
+
+- Use predefined roles
+
+- Display role information from the data dictionary
+
+- Choose a database character set for a database
+
+- Specify the language-dependent behavior using initialization
+  parameter, environment variables, and the alter session command
+
+- Use the different types of NLS parameters
+
+- Explain the influence of language-dependent application behavior
+
+- Obtain information about Globalization Support usage
+
+
+
+** Fundamentals II
+
+- Explain solutions included with Oracle 9i for managing complex
+  networks
+
+- Describe Oracle networking add-on solutions
+
+- Explain the key components of the Oracle Net layered architecture
+
+- Explain Oracle Net Services role in client server connections
+
+- Describe how web client connections are established through Oracle
+  networking products
+
+- Identify how the listener responds to incoming connections
+
+- Configure the listener using Oracle Net Manager
+
+- Control the listener using the lsnrctrl utility
+
+- Describe Dynamic Service Registration
+
+- Configure the listener for IIOP and HTTP connections
+
+- Describe the difference between host naming and local service name
+  resolution 
+
+- Use Oracle Net Configuration Assistant to configure: Host Naming,
+  Local naming method, Net service names.
+
+- Perform simple connection troubleshooting
+
+- Identify the components of the Oracle Shared Server architecture
+
+- Describe the Oracle Shared Server Architecture
+
+- Configure the Oracle Shared Server
+
+- Identify and explain usefulness of related dictionary views
+
+- Describe the basics of database backup, restore and recovery
+
+- List the types of failure that may occur in an Oracle environment
+
+- Define a backup recovery strategy
+
+- Describe the Oracle processes, memory structures, and files related
+  to recovery
+
+- Describe way to tune instance recovery
+
+- Describe the differences between Archivelog and Noarchivelog modes
+
+- Configure a database for Archivelog mode
+
+- Enable automatic archiving
+
+- Perform manual archiving of logs
+
+- Configure multiple archive processes
+
+- Configure multiple destinations, including remote destinations
+
+- Identify the features and components of RMAN
+
+- Describe the RMAN repository and control file usage
+
+- Describe channel allocation
+
+- Describe the Media Management Library interface
+
+- Connect to RMAN without the recovery catalog
+
+- Configure the RMAN environment
+
+- Describe user-managed backup and recovery operations
+
+- Discuss backup issues associated with read tablespaces
+
+- Perform closed database backups
+
+- Perform open database backups
+
+- Backup the control file
+
+- Perform cleanup after a failed online backup
+
+- Use the dbverify utility to detect corruption
+
+- Identify types of RMAN specific backups
+
+- Use RMAN BACKUP command to create sets
+
+- Back up the control file
+
+- Back up the archived redo log files
+
+- Use the RMAN COPY command to create image copies
+
+- Describe media recovery
+
+- Perform recovery in Noarchivelog mode
+
+- Perform complete recovery in Archivelog mode
+
+- Restore datafiles to different locations
+
+- Relocate and recover a tablespace by using archive redo log files
+
+- Describe read-only tablespace recovery
+
+- Describe the use of RMAN for restoration and recovery
+
+- Perform recovery in Noarchivelog mode
+
+- Perform complete recovery in Archivelog mode
+
+- Restore datafiles to different locations
+
+- Relocate and recover a tablespace by using archive redo log filse
+
+- Descibe the steps of incomplete recovery
+
+- Perform an incomplete database recovery
+
+- Identify the loss of current online redo log files
+
+- Perform an incomplete database recovery using UNTIL time
+
+- Perform an incomplete database recovery using UNTIL sequence
+
+- Perform cross checking of backup and copies
+
+- Update the repository when backups have been deleted
+
+- Change the availability status of backups and copies
+
+- Make a backup or copy exempt from the retention policy
+
+- Catalog backups made with operating system commands
+
+- Describe the contents of the recovery catalog
+
+- Create the recovery catalog
+
+- Maintain the recovery catalog by using RMAN commands
+
+- Use RMAN to register, resynchronize, and reset a database
+
+- Query the recovery catalog to generate reports and lists
+
+- Create, store, and run scripts
+
+- Describe methods of backing up and recovering the repository catalog
+
+- Describe the uses of the EXP and IMP utility
+
+- Describe the Export and Import concepts and structures
+
+- Perform simple export and import operations
+
+- List guidelines for using Export and Import
+
+- Demonstrate usage of direct-load insert operations
+
+- Describe the usage of SQL*Loader
+
+- Perform basic SQL*Loader operations
+
+- List guidelines for using SQL*Loader and direct-load insert
+

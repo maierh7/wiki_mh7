@@ -1,0 +1,15 @@
+
+<example>
+
+(x-popup-menu
+  (list '(1 1) (selected-window)) ;; or t
+  (list "title" ;; The Title 
+    (cons "title" 
+      '(
+        ("ignore" 'ignore) ;; Menu-Entry One  : (quote ignore)
+        ("abc"   . abc)    ;; Menu-Entry Two  :   abc -> (funcall abc)
+        ("cde"     cde)    ;; Menu-Entry Three: (cde) -> (funcall (car cde))
+        ))))
+
+</example>
+

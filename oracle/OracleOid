@@ -1,0 +1,31 @@
+
+** OID Schemas
+
+  PORTAL_PUBLIC
+  ORASSO_PUBLIC
+  WIRELESS
+  OWF_MGR
+  DISCOVERER5
+  DCM
+  DSGATEWAY
+  WCRSYS
+  B2B
+  ORABPEL
+  BAM
+  ORAOCA_PUBLIC
+  UDDISYS
+  ODS
+
+** OID Admin
+
+  oidadmin
+
+** OID Password
+
+The program ask for the Oracle AS Admin (oracle10gas).
+
+$ oidpasswd connect=msoid unlock_su_acct=true
+
+** Errors
+
+see OracleOidErrors.

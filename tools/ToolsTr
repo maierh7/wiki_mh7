@@ -1,0 +1,5 @@
+
+** tr
+
+  -d [c]	delete characters
+  -s [c]	squeeze characters Maauss (-s as) -> Maus

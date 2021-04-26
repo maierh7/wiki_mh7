@@ -1,0 +1,33 @@
+
+** Installation
+
+  - *GNU_SECURE* points to a file that contains the host that are
+    allowed to connect to the local emacs. E.g. ~/.gnuserv. Under W2K
+    the *GNU_SECURE* environment is ignored.
+
+    <example>
+    localhost
+    </example>
+
+  - (require '*gnuserv*) on W2K
+  - (require '*gnuserv-compat*) on GNU/Linux
+
+  - (gnuserv-start) ;; see also local/elisp/auto/gnuserv.el
+
+** Files
+
+  - gnuserv
+  - gnuclient
+  - gnudoit
+  - .gnuserv (*GNU_SECURE*)
+  - gnuserv.el
+  - gnuserv-compat.el
+
+** Test whether a emacs is running
+
+  - The following script returns t if emacs is running otherwise it
+    returns an empty string.
+
+    <example>
+    $ gnuclient -batch -eval t 2>/dev/null
+    </example>

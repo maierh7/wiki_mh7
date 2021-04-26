@@ -1,0 +1,4 @@
+
+** Command Line Tool
+
+  $ solsql "tcp 1313"

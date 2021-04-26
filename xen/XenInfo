@@ -1,0 +1,7 @@
+
+** Commands
+
+  - xm list	lists all the domains
+  - xm dmesg	shows the startup messages of the hypervisor
+  - xm info
+  - xm console dom1

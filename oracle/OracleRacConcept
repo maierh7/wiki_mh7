@@ -1,0 +1,67 @@
+
+** Differences to a Single Instance
+
+  - Each Instance has its own redo thread
+  - Each Instance has its own undo tablespace
+
+** Different ORACLE_HOMES per Node
+
+  - Simpliefies rolling upgrades. But only for the physical files. The
+    catalog upgrade in the database is allways for the whole database.
+
+  - Conclusion the upgrade process should always be tested on a
+    different system and then afterward applied to the production
+    system. So a different ORACLE_HOME is not necessary. On the other
+    side the cluster concept copies the physical files to the
+    different node so it doesn't matter.
+
+
+** Voting Disk
+
+  - The voting disk must reside on shared disk and should be
+    multiplexed (3 is recommend). These 3 files should be provided
+    redundant with external mirroring.
+
+** Oracle Cluster Registry (OCR)
+
+  - The OCR must also reside on shared disk and should be multiplexed
+    too and mirrored with external redundancy.
+
+** Terms
+
+  - VIP (Virtual Internet Protocol) address
+  - GSD (Global Service Daemon)
+  - ONS (Oracle Notification Service)
+  - CRS (Cluster Ready Service)
+  - CSS (Cluster Synchronisation Service)
+  - EVM (Event Management)
+  - ONS (Oracle Notification Service)
+
+  - GCS (Global Cache Service)
+  - GES (Global Enqueue Service)
+  - GRD (Global Resource Directory)
+
+** CRS
+
+  Attempts to Restart:
+
+  - ONS (3)
+  - Database (1)
+  - Other database processes (5)
+  - VIP address (0)
+
+** CSS
+
+  - If a third party clusterware is used then CSS interfaces with that
+    software.
+
+** EVM
+
+  - Publishes Oracle Clusterware events.
+
+
+** ONS
+
+  - A publish and subscribe service for communicating Fast Application
+    Notification (FAN) events.
+

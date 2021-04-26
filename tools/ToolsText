@@ -1,0 +1,19 @@
+
+** Text Command Line Tools
+
+  - head
+  - tail
+  - cat
+  - cut
+  - sort
+  - wc
+  - paste
+  - join
+  - yes		prints y or <args>
+  - nl
+  - fold
+  - fmt -0	word list
+  - tr
+  - awk
+  - sed
+

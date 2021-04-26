@@ -1,0 +1,10 @@
+
+** Help
+
+  - $ dbca -help
+
+  - $ dbca -datafiledestination /opt/oracle/oradata 
+
+    Did not work!
+
+Back to OracleDba

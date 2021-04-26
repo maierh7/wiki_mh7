@@ -1,0 +1,19 @@
+
+** General
+
+The old syntax of tramp is:
+
+  **/[maierh@hera]~/.emacs**
+
+The new syntax of tramp is:
+
+  **/sshx:maierh@eos:~/.emacs**
+
+** W32 and cygwin
+
+  - *sshx* should work out of the box.
+
+** Cleanup Cache
+
+  - tramp-cleanup-all-connections
+

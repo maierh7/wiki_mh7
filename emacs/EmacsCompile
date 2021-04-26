@@ -1,0 +1,6 @@
+
+This page contains all issues about the Emacs compile mode.
+
+*special-display-buffer-names* contains all the buffer names that should
+be displayed on a special frame.
+

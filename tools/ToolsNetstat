@@ -1,0 +1,12 @@
+
+netstat show routing information.
+
+Functions
+
+  - *-i* interfaces
+  - *-t* tcp
+  - *-u* udp
+
+Options
+
+  - *-n* show numeric ip addresses

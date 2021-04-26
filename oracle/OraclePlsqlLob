@@ -1,0 +1,31 @@
+
+<pre>
+<verbatim>
+From: "Vladimir M. Zakharychev" <bob@dpsp-yes.com>
+Subject: Re: inserting plain text into LOB in Oracle
+Newsgroups: comp.databases.oracle.server
+Date: Tue Apr 01 11:44:26 2003 +0100
+Organization: N-Networks
+
+declare
+ b BLOB;
+begin
+ insert into mytable (id, lob_column)
+  values(1, empty_blob()) 
+ returning lob_column into b;
+ dbms_lob.writeAppend(b, <chunk length>, 
+           utl_raw.cast_to_raw('whatever'));
+ update mytable
+  set lob_column = b 
+  where id = 1;
+ commit;
+end;
+
+You can also use temporary LOBs - in this case you will
+create a temporary BLOB using DBMS_LOB.createTemporary(),
+populate it using write() or writeAppend(), then insert
+it, and dispose it with freeTemporary() or trim() and reuse
+it for the next row.
+
+</verbatim>
+</pre>

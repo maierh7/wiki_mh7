@@ -1,0 +1,8 @@
+
+  - *describe-char-after* (C-u C-x =) displays all the character
+    informations.
+
+  - *skip-chars-forward* '(skip-chars-forward "\000-\177")' This moves
+    point forward and skips characters that are in the given range. If
+    the string begins with '^' then the search stops by the first
+    match of a character.

@@ -1,0 +1,6 @@
+
+** Print Special Lines
+
+  sed -n 1p
+  sed -n [-e] '2,4p'
+

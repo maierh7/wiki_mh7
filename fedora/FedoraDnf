@@ -1,0 +1,32 @@
+
+** Proxy
+
+File: /etc/dnf/dnf.conf 
+[main]
+gpgcheck=1
+installonly_limit=3
+clean_requirements_on_remove=True
+proxy=http://bluecoat:80
+proxy_username=svc_oem
+proxy_password=xxxxxx
+
+
+** Install
+
+emacs
+cvs
+system-config-users
+xorg-x11-fonts*
+tigervnc
+
+** SSH
+
+systemctl enable sshd.service
+
+** Upgrade
+
+dnf system-upgrade reboot
+dnf system-upgrade clean
+dnf clean packages
+
+

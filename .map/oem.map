@@ -1,0 +1,34 @@
+*ac
+Application Server Configuration Management Pack
+*ad
+Applicatioin Server Diagnostic Pack
+*cm
+Database Change Management Pack
+*cmnos
+Configuration Management Pack for Non-Oracle Systems
+*dc
+Database Configuratioin Management Pack
+*dd
+Database Diagnostics Pack
+*dm
+Database Masking Pack
+*dt
+Database Tuning Pack
+*idm
+Identity Managment Pack
+*lm
+Linux Management Pack
+*obim
+Oracle BI Mangement Pack
+*pv
+Provisioning Pack
+*slm
+Service Level Management Pack
+*smh
+System Monitoring Plug-in for Hosts
+*smnom
+System Monitoring Plug-in for Non-Oracle Middleware
+*sms
+System Monitoring Plug-in for Storage
+*soam
+SOA management pack

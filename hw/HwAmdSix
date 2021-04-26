@@ -1,0 +1,36 @@
+
+** AMD Opteron Six Cores
+
+  - 2425 2,1GHz
+  - 2427 2,2GHz
+  - 2431 2,4GHz
+  - 2435 2,6GHz
+
+** AMD Opteron 2431
+
+Six-Core "Istanbul" 
+TDP: 115W 
+Fertigung: 45nm 
+L2-Cache: 6x 512kB
+L3-Cache: 6MB shared 
+Stepping: D0 
+Hypertransport: 4.8GT/s
+Memory Controller: 2200MHz
+MMX, Extended 3DNow!, SSE, SSE2, SSE3, SSE4a, AMD64, OPM, NX-Bit, SMP,
+AMD-V
+für *2-Prozessor* Systeme
+WOF = Boxed Verpackung OHNE Lüfter
+
+** AMD Opteron 8431
+Six-Core "Istanbul"
+TDP: 115W
+Fertigung: 45nm
+L2-Cache: 6x 512kB
+L3-Cache: 6MB shared
+Stepping: D0
+Hypertransport: 4.8GT/s
+Memory Controller: 2200MHz
+MMX, Extended 3DNow!, SSE, SSE2, SSE3, SSE4a, AMD64, OPM, NX-Bit, SMP,
+AMD-V
+für *8-Prozessor* Systeme
+WOF = Boxed Verpackung OHNE Lüfter

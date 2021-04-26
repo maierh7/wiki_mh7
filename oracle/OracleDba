@@ -1,0 +1,65 @@
+
+** Startup
+
+  - startup force
+  - startup restrict
+
+    - alter system disable restricted session;
+
+  - OracleInstance
+
+** Shutdown
+
+  - shutdown abort
+
+** Statistics
+
+  - OracleDbaStat
+
+** Grant/Revoke
+
+  - OracleDbaGrant
+  - OracleDbaRoles
+
+** Remote DBA
+
+  - http://athene:7783/isqlplusdba as sys-user
+
+  - This requires a user and password in the apache passwd file:
+
+  <example>$ORACLE_HOME/sqlplus/admin/iplusdba.pw</example>
+ 
+
+  - The file is defined in:
+
+  <example>$ORACLE_HOME/sqlplus/admin/isqlplus.conf</example>
+
+  - See too OracleDbaPassword
+
+** Backup
+
+  - OracleBackup
+
+** DBCA
+
+  - OracleDbca
+
+** Synonyms
+
+  - Billy Verreynne <vslabs@onwe.co.za>: "Public synonyms for user
+    tables ARE EVIL."
+
+** Shared Server (nine)
+
+  - = dispatchers = (PROTOCOL=TCP) (SERVICE=nineXDB) =
+  - = max_dispatchers=5 = 
+  - = shared_servers=1 =
+  - = max_shared_servers=20
+  - = circuits=170 =
+  - = shared_server_sessions=165 =
+  - = large_pool_size=16777216 =
+  - = sessions=170 =
+
+** Security
+
+  - OracleDbaSecurity

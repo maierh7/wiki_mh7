@@ -1,0 +1,34 @@
+
+** Check Cluster Servicses
+
+  - crs_stat -t
+
+** Start cssd
+
+  - crs_start ora.cssd
+
+
+** Setup
+
+  - asmca
+
+** SQL*PLUS
+
+  sqlplus / as sysasm
+
+
+** Clean the Disk Infos
+
+  - dd if=/dev/zero of=/dev/hdb2 bs=512 count=1
+  - dd if=/dev/zero of=/dev/hdb3 bs=512 count=1
+
+** DBCA
+
+  See note: 1286434.1. The asm needs to be registered in crs.
+
+  srvctl add asm -h
+  srvctl add asm -p '/dev/hdb*'
+
+** EMCTL
+
+  https://ares:5503/em

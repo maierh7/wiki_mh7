@@ -1,0 +1,214 @@
+
+** Error
+
+  - = sqlcode =
+  - = sqlerrm =
+
+** Number Functions
+
+  - = abs =
+  - = acos =
+  - = asin =
+  - = atan =
+  - = atan2 =
+  - = ceil =
+  - = cos =
+  - = cosh =
+  - = exp =	2.718..
+  - = floor =
+  - = ln =
+  - = log =
+  - = mod =	modula %
+  - = power =
+  - = round =
+  - = sign =
+  - = sin =
+  - = sinh =
+  - = sqrt =
+  - = tan =
+  - = tanh =
+  - = trunc =
+
+** Character Functions
+
+  - = ascii =	gets the number of character
+  - = asciistr = 
+  - = chr =	gets the character from number
+  - = concat =
+  - = initcap = capitalize function
+  - = instr/b =
+  - = length/b =
+  - = lower =
+  - = lpad =
+  - = ltrim =
+  - = nchr = chr
+  - = nls_initcap =
+  - = nls_lower =
+  - = nls_upper =
+  - = nlssort =
+  - = replace =
+  - = rpad =
+  - = rtrim =
+  - = soundex =
+  - = substr/b =
+  - = translate =
+  - = trim =
+  - = unistr =
+  - = upper =
+
+** Conversion Functions
+
+  - = cast =
+  - = chartorowid =
+  - = compose = returns a normalized unicode string
+  - = convert = converts a string to another character set
+  - = decompose =
+  - = hextoraw =
+  - = rawtohex =
+  - = rawtonhex =
+  - = rowidtochar =
+  - = rowidtonchar =
+  - = to_char =
+  - = to_clob =
+  - = to_date =
+  - = to_lob =
+  - = to_multi_byte =
+  - = to_nchar =
+  - = to_nclob =
+  - = to_number =
+  - = to_single_byte =
+
+** Date Functions
+
+  - = add_months =
+  - = current_date =
+  - = current_timestamp =
+  - = dbtimezone =
+  - = from_tz =
+  - = last_day =
+  - = localtimestamp =
+  - = months_between =
+  - = new_time =
+  - = next_day =
+  - = numtodsinterval
+  - = numtoyminterval
+  - = round =
+  - = sessiontimezone =
+  - = sys_extract_utc =
+  - = sysdate =
+  - = systimestamp =
+  - = to_dsinterval =
+  - = to_timestamp =
+  - = to_timestamp_tz =
+  - = to_yminterval =
+  - = trunc =
+  - = tz_offset =
+
+** Object References
+
+  - = deref = dereferences a ref(obj) to its value.
+  - = ref =
+  - = reftohex =
+  - = make_ref =
+  - = value =
+  - = sys_typeid =
+  - = treat =
+  - = vsize =
+
+** Analytic Functions
+
+  - = avg =
+  - = corr = coefficient of correlation
+  - = covar_pop =
+  - = covar_samp =
+  - = cume_dist =
+  - = dense_rank =
+  - = first =
+  - = first_value =
+  - = lag =
+  - = last =
+  - = last_value =
+  - = lead =
+  - = ntile =
+  - = percent_rank =
+  - = percentile_count =
+  - = percentile_disc =
+  - = rank =
+  - = ratio_to_report =
+  - = regr_slope =
+  - = regr_intercept =
+  - = regr_count =
+  - = regr_r2 =
+  - = regr_avgx =
+  - = regr_avgy =
+  - = regr_sxx =
+  - = regr_syy =
+  - = regr_sxy =
+  - = stddev =
+  - = stddev_pop =
+  - = stddev_samp =
+  - = var_pop =
+  - = var_samp =
+  - = variance =
+  - = width_bucket =
+
+** Binary Functions
+
+  - = bin_to_num = bin_to_num(1,0,1)
+  - = bitand = 
+
+** Group Functions
+
+  - = count =
+  - = group_id() = 
+  - = grouping =
+  - = grouping_id =
+  - = max =
+  - = min =
+  - = sum =
+
+** XML Functions
+
+  - = depth =
+  - = existsnode =
+  - = extract =
+  - = extractvalue =
+  - = path =
+  - = sys_dburigen =
+  - = sys_xmlagg =
+  - = sys_xmlgen =
+  - = updatexml =
+  - = xmlagg =
+  - = xmlclattval =
+  - = xmlconcat =
+  - = xmlelement =
+  - = xmlforest =
+  - = xmlsequence =
+  - = xmltransform =
+
+** Misc Functions
+
+  - = bfilename =
+  - = decode =
+  - = dump =
+  - = empty_blob =
+  - = empty_clob =
+  - = greatest = least
+  - = least = greatest
+  - = nls_charset_decl_len =
+  - = nls_charset_id =
+  - = nls_charset_name =
+  - = nls_lower =
+  - = nls_sort =
+  - = nls_upper =
+  - = nullif =
+  - = nvl =
+  - = nvl2 =
+  - = row_number =
+  - = sys_connect_by_path = connect by ...
+  - = sys_context =
+  - = sys_guid =
+  - = uid
+  - = user
+  - = userenv
+  - = vsize =

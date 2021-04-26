@@ -1,0 +1,14 @@
+
+** ORA-01925
+
+  - ora-01925: maximum of 30 enabled roles exceeded
+
+  - To find out the currently maximum number of roles available use:
+
+  <example>
+    select grantee, count(*)
+    from dba_role_privs
+    where default_role = 'YES'
+    group by grantee; 
+  </example>  
+

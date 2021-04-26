@@ -1,0 +1,33 @@
+
+** Show
+
+  - SQL> show parameters
+  - par.pl
+
+** Description
+
+  - = *audit_trail=db* = Logs login failures 
+  - = *buffer_pool_keep = (buffers:50000,LRU_LATCHES:2)* =
+  - = db_block_buffers = Since 9.2 deprecated. Use = db_cache_size =.
+  - = *db_block_size = 8192* =
+  - = db_cache_size = Specifies the default size of the buffer pool.
+  - = *db_create_file_dest* = The location there to create the data
+    files, redo and control files. See to db_create_online_log_dest_n.
+  - = *db_create_online_log_dest_n* = The directories where to create
+    the redo and control files.
+  - = *disk_async_io=true* = Only relevant for raw devices
+  - = *event* = "901 trace name errorstack forever" =
+  - = *filesystem_io_options="asynch"* = Only relevant for filesystems.
+  - = *job_queue_interval* = Wake up for the job queue processes
+  - = *log_archive_max_processes* = Number of archive processes.
+  - = *processes* = Number of processes.
+  - = *remote_login_passwordfile* = Specifiy whether the passwordfile
+    of the database can be shared by other databases.
+  - = *remote_os_authent* = Allows non-secure auto logons. ONLY INIT.
+  - = *sessions* = defaults to: <processes> * 1.1 + 5
+  - = *sort_area_size* = Increase it by big indices.
+  - = *sort_area_retained_size* = Increase it by big indices.
+  - = *sql_trace* =
+  - = *trace_files_public=true* = The trace file are readable by others.
+  - = *timed_statistics* = if sql_trace true then it outputs timing
+    statistics

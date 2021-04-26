@@ -1,0 +1,7 @@
+
+** Clean Cache
+
+/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister
+
+-kill - deletes the cache
+-seed - builds the default cache

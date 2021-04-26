@@ -1,0 +1,17 @@
+<pre>
+<verbatim>
+
+HJR wrote:
+
+If you mean 'how do I identify which rows exactly have migrated', just
+run the script utlchain.sql (in ye ever handy ORACLE_HOME/rdbms/admin
+directory) to create a table called 'chained_rows', and then do
+'analyze table BLAH list chained rows'. If you select * from
+chained_rows after that, you will have the head rowids for each of the
+migrated rows. If you include a subselect from the main table
+(something like 'select * from chained_rows where head_rowid in
+(select * from BLAH)' ) then you can see the data that's involved.
+
+</verbatim>
+</pre>
+

@@ -1,0 +1,15 @@
+
+** Tools
+
+  - nmon
+  - ptrconf (AIX 5.2)
+
+** Swap Space
+
+  - svmon -Pt20 | \
+    perl -e 'while(<>){print if($.==2||$&&&!$s++);$.=0 if(/^-+$/)}'
+
+
+** Block Size
+
+  - ps -efZ|more

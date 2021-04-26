@@ -1,0 +1,14 @@
+
+** Objects:
+
+  >>> help(sys)
+
+  argv
+  path
+  
+  stdin
+  stdout
+  stderr
+
+  executeable
+  ...  

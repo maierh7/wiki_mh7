@@ -1,0 +1,39 @@
+
+** Analytic Functions
+
+AVG		avg (sal) over (order by 1)     -- avg on each record
+CORR
+COUNT		count (empno) over (order by 1) -- 14 on each record
+                count (empno) over (order by empno)
+		1, 2, 3, ...
+COVAR_POP
+COVAR_SAMP
+CUME_DIST
+DENSE_RANK      dense_rank () over (partition by deptno order by sal)
+		OracleRank
+FIRST
+FIRST_VALUE
+LAG
+LAST
+LAST_VALUE
+LEAD
+LISTAGG
+MAX
+MEDIAN
+MIN
+NTH_VALUE
+NTILE
+PERCENT_RANK
+PERCENTILE_CONT
+PERCENTILE_DISC
+RANK
+RATIO_TO_REPORT
+REGR_ (Linear Regression) Functions
+ROW_NUMBER
+STDDEV
+STDDEV_POP
+STDDEV_SAMP
+SUM
+VAR_POP
+VAR_SAMP
+VARIANCE 

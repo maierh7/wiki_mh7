@@ -1,0 +1,33 @@
+
+** General
+
+Use a feature test instead of a check of the system-type. For example
+the current tool-bar under X is not ready for the Windows system. But
+this feature may in future versions of Emacs exist. Only checking the
+system type would mean that this have to change later then the feature
+is also available on Windows.
+
+Eli suggests:
+
+Don't use window-system. Better try to test a feature with featurep or
+a function with fboundp. If this is not possible then the usage of
+display-graphic-p is always better.
+
+
+<example>
+
+;; The function executable-make.* did not exist in emacs 20. But to
+;; test this it's better to test the existence of the function instead 
+;; of testing the emacs version number.
+
+(when (fboundp 'executable-make-buffer-file-executable-if-script-p)
+  (add-hook 'after-save-hook 
+	    'executable-make-buffer-file-executable-if-script-p
+	    ))
+</example>
+
+
+** Hooks
+
+Always set a hook variable to nil so that the variable exists for byte
+compiling.

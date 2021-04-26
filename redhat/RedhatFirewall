@@ -1,0 +1,25 @@
+
+** Config
+
+  /etc/firewalld/zones/public.xml
+
+  <port protocol="tcp" port="1521"/> Oracle
+  <port protocol="tcp" port="3306"/> MySQL
+  <port protocol="tcp" port="5432"/> PostgreSQL
+  <port protocol="tcp" port="5900"/> VNC
+  <port protocol="tcp" port="5901"/>
+  <port protocol="tcp" port="5902"/>
+  <port protocol="tcp" port="5903"/>
+  <port protocol="tcp" port="5904"/>
+  <port protocol="tcp" port="5905"/>
+
+** List
+
+  firewall-cmd --info-zone=public
+  firewall-cmd --zone=public --list-ports
+  firewall-cmd --zone=public --list-all
+
+
+** Reload
+
+  firewall-cmd --reload

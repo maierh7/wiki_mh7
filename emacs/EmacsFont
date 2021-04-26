@@ -1,0 +1,25 @@
+
+** Default Font
+
+  (set-face-font 'default "Consolas-10")
+
+** Font Types Recommendations
+
+  - *Lucida*
+  - *Andale Mono*
+  - *Monaco-9*
+  - *Consolas-10*
+
+** Windows
+
+  - Enable ClearType unter
+    Anzeige
+    . Darstellung
+      . Effekte
+        . Zweite Checkbox (ClearType)
+
+** Font Logging
+
+  - EMACS_FONT_LOG=1 emacs -Q -fn 'arial-18'
+  - M-x font-show-log RET
+

@@ -1,0 +1,5 @@
+
+** Force Securefiles
+
+  - alter system set db_securefile = 'force';
+

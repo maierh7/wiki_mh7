@@ -1,0 +1,39 @@
+
+Sehr geehrter Herr Maier !
+
+Um die Tapelibrary unter Unix 4.0F zu konfigurieren sind folgende
+Schritte nötig:
+
+1. Sie müssen die "CAM Layered Components" installieren.
+Diese Subsets finden Sie auf der CD "Associated Products Vol. 2"
+Wenn Sie die CD nach /mnt gemounted haben, dann wechseln Sie nach
+/mnt/SCSI_CAM_Layered_Components/kit/ und führen dort folgendes aus:
+
+ # setld -l .                  
+
+(nun kann es sein, daß die Special-Device-Files automatisch nach einem
+reboot generiert werden. Prüfen Sie also nach einem reboot "ls /dev"
+ob es dort 'mc' und "'rmt' - files gibt, wenn nicht, dann müssen Sie
+noch folgendes tun:)
+
+2. Special-Device-Files für die Tapedrives und den Changer erstellen.
+
+2a.) die Tapedrives
+ prüfen Sie die Tapebezeichnung für die Drives aus dem Startup:
+ # uerf -R -r 300 | more
+ Sie sehen dort z.B. solche Zeilen für die Drives
+ "tz21 at scsi2 target 5 lun 0 (LID=5)"
+ # cd /dev
+ # ./MAKEDEV tz21
+ dies erstellt dann für das Drive die Special Device Files und nun 
+
+2b.) das mc-Device:
+ # scu show edt | grep -i changer
+ Dies wird Ihnen z.B. so etwas zurückliefern:
+ "Bus: 1, Target: 6, Lun: 1, Device Type: Changer"
+ nun müssen Sie daraus die mc-Bezeichnung ermitteln mit folgender Formel:
+ Bus# mal 8 plus Target#....also hier 14 und dann noch die LUN in einen
+ Buchstaben umwandeln...wobei 0=a, 1=b, 2=c ...hier also "b" nun alles Zusammen:
+ mc14b. Um dieses Special-Device-File zu erstellen geben Sie ein (in /dev)
+ # ./MAKEDEV.MC mc14b
+

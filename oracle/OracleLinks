@@ -1,0 +1,59 @@
+
+** General
+
+  - http://tahiti.oracle.com
+  - http://asktom.oracle.com
+
+** FAQ
+
+  - http://www.doag.org/orafaq/
+
+** Security
+
+  - http://www.petefinnigan.com, wrotes a cookbook about security
+  - http://www.cisecurity.org
+
+
+** Performance
+
+  - http://www.dbazine.com/connor.html, has some ideas about analyzing
+    the most activity on a table.
+  - http://dbamon.com/orastat, orastat tool.
+  - http://dbamon.com, monitoring tool.
+  - http://www.confio.com, monitoring tool,DBFlash.
+  - http://www.leccotech.com, tuning tool.
+  - http://www.precise.com
+  - http://www.oraperf.com
+  - http://www.ixora.com.au - Steve Adams
+  - http://www.hotsos.com/
+  - http://www.jlcomp.demon.co.uk - Jonathan Lewis
+
+** Linux
+
+  - http://www.thomasfly.com, lists known issues on Oracle
+    installations under Linux.
+  - http://www.puschitz.com/OracleOnLinux.shtml, ORA-3113
+  - http://www.suse.com/oracle, LVM whitepaper for raw partitions
+
+
+** RAC
+
+  - http://oaktable.net, RAC on Redhat
+
+  - http://www.microsoft.com/sql/evaluation/features/distpart.asp
+  - http://www.microsoft.com/sql/evaluation/compare/RealityBehind_RAC.pdf
+
+** ER Diagramming
+
+  - http://www.embarcadero.com, DBArtisan
+
+** Tools
+
+  - http://www.toadsoft.com
+  - http://www.sqltools.net
+  - http://www.globecom.se/tora/ - open source
+  - http://www.quest.com/formatter_plus/ 
+  - http://www.benthicsoftware.com/index.html - Benthic Golden
+  - http://membres.lycos.fr/pmscontact/pagegb/main_gb.html - oracle tool
+  - http://www.dbpowersuite.com/DBPowerSuite/index.html - dba tool
+  - http://www.scaleabilities.com/tools.shtml - monitoring

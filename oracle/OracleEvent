@@ -1,0 +1,289 @@
+ Code Description
+----- ---------------------------------------------------------------
+10000 Control file debug event, name ‘control_file’
+10001 Control file crash event1
+10002 Control file crash event2
+10003 Control file crash event3
+10004 Control file crash event4
+10005 Trace latch operations for debugging
+10006 Testing - block recovery forced
+10007 Log switch debug crash after new log select, thread %s
+10008 Log switch debug crash after new log header write, thread %s
+10009 Log switch debug crash after old log header write, thread %s
+10010 Begin Transaction
+10011 End Transaction
+10012 Abort Transaction
+10013 Instance Recovery
+10014 Roll Back to Save Point
+10015 Undo Segment Recovery
+10016 Undo Segment extend
+10017 Undo Segment Wrap
+10018 Data Segment Create
+10019 Data Segment Recovery
+10020 Partial link restored to linked list (KSG)
+10021 Latch cleanup for state objects (KSS)
+10022 Trace ktsgsp
+10023 Create Save Undo Segment
+10024 Write to Save Undo
+10025 Extend Save Undo Segment
+10026 Apply Save Undo
+10027 Latch cleanup for enqueue locks (KSQ)
+10028 Latch cleanup for enqueue resources (KSQ)
+10029 Session logon (KSU)
+10030 Session logoff (KSU)
+10031 Row source debug event (R*)
+10032 Sort end (SOR*)
+10035 Parse SQL statement (OPIPRS)
+10036 Create remote row source (QKANET)
+10037 Allocate remote row source (QKARWS)
+10038 Dump row source tree (QBADRV)
+10039 Type checking (OPITCA)
+10040 Dirty cache list
+10041 Dump undo records skipped
+10042 Trap error during undo application
+10044 Free list undo operations
+10045 Free list update operations - ktsrsp, ktsunl
+10046 Enable SQL statement timing
+10047 Trace switching of sessions
+10048 Undo segment shrink
+10049 Protect library cache memory heaps
+10050 Sniper trace
+10051 Trace OPI calls
+10052 Don’t clean up obj$
+10053 CBO Enable optimizer trace
+10054 Trace UNDO handling in MLS
+10055 Trace UNDO handing
+10056 Dump analyze stats (kdg)
+10057 Suppress file names in error messages
+10058 Use table scan cost in tab$.spare1
+10060 CBO Enable predicate dump
+10061 Disable SMON from cleaning temp segment
+10062 Disable usage of OS Roles in osds
+10063 Disable usage of DBA and OPER privileges in osds
+10064 Thread enable debug crash level %s, thread %s
+10065 Limit library cache dump information for state object dump
+10066 Simulate failure to verify file
+10067 Force redo log checksum errors - block number
+10068 Force redo log checksum errors - file number
+10069 Trusted Oracle test event
+10070 Force datafile checksum errors - block number
+10071 Force datafile checksum errors - file number
+10072 Protect latch recovery memory
+10073 Have PMON dump info before latch cleanup
+10074 Default trace function mask for kst
+10075 CBO Disable outer-join to regular join conversion
+10076 CBO Enable cartesian product join costing
+10077 CBO Disable view-merging optimization for outer-joins
+10078 CBO Disable constant predicate elimination optimization
+10080 Dump a block on a segment list which cannot be exchanged
+10081 Segment High Water Mark has been advanced
+10082 Free list head block is the same as the last block
+10083 A brand new block has been requested from space management
+10084 Free list becomes empty
+10085 Free lists have been merged
+10086 CBO Enable error if kko and qka disagree on oby sort
+10087 Disable repair of media corrupt data blocks
+10088 CBO Disable new NOT IN optimization
+10089 CBO Disable index sorting
+10090 Invoke other events before crash recovery
+10091 CBO Disable constant predicate merging
+10092 CBO Disable hash join
+10093 CBO Enable force hash joins
+10094 Before resizing a data file
+10095 Dump debugger commands to trace file
+10096 After the cross instance call when resizing a data file
+10097 After generating redo when resizing a data file
+10098 After the OS has increased the size of a data file
+10099 After updating the file header with the new file size
+10100 After the OS has decreased the size of a data file
+10101 Atomic redo write recovery
+10102 Switch off anti-joins
+10103 CBO Disable hash join swapping
+10104 Dump hash join statistics to trace file
+10105 CBO Enable constant pred trans and MPs w WHERE-clause
+10106 CBO Disable evaluating correlation pred last for NOT IN
+10107 CBO Always use bitmap index
+10108 CBO Don’t use bitmap index
+10109 CBO Disable move of negated predicates
+10110 CBO Try index rowid range scans
+10111 Bitmap index creation switch
+10112 Bitmap index creation switch
+10113 Bitmap index creation switch
+10114 Bitmap index creation switch
+10115 CBO Bitmap optimization use maximal expression
+10116 CBO Bitmap optimization switch
+10117 CBO Disable new parallel cost model
+10118 CBO Enable hash join costing
+10119 QKA Disable GBY sort elimination
+10120 CBO Disable index fast full scan
+10121 CBO Don’t sort bitmap chains
+10122 CBO disable count(col) = count(*) transformation
+10123 QKA Disable Bitmap And-EQuals
+10145 Test auditing network errors
+10146 Enable Oracle TRACE collection
+10200 Block cleanout
+10201 Consistent read undo application
+10202 Consistent read block header
+10203 Consistent read buffer status
+10204 Signal recursive extend
+10205 Row cache debugging
+10206 Transaction table consistent read
+10207 Consistent read transactions’ status report
+10208 Consistent read loop check
+10209 Enable simulated error on control file
+10210 Check data block integrity
+10211 Check index block integrity
+10212 Check cluster integrity
+10213 Crash after control file write
+10214 Simulate write errors on control file
+10215 Simulate read errors on control file
+10216 Dump control file header
+10217 Debug sequence numbers
+10218 Dump uba of applied undo
+10219 Monitor multi-pass row locking
+10220 Show updates to the transaction table
+10221 Show changes done with undo
+10222 Row cache
+10223 Transaction layer - turn on verification codes
+10226 Trace CR applications of undo for data operations
+10227 Verify (multi-piece) row structure
+10228 Trace application of redo by kcocbk
+10230 Check redo generation by copying before applying
+10231 Skip corrupted blocks on _table_scans_
+10232 Dump corrupted blocks symbolically when kcbgotten
+10233 Skip corrupted blocks on index operations
+10234 Trigger event after calling kcrapc to do redo N times
+10235 Check memory manager internal structures
+10236 Library cache manager
+10237 Simulate ^C (for testing purposes)
+10238 Instantiation manager
+10239 Multi-instance library cache manager
+10240 Dump dba’s of blocks that we wait for
+10241 Dump SQL generated for remote execution (OPIX)
+10243 Simulated error for test %s of K2GTAB latch cleanup
+10244 Make tranids in error msgs print as 0.0.0 (for testing)
+10245 Simulate lock conflict error for testing PMON
+10246 Print trace of PMON actions to trace file
+10247 Turn on scgcmn tracing. (VMS ONLY)
+10248 Turn on tracing for dispatchers
+10249 Turn on tracing for multi-stated servers
+10250 Trace all allocate and free calls to the topmost SGA heap
+10251 Check consistency of transaction table and undo block
+10252 Simulate write error to data file header
+10253 Simulate write error to redo log
+10254 Trace cross-instance calls
+10256 Turn off multi-threaded server load balancing
+10257 Trace multi-threaded server load balancing
+10258 Force shared servers to be chosen round-robin
+10259 Get error message text from remote using explicit call
+10260 Trace calls to SMPRSET (VMS ONLY)
+10261 Limit the size of the PGA heap
+10262 Don’t check for memory leaks
+10263 Don’t free empty PGA heap extents
+10264 Collect statistics on context area usage (x$ksmcx)
+10265 Keep random system generated output out of error messages
+10266 Trace OSD stack usage
+10267 Inhibit KSEDMP for testing
+10268 Don’t do forward coalesce when deleting extents
+10269 Don’t do coalesces of free space in SMON
+10270 Debug shared cursors
+10271 Distributed transaction after COLLECT
+10272 Distributed transaction before PREPARE
+10273 Distributed transaction after PREPARE
+10274 Distributed transaction before COMMIT
+10275 Distributed transaction after COMMIT
+10276 Distributed transaction before FORGET
+10277 Cursor sharing (or not) related event (used for testing)
+10281 Maximum time to wait for process creation
+10282 Inhibit signalling of other backgrounds when one dies
+10286 Simulate control file open error
+10287 Simulate archiver error
+10288 Do not check block type in ktrget
+10289 Do block dumps to trace file in hex rather than fromatted
+10290 Kdnchk - checkvalid event - not for general purpose use.
+10291 Die in dtsdrv to test controlfile undo”
+10292 Dump uet entries on a 1561 from dtsdrv”
+10293 Dump debugging information when doing block recovery”
+10294 Enable PERSISTENT DLM operations on non-compliant systems”
+10300 Disable undo compatibility check at database open
+10301 Enable LCK timeout table consistency check”
+10320 Enable data layer (kdtgrs) tracing of space management calls”
+10352 Report direct path statistics
+10353 Number of slots
+10354 Turn on direct read path for parallel query
+10355 Turn on direct read path for scans
+10356 Turn on hint usage for direct read
+10357 Turn on debug information for direct path
+10374 Parallel query server interrupt (validate lock value)
+10375 Turn on checks for statistics rollups
+10376 Turn on table queue statistics
+10377 Turn off load balancing
+10379 Direct read for rowid range scans (unimplemented)
+10380 Kxfp latch cleanup testing event
+10381 Kxfp latch cleanup testing event
+10382 Parallel query server interrupt (reset)
+10383 Auto parallelization testing event
+10384 Parallel dataflow scheduler tracing
+10385 Parallel table scan range sampling method
+10386 Parallel SQL hash and range statistics
+10387 Parallel query server interrupt (normal)
+10388 Parallel query server interrupt (failure)
+10389 Parallel query server interrupt (cleanup)
+10390 Trace parallel query slave execution
+10391 Trace rowid range partitioning
+10392 Parallel query debugging bits
+10393 Print parallel query statistics
+10394 Allow parallelization of small tables
+10395 Adjust sample size for range table queues
+10396 Circumvent range table queues for queries
+10397 Suppress verbose parallel coordinator error reporting
+10398 Enable timeouts in parallel query threads
+10399 Use different internal maximum buffer size
+10400 Turn on system state dumps for shutdown debugging
+10500 Turn on traces for SMON
+10510 Turn off SMON check to offline pending offline rollbacksegment
+10511 Turn off SMON check to cleanup undo dictionary
+10512 Turn off SMON check to shrink rollback segments
+10600 Check cursor frame allocation
+10602 Cause an access violation (for testing purposes)
+10603 Cause an error to occur during truncate (for testing purposes)
+10604 Trace parallel create index
+10605 Enable parallel create index by default
+10606 Trace parallel create index
+10607 Trace index rowid partition scan
+10608 Trace create bitmap index
+10610 Trace create index pseudo optimizer
+10666 Do not get database enqueue name
+10667 Cause sppst to check for valid process ids
+10690 Set shadow process core file dump type (Unix only)
+10691 Set background process core file type (Unix only)
+10700 Alter access violation exception handler
+10701 Dump direct loader index keys
+10702 Enable histogram data generation
+10703 Simulate process death during enqueue get
+10704 Print out information about what enqueues are being obtained
+10706 Print out information about instance lock manipulation
+10707 Simulate process death for instance registration
+10708 Print out Tracing information for skxf multi instance comms
+10709 Enable parallel instances in create index by default
+10710 Trace bitmap index access
+10711 Trace bitmap index merge
+10712 Trace bitmap index or
+10713 Trace bitmap index and
+10714 Trace bitmap index minus
+10715 Trace bitmap index conversion to rowids
+10800 Disable Smart Disk scan
+10801 Enable Smart Disk trace
+10802 Reserved for Smart Disk
+10803 Write timing statistics on OPS recovery scan
+10804 Reserved for ksxb
+10805 Reserved for row sort
+10900 Extent manager fault insertion event #%s
+10924 Import storage parse error ignore event
+10925 Trace name context forever
+10926 Trace name context forever
+10927 trace name context forever
+10928 trace name context forever
+10999 do not get database enqueue name
+ 
+ 

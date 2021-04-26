@@ -1,0 +1,28 @@
+
+** orarun
+
+  - =rpm -Uvh orarun8i.rpm=
+
+** catrep.sql
+
+  - Is only needed if replication will be used.
+
+
+** ORA-3113
+
+  - This error means that the glibc stubs are not installed and the
+    products are not relinked.
+
+** SuSE 9.0
+
+  - Needs gcc-2.95 otherwise linking of the oracle executable fails
+    with a hidden symbol.
+
+** sort-area-size
+
+
+  - The sort-area-size is set to low. Increase this parameter to
+    1 MB.
+
+See too ImposOracleInstallation
+Back to OracleInstall

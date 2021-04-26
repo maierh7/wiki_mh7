@@ -1,0 +1,15 @@
+
+** Startup
+
+Startup with sqlplus is only possible if the Windows service has been
+started. 
+
+** Limitations
+
+- Do not use the database on PDC and BDC.
+- The database do not use the OS file cache.
+- LAN Manager Server can cause problems
+
+** Metalink
+
+- Note: 46001.1

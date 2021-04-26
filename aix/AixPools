@@ -1,0 +1,14 @@
+
+** Pools
+
+	http://172.17.156.178/lpar2rrd 
+
+  0 - Default Pool
+  1 - ora_eed		EE (Enterprise Edition)
+  2 - ora_bip		BI Publisher
+  3 - ora_cmp		EE and Partitioning and Advance Compression
+  4 - ora_mte		EE and Partioning and Multitenant
+  5 - ora_par		EE and Partitioning
+  6 - sap_ora		SAP - EE
+  7 - sap_ora_par	SAP - EE and Partitioning
+  8 - ora_rac		EE and Partitioning and RAC

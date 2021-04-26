@@ -1,0 +1,77 @@
+
+
+** Search for Doc ID
+
+  - Do an advance search and then select Doc ID.
+  - Put in the search field '146599.1'.
+
+** Defragmentation
+
+  - http://support.oracle.co.uk/cgi-bin/cr/getfile_cr.cgi?23904
+
+** Database
+
+      Name
+
+  -   21154.1 Event 10046 enable SQL statement tracing
+  -   29430.1 How to Recover a Database Having Added a Datafile 
+              Since The Last Backup 
+  -   30286.1 I/O Tuning with Different RAID Controller
+  -   35934.1 Cost Based Optimizer - Common Misconceptions and Issues
+  -   39817.1 Interpreting RAW 10046 output
+  -   50868.1 Calling C from PL/SQL in Oracle8
+  -   66320.1 How to change a database character set?
+  -   69642.1 UNIX: Checklist for Resolving Connect AS SYSDBA Issues
+  -   91969.1 IMP - FROMUSER/TOUSER fails with LOB data
+  -   93763.1 Tuning Considerations When Import Is Slow
+  -   97066.1 How The Intelligent Agent Determines A Database Service 
+  -  125021.1 Oracle Connections and Firewalls
+  -  131865.1 Backup and Recovery - Index
+  -  146599.1 Diagnosing and Resolving Error ORA-04031
+  -  149393.1 What scripts are needed to manually install Oracle9i 
+              JVM(9.0.1)
+  -  150316.1 Manual installation of Oracle Text version 9.0.1
+  -  153091.1 RDA - Remote Diagnostic Agent
+  -  155477.1 Parameter DIRECT: Conventional Path Export Versus 
+              Direct Path Export
+  -  155933.1 Resolving an ORA-600 [12700] error
+  -  159657.1 Complete Upgrade Checklist for Manual Upgrades from 8.X
+              / 9.0.1 to Oracle9i
+  -  161818.1 Release Support Status Summary
+  -  175006.1 Steps to generate HANGANALYZE trace files
+  -  179848.1 Enable 10046 for all new sessions
+  -  184432.1 Configuring SSL with Oracle HTTP Server in 9iAS Release 2 
+  -  189256.1 UNIX: Script to Verify Installation Requirements for 
+              Oracle 9.x version of RDBMS
+  -  201370.1 Linux: Quick Start Guide - 9.2.0 RDBMS Installation
+  -  205259.1 Asynchoronous I/O on Red Hat
+  -  214691.1 Oracle 9iAS Release 2 (9.0.2.0.1) Windows Installation Cookbook
+     215971.1 Relinking Errors During Install of Oracle 9iDS on Linux
+  -  217624.1 Sample Startup/Shutdown Scripts for 9iAS Release 2 on 
+              Windows and UNIX
+  -  224266.1 How to Change the DBID and the DBNAME by using NID
+  -  225912.1 Changing the Database Character Set
+  -  236826.1 Supported and Recommended File System on Unbreakable Linux
+  -  453293.1 Configuration of TAF (Transparent Application Failover) 
+              and Load Balancing
+  -  460982.1 How To Configure Server Side Transparent Application
+              Failover (TAF)
+  - 1048876.6 UNIX: Connect internal prompts for password
+  - 1005107.6 ORA-01555: snapshot too old - Causes and Solutions
+  - 1069332.6 sqlnet.encription%
+  - 1039126.6 Find the number of transactions in RBS for specified Object
+
+*** AS
+
+  - **280116.1** How To Reset ias_admin User Password On AS10G On Unix 
+             If The Old Password Is Missing?
+
+*** OEM
+
+  - **434218.1** Metric Collection error-Instance Health Check 
+             initialization failed GIM-00104 LEM-00031 LEM-00033
+
+*** Retail
+
+  - **467884.1** Oracle Retail Platform Support: 
+             Statement Of Direction - 2009

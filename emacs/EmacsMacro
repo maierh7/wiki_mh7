@@ -1,0 +1,29 @@
+
+** Counter
+
+  - *C-x C-k C-i* Insert a macro counter. Arg specifies the
+    increment.
+
+  - *C-u 5 f1* - set the counter to five
+  - *f1*       - inserts the actual counter and increments it
+  - *C-u 2 f1* - increments it by two 
+
+** Edit
+
+  - *C-x C-k C-e* Edit the macro.
+
+** Name It
+
+  - name-last-kbd-macro
+  - insert-kbd-macro
+
+** Ring
+
+  - C-x C-k C-p
+  - C-x C-k C-n
+
+** Delete
+
+  - C-x C-k C-d
+
+

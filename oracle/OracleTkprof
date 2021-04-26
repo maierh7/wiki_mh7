@@ -1,0 +1,51 @@
+
+** Result
+
+  - *parse*   Soft or hard parse phase
+
+  - *execute* For a select, this will be many time empty. For update,
+    this will be where all of the work is done.
+
+  - *fetch*   Fetching rows.
+
+** Result Columns
+
+  - count
+  - cpu     Timed_statistics need to be on
+  - elapsed Ditto
+  - disk    I/O performance
+  - query   How many blocks are read
+  - current
+  - rows    How many rows
+
+** Analysis
+
+  - *parse / execute equal one* Always hard parses. Should be go to
+    zero.
+
+  - *parse greater one is alwys suspect* Always hard parses.
+
+  - *execute count equal one* No bind variables.
+
+  - *large disparity between cpu and elapsed* A lot of time of waits.
+
+  - *large cpu or elapsed time* Tune it.
+
+  - *fetch near one and rows greater one* No bulk fetches. [1]
+
+  - *excessively high disk*. Suspect.
+
+  - *excessively high query or current*. Suspect.
+
+  - *Misses in library cache during parse: 1* Always hard parses.
+
+
+** Trace File
+
+  - **dep** Recursive SQL. A value greater zero means that the SQL is
+    executed by the database and not by the client. This is true for
+    SQL inside PL/SQL.
+
+Footnotes: 
+[1]  JDBC: Connection.setDeaultRowPrefetch. Default is 10.
+           OracleStatement.setRowPrefetch, getRowPrefetch.

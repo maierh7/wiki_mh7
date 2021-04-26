@@ -1,0 +1,75 @@
+<pre>
+<verbatim>
+
+By default, the initSID.ora is stored in ORACLE_HOME/dbs (or
+ORACLE_HOME\database on Windows). But you will also find that the
+database creation assistant sets up an ORADATA\ADMIN directory under
+ORACLE_BASE (usually C:\oracle on Windows platforms). In there, you'll
+find a PFILE directory, and in there, you'll find the *real*
+initSID.ora. The one in ORACLE_HOME\database merely has a line in it
+saying where to find the other one
+(IFILE=C:\oracle\oradata\admin\file\initxxx.ora).
+
+So editing the one with numbers after it is not going to help you at all.
+
+If there's an SPFILE, it also has to live in ORACLE_HOME\database, but
+you can again move it anywhere so long as you leave a regular init.ora
+behind that has one line in it:
+SPFILE=C:\somwhere\somewherelse\spfilexxx.ora.
+
+There are some advantages to using an SPFILE, and some known
+disadvantages. The advantages are that when you modify a dynamic
+parameter (alter system set shared_pool_size=120M), that implicitly
+not only changes the currently running instance, but modifies the
+spfile setting as well, so the next time you startup, the new setting
+is already in place. In the dark old days before 9i, achieving both
+things would have involved issuing the alter system command to get the
+currently-running instance right, and *then* remembering to edit your
+init.ora yourself (and yes, I realise that before 9i, you couldn't
+actually modify the shared_pool_size dynamically).
+
+Big deal, as far as I'm concerned: it's shifted the burden in other
+respects. 'Alter system' commands used to have no lasting effect. Now,
+by default, they do. So if I want to make just a temporary change to
+the currently running instance, I have to remember to append the
+'SCOPE=MEMORY' clause to the alter system command so it doesn't try
+and edit my spfile.
+
+Then there are the bugs: try changing the DISPATCHERS= parameter with
+an alter system command, with no SCOPE clause. It won't work, because
+you can't, for some reason, edit that parameter in the spfile. At all.
+
+Then there are the quirks. Try 'alter system set shared_pool_size=0
+scope=spfile'. Zero is, of course, an utterly illegal value, but the
+spfile is merrily altered anyway.
+
+Then there's the rigmarole of correcting such quirks, or modifying
+your DISPATCHERS parameter: create pfile from spfile. Edit the
+traditional init.ora that results. Then create spfile from pfile. Then
+startup. Strikes me it was easier just to: edit init.ora, startup.
+
+There are two occasions when you *have* to use an spfile: Data Guard
+requires it (standby databases). And so does RAC *if* you are using
+raw devices and want to have a common configuration file (because you
+can't put a text file init.ora onto a raw partition).
+
+And there is one major plus point in the spfile's favour: there's only
+ever one of them. If you have a team of DBAs, each managing the
+database from their own PCs using Enterprise Manager, each DBA has a
+local copy of the init.ora. So which one is the 'right' one? With the
+SPFILE, everything stays on the server end, and there's no confusion
+about what file is the definitive one.
+
+Like anything else, therefore, it's a tool which you may or may not
+find helpful or a hinderance, and which has benefits as well as
+costs. Personally, unless I'm working with Data Guard, I never have
+one (most RAC implementations these days could use a cluster file
+system, onto which an init.ora *can* be placed for common-file
+configuration). But it's, as ever, an 'all depends' situation at the
+moment. Give it enough time, though, and I expect it will be the only
+way to do things.
+
+~QM
+
+</verbatim>
+</pre>

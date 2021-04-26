@@ -1,0 +1,12 @@
+
+** From 8i
+
+
+  - Always make a Backup and restore that backup to a new server.
+
+  - Perform a test migration on a different server.
+
+  - If the database is not to large use export/import.
+
+  - Paul Drake suggest to create a LMT system tablespace?
+    drak0nian@yahoo.com (Paul Drake)

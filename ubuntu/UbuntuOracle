@@ -1,0 +1,15 @@
+
+** Packages
+
+  - oracle-xe
+  - oracle-xe-client (without proc)
+
+** Notes
+
+  - For the oracle-xe-client installation the NLS_LANG variable should
+    be set
+
+
+** 11gR2
+
+  - see UbuntuTen

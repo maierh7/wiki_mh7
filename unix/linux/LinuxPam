@@ -1,0 +1,6 @@
+
+** Shells
+
+  - Shells must be added to the /etc/shells file otherwise connection
+    is not possible.
+

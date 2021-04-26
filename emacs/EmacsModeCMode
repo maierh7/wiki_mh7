@@ -1,0 +1,7 @@
+
+** Tags and Info
+
+  - *C-x 4 .* shows the tag definition in another window.
+
+  - *C-h S* shows the c function definition in the info file if the
+    libc info files are installed.

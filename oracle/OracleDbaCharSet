@@ -1,0 +1,11 @@
+
+** Change Character Set
+
+  - Example
+
+  <example>
+    ALTER DATABASE  CHARACTER SET <new set>;
+    ALTER DATABASE NATIONAL CHARACTER SET <new national set> ;
+  </example>
+
+  - see also the csscan program

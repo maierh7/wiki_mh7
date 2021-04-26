@@ -1,0 +1,8 @@
+
+** List Shared Memory
+
+  ipcs -m
+
+  *sysresv* lists the id and key of the shared memory
+
+  ipcrm -m <id>

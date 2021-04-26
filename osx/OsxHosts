@@ -1,0 +1,9 @@
+
+** /etc/hosts
+
+  - niload -v -m hosts . < /etc/hosts
+
+** Hostname
+
+  /usr/sbin/scutil --set HostName ate
+

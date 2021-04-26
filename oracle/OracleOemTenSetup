@@ -1,0 +1,17 @@
+
+** User
+
+  - Administration User: sysman/*****/normal
+
+** SMTP
+
+  - SMTP          : locahost
+  - Identification: eris.maierh
+  - Email Address : oracle@eris.maierh
+
+<pre> <verbatim>
+
+  "eris.maierh" <oracle@eris.maierh>
+
+</verbatim></pre>
+

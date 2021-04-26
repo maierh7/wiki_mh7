@@ -1,0 +1,38 @@
+
+  - *sort-fields* sorts region. The universial argument specifies which
+    field should be sorted. (sort-fields 1 BEG END) is equal to
+    sort-lines.
+
+    Universal Argument specifies the ARGth field. A negative argument
+    starts from the right to count.
+
+  - *sort-regexp-fields* sorts region in a more sophisticated manner.
+
+  <example>
+    ;; sort field two
+    c 123 bleh
+    b 456 blha
+    a 789 blah
+  </example>
+
+  <example>
+    (sort-regexp-fields nil "^. \\([0-9]+\\) .+$" "\\1" 
+      (region-beginning) (region-end))
+    (sort-regexp-fields nil "^.*$" "[0-9]+" 
+      (region-beginning) (region-end))
+    (sort-numeric-fields 2 
+      (region-beginning) (region-end))
+  </example>
+
+  - *sort-numeric-fields*
+
+  <example>
+     ;; sort field one
+     16     travel
+    189     tools
+  </example>
+
+  <example>
+    (sort-numeric-fields 2 
+      (region-beginning) (region-end))
+  </example>

@@ -1,0 +1,4 @@
+
+** Print
+
+  - *xfontsel -print* prints the selected font to stdout.

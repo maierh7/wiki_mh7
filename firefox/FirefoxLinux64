@@ -1,0 +1,15 @@
+
+** 64 Linux
+
+  - nspluginwrapper
+  - libflashplayer.so
+
+*** install nspluginwrapper
+
+  - ./configure
+  - make
+  - make install
+
+*** install flashplayer
+
+  - nspluginwrapper -i /usr/lib/flash-plugin/libflashplayer.so

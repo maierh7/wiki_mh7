@@ -1,0 +1,6 @@
+
+** Comparsion to the MS SQL Server
+
+  - Simplified locking mechanismn.
+  - Not a strict row level locking.
+  - Long during transaction can halt the whole server.

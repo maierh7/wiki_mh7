@@ -1,0 +1,10 @@
+
+** NAT: Static IP-Address
+
+
+192.168.220.21
+192.168.220.22
+
+Name-Server:172.16.1.10
+Search-Domain: media-saturn.com rb.media-saturn.net
+

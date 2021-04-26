@@ -1,0 +1,5 @@
+
+** Startup
+
+  - *startup.el* defines some hooks that can be used for controlling the
+    startup behavior.

@@ -1,0 +1,8 @@
+
+** psql
+
+  psql -W -h <hn> <dbname> <username>
+
+  -W 		prompt for password
+  -h <hn>	hostname
+  

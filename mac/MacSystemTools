@@ -1,0 +1,21 @@
+
+** Tools
+
+  - sw_vers
+  - /usr/sbin/sysctl
+  - /usr/sbin/system_profiler
+
+** Netinfo
+
+  - nireport
+  - nicl
+
+
+** Startup
+
+  - SystemStarter
+
+** NIREPORT
+
+  - nireport . /users  <property>
+  - nireport . /groups <property>

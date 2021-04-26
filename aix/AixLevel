@@ -1,0 +1,12 @@
+
+** Technologie Level
+
+  oslevel -r -s
+
+
+7100-02-03-1334
+|    |  |  +-- build sequence
+|    |	+----- service pack
+|    +-------- technology level
++------------- base level
+

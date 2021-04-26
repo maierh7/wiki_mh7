@@ -1,0 +1,5 @@
+
+  - *run-with-idle-timer *SECONDS REPEAT FUNCTION &rest ARGS
+
+This runs function if seconds is reached in a idle state.
+

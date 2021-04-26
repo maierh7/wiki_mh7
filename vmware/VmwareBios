@@ -1,0 +1,11 @@
+
+* Force Bios
+
+  - bios.forceSetupOnce = "TRUE"
+
+  - or use the function "Power On To Bios"
+
+  - The Bios uses the US-Keyboard. The '+' key is 'S-+`'. The '-' key
+    is 'ß'.
+
+

@@ -1,0 +1,10 @@
+
+** Setup Time Server
+
+/etc/chrony.conf
+server time.media-saturn.com
+
+** Localtime
+
+timedatectl set-timezone Europe/Berlin
+

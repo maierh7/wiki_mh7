@@ -1,0 +1,9 @@
+
+** Last Element
+
+  - *$#array* returns the index of the last element.
+  - *@array* returns the number of items in a scalar context.
+
+    <example>
+      if( @array > 2 ) { ... }
+    </example>

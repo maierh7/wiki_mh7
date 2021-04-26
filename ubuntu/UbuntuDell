@@ -1,0 +1,32 @@
+
+** Install
+
+  - openssh-server
+  - cvs
+  - libc6-dev
+  - texinfo
+  - nfs-common
+
+** dpkg (i386)
+
+  - use --force-architecture
+
+** Clean Cache
+
+  - apt-get clean
+
+This removes the pacages (*.deb) from /var/cache/apt/archives.
+
+
+** Emacs
+
+  - libc6-dev
+  - termcap-compat
+
+** Firefox (Yahoo Toolbar)
+
+  - sudo apt-get remove yahoo-toolbar-extension
+
+** WLAN Network
+
+# - sudo iwpriv eth1 set_vlanmode 0

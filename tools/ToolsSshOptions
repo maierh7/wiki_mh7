@@ -1,0 +1,8 @@
+
+** X11
+
+<example>
+  $ ssh -X athene xterm
+</example>
+
+Back to ToolsSsh.

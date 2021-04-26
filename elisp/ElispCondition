@@ -1,0 +1,12 @@
+
+This page gives info about conditions in emacs lisp.
+
+<example>
+
+(condition-case errinfo
+    (load "dddd")
+  (error 
+   (message "error: %s" errinfo)
+   ))
+
+</example>

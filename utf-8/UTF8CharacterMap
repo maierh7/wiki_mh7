@@ -1,0 +1,18 @@
+
+To find out which character map is in use type in the command 
+
+ $ **locale charmap**
+ $ **locale -a** lists all the maps on the system
+
+To create new locals put it into **/etc/locale.gen** (posted by Kai
+Groﬂjohann):
+
+<example>
+
+ de_DE.UTF-8 UTF-8
+ en_GB.UTF-8 UTF-8
+ en_US.UTF-8 UTF-8
+
+</example>
+
+See also *localedef* and localegen (debian)

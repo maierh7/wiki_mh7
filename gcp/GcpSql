@@ -1,0 +1,7 @@
+
+** Connect 
+
+  - Define Static External IP-Address for Compute Instance
+  - For the SQL instance execute "add network" and insert the external
+    IP-Address of the Compute Instance
+

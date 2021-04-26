@@ -1,0 +1,60 @@
+
+** Diagnostics Pack
+
+  - Automatic capturing of AWR data
+  - Performance analysis based on AWR (ADDM)
+  - OS monitoring
+  - Adaptive thresholds. Compare against baselines.
+  - Advanced alert management		
+  - Retrieve performance statistics directly from the SGA
+
+** Tuning Pack
+
+  - SQL Tuning Advisor
+  - SQL Access Advisor (indices, MVs)
+  - Reorganize objects
+  - SQL Tuning sets (capture SQL workloads)
+
+** Change Management Pack
+
+  - Baselines
+  - Comparsions
+  - Synchonization
+
+** Configuration Management Pack
+
+  - Conf. management (search, comparsion, change tracking, reporting)
+  - Patching
+  - Policy and security management
+  - Policy groups (database, listener, rac)
+
+** Provisioning Pack for Database
+
+  - Patching
+    - Oracle products
+    - Linux
+    - Windows
+    - Solaris
+  - Provisioning and Cloning
+    - OS
+    - Images of db, rac and as
+    - extend rac and as
+    - clone DBs and $OHs
+    - convert single-instance DBs to RAC
+
+** Data Masking Pack
+
+** Diagnostics Pack for Oracle Middleware
+
+** Configuration Management Pack for Oracle Middleware
+
+** Provisioning Management Pack for Oracle Middleware
+
+** Management Pack for SOA
+
+** Management Pack for Identity Management
+
+** BI Management
+
+** Service Level Management Pack
+

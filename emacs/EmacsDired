@@ -1,0 +1,25 @@
+
+** Global
+
+- *C-x C-j* dired-jump
+
+
+** Keys
+
+- *w* dired-copy-filename-as-kill
+- *U* dired-unmark-all-marks
+- *M-{* dired-prev-marked-file
+- *M-}* dired-next-marked-file
+
+- *C-x C-q* wdired
+
+
+** using of " * "
+
+The marked files can be used in a dired shell command by a
+whitespace surrounded asterix. To nullify this use =*""=.
+
+  <example>
+  '! echo * '
+  '! echo *""'
+  </example>

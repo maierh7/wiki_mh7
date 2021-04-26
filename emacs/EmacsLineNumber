@@ -1,0 +1,10 @@
+
+** Display Line Number
+
+  - use setnu.el
+  - M-x 'setnu-mode'
+
+** Mark and Kill Line Numbers
+
+  - use line-num.el
+  - M-x turn-on-line-numbers-display

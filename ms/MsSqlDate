@@ -1,0 +1,22 @@
+
+** Timestamp
+
+  - SYSDATETIMEOFFSET()			systimestamp
+  - GETDATE ()				sysdate   
+
+  - CONVERT (data type, expression, style)
+
+** Datatyes
+
+  - smalldatetime (date)
+  - datetime      (timestamp(3)) -- milli
+  -               (timestamp(6)) -- micro
+  - datetime2     (timestamp(9)) -- nano
+
+** Calculation
+
+  - dateadd
+  - eomonth
+  - datediff
+  - datediff_big
+  

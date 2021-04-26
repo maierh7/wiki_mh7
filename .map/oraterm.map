@@ -1,0 +1,628 @@
+*active sessions
+Active sessions are in transaction, in querying or uses other database
+resources such as enqueues.
+*advancing the checkpoint
+This reduces recovery because the changes are written to the datafile
+and the checkpoint is moved forward. Afterward the SCN changes.
+*alter database
+Use alter database to operate on the phisical structure of the
+database. Examples: open, close, mount, recover, archivelog.
+*alter table
+storage parameters, move, allocate, add columns, logging, cache, add
+constraints, enable integrity constraints or triggers, parallelism,
+monitoring, rename, add index-organized characteristics.
+*archive background processes
+Default is 2 processes.
+*archive lag target
+Automatic log switch. In a RAC all instances need the same value of
+this parameter.
+*archived redo logs
+Can be used for recovery, update of a standby database, to gain
+history information (see logminer).
+*archivelog mode
+In archive log mode it is not allowed to overwrite an redo log group
+that is not archived. See v$log.
+*auditing
+Statement, privilege and schema object auditing.
+*automatic undo management
+AUM uses tablespaces instead of rollback segments. Important dynamic
+views are v$transaction, v$rollstat and v$undostat.
+*b-tree
+B-trees are balanced.
+*background processes
+See processes.
+*backup pieces
+physical files in a RMAN backup set.
+*backup set
+Contains one or more backup pieces and it's the result of a RMAN
+backup operation.
+*bind variables
+Use always bind variables. If not then the changes to the shared pool
+are too much because it needs to much hard parses. soft parses reuse
+existing plans.
+*bitmap indexes
+Often used in data warehouses. Often the space required is a fraction
+of the space required by a B-tree index. Not useful for OLTP with lots
+of concurrent transactions. They are only supported in the Enterprise
+Edition.
+*byte length semantics
+The length is measured in bytes.
+*cardinality columns
+If a column contains less distinct values then it is a candidate for a
+bitmap index.
+*char
+Fixed length. See too nchar.
+*character length semantics
+The length is measured in characters. E.g. צהü is 3 characters long in
+a UTF8 context.
+*character set
+Init.ora parameter that specifies the character set for char, varchar2
+and clob.
+*clone database
+A clone database is used for tablespace point in time recovery.
+*cluster manager
+Needs to run on each cluster node.
+*clusters
+A clustered table cannot specify storage parameters. Only the cluster
+determines the storage parameters. Clusters may improve disk access
+time.
+*coalescing extents
+Only by DMT.
+*cold buffer
+A cold buffer has not been recently used.
+*column order
+Long columns are at the end. Try to add columns with frequently nulls
+in it to put to the end of the create statement.
+*commit comments
+Deprecated in future releases. Use transaction names.
+*complete recovery
+Restore the database to the current point.
+*composite indexes
+A index over multiple columns.
+*concurrency
+Simultaneous acces of the same data by different users.
+*connect descriptor
+(description ...)
+*connect identifier
+A CI can be either a net service name or a the connect descriptor
+itself. If it is a net service name then Oracle
+Net resolves the connect descriptor.
+*connection manager
+multiplexing of connections, cross-protocol connectivity, network
+access control. CM is a multi-tier application.
+*control files
+Multiplex the control files and backup it daily. Information in the
+control files are the database name, names and locations of the
+datafiles and redo log files. Time stamp of database creation.
+Tablespace information, datafile offline ranges, log history, archived
+log information, backup set and backup piece information, backup data
+file and redo log information, datafile copy information, current log
+sequence number, checkpoint information (scn).
+*cursor sharing
+Constants and literals are replaced by bind variables. The
+disadvantage of cursor sharing is that the explain plan looks
+afterward different. Also the optimizer may have less information to
+work with. Also FB indexes will never be used bacause the optimizer
+will they not see.
+*cursors
+It's a handle or a name to a private SQL area.
+*data block format
+Common header,table dictionary,row dictionary,free space, row data.
+*data blocks
+The size is determined by DB_BLOCK_SIZE (8192).
+*data guard
+See standby database.
+*data segments
+Data segments are used by tables, partitioned tables and clusters. The
+storage clause determines how the segment extents are allocated.
+*database
+database ->> tablespaces ->> datafiles.
+*database buffer block size
+Valid values are 2K to 32K. Default on Linux is 8K. DB_BLOCK_SIZE.
+*database buffer cache
+The database buffer cache has two lists. The write list and the lru
+list. The write list holds dirty buffers. The LRU list holds free
+buffers, pinned buffers (accessed buffers) and dirty buffers that are
+not in the free list.
+*database buffer cache size
+The cache size. See too DB_CACHE_SIZE parameter.
+*database managed tablespaces
+Extent acquisition in DMT is a expensive operation.
+*date
+Date format. See too timestamp, timestamp with time zone, timestamp
+with local time zone.
+*dbwr
+The database wrtiter process writes cold, dirty data buffers to disk.
+*deallocate extents
+Drop table, drop cluster. Truncate ... drop storage. Alter table ...
+deallocate unused.
+*dictionary cache
+Holds the data dictionary as rows. It's too called row cache.
+*dropping log groups
+See v$log whether the group to delete is archived. The physical file
+is only deleted in OMF mode.
+*dynamic sga
+The dynamic SGA can be set at runtime. DB_CACHE_SIZE, LOG_BUFFER,
+SHARED_POOL_SIZE, LAGE_POOL_SIZE (0).
+*exclusive lock
+Only one EL can be set.
+*extended rowid
+Oracle 8i or higher.
+*extent management
+LOCAL, LOCAL UNIFORM SIZE 1M. May be specified by the create database
+and the create tablespace clause.
+*extents
+An extent is an specific number of contiguous data blocks. An extent
+resides always in one datafile.
+*external table
+A external table might be a excel table.
+*external tables
+External Tables are read only.
+*failures
+user error,statement failure,process failure, instance failure, media
+failure.
+*fixed sga
+In the fixed SGA no user data stored.
+*force logging
+Is specifiable by create database, create controlfile and create
+tablespace. FL ignores nologging and always writes redo log records by
+DDL statements. Should always be set by using of Data Guards.
+*free space
+FS of a data block may contain transaction entries.
+*function-based indexes
+Needs statistics. It's not used by RBO. FBIs also needed by usage of
+NLS_COMP=ansi. FBI is only supported in the Enterprise Edition.
+*grant
+See too system privileges, predefined roles, object privileges
+*granule
+Allocation unit for the SGA components. On most systems this is 4M if
+SGA is <= 128M and 16M for SGA >128M.  See too
+V$SGA_DYNAMIC_COMPONENTS.
+*hard parse
+Parse a new statement that is not in the shared pool.
+*heap-organized
+Default building type for tables. See too 'index-organized'.
+*heterogeneous services
+The means to connect to other databases.
+*high water mark
+HWM is the boundary between used and unused space.
+*horizontally scaled
+Distribute the database to more machines.
+*image copy
+A copy of a datafile, control file or archive log file. It's not in
+the RMAN-specific format.
+*inactive sessions
+Inactive sessions are not active.
+*incomplete recovery
+Restore the database to a point behind the current point.
+*index range scan
+Return multiple data from a B-tree index.
+*index segments
+Index segments are used by indexes and partitioned indexes.
+*index unique scan
+Return data from a B-tree index.
+*index-organized
+The table contents is builded as an index. See too 'heap-organized'.
+*indexes
+Indexes cannot be dropped if there still constraints exist.
+*initialization sql scripts
+catalog.sql,catproc.sql. The first installs the dictionary. The second
+the PL/SQL procedures and function.
+*inline view
+A inline view is a construct as follwos: 'from (select ...)'.
+*inserts
+insert /*+ append */ should be faster.
+*instance
+SGA plus background processes.
+*integrity constraints
+ICs are defined only for tables. If a IC cannot be enforced then the
+statement is rolled back and a error is raised. IC types are not null,
+unique key, primary key, foreign key, check.
+*intelligent agent
+Runs OEM jobs. It's independent from OMS.
+*intra-block chaining
+Chaining happens in the same block.
+*julian date
+to_char(sysdate, 'J')
+*key compression
+Cannot be used on a single unique attributed key.
+*key-preserved table
+Every key of a table should be present in the view join, then the
+result set of the join is key-preserved.
+*keys
+Keys are strictly a logical concept. They correspond to the
+integrity constraints.
+*library cache
+The library cache contains the shared sql and the private sql areas.
+*locally managed tablespaces
+In LMTs fragmentation should be a thing of the past. See the 'create
+tablespace': 'extent management local'.
+*locks
+Exclusive locks and shared locks.
+*log sequence number
+See log switch.
+*log switch
+Each time the current online redo log file changes the log sequence
+number is increased.
+*log switch manual
+Use a manual log switch to make the current online redo log inactive.
+*logical database structure
+schema objects, data blocks, extents, segments, tablespaces.
+*logical rowid
+ROWIDs in indexed organized tables will always change. Oracle created
+a logical ROWID based on the PK that will not change.
+*logical standby database
+Converts the redo log entries to SQL and applies the statements to the
+standby database.
+*lru list
+The lru list holds free buffers, pinned buffers and dirty buffers that
+are not in the write list.
+*manual undo management
+MUM uses rollback segments to store the information for database
+recovery.
+*materialized views
+Also called summaries because they contain aggregated data. MV are
+similar to indexes. MV need to be refreshed but this can be done only
+locally. MV can be used for replication.
+*multi threaded server
+In a MTS do not run long transactions. Use for long transactions
+'Advanced Queues' (AQ).
+*multiple instances
+Daniel Morgan suggests: Use multiple only if each instance can have
+1/3 of the physical ram. Another alternative would be to install
+multiple projects in different schemas.
+*multitier architecture
+Client, Application-Server, Database Server.
+*national character set
+Init.ora parameter that specifies the character set for nchar,
+nvarchar2 and nclob.
+*nchar
+Unicode fixed length string. Stored in character length semantics.
+*network solutions
+connectivity, directory services, scalability, security, accessibility
+*nls variable
+language_territory.characterset
+*none schema objects
+- Contexts
+- Directories
+- Profiles
+- Roles
+- Tablespaces
+- Users
+- Rollback segments
+*nvarchar2
+Unicode variable length string. Stored in character length semantics.
+*object level lock
+See the dynamic view v$lock.
+*object priveleges
+alter, delete, execute, debug, flashback, index, insert, on commit refresh,
+query rewrite, read, refereneces, select, under, update, write
+*object types
+column object, row object (also called object table)
+*object views
+Allows to map relational data into objects.
+*objects
+Oracle extension to SQL.
+*online redo logs
+Do not backup online redo logs.
+*online reorganization
+Except rebuilding of primary keys.
+*optimizer goals
+throughput (all rows),response time (first row)
+*oracle lite
+Oracle Lite seems to have no PL/SQL engine, only a SQL99 interface.
+*oracle personal edition
+Only one database and no database links.
+*parallel dml
+Is only available if the partitioning option is installed.
+*partions
+Needs always the same block size. Better handling of big
+data. Improves performance.
+*partitioning types
+List partitioning, range partitioning, hash partitioning, composite
+partitioning.
+*pctfree
+Is ignored in LMTs with automatic segment space management.
+*pctused
+Is ignored in LMTs with automatic segment space management.
+*pga
+The PGA is created when a dedicated or shared server is started.
+*physical database structure
+data files, redo log files and control files.
+*physical standby database
+Uses recovery to apply redo log entries. The database must be in read
+only mode.
+*pinned buffers
+Pinned buffers are currently being accessed.
+*pl/sql
+Units are procedures, functions, packages, triggers and anonymous
+transactions.
+*pmon
+process recovery, process handling
+*predefined roles
+connect, resource, dba, delete_catalog_role, execute_catalog_role,
+select_catalog_role, exp_full_database, imp_full_database, aq_user_role,
+aq_adminstrator_role, snmpagent, recovery_catalog_owner, hs_admin_role
+*primary key
+Only one PK can be defined for a table.
+*process types
+user processes, server processes, background processes.
+*processes
+DBWRn,LGWR,CKT,SMON,PMON,ARCHn,RECO(dist),Snnn,Dnnn,Jnnn,LMS,QMNn,CJQ.
+LMS - Global Cache,QMN - Queue Monitor, CJQ - Coordinator Job Queue.
+*profile
+A profile may be specified by the 'create user' or 'alter user'
+statement.
+*profile password parameters
+failed_login_attempts, password_life_time, password_reuse_time,
+password_reuse_max, password_lock_time, password_grace_time,
+password_verify_function
+*profile resource parameters
+sessions_per_user, cpu_per_session, cpu_per_call, connect_time, idle_time,
+logical_reads_per_session, logical_reads_per_call, composite_limit,
+private_sga
+*program global area
+Memory used by a database server process.
+*protocols
+tcp,iiop,http
+*proxy copy
+The copy will be done by the MMS product.
+*quiesce
+alter system quiesce database. alter system quiesce restricted. See
+too the active_state column in the system view v$instance. In the
+quiesce restricted mode the database waits for active sessions.
+*read consistency
+Statement level RC and transaction level RC.
+*reco
+recovers distributed transactions
+*redo entries
+Also called redo records. A redo entry contains a change vector to one
+database block.
+*redo log buffer
+Redo log buffer holds information about changes made to the
+database. The redo log buffer is stored by LGWR to the current online
+redo log file as redo entries or redo records. Redo entries are used
+for database recovery. The LOG_BUFFER parameter determines the size of
+the redo log buffer.
+*redo log file
+LGWR writes the redo log buffer to the active or curent online redo
+log file. Do not backup the online redo log file. Only the archived
+redo log file. The information in the redo log files are only used for
+recovery.
+*redo log file types
+current online redo log file, inactive online redo log files and the
+archived redo log files. Do only backup the archived redo log files.
+*redo log group
+The database needs at least 2 log groups. Default configuration is 3
+Groups.
+*redo records
+See redo entries.
+*redo thread
+Each instance has one redo thread. In a RAC each instance has it own
+redo thread. All online redo log groups are the redo thread.
+*redundancy set
+The files that needs to be backuped.
+*resource manager
+See to 'resource plan' and dbms_resource_manager.
+*resource plan
+A resource plan can be constructed in a hierarchical manner.
+*restricted rowid
+Less Oracle 8i.
+*resumable space allocation
+Needs to be enabled by the alter session statement. If it's enabled
+then suspencion on the following events occur: out of space, maximum
+extents reached, space quota exceeded conditions.
+*reverse key indexes
+Make sense in clusters. Reverse key indexes cannot be used for index
+range scanning.
+*role
+Role is a collection of privileges.
+*rollback segment
+Only used by manual undo management.
+*rolling forward
+Applying of the redo log during recovery.
+*row
+A row is stored in one or more row pieces.
+*row cache
+See too dictionary cache and library cache.
+*row chaining
+If a row does not fit into one data block then the row is chained into
+more blocks. Lesser IO performance.
+*row level lock
+Oracle stores the info about row level lock only in the data block.
+*row migrating
+Happens by updates then the row does not fit in the current data block
+after update. Then the entire row is migrated to a new data block. The
+database preserves the original row pice to point to the new row pice.
+The ROWID of a migrated row does not change. Lesser IO performance.
+*row piece
+See row.
+*rowid
+Rowids are constant over the lifetime of a row pice.
+*schema objects
+- Clusters
+- Database links
+- Database triggers
+- Dimensions
+- External procedures and libraries,
+- Indexes and index types
+- Java classes
+- Materialized views
+- Object tables
+- Operators
+- Sequences
+- Stored function, procedures
+- Synonym
+- Tables
+- Views
+*segment space management
+AUTO may be specified by the create tablespace clause. MANUAL is the
+default.
+*segments
+A segment is a set of extents. Segment types are data segment, index
+segment, temporary segment and rollback segment. Extents of the
+segment are dynamically allocated. A segment resides in one tablespace
+and can span multiple datafiles.
+*server parameter file
+The spfile. It's normally placed to = $ORACLE_HOME/dbs/spfile<sid>.ora =.
+*service handlers
+dispatcher (shared server) or dedicated servers.
+*service name
+Defaults to the global database name (db_name + db_domain).
+*service registration
+PMON registers the database instance by the listener. This means it is
+not necessary to add this instance into the listener.ora file. An
+entry in the listener.ora file is only necessary for OEM.
+*sga
+Database buffers, redo log buffers, shared pool and large pool
+(context areas). The SGA should fit in real memory.
+*shared pool
+The shared pool contains the library cache (sql areas) and the
+dictionary cache. See too the PARALLEL_AUTOMATIC_TUNING and the
+SHARED_POOL_SIZE parameter.
+*shared sql area
+Contains the parse tree and the execution plan.
+*shutdown immediate
+Rollbacks all current transaction and disconnects all connected users.
+*signature checking
+Dependencies checking.
+*smon
+recovery, cleaning up temporary segments
+*soft parse
+Use an already existing plan from the shared pool.
+*sql
+dml statements, ddl statements,transaction control statement,session
+control statemetns, system control statements, embedded sql statements.
+*sql processing architecture
+parser, optimizer, row source generator, sql execution engine
+*sql server
+See the 'Heterogeneous Connectivity (a96544)' document.
+*sql statements
+DDL, DML, Transaction Control, Session Control, System Control
+Embedded SQL (open, fetch, close, execute).
+*sql trace
+Use the alter session to enable sql tracing. This reduces the amount
+of logging. The trace goes to the directory name in USER_DUMP_DEST.
+Default for this is ?/rdbms/log.
+*standby database
+A copy of a primary database but opened in readonly mode. The standby
+database can be used for reporting purposes.
+*startup
+The SGA is initialized and the database is mounted and opened.
+*startup force
+Closes all processes and restarts the database. All connected session
+lost the connection.
+*startup mount
+The SGA is initialized and the database is mounted but not opened. Use 
+'alter database open [read only]'.
+*startup nomount
+Only the SGA is created and the background processes are started.
+*startup restrict
+Enables the restricted session.
+*statement-level rollback
+On an error only the effects of the statement are rolled back.
+*storage clause
+The sc may be specified by create tablespace or create table.
+*sysdate
+The current system date. See too systimestamp.
+*system global area
+Database buffer cache, Redo log buffers, Shared pool, Java pool, Large
+pool (if configured), Data dictionary cache. The sga should fit in
+real memory.
+*system priveleges
+clusters, contexts, databases links, debugging, dimensions,
+directories, index types, indexes, libraries, materialized views,
+operators, outlines, procedures, profiles, rollback segments, 
+sequences, sessions, synonyms, tables, tablespaces, triggers,
+types, users, views,
+*system-managed extents
+Extent management local. In this case the initial extent can be
+specified and Oracle determines the additional extent size, with a
+minimum of 64k.
+*systimestamp
+The current system time.
+*tables
+Tables are the basic unit of data storage. They hold all the
+user-accessible data.
+*tablespaces
+TSs are the logical storage units. They group logical structures
+together.
+*temporary segments
+The following statements may require a temporary segment: create
+index, .. oder by, distinct, group by, union, intersect, minus. Also
+temporary tables use temporary segments.  See too the init parameter
+SORT_AREA_SIZE.
+*temporary tables
+Temporary tables can be session specific or transaction specific. They
+do not generate redo logs. In both types the contents of the table is
+only visible to the current session. It's possible to create indexes
+for temporary tables. They are also temporary. Temporary tables are 
+using temporary segments.
+*temporary tablespace
+OMF creates a temporary tablespace TEMP by default. Otherwise use the
+default temporary tablespace <name> clause by the create or alter
+database statement. A locally managed SYSTEM tablespace cannot be used
+as temporary tablespace.
+*terminate session
+Use "alter system kill session '7,5'". 7 is the sid and 5 is the
+serial#. Both values must be specified.
+*time stamp checking
+Dependencies checking.
+*transaction entries
+TE are placed in the free space of a data block. Normally the size is
+23 bytes.
+*transitional read only
+Allows to finish open transaction if the read only option is applied
+to a tablespace.
+*transparent application failover
+Connections,cursors,transactions,server-side program variables,
+database sessions executing commands.
+*transportable tablespace
+TTS are faster in handling as exp/imp. See to the exp option
+transport_tablespace.
+*trigger debugging
+Use debug tables and autonomous transactions. This ensures that the
+logging info is not lost on errors.
+*trigger types
+dml events, ddl events and database events. database events also refer
+to system events.
+*truncate
+truncate resets only the HWM.
+*two-task common
+Provides character set and data type conversion.
+*undo management
+A init parameter. If AUTO is specified it switches to automatic undo
+management.
+*undo quota
+See UNDO_POOL directive in the resource manager.
+*undo retention
+A init parameter that specifies how long commited undo information are
+kept. The unit is seconds. Default is 15 minutes. OUI sets as default
+180 minutes. If a error message 'snapshot to old' is raised then may
+be this parameter should be increased.
+*undo tablespace
+A system can have many undo tablespaces. Especially in a RAC each
+instance has its own tablespace. A undo tablespace entry can be
+changed with the alter system set command because UNDO_TABLESPACE is a
+init parmeter.
+*uniform extents
+Extent management local uniform size 16m. Default is 1m.
+*unique indexes
+Unique indexes don't allow NULL values.
+*unique key
+A unique key might be useful if surrogate keys are used.
+*varchar
+Variable length. The same as varchar2 but this might change in future.
+*varchar2
+Variable length. See to nvarchar2.
+*version number
+Major release, maintanance release, app server specific release,
+component specific release number, platform specific release
+number. Before 9.2 maintanance release number was the third digit.
+*vertically scaled
+Take a larger system to scale better.
+*views
+No triggers allowed. Triggers are only allowed at the underlying base
+tables. They are too called stored queries.
+*write list
+The write list holds dirty buffers.

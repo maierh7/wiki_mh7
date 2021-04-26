@@ -1,0 +1,27 @@
+
+** Navigation
+
+  Alt Tab
+
+  Ctrl Alt up		Previos WS
+  Ctrl Alt down		Next WS
+
+  Ctrl Alt Shift up	Move to Previos WS
+  Ctrl Alt Shift down	Move to Next WS
+
+  Alt f6		Next Window of App
+  Alt f2		Start Program
+
+  Alt 1			WS 1
+  Alt 2			WS 2
+  Alt 3			WS 3
+  Alt 4			WS 4
+
+** Verschieben
+
+  Shift Alt Ctrl up
+  Shift Alt Ctrl down
+
+** Activity Screen
+
+  gsettings set org.gnome.mutter overlay-key 'Control_R'

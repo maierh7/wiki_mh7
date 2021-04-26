@@ -1,0 +1,6 @@
+
+** Upgrade
+
+  dnf check-update
+
+  dnf update

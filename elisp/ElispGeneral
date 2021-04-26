@@ -1,0 +1,7 @@
+
+** Functions
+
+  - *copy-tree* deep copy
+  - *mapconcat* concatenates the given list with function and separator
+              (mapconcat 'identity (list "a" "b") ":")
+  - *vconcat* takes string argument and creates a vector

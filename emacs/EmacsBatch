@@ -1,0 +1,6 @@
+
+Examples for emacs batch invocation:
+
+<example>
+$ emacs --batch --eval '(eval-expression (user-uid))'
+</example>

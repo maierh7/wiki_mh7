@@ -1,0 +1,22 @@
+
+Für eine Korrektur der PMS-Stücklisten, muß man wie folgt vorgehen:
+
+    $ cd ~/impos-3.0/impos-src/sql
+    $ sqlplus @check.1.sql <var> <teil>
+
+       # In check.1.sql muß die prod-id und die plan-id abgeändert
+       # werden.
+
+Am besten verwendet man hierfür D_check <prod-id>. D_check zeigt dann
+die fehlerhaften Varianten pro teil an.
+
+<example>
+imp 'ops$midba/midba' 'fromuser=ops$midba' file=/tmp/exp.dmp 
+  'touser=ops$midba' 'tables=(ms00_mstueli,ms07_mstuelivar)'
+</example>
+
+<example>
+  drop table ms00_mstueli;
+  drop table ms07_mstuelivar;
+</example>
+

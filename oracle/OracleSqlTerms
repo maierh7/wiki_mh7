@@ -1,0 +1,35 @@
+
+** Scalar Subquery 
+
+  - returns only one column value. it shall be used in all places
+    where *expr* is mentioned.
+
+  - exceptions: *default* values, *check* constraints, *group by* and
+    *having*, in *when* expressions in the *case* statement, in *start with*
+    and *connect by*.
+
+** Inline View Subquery
+
+** Nested Subquery
+
+** Transaction Control Statements
+
+  - commit, rollback, savepoint.
+
+#IN 
+** IN
+
+  - If the selective predicate is in the sub query then use IN. See
+    too OracleSqlTerms#EXISTS.
+
+#EXISTS
+** EXISTS
+
+  - If the selective predicate is in the parent query then use
+    EXISTS. See too OracleSqlTerms#IN.
+
+** Types
+
+  - Object
+  - VARRAY
+  - TABLE OF

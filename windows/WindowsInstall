@@ -1,0 +1,18 @@
+
+** Profiles Location
+
+  - http://support.microsoft.com/default.aspx?scid=kb;en-us;Q236621
+
+  <example>
+    winnt /u:<answer file>
+  </example>
+
+  - Example for an unattended file
+
+  <pre>
+  <verbatim>
+    [GuiUNattended]
+    ProfilesDir = z:\foldername
+  </verbatim>
+  </pre>
+

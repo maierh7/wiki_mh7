@@ -1,0 +1,27 @@
+
+** Pre-Requisits (Linux)
+
+  - libffi-devel
+  - openssl-devel
+  - readline-devel
+
+** Install
+
+  - Download Source GcpPython
+  - Configure
+
+    ./configure --enable-optimizations
+    
+    # enable-optimizations does not work under SuSE 11.4
+    
+** cx_oracle
+
+  git clone https://github.com/oracle/python-cx_Oracle
+  git submodule init
+  git submodule update
+  python3 setup.py build
+  sudo /usr/local/bin/python3 setup.py install
+
+** pyodbc
+
+  git clone https://github.com/mkleehammer/pyodbc

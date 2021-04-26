@@ -1,0 +1,28 @@
+
+Eli Zaretski wrote about problems in building emacs from temacs:
+
+For some problems, you will have no other choice but to use GDB.  It's 
+not that hard, really; and you can get help here if you get stuck.
+
+Anyway, here's some hints about debugging this on the Lisp level:
+
+  - *byte-compile* all the .el files for which temacs says it is
+    loading the (stale) .elc file.  You might be having trouble
+    because old .elc files conflict with the new C code.
+
+  - If "make" still produces the same error after you byte-compile all
+    the new .el files, try this:
+
+	cd src
+	./temacs -q
+	M-x set-variable RET debug-on-error RET t RET
+	M-x load-library RET loadup RET
+
+This will load all the packages specified by loadup.el, but
+interactively.  With any luck, you will get a backtrace when it hits
+the problem.
+
+If the above doesn't help, I'd suggest to run temacs under GDB, set a
+breakpoint in Fsignal, type "run -batch -l loadup", and examine things
+when that breakpoint breaks.  See etc/DEBUG for some useful techniques
+about accessing Lisp information from GDB.

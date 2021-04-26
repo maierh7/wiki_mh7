@@ -1,0 +1,56 @@
+
+<pre>
+<verbatim>
+
+From: quarkman <quarkman@myrealbox.com>
+Subject: Re: create three column unique constraint on existing table
+Newsgroups: comp.databases.oracle.server, comp.databases.oracle.misc
+Date: Mon Aug 18 23:02:27 2003 +0200
+User-Agent: Opera7.11/Win32 M2 build 2880
+
+On 18 Aug 2003 12:52:16 -0700, Doron <doron_almog@msn.com> wrote:
+
+> Hi,
+> I want to create a unique validated constraint on three columns of a
+> very large existing table. the create is failing due to the validation
+> process.
+>
+> anybody got any SQL code that will help me determine in which rows the
+> data appears more then once?
+>
+> thanks,
+> Doron
+>
+
+
+Create the constraint as enabled novalidate. That will get the
+constraint created, new data will be subject to it, but existing data
+will not be checked.
+
+Then, run the Oracle-supplied script utlexcpt.sql in
+$ORACLE_HOME/rdbms/admin. That creates a little table called
+'exceptions' in your current schema.
+
+Now, alter table XXX enable constraint yyy exceptions into exceptions;
+
+That will attempt to fully validate the constraint (which will fail,
+of course), and rowids of the duplicatiing/violating records will be
+written into the exceptions table you've just created.
+
+Now all that remains is:
+
+select * from XXX [the real table] where rowid in (select row_id from
+exceptions);
+
+And you should now see the actual records which are causing the violation.
+
+Nothing gets fixed automatically by this procedure: you now have to
+fix up the duplication issues yourself with appropriate updates to the
+real table. But it's the quickest way I know of to get to see what is
+actually causing the problem.
+
+Regards
+HJR
+
+</verbatim>
+</pre>

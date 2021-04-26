@@ -1,0 +1,82 @@
+
+** Use Login Shell
+
+  - *#! /bin/bash --login*. Especially in the .xsession file or in other
+    initialization files.
+
+  - *auto logoff* can be activated by the enviroment TMOUT.
+
+** Default Values
+
+  - ${var:=10}. Note this works not for command line arguments.
+
+** Non-Interactive Shell
+
+  - In this case bash reads the file in *$BASH_ENV*. Similiar to $ENV
+    sh.
+
+** Concepts
+
+  - login interactive shell
+  - interactive shell
+  - non interactive shell
+
+** Return vs. Exit
+
+  - In proceure/functions always use return instead of exit.
+
+** Functions
+
+  - *command* allows to call a command that is also defined as a
+    function.
+
+  <example>
+    ls() {
+      command ls --color $@
+    }
+  </example>
+
+** Passing Arguments
+
+  - = "$@" = Use quotes by bassing arguments. This keeps the
+    quotation.
+
+** Options
+
+  - shopt
+  - shopt -s <opt> # enable the option
+  - shopt -u <opt> # disable the option
+
+Note: "shopt" is different from "set -o".
+
+** PipeFail
+
+  - set -o pipefail
+
+In this case bash returns as exit status the last failing command in a
+pipe. Default is to return the last exit status.
+
+** Restricted Shells
+
+  - set -r
+
+This disables some comands such as 
+
+  - cd
+  - changing the $PATH, $SHELL, and env variables
+  - changing the $SHELLOPTS
+  - output redirection
+  - invoking commands containing on or more /'s
+  - invoking exec
+  - getting out of the restricted mode in the script
+
+** Debug
+
+  - set -n checks for syntax errors
+  - set -v echoes each command before executing
+  - set -x echoes the result of each command
+
+** Trap
+
+  - trap '' 2 disbables C-c
+  - trap 2    enables   C-c

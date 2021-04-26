@@ -1,0 +1,48 @@
+
+** Tags
+
+  <to>me@myself.com</to> is equivalent to 
+   to=me@myself.com
+
+** Empty Tag
+
+  *<flag/>* The tag ends by a slash.
+
+** Continuation (same as by Regular Expressions)
+
+  - *
+  - ?
+  - +
+
+** DTD
+
+  - !DOCTYPE
+  - !ELEMENT
+  - !ATTLIST
+
+** Attributes
+
+  - CDATA
+  - ID
+  - IDREF
+  - ENTITY or ENTITIES
+  - NMTOKEN or NMTOKENS
+  - name list
+
+
+  - # REQUIRED
+  - # IMPLIED
+
+  <example>
+  <!ATTLIST record 
+     id     CDATA #IMPLIED
+     name   CDATA #REQUIRED
+     age    CDATA #REQUIRED
+     stat   (true|false) true
+     > 
+  </example>
+
+** Comments
+
+  *<!-- This is a comment -->*
+

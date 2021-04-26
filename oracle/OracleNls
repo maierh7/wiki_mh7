@@ -1,0 +1,67 @@
+-*- coding: latin-9 -*-
+
+** EXP
+
+  - The exp tool should have always set the *NLS_LANG* variable. This
+    prevents from converting the database content.
+
+** compare
+
+  - = NLS_COMP = ansi =. Specifies the comparsion in where clauses.
+    This value defaults to binary. If this value is set to ansi then
+    it might be good to have a functional index which can be created
+    as follows:
+
+  <example>
+     SQL> create index i on t(nlssort(col, 'nls_sort=german'));
+  </example>
+
+
+** week calculation
+
+  - = NLS_TERROTORY = germany =. This does not set the NLS_SORT.
+    The territory variable can only be set in the init file or with a
+    alter session statement. Also it's not possible to set the value
+    with the scope 'both' in the alter system command. Only the scope 
+    spfile is valid so a restart of the database is necessary.
+
+  <example>
+    SQL> alter system set nls_territory = germany scope = spfile;
+  </example>
+
+
+** Info
+
+  - = NLS_DATABASE_PARAMETERS =
+  - = NLS_INSTANCE_PARAMETERS =
+  - = NLS_SESSION_PARAMETERS =
+
+  - par.pl | grep nls
+
+** Changing the Characterset
+
+  - Best would be to export the database in the current nls
+    environment and then to a import to a database with the new
+    character set.
+
+** UTF8
+
+  - = NLS_LENGTH_SEMANTICS = Byte or char.
+
+** Euro / SQLPLUS
+
+  - sqlplus needs NLS_LANG with a specified character set otherwise
+    it uses as client character set us7ascii.
+
+** Euro / Output
+
+  <example>
+    alter session set nls_territory = GERMANY;
+    select to_char(100,'U9999') from dual;
+    -------
+    ¤100
+    select '¤' from dual;
+    -------
+    ¤
+  </example>
+

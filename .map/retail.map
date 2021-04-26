@@ -1,0 +1,193 @@
+*aip
+Advanced Inventory Planning
+*alc
+Actual Landed Costs
+*ap
+account payable
+*apc
+Oracle Analytic Parameter Calculator
+*ari
+Active Retail Intelligence
+*asn
+advanced shipping node
+*atp
+available to promise,does not include transfers
+*bob
+Business Object Broker,SeeBeyond
+*bom
+beginning of month
+*bow
+beginning of week
+*cogs
+cost of goods sale for the period
+*cti
+computer/telephone integration
+*dsd
+direct store delivery
+*ea
+Eaches
+*elc
+Estimated Landed Costs,Freight + Labour
+*eom
+end of month
+*eow
+end of week
+*gafs
+Goods Available For Sale
+*gl
+General Ledger
+*hts
+Harmonized tariff schedules,import/export
+*io
+Inventory Optimization
+*iq
+Intelligent Queues
+*iso
+integrated store operation,Retek AS for sim,obsolete
+*jmx
+java management extension
+*lov
+List of Values
+*luw
+Logical Unit of Work
+*mdb
+Message Driven Bean
+*mfm
+Message Family Manager
+*mfm
+Message Family Manager
+*msob
+multiple set of books
+*nad
+not after date
+*orw
+Oracle Retail Workspace
+*otb
+Open To Buy,Thats the amount that can be bought from a supplier (Item Level)
+*pjc
+pluggable java components,OAS Forms Service
+*pop
+proof of performance
+*pos
+Point Of Service
+*psp
+Provisioning Service Provider
+*qc
+Quality Check
+*rcom
+retail customer order management
+*rdf
+Oracle Retail Demand Forecasting
+*rdm
+retail distribution manager,old is substituted by rwms
+*rdw
+Oracle Retail Data Warehouse
+*reim
+Retail Invoice Matching
+*resa
+Oracle Retail Sales Audit, Rechnungsprüfung
+*retl
+Oracle Retail Extract Load Transform
+*rib
+Oracle Retail Integration Bus
+*riha
+RIB Hospital Administration Tool
+*rin
+Retek Item Number
+*rmdt
+RIB Diagnostic and Monitoring Tool
+*rms
+Oracle Retail Merchandise System
+- hierarchy
+- item master
+- suppliers
+- purchase orders
+- deals and contracts
+- wholesale and franchise
+- replenishment
+- cost management
+- stock counts
+- transfers
+- stock ledger
+- return to vendors
+*roq
+reorder quantity
+*rpas
+Retail Predictive Application Server
+*rpm
+Oracle Retail Price Management
+- price zones
+- price changes
+- promotions
+- clearances
+- price strategies
+*rsl
+Oracle Retail Service Layer
+*rsm
+Oracle Retail Security Manager
+*rtg
+Oracle Retail Integration Technologies
+*rtm
+Retail Trade Management
+*rtv
+return to vendor
+*rwms
+Retail Warehouse Management System
+*sa
+Sales Audit
+*scac
+Standard Carrier Alpha Code
+*sco
+Supply Chain Optimization
+*sco/io
+Supply Chain Optimization/Inventory Optimization
+*sim
+Store Inventory Management
+- shipping
+- receiving
+- transfers
+- inventory adjustments
+- stock count
+- store ordering
+*sku
+Stock Keeping Unit
+*slsb
+Stateless Session Bean
+*soh
+stock on hand,atp,includes items on transfer
+*tafr
+transform address filter/router
+*tafr
+transform address filter/router
+*twp
+Technical White Paper
+*uda
+User Defined Attributes
+*uom
+unit of measurement
+*upc
+Universal Product Code,EAN
+*vat
+Value Added Tax
+*vc
+vendor control
+*vmi
+Vendor Managed Inventory
+*wac
+Weight Average Cost
+*wf
+Warehouse/Franchise
+*wo
+Work Order
+*dao
+Data Access Objects
+*mom
+Merchandising Operations Management
+*remediate
+sanieren,korrigieren
+*chrg
+Charge
+*iscl
+item supplier country loc
+*ce
+custom entry

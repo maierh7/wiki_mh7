@@ -1,0 +1,5 @@
+
+** .Xresources
+
+cp local/Xresources to ~/.Xresources
+

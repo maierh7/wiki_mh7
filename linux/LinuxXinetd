@@ -1,0 +1,23 @@
+
+** Starting
+
+  - At least one service needs to be enabled. For example go to the
+    /etc/xinetd.d/ directory and enable the printer service. The line
+    with *disable* needs *no*.
+
+   <pre>
+   <verbatim>
+   --- /etc/xinetd.d/cups-lpd ---
+   service printer
+   {
+	disable     = no
+	flags       = NAMEINARGS
+	socket_type = stream
+	protocol    = tcp
+	wait        = no
+	user        = lp
+	server      = /usr/lib/cups/daemon/cups-lpd
+	server_args = cups-lpd -o document-format=application/octet-stream 
+   }
+   </verbatim>
+   </pre>

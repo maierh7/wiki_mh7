@@ -1,0 +1,7 @@
+
+** Activate Root User
+
+  - Start the *netinfo.app* program and enable under the security menu 
+    the root user.
+  - To get access via ssh allow root logins in the *sshd_config* file.
+  - To change the login shell use too the *netinfo.app*.

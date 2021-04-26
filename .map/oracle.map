@@ -1,0 +1,159 @@
+*ada
+SQL*Module for Ada Programmer's Guide
+*adg
+Oracle9i Application Developer's Guide - Fundamentals
+*adl
+Oracle9i Application Developer's Guide - Large Objects (LOBs)
+*ado
+Oracle9i Application Developer's Guide - Object-Relational Features
+*adq
+Oracle9i Application Developer's Guide - Advanced Queuing
+*adw
+Oracle9i Application Developer's Guide - Workspace Manager
+*adx
+Oracle9i XML Developer's Kits Guide - XDK
+*brc
+Oracle9i Backup and Recovery Concepts
+*con
+Oracle9i Database Concepts
+*dcd
+Oracle9i Data Cartridge Developer's Guide
+*dmc
+Oracle9i Data Mining Concepts
+*dsu
+Oracle Dynamic Services User's and Administrator's Guide
+*dwg
+Oracle9i Data Warehousing Guide
+*err
+Oracle9i Database Error Messages
+*glo
+Oracle9i Database Globalization Support Guide
+*het
+Oracle9i Heterogeneous Connectivity Administrator's Guide
+*ima
+Oracle interMedia Annotator User's Guide
+*imj
+Oracle interMedia Java Classes User's Guide and Reference
+*imu
+Oracle interMedia User's Guide and Reference
+*ipi
+Oracle C++ Call Interface Programmer's Guide
+*jjd
+Oracle9i Java Developer's Guide
+*jjp
+Oracle9i JPublisher User's Guide
+*jpg
+Oracle9i Java Stored Procedures Developer's Guide
+*jpr
+Oracle9i Supplied Java Packages Reference
+*jse
+Oracle9i Support for JavaServer Pages Reference
+*jss
+Oracle9i SQLJ Developer's Guide and Reference
+*mig
+Oracle9i Database Migration
+*ner
+Oracle9i Net Services Reference Guide
+*net
+Oracle9i Net Services Administrator's Guide
+*new
+Oracle9i Database New Features
+*oad
+Oracle Internet Directory Application Developer's Guide
+*oas
+Oracle Advanced Security Administrator's Guide
+*oci
+Oracle Call Interface Programmer's Guide
+*ocm
+Getting Started with Oracle Change Management Pack
+*odp
+Getting Started with the Oracle Diagnostics Pack
+*ods
+Oracle9i Directory Service Integration and Deployment Guide
+*oea
+Oracle Enterprise Manager Administrator's Guide
+*oec
+Oracle Enterprise Manager Configuration Guide
+*oem
+Oracle Enterprise Manager Concepts Guide
+*oia
+Oracle Intelligent Agent User's Guide
+*oid
+Oracle Internet Directory Administrator's Guide
+*ola
+Oracle9i OLAP Developer's Guide to the OLAP DML
+*ols
+Oracle Label Security Administrator's Guide
+*omm
+Oracle Enterprise Manager Messages Manual
+*osa
+Oracle9i OLAP Developer's Guide to the OLAP API
+*osd
+Oracle9i Security Overview
+*osg
+Oracle9i OLAP User's Guide
+*osm
+Getting Started with the Oracle Standard Management Pack
+*otp
+Database Tuning with the Oracle Tuning Pack
+*oui
+Oracle Universal Installer Concepts Guide
+*pcc
+Pro*C/C++ Precompiler Programmer's Guide
+*pco
+Pro*COBOL Precompiler Programmer's Guide
+*per
+Oracle9i Database Performance Planning
+*pgr
+Oracle9i Database Performance Tuning Guide and Reference
+*pls
+PL/SQL User's Guide and Reference
+*raa
+Oracle9i Real Application Clusters Administration
+*rac
+Oracle9i Real Application Clusters Setup and Configuration
+*rar
+Oracle9i Replication Management API Reference
+*rcg
+Oracle9i Real Application Clusters Real Application Clusters Guard I - Concepts and
+Administration
+*rco
+Oracle9i Real Application Clusters Concepts
+*rde
+Oracle9i Real Application Clusters Deployment and Performance
+*ref
+Oracle9i Database Reference
+*rep
+Oracle9i Advanced Replication
+*rmn
+Oracle9i Recovery Manager User's Guide
+*rmr
+Oracle9i Recovery Manager Reference
+*sag
+Oracle9i Database Administrator's Guide
+*snm
+Oracle SNMP Support Reference Guide
+*spr
+Oracle9i Supplied PL/SQL Packages and Types Reference
+*sql
+Oracle9i SQL Reference
+*ssg
+Oracle Syndication Server User's and Administrator's Guide
+*stm
+Oracle9i Streams
+*sug
+Oracle Spatial User's Guide and Reference
+*tad
+Oracle Text Application Developer's Guide
+*txt
+Oracle Text Reference
+*umr
+Oracle9i User-Managed Backup and Recovery Guide
+*utl
+Oracle9i Database Utilities
+*xdg
+Oracle9i XML Database Developer's Guide - Oracle XML DB
+*xml
+Oracle9i XML API Reference - XDK and Oracle XML DB
+*zzp
+Pro*PL/I Supplement to the Oracle Precompilers Guide

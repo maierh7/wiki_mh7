@@ -1,0 +1,74 @@
+
+** Orchestration
+
+  - Ambari
+  - Mesos
+
+** Workflow
+
+  - Oozie
+  - Falcon
+
+** Heart / Processing
+
+  - Hadoop
+  - YARN
+  - REEF
+
+** Compute / Processing
+
+  - MapReduce
+  - Pig
+  - Tez
+  - Spark
+  - Flink
+  - Apex
+  - Beam
+  - Hama
+  - Ignite
+  - Giraph
+
+** Queue / Data Input
+
+  - Kafka
+
+** ETL / Data Input
+
+  - Sqoop
+
+** Streaming / Data Input
+
+  - Storm
+  - Kafka Streams
+  - Samza
+  - Flink
+  - Spark Streaming
+
+** Dataformat / Persistenz
+
+  - Avro
+  - QRC
+  - Parquet
+
+** Data Access / Persistenz
+
+  - Calcite
+
+** Key Value / Persistenz
+
+  - HBase
+  - Accumulo
+  - Cassandra
+  - Flume
+
+** DWH / Reporting
+
+  - Hive
+  - Tajo
+  - Phoenix
+  - Impala
+
+** Exploration / Reporting
+
+  - Zeppelin
+  

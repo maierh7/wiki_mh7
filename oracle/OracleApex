@@ -1,0 +1,11 @@
+
+** Install
+
+  - @ apexinst apex apexfiles apextemp /i/
+  - @ apxchpwd
+  - @ apex_epg_config /data/oracle/product/apex-5.0.3
+
+  SQL>  exec DBMS_XDB.SETHTTPPORT(7799);
+
+  http://ing04dbaora01t:7799/apex/apex_admin
+  http://ing04dbaora01t:7799/apex

@@ -1,0 +1,8 @@
+
+  - *C-h l* view-lossage. Displays the last 100 input keystrokes.
+
+  - *C-h a* apropos-comand. It is not the same as apropos. It shows only
+     the user level functions.
+
+  - *<prefix command> C-h* shows all the keys that belong to the prefix 
+    command.

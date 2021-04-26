@@ -1,0 +1,4 @@
+
+** Show only current session
+
+  - Use `TeX-source-specials-mode' to display the current section.

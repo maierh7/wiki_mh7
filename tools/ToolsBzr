@@ -1,0 +1,36 @@
+
+** Installing Bzr
+
+*** ubuntu
+
+  - sudo apt-get install python2.5-dev
+
+*** install
+
+  - sudo python setup.py install
+
+  http://bazaar-vcs.org/InstallationFaq
+
+** Additional Packages
+
+  - pycrypto-2.0.1.tar.gz
+  - paramiko-1.7.5.zip
+
+** Emacs
+
+  http://bzr.savannah.gnu.org/r/emacs/trunk/
+
+** Commands
+
+*** init
+
+The first command should be "init".
+
+*** pull
+
+  --overwrite
+
+  bzr pull sftp://maierh@ate/~/build/bzr/trunk
+
+The sftp method needs paramiko module and the python-devel package.
+

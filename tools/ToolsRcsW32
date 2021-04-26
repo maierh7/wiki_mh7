@@ -1,0 +1,6 @@
+
+Under Windows rcs needs the RCSINIT variable and the TZ variable. 
+
+  - **RCSINIT**=-x,v
+  - **TZ**=CET-1DST
+

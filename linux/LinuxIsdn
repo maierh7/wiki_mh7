@@ -1,0 +1,5 @@
+
+** Teles 16.3/ISA
+
+  - Interrupt 5 needs to be set to restricted, so that it will not
+    be used by other resources.

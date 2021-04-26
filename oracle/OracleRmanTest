@@ -1,0 +1,76 @@
+
+** Commands
+
+<pre>
+<verbatim>
+
+RMAN> startup;
+RMAN> shutdown;
+
+-- backup
+RMAN> backup database;
+RMAN> backup incremental level 1 database;
+
+-- backup tablespace
+RMAN> bakup tablespace system;
+
+-- backup archive logs
+RMAN> backup archivelog all delete input;
+
+-- verify
+RMAN> restore database validate;
+
+-- restore
+RMAN> restore database;
+RMAN> recover database;
+RMAN> alter database open;
+
+-- restore tablespace
+RMAN> SQL 'alter tablespace tools offline immediate';
+RMAN> restore tablespace tools;
+RMAN> SQL 'alter tablespace tools online';
+
+-- list
+RMAN> reoport schema;
+RMAN> list backup;
+RMAN> list backup summary;
+RMAN> list copy;
+
+-- show
+RMAN> show all;
+
+-- delete
+RMAN> delete backupset 231;
+RMAN> delete backup TAG='TAG20030823T181616';
+
+-- change
+RMAN> change backupset 231 nokeep;
+
+</verbatim>
+</pre>
+
+** Channel Switching
+
+<pre>
+<verbatim>
+
+RMAN> run {
+allocate channel c1 device type sbt;
+backup current controlfile;
+}
+
+</verbatim>
+</pre>
+
+** Configure
+
+<pre>
+<verbatim>
+
+RMAN> configure device type sbt clear;
+
+</verbatim>
+</pre>
+
+
+Back to OracleRman

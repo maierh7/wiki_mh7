@@ -1,0 +1,14 @@
+
+** Keyboard
+
+  - Dead keys is for example the back tick key (`).
+
+  <example>
+
+  Section "Keyboard"
+     ...
+     XkbVariant      "nodeadkeys"
+  EndSection
+
+  </example>
+

@@ -1,0 +1,6 @@
+
+* How to get the X11 version number?
+
+<example>
+X -version
+</example>

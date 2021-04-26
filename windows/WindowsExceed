@@ -1,0 +1,12 @@
+
+** Connection Problems
+
+  - If more than one NIC exists then the *X-Server IP* Address should
+    be specified. Go to xconfig, communication, xdmcp broadcast and
+    add as user-defined ip xdmcp address the address of the X-Server
+    in this case the PC-Address.
+
+  - See also SystemEosNet.
+
+  - On SuSE 9.0 look in the 'Editor for /etc/sysconfig' for the xdm
+    entries. See also KdeKdm.

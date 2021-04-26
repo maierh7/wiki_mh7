@@ -1,0 +1,4 @@
+
+** Delete **New Line**
+
+  - s/^\n//"

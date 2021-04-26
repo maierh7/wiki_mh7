@@ -1,0 +1,27 @@
+
+** Debug Commands
+
+  - frame
+  - finish
+  - up
+  - down
+
+** Commands
+
+  - *gcore* produces a core file.
+  - *watch* stops if the watched expression is written.
+  - *rwatch* stops if the watched expression is read.
+  - *awatch* stops if the watched expression is read or written.
+
+** Emacs
+
+  - M-x gud-gdb
+
+** Reset Program Arguments
+
+  - *set args*. Resets the arguments to zero.
+  - set args test
+
+** Unset Environment
+
+  - unset env <name>

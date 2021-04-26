@@ -1,0 +1,51 @@
+
+*Tempo* is a package to create templates.
+
+<example>
+(tempo-define-template "abc" '("abc" "def")) 
+</example>
+
+This creates a interactive lisp function
+
+  M-x **tempo-template-abc**
+
+Syntax elements for tempo definitions
+
+- *p*  Prompt
+- *P*  Prompt
+- *r*  Region otherwise prompt
+
+The following more complex example
+
+<example>
+(tempo-define-template 
+ "c-header-if"
+ `(
+   'n>
+   "#ifndef " 
+   (upcase (replace-regexp-in-string "\\." "_" (buffer-name)))   
+   'n>
+   "#define "
+   (upcase (replace-regexp-in-string "\\." "_" (buffer-name)))   
+   'n>
+   'n
+   'n
+   'n
+   "#endif"
+   'n>
+   (progn (forward-line -3) "")
+   ))
+</example>
+
+generates the following C header guard.
+
+<example>
+
+#ifndef HELLO_H
+#define HELLO_H
+
+
+
+#endif
+</example>
+

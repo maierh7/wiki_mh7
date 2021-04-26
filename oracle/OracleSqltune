@@ -1,0 +1,32 @@
+
+** dbms_sqltune
+
+  SQL> EXEC DBMS_SQLTUNE.CAPTURE_CURSOR_CACHE_SQLSET( 
+    sqlset_name => 'my_workload', 
+    time_limit => 30, 
+    repeat_interval => 5, 
+    capture_option => 'INSERT'
+  );
+
+DECLARE 
+my_task_name VARCHAR2(30);
+my_sqltext CLOB; 
+my_sqlprofile_name VARCHAR2(30); 
+
+BEGIN 
+  my_sqltext := 'select /*+ no_index(emp pk_emp) */ * from emp where empno=7839'; 
+  my_task_name := DBMS_SQLTUNE.CREATE_TUNING_TASK(sql_text => my_sqltext, 
+        user_name => 'SCOTT', 
+        scope => 'COMPREHENSIVE', 
+        time_limit => 60, 
+        task_name => 'my_sql_tuning_task', 
+        description => 'Demo Task to tune a query'); 
+  
+DBMS_SQLTUNE.EXECUTE_TUNING_TASK( task_name => 'my_sql_tuning_task'); 
+
+my_sqlprofile_name := DBMS_SQLTUNE.ACCEPT_SQL_PROFILE (task_name =>'my_sql_tuning_task', 
+        name => 'my_sql_profile'); 
+END; 
+/
+
+-- execute the SQL

@@ -1,0 +1,11 @@
+
+** Analyze
+
+  <example>
+    SQL> analyze table md10_auftrag compute statistics;
+    SQL> select avg__row__len from user__tables;
+  </example>
+
+  - Jonathan Lewis mentioned: That this might not be good because it's
+  a simple minded computation.
+

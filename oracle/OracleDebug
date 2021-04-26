@@ -1,0 +1,37 @@
+
+** Debug Parameters
+
+  - oradebug setmypid
+  - oradebug ipc
+  - oradebug unlimit
+  - oradebug hanganalyze 3
+
+  <example>
+  SQL> oradebug ipc
+  </example>
+
+  <example>
+  Get hanganalyze this way, while the hang is occurring:
+  
+  sqlplus /nolog
+  SQL> connect / as sysdba
+  SQL> oradebug setmypid
+  SQL> oradebug unlimit
+  SQL> oradebug hanganalyze 3
+  
+  Then disconnect and go find the trace file in udump. Several may be
+  created, depending on the level you run this, but one will be for your
+  os pid and will contain the dependency analysis.
+  </example>
+
+  <example>
+  sqlplus /nolog
+  SQL> connect / as sysdba
+  SQL> oradebug setospid <o.s. process id>
+  SQL> oradebug unlimit
+  SQL> oradebug dump processstate 10
+  
+  This will produce a trace file constructed of that process id,
+  located in the udump directory.
+  </example>
+

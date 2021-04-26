@@ -1,0 +1,45 @@
+
+
+** OCP 1
+
+  - Module 01: Oracle Architectural Components
+  - Module 02: Getting Started With the Oracle Server
+  - Module 03: Managing an Oracle Instance
+  - Module 04: Creating a Database
+  - Module 05: Data Dictionary Content and Usage
+  - Module 06: Maintaining the Control File
+  - Module 07: Maintaining Redo Log Files
+  - Module 08: Managing Tablespaces and Data files
+  - Module 09: Storage Structure and Relationships
+  - Module 10: Managing Undo Data
+  - Module 11: Managing Tables
+  - Module 12: Managing Indexes
+  - Module 13: Maintaining Data Integrity
+  - Module 14: Managing Password Security and Resources
+  - Module 15: Managing Users
+  - Module 16: Managing Privileges
+  - Module 17: Managing Roles
+  - Module 18: Using Globalization Support
+
+
+** OCP 2
+
+  - Module 01: Networking Overview
+  - Module 02: Basic Network Architecture
+  - Module 03: Basic Net Server-Side Configuration
+  - Module 04: Basic Oracle Net Services Client-Side Configuration
+  - Module 05: Usage and Configuration of the Oracle Shared Server
+  - Module 06: Backup and Recovery Overview
+  - Module 07: Instance and Media Recovery Structures
+  - Module 08: Configuring the Database Archiving Mode
+  - Module 09: Oracle Recovery Manager Overview and Configuration
+  - Module 10: User-Managed Backups
+  - Module 11: RMAN Backups
+  - Module 12: User-Managed Complete Recovery
+  - Module 13: RMAN Complete Recovery
+  - Module 14: User-Managed Incomplete Recovery
+  - Module 15: RMAN Incomplete Recovery
+  - Module 16: RMAN Maintenance
+  - Module 17: Recovery Catalog Creation and Maintenance
+  - Module 18: Transporting Data Between Databases
+  - Module 19: Loading Data into a Database

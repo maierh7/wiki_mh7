@@ -1,0 +1,12 @@
+
+** More Than One Server
+
+Before "server-start" set the variable "server-name". The default
+value is "server".
+
+  (setq server-name "abc")
+  (server-start)
+
+  $ emacsclient -s abc ~/.emacs
+
+"server-start" restarts the server if it already is running.

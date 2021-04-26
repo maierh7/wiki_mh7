@@ -1,0 +1,86 @@
+
+** OEM Console
+
+  - *Add* new databases
+
+  <example>
+    $ oemapp console
+  </example>
+
+** OMS
+
+  - Oracle Management Server
+
+  <example>
+    $ oemctl start oms
+    $ oemctl stop  oms sysman/oem_temp
+  </example>
+
+
+  - If a process hangs then use 'ps -Af | grep oms' and kill the one
+    or two listed processes. See too the sysman.sh script for a
+    possible solution.
+
+** OMS Config
+
+  - See $?/sysman/config/omsconfig.properties
+
+** EM Repository
+
+  OracleOemRep
+
+** OIA
+
+  - Oracle Intelligent Agent
+
+
+  <example>
+    # 8.1.7
+    $ dbsnmp start
+    $ dbsnmp stop
+    # 9.2.0
+    $ agentctl start
+    $ agentctl stop
+  </example>
+
+*** OIA logs
+
+  - ?/network/log/nmiconf.log
+
+*** OIA services
+
+  - ?/network/agent/services.ora
+
+  - OIA takes the services from */etc/oratab*. So adding a new service
+    to the listener.ora file is not enough. It too needs to be added
+    to the /etc/oratab file.
+
+** Install a OMS
+
+    $ emca
+
+** Reconfigure dbconsole and agent
+
+  Note the emca is in the ORACLE_HOME of the database.
+
+    $ emca -config dbcontrol db
+    $ emca -config centralAgent db -repos create
+
+** Current OMS
+
+  - sysman/oem_temp (The default password. This must be changed after
+    first time login into the *oemapp console)*.
+  - sysman/delphi (oms)
+  - oem_athene/delphi@nine (database)
+
+** Deconfig dbconsole
+
+  - emca -deconfig dbcontrol db -repos drop \
+      -respFile tmp/dbconsole-response
+
+*** tmp/dbconsole-response
+SID=
+PORT=
+SYS_PWD=
+SYSMAN_PWD=
+

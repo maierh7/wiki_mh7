@@ -1,0 +1,20 @@
+
+** Steps to define a Xref source
+
+** Xref-Manual
+
+*** Specify the source
+
+  - (region) *H-q r* specify a source
+
+*** Specify the target
+
+  - (region) *H-q C-r* specify a target
+  -          *H-q SPC* specify a buffer-file-name as target
+  -      *C-u H-q SPC* specify a file as target
+  -          *H-q @*   specify a action as target
+
+# Local Variables: 
+# xref-1:(23 4 ("~/local/elisp/xref.el")) 
+# xref-2:(39 11 "(info \"xref\")") 
+# End: 

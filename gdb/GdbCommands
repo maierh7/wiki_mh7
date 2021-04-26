@@ -1,0 +1,8 @@
+
+
+  - *jump * LINESPEC
+
+*jump* is a special continue command that allows to specify a LINESPEC.
+Important is that jump does not change the current stack frame or the
+stack pointer or any memory location. *jump* is a 'back up' to set
+breakpoints previously.

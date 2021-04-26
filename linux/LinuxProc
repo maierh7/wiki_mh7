@@ -1,0 +1,12 @@
+
+** Memory
+
+  - cpuinfo
+  - meminfo
+
+** VM
+
+  <verbatim>
+    echo 1 >/proc/sys/vm/vm_gfp_debug
+  </verbatim>
+

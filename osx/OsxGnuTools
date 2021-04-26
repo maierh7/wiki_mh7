@@ -1,0 +1,11 @@
+
+** Build both architectures
+
+Building both architectures are necessary for OSX perl. In this
+special case it was building of the "readline" library.
+
+Use:
+
+  CFLAGS="-O -g -arch i386 -arch ppc" LDFLAGS="-arch i386 -arch ppc" \
+    ./configure
+

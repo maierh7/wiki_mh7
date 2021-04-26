@@ -1,0 +1,17 @@
+
+** List all Packages
+
+  - rpm -qa
+
+** Downgrade Example
+
+  - rpm -e --nodeps Motif-2.2.2-124
+  - rpm -ivh Motif-2.1....
+
+** List Contents of a Package
+
+  - rpm -q glibc-info-2.3.3-98.61 --filesbypkg
+
+** List Contents of a Package File
+
+  - rpm -qpl <rpm-file>

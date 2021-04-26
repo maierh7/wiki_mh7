@@ -1,0 +1,13 @@
+
+#ftype
+** ftype
+
+Lists all the extensions.
+
+see also ToolsDos#assoc.
+
+#assoc
+** assoc
+
+Assoc assigns a extension to a file tpye. See also ToolsDos#ftype.
+

@@ -1,0 +1,19 @@
+
+** CTRL-ALT-DEL
+
+  - CTRL-ALT-END
+  -  ALT-Pageup
+  -  Alt-Pagedown
+  - CTRL-ALT-Pause - Full Screen
+
+
+** Enable Windows Terminal Services
+
+
+   - start 'gpedit.msc'
+
+   - Computer Configuration
+     - Administrative Templates
+       - Windows Components
+         - Terminal Services
+           - Allow user to connect remotely using Termal Services

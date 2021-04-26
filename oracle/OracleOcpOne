@@ -1,0 +1,830 @@
+
+* Fundamentals I
+
+- Describe the *Oracle architecture* and its main components
+
+    Database server:
+    
+      SGA + PROCESSES
+
+      PROCESSES = DBWR, LGWR, CKPT, SMON, PMON, ARCH, RECO,
+                  Dnnn, Jnnn, JMS, QMS
+                = DEDICATED SERVER PROCESS
+                = SHARED SERVER PROCESS
+
+      SGA = data buffers + redo log buffers + CONTEXT AREAS
+
+      CONTEXT AREAS = shared pool + large pool
+    
+    Database clients:
+    
+      CLIENTS
+
+    INIT:
+
+      DB_CACHE_SIZE
+      LOG_BUFFER
+      SHARED_POOL_SIZE
+      LARGE_POOL_SIZE
+
+- Describe the structure involved in *connecting* a user to an Oracle
+  instance
+
+    APP        + DS + INSTANCE
+    APP + ONET + DS + INSTANCE
+    APP + ONET + SS + INSTANCE
+
+- Identify common database administrative *tools* available to a DBA
+
+    SQL*PLUS,EXP,IMP,SQL*LOADER,RMAN,OEM
+
+- Identify the features of the Oracle Universal Installer *(OUI)*
+
+    Install, deinstall software
+    Implicit deinstallation
+    Dependency resolution
+    Silent installations
+    Installation from the Web
+    NLS support
+
+    Options: responseFile, silent
+
+- Explain the benefits of Optimal Flexible Architecture *(OFA)*
+
+    Organize software and data
+    Facilitate routine administrative task
+    Facilitate switching of databases
+    Manage database growth
+    Minimize resource contention and fragmentation
+
+    pm - mount point
+    q  - oradata (a string that denotes oracle data)
+    dm - database name
+    h  - standard directory name
+    n  - two digit string
+    t  - tablespace name
+    u  - user / owner of the directory
+    v  - version
+
+    /u01/app/oracle/admin/db
+    /u01/app/oracle/product/9.2.0.3.0
+    /u01/oradata/db
+    /u02/home
+    /u02/oradata
+
+    admin
+    product
+    doc
+    local
+
+    adhoc   - SQL scripts
+    arch    - Archived redo log files
+    adump   - AUDIT_FILE_DEST
+    bdump   - Backround process trace files (alert_<dm>.log)
+    cdump   - core dump files
+    create  - files and logs used for creation
+    exp     - export files
+    logbook - recording status and history
+    pfile   - instance parameter files
+    udump   - user SQL trace files
+
+- Set up *password file* authentication
+
+    $ orapwd file=$ORACLE_HOME/dbs/orapwmanual passwod=abc entries=20
+    # set init parameter 'remote_login_passwordfile=exclusive'
+    SQL> create user me identified by abc;
+    SQL> grant create session to me;
+    SQL> grant sysdba to me;
+
+    # Without 'create session' only connecting 'as sysdba' is possible.
+
+    # List all the SYSDBAs and SYSOPERs.
+    SQL> select * from v$pwfile_users;
+
+- List the main components of the *OEM* and their uses
+
+    **???**
+
+- Create and manage *initialization parameter* files
+
+    SQL> create spfile from pfile;
+    SQL> create pfile from spfile;
+
+    If no spfile or pfile name is specified then oracle uses default
+    names. For this command the database needs not to be mounted.
+
+    pfile=initmanual.ora
+    spfile=spfilemanual.ora
+
+- Configure *OMF*
+
+    DB_CREATE_FILE_DEST
+    DB_CREATE_ONLINE_LOG_DEST_n
+
+    *Look in ~/ora/plsql/db*
+
+- *Startup and shutdown* and instance
+
+    SQL> startup nomount;
+    SQL> alter database mount;
+    SQL> alter database open;
+
+    SQL> startup restricted;
+    SQL> startup open read only;
+    SQL> startup force;
+
+- *Monitor* the use of diagnostic files
+
+    OFA: bdump/alert_manual.log
+
+- Describe the *prerequisites* necessary for database creation
+
+    Oracle software installed.
+    Necessary system privileges associated.
+    Environment variables set.
+    Sufficient Memory.
+    Sufficient disk space.
+
+- Create a database using Oracle Database Configuration Assistant *(DBCA)*
+
+- Create a database *manually*
+
+    SQL> create database abc;
+
+- Identify key data dictionary components
+
+    Base Tables
+    User-Accessible Views
+    Dynamic Performance Tables
+
+- Identify the contents and uses of the data dictionary
+
+    Names of the Oracle users
+    Privileges and roles
+    Auditing
+    Definitons of schema objects
+    Information about the used space
+    Default values
+    Integrity constraint information
+    Other database information
+
+- Query the data dictionary
+
+- Explain the uses of the control file
+
+    The control files are specified in the init parameters
+    control_files and the database needs one of the specified control
+    files to mount the database.
+
+- Describe the contents of the control file
+
+    Database name.
+    Location and names of the datafiles and the redo log files.
+    Tablespace information and data file offline ranges.
+    Log history. 
+    Backup datafiles and redo log information.
+    Datafile copy information.
+    Current log sequence number.
+    Checkpoint information.
+
+- Multiplex and manage the control file
+
+    init: control_files=('/O1/abc','/O2/abc')
+
+- Obtain control file information
+
+    SQL> alter database backup controlfile to trace;
+
+- Manage the control file with OMF
+
+    Add init parameter control_files to the spfile or pfile.
+
+- Explain the purposes of online redo log files
+
+    The redo log files holds the information about changes in the
+    database. The redo log files are used to recover the database, if
+    necessary.
+
+- Enabling Archive Log Mode
+
+    SQL> startup mount;
+    SQL> alter database achrchivelog;
+    SQL> alter system archive log start;
+    SQL> alter database open;
+
+    -- Status
+    SQL> archive log list;
+
+- Describe the structure of online redo log files
+
+    Group |  Memb 1   | Memb 2
+    ------+-----------+----------
+        1 | /O1/1.log | /O2/1.log
+        2 | /O1/2.log | /O2/2.log
+        3 | /O1/3.log | /O2/3.log
+
+- Control log switches and checkpoints
+
+    A log switch is the point at which Oracle ends writing to one
+    online redo log file and begins to write to another.
+
+    Checkpoints are triggered by the CKT process. Checkpoints are
+    stored in the controll files and datafiles (v$datafile). 
+
+- Multiplex and maintain online redo log files
+
+    SQL> select * from v$log;
+    SQL> select * from v$logfile;
+    SQL> select * from v$log_history;
+
+    SQL> alter database add logfile (
+           '/O1/1.log',
+           '/O2/1.log'
+         ) size 500 K;
+
+    SQL> alter database add log file member '/O1/3.log' to group 3;         
+
+- Manage online redo log files with OMF
+
+    DB_CREATE_ONLINE_LOG_DEST_1
+    DB_CREATE_ONLINE_LOG_DEST_2
+
+- Describe the logical structure of the database
+
+- Create tablespace
+
+    -- create normal
+    SQL> create tablespace text datafile '.../nine/text.dbf' 50 M
+         autoextend on segment space management auto;
+
+    -- create omf
+    SQL> create undo tablespace undo1;
+    SQL> create temporary tablespace temp1;
+
+    -- drop
+    SQL> drop tablespace temp1 including contents;
+
+- Change the size of tablespaces
+
+    SQL> alter database datafile '.../nine/text.dbf' resize 100 m;
+    SQL> alter tablespace text add datafile '.../nine/text02.dbf' 50 M;
+
+
+- Allocate space for temporary segments
+
+    SQL> create temporary tablespace temp02;
+    SQL> alter tablespace temp add tempfile;
+
+- Change the status of tablespaces
+
+    SQL> alter tablespace text offline;
+
+- Change the storage settings of tablespaces
+
+    A default storage clause cannot be specified for locally managed
+    tablespaces.
+
+- Implement Oracle Managed Files
+
+    DB_CREATE_FILE_DEST=
+    DB_CREATE_ONLINE_LOG_DEST_1=
+    DB_CREATE_ONLINE_LOG_DEST_2=
+
+- Describe the logical structure of tablespaces within the database
+
+- List the segment types and their uses
+
+    data segments
+    index segments
+    temporary segments
+    rollback segments
+
+    SEGMENT_TYPE
+    ------------------
+    CACHE
+    CLUSTER
+    INDEX
+    INDEX PARTITION
+    LOBINDEX
+    LOBSEGMENT
+    NESTED TABLE
+    ROLLBACK
+    TABLE
+    TABLE PARTITION
+    TYPE2 UNDO
+
+- Obtain information about storage structures from the data dictionary
+
+    SQL> select sum(bytes) / (1024*1024*1024) from dba_segments;
+    SQL> select sum(bytes) / (1024*1024*1024) from dba_free_space;
+    SQL> select sum(bytes) / (1024*1024*1024) from dba_extents;
+
+- Describe the logical structure of segments within the database
+
+    A database segment holds all the allocated extents. For each
+    database object Oracle creates a database segment and allocates
+    extents.
+
+- Describe the purposes of the undo data
+
+    Undo data keeps the information for undoing not commited
+    operations. Each user transaction is bound to a undo segment.  In
+    the case of automatic undo management only one active undo
+    tablespace exists. The init parameter undo_tablespace designates
+    the active undo tablespace.
+
+- Implement automatic undo management
+
+    INIT: undo_management=auto
+
+    INIT: undo_retention=<seconds>
+    INIT: undo_tablespace=sys_undots (default)
+
+
+- Identify various methods of storing data
+
+    **???**
+
+- Describe Oracle data types
+
+    varchar2
+    nvarchar2
+    number
+    long
+    date
+    timestamp
+    timestamp with time zone
+    timestamp with local time one
+    interval year to month
+    interval day to second
+    raw
+    long raw
+    rowid
+    urowid
+    char
+    nchar
+    clob
+    blob
+
+- Distinguish between an extended versus a restricted ROWID
+
+    Restricted ROWID Oracle  < 8.1 - 00000DD5.0000.0001
+    Extented   ROWID Oracle >= 8.1 - AAAAaoAATAAABrXAAA
+
+    Restricted Rowid
+    ----------------
+    00000DD5 - data block
+    0000     - row
+    0000     - datafile
+
+    Extended Rowid
+    --------------
+    OOOOOO - Object Number
+    FFF    - Tablespace-relative datafile number
+    BBBBBB - Datablock
+    RRR    - Row
+
+- Describe the structure of a row
+
+    Row Header: row overhead, number of columns, cluster key id, rowid
+    Row Overhead: number of row pices, Chaining
+    Column Data: column length, column value
+
+- Create regular and temporary tables
+
+    A global temporary table is visible as other tables. But the data
+    of a global temporary table is only visible to the current session.
+    A commit or rollback deletes the global temporary table.
+
+    SQL> create global temporary table abc (
+           ...           
+         )
+         on commit preserve rows;
+
+- Manage storage structures within a table
+
+  PCTFREE  -+- Ignored by segment space management AUTO
+  PCTUSED  -+
+  INITRANS
+  MAXTRANS
+  storage (          
+    initial 128 K    -+
+    next    128 K     |
+    pctincrease 0     +- For DMTs
+    minextents  2     |
+    maxextents 10    -+ 
+  )
+
+- Reorganize, truncate, drop a table
+
+    SQL> alter table abc deallocate unused;
+    SQL> alter table abc move tablespace system pctfree 10;
+
+- Drop a column within a table
+
+    SQL> alter table abc drop column age;
+    SQL> alter table abc modify age default 20;
+    SQL> alter table abc modify age number(3) default 20;
+
+- Describe the different types of indexes and their uses
+
+    B-Tree Index
+      Function Based Index
+      Index organized Table
+      Domain Index
+    B-Tree Cluster Index  
+    Hash Cluster Index
+    Bitmap Index
+    Bitmap Join Index
+
+    Reverse Key Index
+
+- Create various types of indexes
+
+    SQL> Create Index ...;
+    SQL> Create Bitmap Index ...;
+
+- Reorganize indexes
+
+    SQL> alter index abc rebuild [reverse];
+
+    SQL> analyze index abc compute statistics;
+    SQL> analyze index abc validate structure;
+
+- Drop indexes
+
+    SQL> drop index abc_pk;
+
+- Get index information from the data dictionary
+
+    SQL> select index_name, index_type from dba_indexes;
+
+- Monitor the usage of an index
+
+    SQL> alter index abc_pk monitoring usage;
+
+    See too the usage column in v$object_usage.
+
+- Implement data integrity constraints
+
+- Maintain integrity constraints
+
+    SQL> alter table abc add constraint abc_pk primary key (id);
+
+- Obtain constraints information from the data dictionary
+
+    SQL> select table_name, constraint_name from user_constraints;
+
+- Manage passwords using profiles
+
+- Administer profiles
+
+    SQL> create profile users limit
+      sessions_per_user 5
+      cpu_per_session 2
+      ;
+
+    SQL> alter profile users limit
+      sessions_per_user 10
+      ;
+
+- Types of Resources
+
+    Kernel
+    Password
+
+- Control of resources using profiles
+
+- Obtain information about profiles, password management and
+  resources. Default is set to unlimited.
+
+    PROFI RESOURCE_NAME                LIMIT
+    ----- -------------------------------- ----------
+    USERS COMPOSITE_LIMIT              DEFAULT
+    USERS SESSIONS_PER_USER            100
+    USERS CPU_PER_SESSION              2
+    USERS CPU_PER_CALL                 DEFAULT
+    USERS LOGICAL_READS_PER_SESSION    DEFAULT
+    USERS LOGICAL_READS_PER_CALL       DEFAULT
+    USERS IDLE_TIME                    DEFAULT
+    USERS CONNECT_TIME                 DEFAULT
+    USERS PRIVATE_SGA                  DEFAULT
+    USERS FAILED_LOGIN_ATTEMPTS        DEFAULT
+    USERS PASSWORD_LIFE_TIME           DEFAULT
+    USERS PASSWORD_REUSE_TIME          DEFAULT
+    USERS PASSWORD_REUSE_MAX           DEFAULT
+    USERS PASSWORD_VERIFY_FUNCTION     DEFAULT
+    USERS PASSWORD_LOCK_TIME           DEFAULT
+    USERS PASSWORD_GRACE_TIME          DEFAULT
+
+- Create a new database user
+
+    $ sqlplus /nolog
+    SQL> connect / as sysdba;
+    SQL> create database abc;
+
+- Alter and drop existing database users
+
+    SQL> drop user scott cascade;
+
+- Monitor information about existing users
+
+    SQL> select * from v$session;
+
+- Identify system and object privileges
+
+    SQL> select * from session_privs;
+
+- Grant and revoke privileges
+
+    SQL> grant create session to abc;
+    SQL> revoke create session from abc;
+
+- Identify auditing capabilities
+
+    suspicious activities
+    normal activities
+
+
+    audit_trail = db
+    sys.aud$
+
+- Create and modify roles
+
+    SQL> create role abc identified by password;
+    SQL> create role abc identified by package;
+
+- Control availability of roles
+
+    SQL> set role abc;
+    SQL> alter user scott default role abc, resource;
+
+- Remove roles
+
+    SQL> drop role abc;
+
+- Use predefined roles
+
+    connect, resource, dba,
+    export_full_database, imp_full_database,
+    select_catalog_role
+
+- Display role information from the data dictionary
+
+    SQL> select * from session_privs;
+    SQL> select * from session_roles;
+    SQL> select * from role_sys_privs;
+    SQL> select * from role_role_privs;
+    SQL> select * from role_tab_privs;
+
+    SQL> select * from dba_col_privs;
+    SQL> select * from dba_tab_privs;
+    SQL> select * from dba_sys_privs;
+    SQL> select * from dba_role_privs;
+
+- Choose a database character set for a database
+
+    SQL> alter database character set WE8ISO8859P15;
+
+- Specify the language-dependent behavior using initialization
+  parameter, environment variables, and the alter session command
+
+    **???**
+
+- Use the different types of NLS parameters
+
+- Explain the influence of language-dependent application behavior
+
+    Language
+      Error Messages
+      Names for Days and Months
+      Sorting
+      And Comparing
+
+    Territory
+      Calculating day of week and week numbering
+      Default Date format
+
+- Obtain information about Globalization Support usage
+
+    PARAMETER                  VALUE
+    ------------------------------ ----------------------------------------
+    NLS_LANGUAGE               AMERICAN
+    NLS_TERRITORY              AMERICA
+    NLS_CURRENCY               $
+    NLS_ISO_CURRENCY           AMERICA
+    NLS_NUMERIC_CHARACTERS     .,
+    NLS_CHARACTERSET           WE8ISO8859P1
+    NLS_CALENDAR               GREGORIAN
+    NLS_DATE_FORMAT            DD-MON-RR
+    NLS_DATE_LANGUAGE          AMERICAN
+    NLS_SORT                   BINARY
+    NLS_TIME_FORMAT            HH.MI.SSXFF AM
+    NLS_TIMESTAMP_FORMAT       DD-MON-RR HH.MI.SSXFF AM
+    NLS_TIME_TZ_FORMAT         HH.MI.SSXFF AM TZR
+    NLS_TIMESTAMP_TZ_FORMAT    DD-MON-RR HH.MI.SSXFF AM TZR
+    NLS_DUAL_CURRENCY          $
+    NLS_COMP                   BINARY
+    NLS_LENGTH_SEMANTICS       BYTE
+    NLS_NCHAR_CONV_EXCP        FALSE
+    NLS_NCHAR_CHARACTERSET     AL16UTF16
+    NLS_RDBMS_VERSION          9.2.0.3.0
+    
+
+
+** Fundamentals II
+
+- Explain solutions included with Oracle 9i for managing complex
+  networks
+
+- Describe Oracle networking add-on solutions
+
+- Explain the key components of the Oracle Net layered architecture
+
+- Explain Oracle Net Services role in client server connections
+
+- Describe how web client connections are established through Oracle
+  networking products
+
+- Identify how the listener responds to incoming connections
+
+- Configure the listener using Oracle Net Manager
+
+- Control the listener using the lsnrctrl utility
+
+- Describe Dynamic Service Registration
+
+- Configure the listener for IIOP and HTTP connections
+
+- Describe the difference between host naming and local service name
+  resolution 
+
+- Use Oracle Net Configuration Assistant to configure: Host Naming,
+  Local naming method, Net service names.
+
+- Perform simple connection troubleshooting
+
+- Identify the components of the Oracle Shared Server architecture
+
+    User process
+    Dispatcher
+    Server process
+
+- Describe the Oracle Shared Server Architecture
+
+    U1 -->  Dispatcher --> P1 -> PGA
+    U2 -+              +-> P2 -> PGA
+    U3 -+                   |
+    U4 -+                  SGA
+
+    In a dedicated server configuration each user process has its own
+    server process. In a shared server configuration user process are
+    dispatched to less server processes.
+
+- Configure the Oracle Shared Server
+
+    INIT: dispatchers='(PROTOCOL=TCP) (SERVICE=manualXDB)'
+    tnsnames.ora: 
+      connect_data =
+        (server = shared)
+        (service_name=manualXDB)
+  
+    SQL> select username, server from v$session
+
+    shows how a session is connected.
+
+- Identify and explain usefulness of related dictionary views
+
+- Describe the basics of database backup, restore and recovery
+
+- List the types of failure that may occur in an Oracle environment
+
+- Define a backup recovery strategy
+
+- Describe the Oracle processes, memory structures, and files related
+  to recovery
+
+- Describe way to tune instance recovery
+
+- Describe the differences between Archivelog and Noarchivelog modes
+
+- Configure a database for Archivelog mode
+
+- Enable automatic archiving
+
+    SQL> alter system archive log start;
+
+- Perform manual archiving of logs
+
+- Configure multiple archive processes
+
+- Configure multiple destinations, including remote destinations
+
+- Identify the features and components of RMAN
+
+- Describe the RMAN repository and control file usage
+
+- Describe channel allocation
+
+- Describe the Media Management Library interface
+
+- Connect to RMAN without the recovery catalog
+
+- Configure the RMAN environment
+
+- Describe user-managed backup and recovery operations
+
+- Discuss backup issues associated with read tablespaces
+
+- Perform closed database backups
+
+- Perform open database backups
+
+- Backup the control file
+
+- Perform cleanup after a failed online backup
+
+- Use the dbverify utility to detect corruption
+
+- Identify types of RMAN specific backups
+
+- Use RMAN BACKUP command to create sets
+
+- Back up the control file
+
+- Back up the archived redo log files
+
+- Use the RMAN COPY command to create image copies
+
+- Describe media recovery
+
+- Perform recovery in Noarchivelog mode
+
+- Perform complete recovery in Archivelog mode
+
+- Restore datafiles to different locations
+
+- Relocate and recover a tablespace by using archive redo log files
+
+- Describe read-only tablespace recovery
+
+- Describe the use of RMAN for restoration and recovery
+
+- Perform recovery in Noarchivelog mode
+
+- Perform complete recovery in Archivelog mode
+
+- Restore datafiles to different locations
+
+- Relocate and recover a tablespace by using archive redo log filse
+
+- Descibe the steps of incomplete recovery
+
+- Perform an incomplete database recovery
+
+- Identify the loss of current online redo log files
+
+- Perform an incomplete database recovery using UNTIL time
+
+- Perform an incomplete database recovery using UNTIL sequence
+
+- Perform cross checking of backup and copies
+
+- Update the repository when backups have been deleted
+
+- Change the availability status of backups and copies
+
+- Make a backup or copy exempt from the retention policy
+
+- Catalog backups made with operating system commands
+
+- Describe the contents of the recovery catalog
+
+- Create the recovery catalog
+
+- Maintain the recovery catalog by using RMAN commands
+
+- Use RMAN to register, resynchronize, and reset a database
+
+- Query the recovery catalog to generate reports and lists
+
+- Create, store, and run scripts
+
+- Describe methods of backing up and recovering the repository catalog
+
+- Describe the uses of the EXP and IMP utility
+
+- Describe the Export and Import concepts and structures
+
+- Perform simple export and import operations
+
+- List guidelines for using Export and Import
+
+- Demonstrate usage of direct-load insert operations
+
+- Describe the usage of SQL*Loader
+
+- Perform basic SQL*Loader operations
+
+- List guidelines for using SQL*Loader and direct-load insert
+

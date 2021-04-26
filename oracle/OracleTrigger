@@ -1,0 +1,21 @@
+
+** What DML Type
+
+  - inserting
+  - updating
+  - deleting
+
+create trigger emp_aud
+after insert or delete or update on emp
+for each row
+begin
+  case
+    when inserting then
+      null;
+    when updating  then
+      null;
+    when deleting  then
+      null;
+  end case;
+end;
+/

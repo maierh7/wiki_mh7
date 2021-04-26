@@ -1,0 +1,71 @@
+
+** Optimizer Steps
+
+  - evaluate expressions
+  - transform statement (subqueries, views)
+  - choice goals
+  - choice access paths
+  - choice join orders
+
+** Init Parameter
+
+  - cursor_sharing
+  - optimizer_mode
+  - optimizer_goal
+  - optimizer_features_enable
+  - db_file_multiblock_read_count
+  - hash_area_size
+  - hash_join_enabled
+  - optimizer_index_caching
+  - optimizer_index_cost_adj
+  - optimizer_max_permutations
+  - partition_view_enabled
+  - query_rewrite_enabled
+  - sort_area_size
+  - start_transformation_enabled
+
+** Functions on index columns
+
+  - The optimizer do not use an index if the column is applied to a
+    function. In this case use Function Based Indexes.
+
+** Hints Approaches and Goals
+
+  - FIRST_ROWS(n)
+  - ALL_ROWS
+  - CHOOSE
+  - RULE
+
+** Hints Access Path
+
+  - FULL(alias) [1]
+  - ROWID(alias)
+  - CLUSTER(alias)
+  - HASH(alias) [2]
+  - INDEX(alias index_name)
+  - INDEX_ASC
+  - INDEX_COMBINE
+  - INDEX_JOIN
+  - INDEX_DESC(alias index_name)
+  - INDEX_FFS [3]
+  - NO_INDEX(alias index_n1 index_n2) [4]
+  - AND_EQUAL
+
+  - If the sample clause is specified then the access path is ignored.
+
+  - ORDERED use the ordering in the from clause
+
+  - USE_NL(alias alias)
+  - DRIVING_SITE(alias) distributed query optimization
+
+Footnotes: 
+
+[1]  select /*+ FULL(e) * from employees e where empno = :b1
+
+[2]  Only for clustered tables.
+
+[3]  Fast Full (Index) Scan. Uses multiblock reads. See too the 
+     init parameter optimizer_features_enable.
+
+[4]  Ignores only the specified indexes. If only a table is specified
+     then all indexes of the table are ignored.

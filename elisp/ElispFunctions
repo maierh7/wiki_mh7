@@ -1,0 +1,22 @@
+
+- *display-graphic-p*. This function returns nil if emacs is called with
+  the -nw option.
+
+- *parse-colon-path* string
+
+- *file-name-as-directory* Takes argument and creates a directory
+  syntax. The function does not check the filename.
+
+  <example>
+  (file-name-as-directory "~/.emacs")
+  -> "~/.emacs/"
+  </example>
+
+- *bounds-of-thing-at-point* syntax. Returns a two element list with
+  the start and end position of syntax.
+
+  <example>
+  (bounds-of-thing-at-point 'word)
+  </example>
+
+- *key-binding* returns the command that is bind to the passed key.

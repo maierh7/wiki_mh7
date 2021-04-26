@@ -1,0 +1,8 @@
+
+** Group: News Test
+
+  - string-match(":")
+
+** Articel: News Test
+
+  - message-news-p

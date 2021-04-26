@@ -1,0 +1,30 @@
+
+** Install
+
+  yum install emacs
+  yum install gcc
+  yum install git
+  yum install autoconf
+  yum install texinfo
+  yum install ncurses-devel
+
+  yum install zlib-devel
+  
+  yum install -y https://centos7.iuscommunity.org/ius-release.rpm
+  yum update
+  yum install -y python36u python36u-libs python36u-devel python36u-pip
+
+
+** New CentOS
+
+  yum install git
+  git clone https://github.com/maierh7/gcp-ms-maierha
+  mkdir tmp
+  mv .bash_profile ~/tmp
+  ln -s gcp-ms-maierha/.bash_profile .
+  cd gcp-ms-maierha/sh
+  sudo ./yum-init.sh
+  cd ~/gcp-ms-maierha
+
+  make emacs
+  make python3

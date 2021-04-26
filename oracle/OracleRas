@@ -1,0 +1,12 @@
+
+** Real Application Security
+
+  xs_principal.create_user (name, schema)
+  xs_principal.create_role (name, enabled, start, end)
+  xs_principal.grant_roles (name, role)
+
+  create role <role>
+  grant ... to role
+
+  grant role to xs_role;
+  

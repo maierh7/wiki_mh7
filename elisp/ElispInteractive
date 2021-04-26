@@ -1,0 +1,25 @@
+
+** Arguments
+
+ - * reports an error if buffer is read only
+ - *P* the raw universial argument (string)
+ - *p* the universal argument as integer 
+
+<example>
+(defun abc(arg)
+  ;; reports an error if the buffer is read only
+  (interactive "*P")
+  (message "%s" arg))
+</example>
+
+** A argument list
+
+<example>
+  (defun abc (a b c)
+    (interactive '(1 2 3))
+    (message "%d %d %d" a b c)
+    )
+  (call-interactively 'abc)
+  (abc 2 4 6)
+</example>
+

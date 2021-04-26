@@ -1,0 +1,10 @@
+
+Backquoting is the way to specify parts of a lisp list as none
+constant. This allows execution of lisp expression in lisp lists.
+
+<example>
+
+`(1 ,(+ 1 1))
+=> (1 2)
+
+</example>

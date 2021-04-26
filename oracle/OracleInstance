@@ -1,0 +1,20 @@
+
+** Information
+
+  - v$sga
+  - v$sgainfo
+  - v$process
+  - v$instance
+  - v$session
+
+** Session
+
+  <verbatim>
+    SQL> alter session set sql_trace = true;
+  </verbatim>
+
+  <verbatim>
+    SQL> execute dbms_system.set_sql_trace_in_session(sid, serial#, TRUE);
+  </verbatim>
+
+  - The files will be written to the udump directory.

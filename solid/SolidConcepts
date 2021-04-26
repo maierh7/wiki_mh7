@@ -1,0 +1,26 @@
+
+** Trees
+
+  - Main Software Tree (B-Tree)
+  - Bonsai-Tree (Versioning)
+
+**  Transactions
+
+  - TSN (Transaction Start Number)
+
+** Table-Types
+
+  - M-Table (Memory)
+  - D-Table (Disk)
+
+** Optimizer
+
+  - Parse Tree
+  - Execution Graph
+
+** Execution Graph
+
+  - Type evalution
+  - Estimage evaluation
+  - Row retrieval
+

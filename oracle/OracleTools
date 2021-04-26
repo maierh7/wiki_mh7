@@ -1,0 +1,7 @@
+
+** Scripts
+
+#Chained.
+  - *utlchain.sql*. Creates a table chained_rows. Needs afterwards the
+    command 'analyze table <blah> list chained
+    rows'. OracleToolsChained.

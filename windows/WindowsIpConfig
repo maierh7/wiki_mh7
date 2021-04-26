@@ -1,0 +1,4 @@
+
+** Reload DNS
+
+  - *ipconfig /flushdns* - Rereads the DNS cache.

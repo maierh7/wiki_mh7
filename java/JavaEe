@@ -1,0 +1,29 @@
+
+** J2EE
+
+  - Java API for XML-Based RPC (JAX-RPC) 
+  - Java Server Pages (JSPs)
+  - Java Servlets
+  - Enterprise Java Beans (EJBs)
+  - J2EE Connector Architecture
+  - J2EE Management Model
+  - J2EE Deployment API
+  - Java Management Extensions (JMX)
+  - J2EE Authorization Contract for Containers
+  - Java API for XML Registries (JAXR)
+  - Java Message Service (JMS)
+  - Java Naming and Directory Interface (JNDI)
+  - Java Transaction API (JTA)
+  - CORBA
+  - JDBC data access API.
+
+** Install
+
+  - JavaEeInstall
+
+** Beans Types
+
+  - Entity
+  - Session
+  - Message-Driven
+

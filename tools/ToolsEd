@@ -1,0 +1,33 @@
+
+** Commands
+
+  - *.* switches to the command mode
+  - *,* prefix (means all)
+
+  - *a* append
+  - *c* change
+  - *d* delete line
+  - *i* insert
+
+  - *p* print
+  - *l* list
+  - *n* enumerate
+
+  - *e <name>* edit and set file NAME
+  - *f <name>* set file NAME
+  - *w <name>* write file NAME
+  - *q/Q* quit
+  - *g/string/* search 
+  - *s/old/new* substitute
+  - *m* move line
+  - *h* print last warning
+
+** Line Addressing
+
+  - *,* first through last line
+  - *;* current to last line
+  - *.* current line
+  - *-[N]* from current
+  - *+[N]* from current
+  - */RE/* next
+  - *?RE?* prev

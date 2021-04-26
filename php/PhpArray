@@ -1,0 +1,41 @@
+
+** Array Functions
+
+  - array_search
+  - array_key_exists
+  - array_keys
+  - array_values
+  - array_pop
+  - array_push
+  - array_rand
+  - array_reverse
+  - array_shift
+
+  - count	see to *sizeof*
+  - current	be careful. Fails if elements are empty.
+  - each	is better than *current*
+  - in_array    see too *array_search*
+  - isset       test the current element
+  - list        allows to define multiple variables
+  - key		return the key of the *current* element
+  - next
+  - prev
+
+  - pos		see to *current*
+  - range
+  - reset	resets the internal pointer to the beginnning
+  - shuffle
+  - sizeof
+
+
+
+  - arsort
+  - krsort
+  - asort
+  - ksort
+  - rsort
+  - sort
+
+  - usort	user defined sorting
+  - uksort	user defined key sort
+  - uasort      user defined value sort

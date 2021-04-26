@@ -1,0 +1,10 @@
+
+** Access to dellimpos in Berlin
+
+  - connect to blnuimp1 (149.227.4.61)
+  - su - midba 
+    ssh -l midba localhost
+  - telnet 149.227.37.61 midba
+  - ssh sim1
+  - ssh dellimpos
+  - ssh -l maierh dellimpos

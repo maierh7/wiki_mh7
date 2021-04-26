@@ -1,0 +1,28 @@
+
+** Througput
+
+    - Transfer time > 5 * positioning time
+
+** Transfer Rate
+
+    - Outer edge 22 MB/sec
+    - Inner edge 11 MB/sec
+
+** Seek Time
+
+    -  1 ms to the next track
+    - 10 ms for the entire disk
+
+** Summary to optimize bandwith
+
+    - Stripe data to equalize the workload across disks to eliminate
+      hotspots
+
+    - Stripe data to enable many disks to serve requests
+
+    - Ensure that sequential access occurs in a least 1 MB units
+
+    - Place data to the outer half disk to provide faster transfer
+      rates
+
+    - Place data to the outer half to minimize seek overhead

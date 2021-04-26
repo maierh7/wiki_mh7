@@ -1,0 +1,9 @@
+
+** Recursive Edit
+
+  - *C-r*   recursive edit
+  - *M-C-c* exit recursive eidt
+
+** Showing Keybindings by Command Invocation
+
+  - *suggest-key-bindings* this hides showing of the keybinding

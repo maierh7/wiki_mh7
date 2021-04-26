@@ -1,0 +1,11 @@
+
+** Run
+
+  go run hello.go
+
+** Build
+
+  go build args.go
+
+    This writes the binary file to the current directory as "args".
+  

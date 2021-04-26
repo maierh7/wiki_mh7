@@ -1,0 +1,14 @@
+
+** Stopping the RAC
+
+  - emctl stop dbconsole
+  - srvctl stop database -d orcl
+  - srvctl stop asm      -n linux1
+    ...
+  - srvctl stop nodeapps -n linux1
+    ...
+
+  As root user:
+
+  - $ORA_CRS_HOME/bin/crsctl stop crs
+

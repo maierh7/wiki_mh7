@@ -1,0 +1,24 @@
+
+** OSX Keyboard
+
+  - set Keyboard to Macintosh
+
+** Xmodmap
+
+Setting the keyboard with xmodmap should be done after the X
+initialization is ready. A good solution might be to look for
+"Mode_switch" in the .bashrc. If this doesn't exist then set it.
+
+<example>
+clear mod1
+clear mod2
+clear mod4
+
+keycode 115 = Alt_L
+keycode  64 = Super_L
+keycode 113 = Mode_switch
+
+add mod1 = Alt_L Meta_L
+add mod2 = Mode_switch
+add mod4 = Super_L Hyper_L
+</example>

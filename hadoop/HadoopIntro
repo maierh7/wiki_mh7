@@ -1,0 +1,48 @@
+** Terms
+
+  - Falcon
+    - data life cycle in Hadoop
+  - Flume
+    - For log data
+  - HBase
+    - NoSQL Database on top of HDFS
+  - HDFS
+    - Java-based distributed FS
+  - HDF
+    - Hortonworks Dataflow
+  - HDP
+    - Hortonworks Data Platform
+  - Hive
+    - SQL for Hadoop, Query server with in-memory caching
+  - Kafka
+    - Messaging system
+  - Nifi
+    - Processing system
+  - Phoenix
+    - OLTP RDBMS for Hadoop
+  - Pig
+    - Scripting
+  - Spark
+    - In-memory data processing enginge
+    - SQL, Data processing, machine learning, streaming
+  - Solr
+    - Search engine
+  - Sqoop
+    - ETL between Hadoop and structure datastores
+    - Teradata, Oracle, ...
+  - Storm
+    - Processes streaming data in real time
+  - Yarn
+    - Data Operating System of Hadoop
+    - Scheduling
+  - Zeppelin
+    - Open web-based notebook for interactive data analytics
+
+
+** Other
+
+  - Beats (gather data)
+  - Druid
+  - Logstash (Vorverarbeitung)
+  - Kibana (Visualisierung)
+  - Elasticsearch

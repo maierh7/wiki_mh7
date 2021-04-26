@@ -1,0 +1,37 @@
+
+** Search Word at Current Point
+
+  - *C-s M-e* Edit the current search string
+
+  - *C-s M-y* Yank the current kill. Unfortunately M-y again is not
+    possible.
+
+  - *M-b C-s C-w* This moves first the cursor to the beginning of the
+    word and then starts the search mode and selects the current
+    word. 
+
+** Isearch
+
+  - C-u C-s starts with isearch regexp
+
+  - C-w   yank-word-or-char
+  - C-y   yank rest of line
+  - C-M-w modify yanked search string - backward
+  - C-M-y modify yanked search string - forward
+  - C-j   newline
+  - M-e   edit search
+  - M-c   toggle case sensitive search. Also a upper-case letter turns 
+          on case sensitive search.
+  - M-r   toggle regexp search
+  - M-p   search ring
+  - M-n   search ring
+  - M-s w word search
+
+  - *C-h C-h* help for isearch
+
+** Occur
+
+  - *isearch-occur*
+  - *multi-occur* > 21.3.50. See also igrep and ibuffer.
+
+  - *C-o* Do not leave the occur buffer.

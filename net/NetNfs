@@ -1,0 +1,20 @@
+
+** Redhat
+
+On Redhat the following line in /etc/fstab is necessary:
+
+  nfsd /proc/fs/nfsd nfsd auto,defaults 0 0
+
+Otherwise it will report a permission denied.
+
+** /etc/exports
+
+For OS X clients use 
+
+  /OVS/stage *(ro,insecure)
+
+Use the following command to export file systems
+
+<example>
+exportfs -a
+</example>

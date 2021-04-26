@@ -1,0 +1,34 @@
+*#CDATA
+The data between xml tag will not be treated as markup and entities.
+*#PCDATA
+The data between xml tags are interpreted as parsed character data. 
+*&amp
+ampersand Sign
+*&apos
+single quote sign
+*&gt
+greater Sign
+*&lt
+lower Sign
+*&quot
+double quote sign
+**
+zero or more elements (a*)
+*+
+minimum on element (a+)
+*?
+wero or one element (a?
+*ANY
+Any can contain any combination of parsed data.
+*EMPTY
+Creates an empty element
+*SYSTEM
+The Document type definition will be find external
+*ELEMENT
+An element is formed by an opening and closing tag.
+*sequence
+Contains childrens (a1,a2)
+*|
+either/or (a,(b|c))
+*ATTLIST
+Define a attribute for an element

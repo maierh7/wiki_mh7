@@ -1,0 +1,26 @@
+
+** Linux
+
+<pre>
+<verbatim>
+
+# cd ~/build
+# unzip /net/ate/O2/tgz/java/j2eesdk-1_4-dr-linux-eval-app
+# java -cp package/PackageFormat.jar:. appserv
+
+</verbatim>
+</pre>
+
+** Additional Infos
+
+  - file:///opt/SUNWappserver/docs/about.html
+ 
+** Startup
+
+  - /opt/SUNWappserver/bin/asadmin start-domain <domain>
+
+  - <domain> defaults to domain1.
+
+** Admin
+
+  - http://localhost:4848/asadmin/index.html

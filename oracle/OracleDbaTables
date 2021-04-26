@@ -1,0 +1,241 @@
+
+** Common
+
+  - global_name
+  - database_properties
+  - session_roles
+
+** User
+
+  - = user_ts_quotas =
+
+** DBA
+
+  - = dba_errors = Shows errors in stored procedure.
+  - = dba_dependencies = List the dependencies of objects. This might
+    be useful on analyzing errors.
+
+** synonyms
+
+  - v$undostat
+
+** V-Tables (8.1.7)
+
+  - see also OraclePerfTables
+
+  - = V_$ACCESS =
+  - = V_$ACTIVE_INSTANCES =
+  - = V_$AQ =
+  - = V_$AQ1 =
+  - = V_$ARCHIVE =
+  - = V_$ARCHIVED_LOG =
+  - = V_$ARCHIVE_DEST =
+  - = V_$ARCHIVE_PROCESSES =
+  - = V_$BACKUP =
+  - = V_$BACKUP_ASYNC_IO =
+  - = V_$BACKUP_CORRUPTION =
+  - = V_$BACKUP_DATAFILE =
+  - = V_$BACKUP_DEVICE =
+  - = V_$BACKUP_PIECE =
+  - = V_$BACKUP_REDOLOG =
+  - = V_$BACKUP_SET =
+  - = V_$BACKUP_SYNC_IO =
+  - = V_$BGPROCESS =
+  - = V_$BH =
+  - = V_$BSP =
+  - = V_$BUFFER_POOL =
+  - = V_$BUFFER_POOL_STATISTICS =
+  - = V_$CIRCUIT =
+  - = V_$CLASS_PING =
+  - = V_$COMPATIBILITY =
+  - = V_$COMPATSEG =
+  - = V_$CONTEXT =
+  - = V_$CONTROLFILE =
+  - = V_$CONTROLFILE_RECORD_SECTION =
+  - = V_$COPY_CORRUPTION =
+  - = V_$DATABASE =
+  - = V_$DATAFILE =
+  - = V_$DATAFILE_COPY =
+  - = V_$DATAFILE_HEADER =
+  - = V_$DBFILE =
+  - = V_$DBLINK =
+  - = V_$DB_CACHE_ADVICE =
+  - = V_$DB_OBJECT_CACHE =
+  - = V_$DB_PIPES =
+  - = V_$DELETED_OBJECT =
+  - = V_$DISPATCHER =
+  - = V_$DISPATCHER_RATE =
+  - = V_$DLM_ALL_LOCKS =
+  - = V_$DLM_CONVERT_LOCAL =
+  - = V_$DLM_CONVERT_REMOTE =
+  - = V_$DLM_LATCH =
+  - = V_$DLM_LOCKS =
+  - = V_$DLM_MISC =
+  - = V_$DLM_RESS =
+  - = V_$DLM_TRAFFIC_CONTROLLER =
+  - = V_$ENABLEDPRIVS =
+  - = V_$ENQUEUE_LOCK =
+  - = V_$EVENT_NAME =
+  - = V_$EXECUTION =
+  - = V_$FAST_START_SERVERS =
+  - = V_$FAST_START_TRANSACTIONS =
+  - = V_$FILESTAT =
+  - = V_$FILE_PING =
+  - = V_$FIXED_TABLE =
+  - = V_$FIXED_VIEW_DEFINITION =
+  - = V_$GLOBAL_BLOCKED_LOCKS =
+  - = V_$GLOBAL_TRANSACTION =
+  - = V_$HS_AGENT =
+  - = V_$HS_PARAMETER =
+  - = V_$HS_SESSION =
+  - = V_$INDEXED_FIXED_COLUMN =
+  - = V_$INSTANCE =
+  - = V_$INSTANCE_RECOVERY =
+  - = V_$KCCDI =
+  - = V_$KCCFE =
+  - = V_$LATCH =
+  - = V_$LATCHHOLDER =
+  - = V_$LATCHNAME =
+  - = V_$LATCH_CHILDREN =
+  - = V_$LATCH_MISSES =
+  - = V_$LATCH_PARENT =
+  - = V_$LIBRARYCACHE =
+  - = V_$LICENSE =
+  - = V_$LOADCSTAT =
+  - = V_$LOADISTAT =
+  - = V_$LOADPSTAT =
+  - = V_$LOADTSTAT =
+  - = V_$LOCK =
+  - = V_$LOCKED_OBJECT =
+  - = V_$LOCKS_WITH_COLLISIONS =
+  - = V_$LOCK_ACTIVITY =
+  - = V_$LOCK_ELEMENT =
+  - = V_$LOG =
+  - = V_$LOGFILE =
+  - = V_$LOGHIST =
+  - = V_$LOGMNR_CONTENTS =
+  - = V_$LOGMNR_DICTIONARY =
+  - = V_$LOGMNR_LOGS =
+  - = V_$LOGMNR_PARAMETERS =
+  - = V_$LOG_HISTORY =
+  - = V_$MAX_ACTIVE_SESS_TARGET_MTH =
+  - = V_$MLS_PARAMETERS =
+  - = V_$MTS =
+  - = V_$MYSTAT =
+  - = V_$NLS_PARAMETERS =
+  - = V_$NLS_VALID_VALUES =
+  - = V_$OBJECT_DEPENDENCY =
+  - = V_$OBSOLETE_PARAMETER =
+  - = V_$OFFLINE_RANGE =
+  - = V_$OPEN_CURSOR =
+  - = V_$OPTION =
+  - = V_$PARALLEL_DEGREE_LIMIT_MTH =
+  - = V_$PARAMETER =
+  - = V_$PARAMETER2 =
+  - = V_$PQ_SESSTAT =
+  - = V_$PQ_SLAVE =
+  - = V_$PQ_SYSSTAT =
+  - = V_$PQ_TQSTAT =
+  - = V_$PROCESS =
+  - = V_$PROXY_ARCHIVEDLOG =
+  - = V_$PROXY_DATAFILE =
+  - = V_$PWFILE_USERS =
+  - = V_$PX_PROCESS =
+  - = V_$PX_PROCESS_SYSSTAT =
+  - = V_$PX_SESSION =
+  - = V_$PX_SESSTAT =
+  - = V_$QUEUE =
+  - = V_$RECOVERY_FILE_STATUS =
+  - = V_$RECOVERY_LOG =
+  - = V_$RECOVERY_PROGRESS =
+  - = V_$RECOVERY_STATUS =
+  - = V_$RECOVER_FILE = [1]
+  - = V_$REQDIST =
+  - = V_$RESERVED_WORDS =
+  - = V_$RESOURCE =
+  - = V_$RESOURCE_LIMIT =
+  - = V_$ROLLNAME =
+  - = V_$ROLLSTAT =
+  - = V_$ROWCACHE =
+  - = V_$ROWCACHE_PARENT =
+  - = V_$ROWCACHE_SUBORDINATE =
+  - = V_$RSRC_CONSUMER_GROUP =
+  - = V_$RSRC_CONSUMER_GROUP_CPU_MTH =
+  - = V_$RSRC_PLAN =
+  - = V_$RSRC_PLAN_CPU_MTH =
+  - = V_$SESSION =
+  - = V_$SESSION_CONNECT_INFO =
+  - = V_$SESSION_CURSOR_CACHE =
+  - = V_$SESSION_EVENT =
+  - = V_$SESSION_LONGOPS =
+  - = V_$SESSION_OBJECT_CACHE =
+  - = V_$SESSION_WAIT =
+  - = V_$SESSTAT =
+  - = V_$SESS_IO =
+  - = V_$SGA =
+  - = V_$SGASTAT =
+  - = V_$SHARED_POOL_RESERVED =
+  - = V_$SHARED_SERVER =
+  - = V_$SORT_SEGMENT =
+  - = V_$SORT_USAGE =
+  - = V_$SQL =
+  - = V_$SQLAREA =
+  - = V_$SQLTEXT =
+  - = V_$SQLTEXT_WITH_NEWLINES =
+  - = V_$SQL_BIND_DATA =
+  - = V_$SQL_BIND_METADATA =
+  - = V_$SQL_CURSOR =
+  - = V_$SQL_SHARED_CURSOR =
+  - = V_$SQL_SHARED_MEMORY =
+  - = V_$STATNAME =
+  - = V_$SUBCACHE =
+  - = V_$SYSSTAT =
+  - = V_$SYSTEM_CURSOR_CACHE =
+  - = V_$SYSTEM_EVENT =
+  - = V_$SYSTEM_PARAMETER =
+  - = V_$SYSTEM_PARAMETER2 =
+  - = V_$TABLESPACE =
+  - = V_$TARGETRBA =
+  - = V_$TEMPFILE =
+  - = V_$TEMPORARY_LOBS =
+  - = V_$TEMPSTAT =
+  - = V_$TEMP_EXTENT_MAP =
+  - = V_$TEMP_EXTENT_POOL =
+  - = V_$TEMP_PING =
+  - = V_$TEMP_SPACE_HEADER =
+  - = V_$THREAD =
+  - = V_$TIMER =
+  - = V_$TRANSACTION =
+  - = V_$TRANSACTION_ENQUEUE =
+  - = V_$TYPE_SIZE =
+  - = V_$VERSION =
+  - = V_$WAITSTAT =
+  - = V_$_LOCK =
+
+** V$SQLAREA
+
+  - Put in front of a statement a comment identifier so it's possible
+    to select for this query in the sql_text attribute. See also 
+    'dba.pl vsga'.
+
+  <example>
+    "/* 1234 */ select user from dual"
+  </example>
+
+** Accesible after mount
+
+  - v$backup
+  - v$datafile
+  - v$controlfile
+  - v$log
+  - v$logfile
+
+  - v$sessions
+
+
+** Cache Info
+
+  - v$bh
+
+Footnotes: 
+[1]  v$recover_file lists the files that needs to be recovered.

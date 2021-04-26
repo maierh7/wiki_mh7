@@ -1,0 +1,15 @@
+
+** The Plus Operator
+
+  - Place the '+' sign to the table column that doesn't contain the
+    additional values.
+
+  <pre>
+  <verbatim>
+
+     select ename, b.deptno
+     from emp a, dept b
+     where a.deptno (+) = b.deptno;
+
+  </verbatim>
+  </pre>

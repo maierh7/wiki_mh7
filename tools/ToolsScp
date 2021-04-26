@@ -1,0 +1,6 @@
+
+** Blanks in Filenames
+
+<example>
+$ scp abc\ def.txt ate:"abc\ def.txt"
+</example>

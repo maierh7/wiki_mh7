@@ -1,0 +1,15 @@
+
+** Set Shell Buffer to UTF8
+
+   C-x RET c utf-8
+   M-x shell
+
+** Set Comint Buffer to UTF8
+
+  - coding-system-for-read
+  - coding-system-for-write
+  
+  - process-coding-system-alist
+
+     ("sqlplus" . utf-8)
+     ("sqlplus" (utf-8 . utf-8))

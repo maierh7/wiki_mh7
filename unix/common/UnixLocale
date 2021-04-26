@@ -1,0 +1,5 @@
+
+** Month and Day List
+
+  - locale mon [(locale-info 'months)]
+  - locale day [(locale-info 'days)]

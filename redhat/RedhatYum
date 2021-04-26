@@ -1,0 +1,18 @@
+
+** Config
+
+  ### /etc/yum.conf ###
+
+  proxy=http://charon:80
+  proxy_username=maierha
+  proxy_password=34Scheme
+
+** Commands
+
+  yum list installed
+  
+** Download Failed
+
+Donwload the RPM package and copy it to:
+
+/var/cache/yum/x86_64/7Server/ol7_latest/packages/

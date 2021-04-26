@@ -1,0 +1,34 @@
+
+** Scope of Alter System
+
+  - spfile
+  - memory
+  - both
+
+
+** Disable Triggers
+
+  <example>
+    -- disable system triggers
+    alter system set "_system_trig_enabled"=false;
+    @?/rdbms/admin/catalog
+    @?/rdbms/admin/catproc
+    -- re-enable system triggers
+    alter system set "_system_trig_enabled"=true;
+  </example>
+
+** Show Checkpoints in Alert File
+
+  <example>
+    alter system set log_checkpoints_to_alert = TRUE;
+  </example>
+
+
+** Automatic Logging
+
+  <example>
+    SQL> alter syste archive log start; -- enable automatic archiving
+    SQL> alter syste archive log stop;  -- disable automatic archiving
+    SQL> alter syste archive log all;   -- manual archiving
+  </example>
+

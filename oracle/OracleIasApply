@@ -1,0 +1,21 @@
+
+** Ports
+
+  - http://eos.maierh:7780 (Welcome Page)
+  - http://eos.maierh:1810 (OEM ias_admin/delphi34)
+
+** Status
+
+  - $OH/opmn/bin/opmnctl status
+    - -l
+    - -app
+
+** Validate
+
+  - $OH/opmn/bin/opmnctl validate
+
+
+** Start/Stop
+
+  - $OH/opmn/bin/opmnctl startall|stopall|status
+  - $ORACLE_HOME/bin/emctl start|stop|status iasconsole

@@ -1,0 +1,5 @@
+
+Under Windows to get the unix mode of make you have to set
+
+  **MAKE_MODE**=unix
+

@@ -1,0 +1,70 @@
+
+** Install Trunk
+
+Unpack the emacs-devel.tar.bz2 directory. Either do a "cvs update -kb"
+of the emacs/nt directory or unix2dos tool.
+
+  - mingw32-make
+
+Install mingw32-make to c:/Programme/mingw and add the bin directory
+to the cygwin path.
+
+  - jpeg
+  - png
+  - zlib
+  - tiff
+  - xpm
+  - gif
+
+Install all the packages. Install too the xpm-src package and copy the
+include file simx.h to $ROOT/include/X11.
+
+
+"chmod u+w" of the following files:
+
+  chmod u+w emacs/lisp/ps-print.el
+  chmod u+w emacs/lisp/emacs-lisp/cl-loaddefs.el
+  chmod u+w emacs/lisp/emulation/tpu-edt.el
+
+configure with the following command:
+
+  $ ./configure.bat --cflags -Ic:/Programme/GnuWin32/include
+
+** Keys
+
+  - (w32-register-hot-key [A-tab])
+
+** Ispell
+
+To get the ispell program for Windows see under
+
+  ftp://ftp.gnu.org/gnu/windows/emacs/contrib/ispell.zip 
+
+Other goodies also in the contrib directory.
+
+** TeX
+
+If mictex is used then using the bash is maybe not good. Cygwin now
+distributes too the teTex distribution.
+
+** Fonts
+
+See intlfonts in the nt-faq.
+
+** Geometry
+
+HKEY_CURRENT_USER\Software\GNU\Emacs\Emacs.geometry
+
+** BZR
+
+  - bzr
+  - python-crypto
+  - python-paramiko
+
+** W3M
+
+  - Install in cygwin the w3m program. 
+  - Download the Development version of emacs-w3m
+
+  cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot login
+  cvs -d :pserver:anonymous@cvs.namazu.org:/storage/cvsroot co emacs-w3m

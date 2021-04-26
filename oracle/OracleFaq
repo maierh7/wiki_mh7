@@ -1,0 +1,6 @@
+
+** DB Name
+
+  - select sys_context('userenv', 'db_name') from dual;
+  - select global_name from global_name;
+  - select name from v$database;

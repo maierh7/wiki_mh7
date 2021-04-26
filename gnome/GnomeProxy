@@ -1,0 +1,5 @@
+
+** Proxy Settings
+
+  gsettings list-recursively org.gnome.system.proxy
+

@@ -1,0 +1,11 @@
+
+* Oracle
+
+  - read only       (+)
+  - read uncommitet (-)
+  - read commited   (+)
+  - repeatable read (-)
+  - serializable    (+)
+
+ 
+  

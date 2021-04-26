@@ -1,0 +1,32 @@
+*sales
+*call center
+*partner portal
+*remote
+remote synchronisation
+*finance
+*customer goods
+*high/standard interactivity mode
+*business entity
+activities,accounts,assets,contacts,service requests
+*automation features
+*reports
+*audit trail
+*search
+*iHelp
+*business rules
+*development environment
+*object manager
+*web client
+*web server
+*gateway name server
+registers dynamically the siebel servers
+*server
+*file system
+*database server
+*repository file
+.srf
+*configuration file
+.cfg
+*web templates
+.swt
+*application object manager

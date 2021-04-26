@@ -1,0 +1,5 @@
+
+** List all SAN Devices
+
+  - powermt display dev=all
+  - vxdisk list

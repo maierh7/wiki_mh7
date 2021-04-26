@@ -1,0 +1,7 @@
+
+** SIPS - Scale Fotos
+
+  - orig    4032
+
+  - sips -Z 1344 ...
+  - sips -Z 2016 ...

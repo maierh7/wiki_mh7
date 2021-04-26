@@ -1,0 +1,34 @@
+
+
+  - *ate* starten (ganz links im Server Raum)
+  - *hestia* starten (Desktop)
+  - login *hestia* 
+  - *ate.ses* exceed starten
+  - Cygwin Terminal starten und
+  - **dial-bshg** eingeben und anschlieﬂend **pingtraunreut**
+  - Telnet-Verbindung ausw‰hlen Berlin, Nauen oder Traunreut
+ 
+<example>
+
+$ export DISPLAY=ate:0
+$ xterm &
+
+</example>
+
+  - midba login (Spargel)
+  - *TWO_TASK* environments are under /etc/tnsnames.ora
+
+  Standort || ORACLE_SID || Export Verzeichnis
+  Berlin    | efr         | ~midba/exp/efr
+  Berlin    | nfr         | ~midba/exp/nfr
+  Nauen     | impos1      | /vol4/exp/1
+  Nauen     | impos2      | /vol4/exp/2
+  Traunreut | impos1      | /O3/exp
+
+<example>
+
+$ export ORACLE_SID=[sid]
+$ cd [exp]
+$ dba-imp-midba.sh [exp-gz-file]
+
+</example>

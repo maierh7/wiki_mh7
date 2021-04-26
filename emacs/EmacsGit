@@ -1,0 +1,37 @@
+
+** Emacs from GITHUB
+
+  git clone --depth 1 http://github.com/emacs-mirror/emacs
+  git glone --depth 1 git://git.sv.gnu.org/emacs
+  
+** Emacs Branch
+
+  git clone http://github.com/emacs-mirror/emacs -b emacs-24
+  git clone http://github.com/emacs-mirror/emacs -b emacs-24 <dir>
+
+
+** List Branches
+
+  git branch -a
+  git remote show origing
+
+** List Remote Server
+
+  git remote -v
+  
+** Conifg
+
+  git config --list
+
+** Packages
+
+  autoconf
+  make
+  texinfo
+  gtk3-devel
+  gnutls-devel
+  libXpm-devel
+  libjpeg-turbo-devel
+  giflib-devel
+  libtiff-devel
+  ncurses-devel

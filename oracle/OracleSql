@@ -1,0 +1,71 @@
+
+** Profile
+
+<verbatim><example>
+  create profile test 
+    limit failed_login_attempts 2
+    limit idle_time 60 -- 60 minutes
+    password_lock_time 1/1440
+    ;
+  --
+  alter user fred profile test;
+</example></verbatim>
+
+** Datatypes
+
+  - *long* is not useful.
+  - *varchar* is a synonym to varchar2. *varchar2* is recommended.
+  - see too OracleSqlDataTypes
+
+** Functions
+
+  - sample - returns a fraction of the result.
+
+  - OraclePlsqlBuiltin
+
+** Create Table
+
+  - The *default* keyword does not allow procedure, function, package
+    and type.
+
+  - see OracleSqlDdl
+  - see OracleSqlConstraint
+
+** Subqueries
+
+  - OracleSqlTerms
+  - OracleSqlExamples
+
+** Order By
+
+  - OracleSqlOrderBy
+
+
+** Outer Joins
+
+  - OracleSqlOuterJoin
+
+** Locks
+
+  - OracleSqlLock
+
+** Date and TimeStamp
+
+  - OracleSqlDate
+
+** Temporary Tables
+
+  - OracleSqlTemp
+
+** Transactions
+
+  - OracleSqlTransaction 
+
+** Schema
+
+  - OracleSqlSchema
+
+** Database vs. System
+
+  - alter database changes the database characteristics.
+  - alter system changes the instance characteristics.

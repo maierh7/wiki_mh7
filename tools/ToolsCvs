@@ -1,0 +1,107 @@
+
+** Commands
+
+  - *init*      - ToolsCvs#Admin
+  - *login*     - ToolsCvs#Spec
+  - *co*
+  - *log*       - ToolsCvs#Labels
+  - *diff*      - ToolsCvsDiff
+  - *up/update* - This is the comman do recheck out a specified file.
+
+Here some examples:
+
+<example>
+
+  CVSROOT=:pserver:athene:/home/cvsroot
+  CVSROOT=:pserver:maierh@athene:/home/cvsroot
+  CVSROOT=:pserver:anoncvs@cvs.gnu.org:/cvsroot/emacs
+
+  cvs -d $(CVSROOT) login                  # on anonymous server press return
+  cvs -d $(CVSROOT) co <subdir|file>
+  cvs -d $(CVSROOT) log -h <file>          # prints the version
+  cvs -d $(CVSROOT) -r1.33 -r1.34 <file>   
+  cvs -d $(CVSROOT) -D "10 days ago" <file>
+
+</example>
+
+ToolsCvsSample
+
+#Labels
+** Labels
+
+  Use "cvs log |less" in the root directory.
+
+#Spec
+** Repository Specification
+
+  :method:server:root
+
+  Specify a repository either by *-d* or with the *$CVSROOT*
+  environment. The server of the repository must between two colons
+  (:local:). See also ToolsCvs#Remote
+
+#Admin
+** Admin
+
+  - *cvs init*
+
+  - Unedit a revision "cvs admin -oREV:" This deletes all revisions
+    greater REV.
+
+** Enties and .cvsignore
+
+  Adding a file afterwards to the .cvsignore file needs too a
+  deletion of the file from the *CVS/Entries* file.
+
+
+** Tags
+
+  <example>
+    cvs tag -c <tag> root-directory
+  </example>
+
+  - The -c flag verifies that no modified files are checked out.
+
+  - The "rtag" command operates directly on the repository.
+
+#Remote
+** Remote access
+
+  - See the */etc/inetd.conf* file for the root directory.
+  - Make sure that the inetd service is started.
+
+** Other Tools
+
+  - CVSCO
+          cvsco is a "cruel checkout". In other words, it removes
+          results of compilation and discards local changes.  It
+          deletes all the files except listed unmodified ones and
+          checks out everything which seems to be missing.  Please
+          note, that cvsco doesn't update files which haven't been
+          modified locally. It only reloads missing files and files
+          which it erases.
+
+  - CVSDISCARD
+          cvsdiscard is "discard my changes". In other words, it
+          discards local changes but keeps results of compilation. It
+          works like cvsco, but it only deletes files which are likely
+          to cause merge conflicts.
+
+  - CVSPURGE
+          cvspurge leaves all files known to CVS, but removes the
+          rest.  Unlike cvsco, it doesn't remove local changes.  It is
+          useful to test local changes in the otherwise clean source
+          tree.
+
+  - CVSTRIM
+          cvstrim removes files and directories unknown to CVS. Files
+          listed in .cvsignore are not removed. The idea is to remove
+          the files that are not resulted from the normal build process
+          - backups, coredumps etc.  cvstrim relies on .cvsignore files
+          being correct. Note that the backups for modified files are
+          removed.
+
+** See also
+
+  - ToolsCvsSample
+  - EmacsCvs

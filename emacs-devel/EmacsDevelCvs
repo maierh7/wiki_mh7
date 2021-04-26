@@ -1,0 +1,55 @@
+
+** The Link to the CVS repository
+
+Here is the describtion how to acces the cvs repository.
+
+  http://savannah.gnu.org/cvs/?group_id=40
+
+** Notes about packages
+
+The w3 and the url packages currently not in the emacs distribution.
+To get these packages acces /cvsroot/w3 and /cvsroot/url. gnus is in
+the emacs distribution.
+
+** Access to the CVS repository
+
+Eli wrote the following articel in gnu.emacs.help about updating an
+existing sub project of emacs
+
+<example>
+From: Eli Zaretskii <eliz@is.elta.co.il>
+Subject: Re: Searching for Euro-Sign
+Newsgroups: gnu.emacs.help
+Date: Fri, 04 Jan 2002 19:10:00 +0200
+
+Raffael Herzog wrote:
+> 
+> > cvs -d :pserver:anoncvs@cvs.gnu.org:/cvsroot/emacs login
+> > Empty password
+> > cvs -d :pserver:anoncvs@cvs.gnu.org:/cvsroot/emacs checkout emacs/lisp/gnus
+> 
+> OK, this will give me the whole CVS-Gnus. How usable is this one now?
+> My current Gnus is basically working great except this one issue, so
+> it would be great if I could patch this only.
+
+It's very simple to get the diffs yourself:
+
+cvs -d :pserver:anoncvs@cvs.gnu.org:/cvsroot/emacs login
+[hit Enter when it asks for a password]
+cvs -d :pserver:anoncvs@cvs.gnu.org:/cvsroot/emacs co
+emacs/lisp/gnus/ChangeLog
+
+Now look in gnus/ChangeLog, and you will see that the latest changes are in
+mm-util.el and nntp.el.  The next step is this:
+
+cvs -d :pserver:anoncvs@cvs.gnu.org:/cvsroot/emacs log -h emacs/lisp/nntp.el
+
+This will show what is the latest version of nntp.el.  Let's say it's
+1.234.  Now (put the -d :pserver etc. stuff instead of the ellipsis):
+
+cvs ... diff -u -r1.233 -r1.234 emacs/lisp/nntp.el > nntp.dif
+patch --binary -p0 -b < nntp.dif
+
+And similarly for mm-util.el.
+
+</example>

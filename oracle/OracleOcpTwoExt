@@ -1,0 +1,45 @@
+
+** ONS
+
+  - Read again the concepts and the User Guide
+  - Layer definitions
+  - Host / Local
+
+** DBA
+
+  - Recover
+  - Standby database. log_archive_dest_n
+  - Checkpoints
+
+** Recover
+
+  - FAST_START_MTTR_TARGET
+  - Recover system tablespace
+  - alter database rename ...
+
+** EXP/IMP
+
+  - Read complete
+
+** SQL Loader
+
+  - Read complete
+
+  - Tests with when keyword
+  - More elaborate tests
+  - Direct-Load-Path
+
+** RMAN
+
+  - Read Complete
+
+  - Server session
+  - Channel allocation
+  - Resync
+  - Catalog
+  - Verify
+  - Import Backups
+  - Scripts
+  - set newname ...
+  - set until ...
+  - switch

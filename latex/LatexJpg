@@ -1,0 +1,8 @@
+
+** How to embbed JPEGS
+
+  - Scan the picture with JPEG
+  - Convert the Picture with GIMP to EPS
+  - Use "epstopdf" or convert (its part auf the latex-System)
+
+

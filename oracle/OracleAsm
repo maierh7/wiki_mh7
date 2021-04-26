@@ -1,0 +1,50 @@
+
+** permissions
+
+  - the oracle user should by part of the "disk" group
+
+** partition infs
+
+  - parted /dev/hdb
+  - *parted* > print
+
+  - cat /proc/partitions
+
+** partition a disk
+
+  - parted /dev/hdb
+  - *parted* > mklabel bsd
+    *parted* > mkpart <start> <end>
+
+  - types: bsd, gpt
+
+** tools
+
+  - asm_test.pl
+  - ORACLE_SID=+ASM asm_test.pl
+  - ts-size.pl
+
+** oracle tools
+
+  - ORACLE_SID=+ASM asmcmd
+
+** asmcmd
+
+   - *ASMCD* > help
+
+   - *ASMCD* > lsct
+     Lists all clients.
+
+   - *ASMCD* > lsdg
+     Lists all diskgroups.
+
+** rename a asm file
+
+  - RAMN> copy datafile '<src>' to '<dest>';
+  - SQL> alter database rename file '<src>' to '<dest>';
+
+
+  - Note: the datafile needs to be in the offline mode. This is only
+    possible if the database is in archive log mode. Otherwise the
+    database should be only mounted.
+

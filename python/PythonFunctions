@@ -1,0 +1,15 @@
+
+** str
+
+  - creates a string object
+
+** repr
+
+  - creates a representation that is readable by the interpreter
+
+** dir
+
+  - lists all the module names
+
+  >>> import sys
+  >>> dir (sys)

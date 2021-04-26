@@ -1,0 +1,21 @@
+
+** Performance Infos
+
+  - = v$system_event = OraclePerfTables#Sysevent
+  - = v$session_event = OraclePerfTables#Sessevent
+  - = v$session_wait =
+  - = v$sysstat =
+
+#Sysevent
+** System Event
+
+#Sessevent
+** Session Event
+
+** index_stats
+
+  - analyze index mt15_prime validate structure
+
+  - Adds a row to the table index_stats. If the attribute del_lf_rows
+    is greater 15 % then the index needs to be rebuild.
+

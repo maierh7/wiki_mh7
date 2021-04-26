@@ -1,0 +1,10 @@
+
+** NULLS FIRST
+
+  - Prints the null values first.
+
+  <example>
+    SQL> select * from abc order by a2 nulls first;
+  </example>
+
+-- Back to OracleSql

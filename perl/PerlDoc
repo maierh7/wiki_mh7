@@ -1,0 +1,18 @@
+
+** Postscript output
+
+  - *perldoc.sh* in ~/local/sh
+
+** Invocation
+
+  - *perldoc* HTML::Element
+
+In this case HTML is a subdirectory in the PERLLIB path and
+Element is a perl mode file Element.ps.
+
+** Emacs
+
+  - *perldoc* -t HTML::Element
+
+Use this shell command to get a correct file output for an emacs
+buffer.

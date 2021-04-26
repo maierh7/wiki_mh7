@@ -1,0 +1,13 @@
+
+** Catalog
+
+<pre>
+<verbatim>
+
+RMAN> connect catalog rman@test;
+RMAN> create catalog;
+RMAN> register database;
+
+</verbatim>
+</pre>
+

@@ -1,0 +1,48 @@
+
+** Methods
+
+  - capitalize ()
+  - casefold   ()	# -i
+  - center
+  - count      (sub, start, end)
+  - encode
+  - endswith   (suffix, start, end)
+  - expandtabs (tabsize)
+  - find       (sub, start, end)
+  - format (*args, **kwargs)
+  - format_map (mapping)
+  - index      (sub, start, end)
+  - isalnum    ()
+  - isalpha    ()
+  - isascii    ()
+  - isdecimal  ()
+  - isdigit    ()
+  - isidentifier ()
+  - islower    ()
+  - isnumeric  ()
+  - isprintable ()
+  - isspace    ()
+  - istitle    ()
+  - isupper    ()
+  - join       (iterable)
+  - ljust      (with, fillchar)
+  - lower      ()
+  - lstrip     (chars)
+  - maketrans
+  - partition
+  - replace    (old, new, count)
+  - rfind
+  - rindex
+  - rjust
+  - rpartition
+  - rsplit
+  - rstrip
+  - split
+  - splitlines
+  - startswith
+  - strip
+  - swapcase   ()
+  - title      ()
+  - translate  (table)
+  - upper      ()
+  - zfill      (width)

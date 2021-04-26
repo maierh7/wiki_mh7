@@ -1,0 +1,9 @@
+
+** Connect
+
+  mysql -h host -u user -ppwd database
+
+** Example 
+
+  mysql -h FFM04REPCG01P -u report -preport cleaneddata
+  mysql --host=FFM04REPCG01P --user=report --password=report cleaneddata

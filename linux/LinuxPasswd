@@ -1,0 +1,18 @@
+
+** Lost Passwd
+
+  - boot with 'rw init=/bin/bash'
+  - # Note: this will start with the american keyboard. So only use
+    # the standard characters.
+  - change the passwd
+  - sync the harddrive
+
+** /etc/shadow
+
+  <pre>
+  <verbatim>
+       +--- pwd -----+
+       |             |
+   root:aOce2ECEmmeuk:12228:0:10000::::
+  </verbatim>
+  </pre>

@@ -1,0 +1,32 @@
+*all
+The child elements can appear in any order but they must exist
+*any
+If any appears in the type definition it can follow any other type not
+specific to the schema
+*anyAttribute
+If anyAttribute appears in the type definition it can follow any
+Attribute that is not specific to the schema
+*base
+Specifies the type
+*block
+Do not allow substitution
+*choice
+Specifies that either one child element or another can occur
+*complexType
+A complex type should be used if the type is not simple. This is true
+too for empty elements
+*mixed
+The mixed attribute in the complexType indicates that in the text can
+appear other child elements
+*restriction
+Is used in simple type and simple content. Mostly it follows the base
+keyword that specifies the type
+*sequence
+Specifies that the child elements must appear in a specific order
+*simpleContent
+Contains extensions or restriction on a text only complex type or an
+simple type as content an contains no elements
+*simpleType
+Defines a simple type and specifies the constraints
+*substitutionGroup
+Allows another name for the element

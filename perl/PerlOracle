@@ -1,0 +1,4 @@
+
+** 8.0.5
+
+  - For Oracle 8.0.5 use 'perl Makefile.PL -8'. This uses OCI 7.

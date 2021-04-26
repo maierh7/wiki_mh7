@@ -1,0 +1,22 @@
+
+** Special Modes
+
+  - **enriched-mode** allows to save the text proberties.
+  - **hi-lock-mode** allows to highlight regexps in the current buffer.
+  - **highline-local-mode** buffer local mode to highline the current line.
+  - **hl-line-mode** buffer local mode to highline the current line.
+  - **refill-mode** new paragraph wrapping mode.
+  - **vbp-mode**
+  - **visual-basic-mode**
+
+** Reverting back to a major mode
+
+  - *normal-mode*
+
+** Testing Modes
+
+  - *re-builder* allows building of regular expressions
+
+** Links
+
+  - EmacsModesLinks

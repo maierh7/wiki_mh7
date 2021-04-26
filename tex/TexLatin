@@ -1,0 +1,4 @@
+
+** Enable Latin-1 in pure Tex
+
+  \usepackage[latin1]{inputenc}

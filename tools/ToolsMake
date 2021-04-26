@@ -1,0 +1,19 @@
+
+** Echoing
+
+Use the '@' to suppress the output of the command.
+
+info:
+	@egrep '^[a-z0-9-]+:' Makefile
+
+** Multiple Targets
+
+Multiple targets need also an *all* target to create all of the multiple
+targets. Otherwise only the first target will be created.
+
+
+<example>
+files=abc.o bde.o
+all: $(files)
+$(files)
+</example>

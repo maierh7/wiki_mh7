@@ -1,0 +1,34 @@
+
+
+** Nowait
+
+  <example>
+    select ... for update nowait
+  </example>
+
+** Monitor  Locks
+
+  <example>
+    SQL> @?/rdbms/admin/utllockt.sql
+  </example>
+
+** Dictionary Tables
+
+  - = DBA_LOCK_INTERNAL =
+  - = DBA_LOCKS = 
+  - = DBA_DML_LOCKS =
+  - = DBA_DDL_LOCKS =
+  - = DBA_BLOCKERS = - holding locks
+  - = DBA_WAITERS =  - waiting for locks
+
+** Session
+
+  - http://www.jlcomp.demon.co.uk/faq/locked_rows.html
+  - http://www.jlcomp.demon.co.uk/faq/row_locker.html
+
+  - The column 'lockwait' in v$session is not null if the session is
+    waiting for a lock.
+
+  - With the lockwait sid you can look further into v$lock, v$tables,
+    and v$sql.
+

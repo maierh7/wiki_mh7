@@ -1,0 +1,137 @@
+
+** Sql Terms
+
+See OracleSqlTerms.
+
+** Oracle Terms
+
+- *Cardinality*. Number of distinct values in a particular column.
+
+- *Selectivity*. The relationship between cardinality and rows.
+
+	selectivity = cardinality / number of rows
+
+- *Alter Database*. Is true for ever, because written to the control
+  files. OracleSqlDatabase.
+
+- *Alter System*. Is only true for the lifetime of the instance. The
+  introduction of the spfile (9i) makes the changes too permanent.
+  OracleSqlSystem.
+
+- *Autoalogated Extents*. OracleTerms#LMT.
+
+- *Automatic Segment Space Management*. H.J.R.: ASSM has signifcant
+  overheads.
+
+_ *Block Size*. Should be the same as the filesystem. Multiple Block
+  Size feature should not be used.
+
+- *Chained Rows*.  OracleTools#Chained.
+
+- *Consistent Backup*. Backup of the database with a clean shutdown.
+
+#Control.
+- *Control File*. Stores the pyhsical structure of a database. Designed
+  for multiplexing. See OracleTermsFiles.
+
+- *Data Guard*. OracleTerms#Standby.
+
+#Denormalization
+- *Denormalization*. It is normally not used in a OLTP system. It
+  might be make sense in a Data Ware House system.
+
+- *Disaster Recovery*.
+
+- *Enqueue*. OracleTermsLock.
+
+- *Extent*. Initial Extent and Incremental Extent.
+
+- *Failsafe*. See metalink for the documentation.
+
+- *Free Space Management*. Should be done automatically.
+
+- *Inconsistent Backup*. Backup of the database files without a clean
+  shutdown of the database. Note: a 'shutdown abort' is also a
+  inconsistent backup. Afterward it requires a recovery.
+
+- *Inconsistent Closed Backup*. After a system crash or after a
+  'shutdown abort' if *archivelog* is on. In noarchivelog mode the SCN
+  differs and so recovery may not be valid.
+
+- *Inline View Subquery*. See OracleSqlTerms.
+
+- *Instance*. SGA + Oracle processes.
+
+- *Latch*. OracleTermLock
+
+#LMT
+- *Locally Managed Tables*. Types are uniform and autoallogate
+  (system-managed) extents.
+
+#Logical
+- *Logical Structures*. Schemas, Blocks, Extents, Segments, Tablespaces.
+  See Physical Structure (OracleTerms#Physical).
+
+- *Lock*. OracleTermLock
+
+- *Materialized View*.
+
+- *Normalization*. OracleTerms#Denormalization.
+
+- *Performance*. OraclePerformance
+
+#Physical
+- *Physical Structure*. Datafiles, control files, redo log files. See
+  OracleTerms#Logical, OracleTerms#Control, OracleTerms#Redo.
+
+- *Quiesced State*. Only a DBA can work on the data base.
+
+#Redo
+- *Redo Log Files*. Redo log files are only used for recovery. Designed
+  for multiplexing.
+
+#RBS
+- *Rollback Segment*. OracleTerms#UNDO. In 8i Best would be one
+  tablespace per RBS.
+
+- *Scalar Subquery*. See OracleSqlTerms.
+
+- *Segment*. A Segment can span _more_ than one datafile. An extent of a
+  segment is always assigned to one datafile. A segment resides always
+  in one tablespace.
+
+  1. Data Segment
+  2. Index Segment
+  3. Temporary Segment. Created by 'temporary tables', 'create index'
+     command and by the following sql statements: 'order by',
+     'distinct', 'group by', 'intersect', 'union', 'minus'.
+
+- *Shutdown*. Close, Unmount, Shutdown.
+
+#Standby.
+- *Standby Database*. A duplicate copy of a primary database (only read
+  mode).
+
+- *Startup*. Start, Mount, Open.
+
+- *System Global Area*. It's a shared memory region. It contains data
+  buffers, redo log buffers and the shared pool.
+
+- *Tablespace Contents*.
+
+  1. Permanent
+  2. Temporary
+  3. Undo
+
+- *Tablespace Allocation Type*.
+
+  1. System
+  2. Uniform
+
+- *Transaction Control Statement*. See OracleSqlTerms.
+
+#UNDO
+- *Undo Tablespace*. OracleTerms#RBS. In 9iR2 one Undo Tablespace
+  should be enough.
+
+- *Uniform Extents*. OracleTerms#LMT.

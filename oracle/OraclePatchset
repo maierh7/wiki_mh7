@@ -1,0 +1,42 @@
+
+* How to find patchsets
+
+Below the number of the current patchsets. The number is the same for
+all operating systems.
+
+* 12.1.0.2
+
+  - 17694377
+
+  1 Databaes, Rac, Deinstall
+  2
+  3 Grid, ASM, Clusterware, Restart
+  4
+  5 Client
+  6 Gateways
+  7 Examples
+  8 GSM
+
+* 11.2.0.4
+
+  - 13390677
+
+* 11.2.0.3
+
+  - 10404530
+
+* 11.2.0.2
+
+  - 10098816
+
+* 10.2.0.3
+
+  - 5337014
+
+* 10.2.0.2
+
+  - 4547817
+
+** OPatch
+
+  - 6880880

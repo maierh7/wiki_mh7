@@ -1,0 +1,13 @@
+
+** General
+
+  - Oracle Indices are always balanced and this means to create them
+    only if it's necessary because updating of an index is almost
+    expensive.
+
+** Index Usage
+
+  - If you're running 9.x, you can issue the following: = alter index
+    index_name monitoring usage = then query v$object_usage. Another
+    possibility would be to look at v$segment_statistics.
+

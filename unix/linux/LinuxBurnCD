@@ -1,0 +1,20 @@
+
+** How to Burn a CD in the maierh Domain
+
+  - *Emacs/mp3-list* mp3-list-find-random-cd, f8. This loads the
+    randomized find CD to the winamp mp3 player.
+
+  - *cygwin*. make wav-clean. This make sure that no old data in the
+    temporary region.
+
+  - *winamp/C-p* select the out_disk.dll plugin.
+
+  - *cygwin*. make wav-harmonnia. This copies all the files to the
+    harmonia location. After copying the wav files the hestia location
+    can be cleaned with 'make wav-clean'.
+
+** Burn ISO Image
+
+<example>
+cdrecord -isosize -eject speed=12 dev=1,0,0 -data <file>
+</example>

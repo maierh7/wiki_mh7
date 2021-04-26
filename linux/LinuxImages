@@ -1,0 +1,12 @@
+
+** FBI Image Viewer
+
+  - *fbi* Frame Buffer Imageviewer
+
+    - a auto resolution
+    - u ramdomize
+    - t time in seconds to continue
+
+<example>
+  maierh $ fbi -a -t 5 *
+</example>

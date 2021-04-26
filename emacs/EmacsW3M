@@ -1,0 +1,7 @@
+** Keys
+
+  - g prompt for a url
+  - G prompt for a url in a new session
+  - c display the current opened url
+  - u display the url under point and put it in the kill-ring
+

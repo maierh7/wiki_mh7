@@ -1,0 +1,4 @@
+
+** Modify User
+
+   SQL> modify user maierha as password = abcde

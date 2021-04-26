@@ -1,0 +1,32 @@
+
+** Time
+
+*** Create a Time Object
+
+  - *encode-time* Creates the internal time representation.
+  - *decode-time* Converts the internal time representation to a list
+    with time elements.
+  - *parse-time-string* Takes a **date** string and returns a list with all
+    the elemnts.
+
+  - *time-to-seconds* Converts the internal representation to seconds.
+  - *second-to-time* Converts seconds to a time representation.
+
+<example>
+(parse-time-string "Die Feb 26 08:54:55 CET 2002")
+-> (55 54 8 26 2 2002 nil nil nil)
+(time-to-seconds (encode-time 0 0 0 25 2 2002))
+</example>
+
+*** Output Time
+
+  - *format-time-string*
+  - *format-seconds*
+
+
+** Date
+
+  - *calendar-absolute-from-gregorian* returns the gregorian number from
+    date.
+  - *calendar-gregorian-from-absolute* returns the date from gregorian 
+    number.

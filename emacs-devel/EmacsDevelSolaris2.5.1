@@ -1,0 +1,10 @@
+ 
+Under Solaris 2.5.1 emacs configured with --without-x the compile flag
+
+  *HAVE_VFORK*
+
+must be defined. Otherwise emacs crashes in the shell conext then the
+user presses C-g. The flag can be set in the files
+
+  - *src/config.h* or
+  - *src/s/sol2-5.h*

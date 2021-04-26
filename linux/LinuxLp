@@ -1,0 +1,16 @@
+
+** Printcap
+
+  - *lp* device or pipe (|cat > /tmp/test.ps). If lp is _empty_ then the
+    job is sent to rm/rp. If rm/rp not exists and lp is _empty_ then the
+    job is not processed.
+  - *cm* comment
+  - *sd* spool directory
+  - *lf* error and log file
+  - *af* accounting file
+  - *ar* write remote accounting file if *af*.
+  - *la* write local accounting file if *af*.
+  - *if* input filter
+  - *tr* trailer string if queue empty
+  - *cl*
+  - *sh* suppress header and banners

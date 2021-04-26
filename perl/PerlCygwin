@@ -1,0 +1,12 @@
+
+** HTML Parse
+
+HTML Parse needs some shared objects so this package needs to be
+installed over the common way. The other packages are installed to
+local/lib. 
+
+** binmode
+
+Do get the same result under cygwin as under linux use the binmode
+function to open the files in binary mode.
+

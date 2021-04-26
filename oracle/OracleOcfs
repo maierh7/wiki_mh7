@@ -1,0 +1,46 @@
+
+** RPMs
+
+  - ocfs2-2.6.9-42.EL-1.2.5-6.i686.rpm 
+  - ocfs2console-1.2.4-1.i386.rpm 
+  - ocfs2-tools-1.2.4-1.i386.rpm
+
+** O2CB (Clusterware)
+
+  /etc/init.d/o2cb status
+  /etc/init.d/o2cb load
+  /etc/init.d/o2cb online  ocfs2
+  /etc/init.d/o2cb offline ocfs2
+  /etc/init.d/o2cb unload
+
+  /etc/init.d/o2cb configure
+
+** Files
+
+  /etc/ocfs2/cluster.conf
+
+<example>
+node:
+        ip_port = 7777
+        ip_address = 192.168.1.21
+        number = 0
+        name = ovs-t1
+        cluster = ocfs2
+
+cluster:
+        node_count = 1
+        name = ocfs2
+</example>
+
+** Configure
+
+  ocfs2console
+
+** Create
+
+  mkfs.ocfs2 -N 2 -L <label> /dev/...
+
+** Mount
+
+  mount -t ocfs2 -o datavolume /dev/... <mnt-point>
+

@@ -1,0 +1,29 @@
+
+** Viewer
+
+  - vncviewer athene:0
+
+** Server
+
+- x0vncserver -PasswordFile=/root/.vnc/passwd
+
+- /usr/sbin/runuser -l oracle   -c "/usr/bin/vncserver :1 -geometry 1280x1024"
+- /usr/sbin/runuser -l maierha  -c "/usr/bin/vncserver :2 -geometry 1280x1024"
+- /usr/sbin/runuser -l root     -c "/usr/bin/vncserver :3 -geometry 1280x1024"
+- /usr/sbin/runuser -l postelt  -c "/usr/bin/vncserver :4 -geometry 1280x1024"
+- /usr/sbin/runuser -l schoettl -c "/usr/bin/vncserver :5 -geometry 1280x1024"
+
+** Packages
+
+  - tigervnc.x86_64
+  - tigervnc-server.x86_64
+
+** Firewall
+
+firewall-cmd --zone=public --add-port=5900/tcp
+firewall-cmd --zone=public --add-port=5901/tcp
+firewall-cmd --zone=public --add-port=5902/tcp
+firewall-cmd --zone=public --add-port=5903/tcp
+firewall-cmd --zone=public --add-port=5904/tcp
+firewall-cmd --zone=public --add-port=5905/tcp
+

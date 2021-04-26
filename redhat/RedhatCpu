@@ -1,0 +1,8 @@
+
+** mpstat
+
+  mpstat 2 1
+
+** top
+
+  top -bn1

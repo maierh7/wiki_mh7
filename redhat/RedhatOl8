@@ -1,0 +1,56 @@
+
+** Config
+
+- Workstation
+
+** Setup
+
+PROXY in /etc/dnf/dnf.conf
+
+ntp -> chrony
+
+** DNF
+
+xterm
+emacs
+gcc
+g++
+make
+ncurses-devel
+openssh-askpass
+gnome-tweaks
+dnf-utils
+tigervnc
+
+** Install
+
+texinfo
+cvs
+
+* SCP
+
+.ssh/id_rsa
+.ssh/id_rsa.pub
+.gitconfig
+
+** Gnome-Extensions
+
+Applications menu
+Desktop icons
+Horizontal workspaces
+Window list
+
+** Emacs
+
+autoconf
+gtk3-devel
+libXpm-devel
+libjpeg-turbo-devel
+giflib-devel (not available)
+libtiff-devel
+gnutls-devel
+
+** Instantclient
+
+libnsl
+

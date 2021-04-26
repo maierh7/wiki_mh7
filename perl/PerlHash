@@ -1,0 +1,7 @@
+
+** Populating
+
+    <example>
+      my(%abc);
+      $abc{$_}++ for @var;
+    </example>

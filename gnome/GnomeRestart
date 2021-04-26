@@ -1,0 +1,6 @@
+
+** Restart Gnome from Comandline
+
+  # init 3; init 5
+  or
+  # reboot # (Xwayland might cause problems)

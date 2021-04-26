@@ -1,0 +1,40 @@
+
+** Pograms
+
+  - *identify* displays information about images.
+
+  - *import* imports a portion of the screen or a selected window to the
+    specified format.
+
+  - *mogrify* transforms an image. See below a example.
+
+  - *convert* converts to another format
+
+** convert
+
+  convert <input> -resize 1024x768 <output>
+
+** mogrify
+
+<example>
+
+
+# 1536/1024 = 640/426
+
+$ mogrify -geometry 640x426! <jpeg>
+
+</example>
+
+
+#hardcopy
+** import
+
+The import command allows capturing a window or a portion of the
+screen. The specified file extension controls the output of import.
+
+<example>
+
+$ import emacs.png
+$ import -window root screen.png
+
+</example>

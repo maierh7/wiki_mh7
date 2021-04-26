@@ -1,0 +1,20 @@
+
+** alter session
+
+  <example>
+    alter session set current_schema = ops$maierh;
+  </example>
+
+  This needs additional grants to the objects. So the following may
+  be work:
+
+  <example>
+    sqlplus 'ops$maierh'
+    SQL> grant ... to public;
+    SQL> exit
+    sqlplus scott/tiger
+    SQL> alter session set current_schema = ops$maierh;
+    ...
+  </example>
+
+

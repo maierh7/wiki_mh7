@@ -1,0 +1,33 @@
+
+** Modes
+
+  - *passive*
+
+** Server
+
+  - proftpd
+  - vsftpd
+
+** VSFTP
+
+  - Needs a inetd.conf entry and a ftp user.
+
+  - /etc/inetd.conf
+
+  <example>
+    ftp stream tcp nowait root /usr/sbin/tcpd /usr/sbin/vsftpd
+  </example>
+  
+
+  - /etc/vsftpd.conf
+
+  <example>
+    # Allow anonymous FTP?
+    anonymous_enable=YES
+    #
+    # Uncomment this to allow local users to log in.
+    local_enable=YES
+    #
+    # Uncomment this to enable any form of FTP write command.
+    write_enable=YES
+  </example>

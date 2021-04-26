@@ -1,0 +1,4 @@
+
+** mount 
+
+  - mount -t usbdevfs none /proc/bus/usb

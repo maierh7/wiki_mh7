@@ -1,0 +1,5 @@
+
+** How to get Port Number
+
+  - list the processes in the task manager
+  - afterward look for the ports with the command 'netstat -ano'

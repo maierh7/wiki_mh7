@@ -1,0 +1,3 @@
+
+Unix knows *real user* and a *effective user*. The real user is the
+user who is connected to the system.

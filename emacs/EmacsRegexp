@@ -1,0 +1,47 @@
+
+
+** query replace regexp
+
+  - *\&* returns the previous entire match. For example to expand a
+    list of expression this can be used as follows: abc\\|bce to set
+    abcXXX or bceXXX wiht \&XXX.
+
+** Regex Builder
+
+  - rx
+  - sregex
+  - re-builder
+  - regexp-opt
+
+** Examples
+
+<pre><verbatim>
+
+  (sregexq (group (or "Go" "Run"))
+                  ", Spot, "
+                  (backref 1))
+
+</verbatim></pre>
+
+
+** Performance
+
+Stefan Monnier:
+
+Not really.  What you need to know is that Emacs's regexp engine is
+based on backtracking, so things like .*\\(.*\\).* is insanely
+inefficient and will make you think Emacs is frozen.
+
+Generally, you'll prefer to use regexps that don't require backtracking.
+E.g. [^(\n]*( works much better than .*( since when encountering an open
+parenthesis, the matcher will know for sure that it has to leave the *
+loop, rather than having to try both cases in sequence.
+
+** Shy Groups
+
+Stefan Monnier:
+
+The \(..\) subgroups are cheap, so I wouldn't worry about them
+w.r.t performance.  If you really care about their performance impact,
+you can use the non-numbered (aka "shy") groups which are written
+\(?:...\), but I doubt you'd be able to measure a difference.

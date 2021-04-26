@@ -1,0 +1,4 @@
+
+** Vendor of the X-Server
+
+  xdpyinfo | grep 'vendor string'

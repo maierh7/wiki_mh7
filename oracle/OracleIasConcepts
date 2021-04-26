@@ -1,0 +1,43 @@
+
+** Development
+
+  - J2EE
+  - Web Services
+  - Enterprise Integration
+  - Personalization
+  - Wireless
+  - Portal
+
+** Deployment
+
+  - Performance
+  - Caching
+  - Availability
+  - System Management
+  - User and Security Management
+  - Scalability
+
+** Tiers
+
+  - Client Tier
+  - Web Tier
+  - Business Logic Tier
+  - Database Tier
+
+** J2EE Application Components
+
+  - Servlets
+  - JSP
+  - Enterprise Beans
+
+** Container Types
+
+  - EJB Container
+  - Web Container
+
+** Underlying Technologies
+
+  - DCM  - Distributed Configuration management)
+  - OPMN - Oracle Process Manager and Notification Server
+  - OMA  - Oracle Management Agent
+  - DMS  - Dynamic Monitoring Service

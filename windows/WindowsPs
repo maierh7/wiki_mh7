@@ -1,0 +1,10 @@
+
+* PsTools
+
+  http://technet.microsoft.com/en-us/sysinternals/bb896649.aspx
+
+** Example
+
+  - pslist -m emacs
+
+  - tasklist /fi "imagename eq emacs*" (XP Pro)

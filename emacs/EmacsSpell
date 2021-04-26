@@ -1,0 +1,23 @@
+
+** Latin-9 under GNU/Linux
+
+  - local-fontpath.sh
+  - M-x *l9* (de DE@euro)
+  - M-x *iln9* neue Deutsche Sprache
+  - M-x *ild9* alte Deutsche Sprache
+
+** Latin-1 under GNU/Linux
+
+  - M-x *l1* (de DE)
+  - M-x *iln* neue Deutsche Sprache
+  - M-x *ild* alte Deutsche Sprache
+
+** ispell-complete-word
+
+  - makes completions from the file ispell-complete-word-dict.
+
+** flyspell
+
+  - *flyspell-prog-mode* use this mode in programming languages. It's
+    enabled by *c-mode, emacs-lisp-mode, cperl-mode and sh-mode*.
+

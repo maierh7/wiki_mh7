@@ -1,0 +1,10 @@
+
+** Password
+
+  - lppasswd -a <user>
+
+** Admin
+
+  - http://localhost:631
+
+  - lpadmin -p <printer> -E ...

@@ -1,0 +1,11 @@
+
+** Keys
+
+  - *C-c @ C-h* hide block
+  - *C-c @ C-s* show block
+
+  - *C-c @ C-M-h* hide all
+  - *C-c @ C-M-s* show all
+
+  - *C-c @ C-c* toggle hs
+  - *S-Mouse-2* toggle hs

@@ -1,0 +1,11 @@
+
+** Config
+
+  - ./configure.gnu -Dusethreads
+
+  - Remove the source tree. Otherwise Configure still use the
+    previous definition.
+
+** Status
+
+  - perl -V

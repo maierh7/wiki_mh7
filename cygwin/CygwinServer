@@ -1,0 +1,14 @@
+
+** cygrunsrv
+
+  - Installs a *server* under cygwin and allows starting with W2K.
+
+<pre>
+<verbatim>
+
+$ cygrunsrv -I sshd -p /usr/sbin/sshd.exe
+$ cygrunsrv -S sshd
+$ cygrunsrv -R sshd
+
+</verbatim>
+</pre>

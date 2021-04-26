@@ -1,0 +1,6 @@
+
+** Interactively Highlight
+
+  - M-s h r highlight-regexp
+  - M-s h u unnhiglight-regexp
+  - M-s h l highlight-lines-matching-regexp

@@ -1,0 +1,28 @@
+
+** Supported Database Specifiers
+
+Oracle Net connection descriptor: *Thin, OCI*
+
+  url="jdbc:oracle:thin:@(DESCRIPTION=
+    (LOAD_BALANCE=on)
+    (ADDRESS_LIST=
+    (ADDRESS=(PROTOCOL=TCP)(HOST=host1) (PORT=1521))
+    (ADDRESS=(PROTOCOL=TCP)(HOST=host2)(PORT=1521)))
+    (CONNECT_DATA=(SERVICE_NAME=service_name)))"
+
+Thin-style service name: *Thin*
+
+  "jdbc:oracle:thin:scott/tiger@//myhost:1521/myservicename"
+
+LDAP syntax: *Thin*
+
+  "jdbc:oracle:thin:@ldap://ldap.example.com:7777/sales,cn=OracleContext,dc=com"
+
+Bequeath connection: *OCI*
+
+  "jdbc:oracle:oci:scott/tiger/@"
+
+TNSNames alias: Thin, *Thin,OCI*
+
+  OracleDataSource ods = new OracleDataSource();
+  ods.setTNSEntryName("MyTNSAlias")

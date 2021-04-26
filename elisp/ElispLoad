@@ -1,0 +1,10 @@
+
+*require* has a third argument to report no error.
+
+*featurep* tests if the feature is *provided*. See also **provide**.
+
+<example>
+(if (require 'mic-paren nil t)
+    (paren-activate)
+  (show-paren))
+</example>

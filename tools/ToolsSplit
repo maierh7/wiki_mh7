@@ -1,0 +1,7 @@
+
+** DD
+
+  <example>
+    $ dd if=original.file of=new.file1 bs=2G-x count=1
+    $ dd if=original.file of=new.file2 bs=2G-x skip=1
+  </example>

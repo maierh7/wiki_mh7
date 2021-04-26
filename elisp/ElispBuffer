@@ -1,0 +1,8 @@
+
+** buffer-exists-p
+
+  - To test whether a buffer exists use *get-buffer*.
+
+** Invisible Buffer
+
+  - Start the buffer name with a space.

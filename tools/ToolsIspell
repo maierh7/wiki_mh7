@@ -1,0 +1,5 @@
+
+** Cygwin Ispell Port
+
+The *PATH* must contain too the directory which contains the *cygwin.dll*.
+E.g. 'c:/cygwin/usr/local/bin;c:/cygwin/bin'

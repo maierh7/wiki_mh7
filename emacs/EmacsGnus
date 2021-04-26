@@ -1,0 +1,99 @@
+
+** Copy Summary Buffer to File
+
+  - mark articles
+  - set gnus-prompt-before-saving to nil
+  - gnus-summary-save-article
+
+** Viewing **HTML** Mails in Netscape
+
+*** Method 1
+
+  - *K b* show mime parts in summary buffer
+  - show mime part in other buffer
+  - switch to html-helper-mode
+  - *C-u f7* browse with netscape
+
+*** Method 2
+
+  - .gnus:    (setq mm-inline-override-types '("text/html"))
+  - .mailcap: text/html; e:/usr/mozilla/mozilla.exe file:%s
+  - Also set browse-url-mozila (under w2k)
+
+** Select another **character set** for displaying the buffer:
+
+  - *1 g* in the summary buffer
+
+** Group Buffer
+
+  - *^* go to server buffer. In the server buffer server selection with
+    *RET* retrieves the complete active file.
+
+** General Options
+
+  - (setq gnus-novice-user nil)
+
+** Clean up a nnml mail group
+
+  - Remove entry from Mail/active
+  - Remove .marks and .overview from Mail/mail/<group>
+
+** Keys (Summary Buffer)
+
+  - *#*   marks an article
+  - *M-#* unmarks an article
+
+  - * store locally
+  - M-* undo remove store locally
+
+  see also EmacsGnusSummary and EmacsGnusNews.
+
+** Agent
+
+  - M-x *gnus-unplugged*
+
+** Articel
+
+  - *t*  toggles the message headers
+
+  - *C-u g* Display the raw article
+
+  - *G g* reads the articel number in the summary buffer and jumps to
+    the summary buffer line.
+
+  - (gnus-request-article 2225 "nnml:mail.suse" "Articel")
+
+  - *W-l* get rid of Next Page ... 
+
+  - *S D e* gnus-summary-resend-message-edit. Allows editing of a
+    message that should be resend.
+
+** Store Articels to another Machine
+
+  - Save the articels to a new nnml group.
+
+  - Method 1:
+
+    - Tar the group and make on eos a directory group.
+    - Copy all the articels with *B c* to the destination group.
+
+  - Method 2:
+
+    - *G m "mail.tmp" 'nnml*  mail.tmp should be a valid directory
+      under nnml-directory.
+
+** Subscribe News from GMANE.ORG
+
+  - *B* in the group buffer 'news.gmane.org'
+
+
+** Create MBOX from gnus mail group
+
+  - $ ls | perl -ne 'chomp; open F, $_; print <F>; print "\n";' > mbox_file
+  - $ cat * | formail -ds >> mbox_file
+
+** Authinfo
+
+  - Maschine in the .authinfo is not a server address. It is the name
+    of a select method.
+

@@ -1,0 +1,28 @@
+
+** Snapshots
+
+  SQL> select dbms_workload_repository.create_snapshot() from dual;
+
+  SQL> exec dbms_workload_repository.drop_snapshot_range (xxx,xxx);
+
+  SQL> ?/rdbms/admin/awrrpt.sql
+  SQL> ?/rdbms/admin/addmrpt.sql
+
+  SQL>
+
+select
+       extract( day from snap_interval) *24*60+
+       extract( hour from snap_interval) *60+
+       extract( minute from snap_interval ) "Snapshot Interval",
+       extract( day from retention) *24*60+
+       extract( hour from retention) *60+
+       extract( minute from retention ) "Retention Interval"
+from dba_hist_wr_control;
+
+
+
+  SQL>
+    execute dbms_workload_repository.modify_snapshot_settings (
+      interval => 60,
+      retention => 1576800
+    );

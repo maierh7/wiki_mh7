@@ -1,0 +1,17 @@
+
+** Keys
+
+  - *M-!*     Execute command.
+  - *C-u M-!* Execute command and insert output in current buffer.
+  - *M-|*     Execute command passing the current region as stdin to the command.
+  - *C-u M-|* Execute command passing the current region as stdin to the
+            command and replace region with output.
+
+  <example>
+    23  abc
+    1   def
+    -------
+    C-x h C-u M-| sort -n
+  </example>
+
+  - See too EmacsSort

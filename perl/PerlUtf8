@@ -1,0 +1,34 @@
+
+** Byte Semantics
+
+  - Is default since perl 5.8.
+
+  - use bytes;
+
+** Set Stream to UTF-8
+
+  - binmode(STDOUT, ":utf8");
+
+** Open Stream in UTF-8
+
+  - open FH, ">:utf8", "file";
+
+** Create a UTF-8 Character
+
+  - chr ();
+
+** Decode a Character
+
+  - ord ();
+
+** \N and \x
+
+  - Interpreted at compile time. So don't use variables in it. Use
+    instead 'chr' and 'charnames::vianame'.
+
+** See Too 
+
+  - man perluniintro
+  - man bytes
+  - man utf8
+  - man charnames

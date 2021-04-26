@@ -1,0 +1,14 @@
+
+** Run Level
+
+  - *runlevel* tells the current and previous runlevel
+  - *telinit*  signals init to change the runlevel
+
+
+** All services
+
+  - chkconfig --list
+
+** Example
+
+  - chkconfig ntpd on

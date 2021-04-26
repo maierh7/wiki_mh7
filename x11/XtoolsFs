@@ -1,0 +1,15 @@
+
+** Network
+
+     *- config* /etc/X11/fs/config and /usr/X11R6/lib/X11/fs/config.
+     Remove the line **no-listen = tcp**. To due a security issue the
+     option no-listen was added. To get the **network** capability the
+     option was added. To figure out the problem use
+
+     <example>
+        $ xfsinfo -server <hostname>:7100
+     </example>
+
+     If this not work then remove the no-listen option.
+
+     *- activate* see XtoolsSet

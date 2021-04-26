@@ -1,0 +1,114 @@
+
+** General Rule
+
+  - Niall Litchfield wrote: Reduce response time this equates with
+    reducing logical and phisical IO.
+
+  - Sybrand Bakker wrote: The goal of your tuning should be to reduce
+    the logical I/O, not to get the hit ratio up.
+
+  - Do *not renice* anything.
+
+** SGA Size
+
+  - Hans Forbrich suggest do set the SGA size of 30 to 55 percent of
+    physical memory to avoid swapping.
+
+
+  - = sga_max_size: share_pool_size + large_pool_size + db_cache_size
+    + sum(db_<n>k_cache_size) + log_buffer = 
+
+  - = db_<n>k_cache_sizes = defaults to null.  This parameter are only
+    used if different block sizes are used.  See too the 'Database
+    Concepts' document.
+
+** SQL_TRACE
+
+  - All alter session statements needs the system privilege
+    'alter session'.
+
+  - http://www.petefinnigan.com/ramblings/how_to_set_trace.htm
+
+** EVENTS 10046
+
+  - alter session set events '10046 trace name context forever, level <n>'
+
+  -  1 default
+  -  4 bind variables
+  -  8 waits
+  - 12 bind variables and wait
+
+
+  - dbms_system.set_ev (sid, serial#,10046,12)
+
+** Optimizer
+
+  - OracleOptimizer
+
+** Performance Tests
+
+  - http://www.osdl.org
+  - http://www.tcp.org
+
+** Tables
+
+  - OraclePerfTables
+
+** TKPROF
+
+  - OracleTkprof
+
+
+** TRCSESS
+
+With trcsess combine all the trace files for a given client identifier
+to one trace file an analyse it via TKPROF.
+
+** Client Identifier
+
+The client identifier can be set by the following command:
+
+<example> 
+  exec dbms_session.set_identifier ('abc');
+</example>
+
+The value can be retrieved with the function 'sys_context' 
+
+<example> 
+  select sys_context( 'userenv', 'client_identifier') from dual;
+</example>
+
+or from the performance view 'v$session'.
+
+<example> 
+  select client_identifier from v$session 
+  where audsid = sys_context ('USERENV', 'SESSIONID');
+</example>
+
+** DBMS_MONITOR
+
+  - client_id_stat_enable (v$client_stats)
+  - serv_mod_act_stat_enable
+
+  - client_id_trace_enable
+  - client_id_trace_disable
+
+  - session_trace_enable
+  - session_trace_disable
+
+  - serv_mod_act_trace_enable
+  - serv_mod_act_trace_disable
+
+  - database_trace_enable
+  - database_trace_disable
+
+** OS Tools
+
+  - sar (Solaris)
+  - topio (Solaris)
+
+** Parsing
+
+  - hard coded
+  - soft coded (using parameter values)
+  - firm coded

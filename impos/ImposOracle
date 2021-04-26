@@ -1,0 +1,12 @@
+
+** SID
+
+
+** TWO TASK
+
+** dba-<scripts>
+
+The dba-<script> such as dba-add-user.sh uses the *connect internal*
+mechanism. This means that connecting over the *TWO_TASK* is not
+possible. Use instead of this variable the **ORACLE_SID**.
+

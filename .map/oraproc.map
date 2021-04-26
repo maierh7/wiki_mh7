@@ -1,0 +1,79 @@
+*arb0
+Doing the rebalancing,managed by RBAL,ASM
+*arc0,arc1
+ARCHIVELOG mode
+*asmb
+Background process that connects and communicates to the ASM instance
+*cjq0
+Manages the background jobs (J000-J999)
+*ckpt
+Checkpoint Process
+*ctwr
+Change tracking writer, fast RMAN incremental backups
+*dbw0,dbw1
+Database Writer
+*diag
+RAC: Reports failures to the background_dump_dest location
+*dmon
+DG: Broker monitor process
+*dsm0,dsmn1
+DG: Broker resource guard process
+*gmon
+maintains disk membeships in asm diskgroups
+*insv
+DG: Broker instance slave process
+*j000
+Scheduled jobs (cjq0)
+*kate
+performs proxy i/o to asm metadata files when disk is offline
+*lck0
+RAC: Global Enqueue Service for library cache
+*lgwr
+Log Writer
+*lmd0,lmd1
+RAC: Lock monitor daemon,Global enqueue service
+*lmon
+RAC: Lock monitor,Global Enque Service Monitor
+*lms0,lms1
+RAC: Global Cache Service
+*lns0,lns1
+DG: Network server
+*lsp0
+DG: Logical standby
+*lsp1
+DG: Dictonary build process for LS
+*lsp2
+DG: Set guard standby information for LS
+*mark
+marks ASM allocation units as stale after a missed write to an offline disk
+*m000
+MMON background processes
+*mman
+Memory Management,since 10,SGA
+*mmnl
+Active session history,AWR,Memory Monitor Light
+*mmon
+Manageability Monitor. Caputres statistics on changed sql objects. 
+Also sends alerts if thresholds exceed.
+*mrp0
+DG: Managed standby recovery process
+*nsv0
+DG: Broker netslave processs
+*pmon
+Process Monitor,frees up resources if a dedicated or shared server fails
+*q000
+AQ slave process
+*qmn0,qmn1
+Queue monitor
+*qmnc
+AQ coordinator
+*rbal
+rebalance activity,ASM
+*reco
+Distributed transactions
+*rvwr
+Writes flash back records to the flash back recovery area
+*smon
+System Monitor,responsible for recovery and segment management
+*dw01
+Datapump

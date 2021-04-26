@@ -1,0 +1,12 @@
+
+** Functions
+
+  - assoc            key   alist
+  - rassoc           value alist
+  - assoc-default    key   alist &optional test default
+  - assq             key   alist
+  - rassq            key   alist
+  - copy-alist       alist
+  - assq-delete-all  key   alist
+  - rassq-delete-all value alist
+

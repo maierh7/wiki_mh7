@@ -1,0 +1,14 @@
+
+** Windows
+
+If the Client is installed then the connection may be done via
+Oracle*NET. E.g.:
+
+  - sqlplus scott/tiger@localhost/XE
+
+  - sqlplus sys/<pwd>@//localhost:1521/XE
+
+Otherwise set only the ORACLE_SID.
+
+  - set ORACLE_SID = XE
+  - sqlplus scott/tiger

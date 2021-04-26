@@ -1,0 +1,11 @@
+
+** Errors
+
+  LDAP: error code 53 - Server currently in read-modify mode. 
+  Add / Delete /   ModDN operations not allowed
+
+This happens normally after a bulk load. In that case the "Server
+Mode" is set to "Read/Modify" instead of "Read/Write".
+
+See reference: 368759.1
+

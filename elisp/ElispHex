@@ -1,0 +1,13 @@
+
+** How to print hex as dec values?
+
+<example>
+(message "%d" ?\x20ac)
+</example>
+
+The other possibility is to use string-to-number with base 16.
+
+<example>
+(string-to-number "a" 16)
+10
+</example>

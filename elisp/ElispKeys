@@ -1,0 +1,15 @@
+
+** function key map
+
+  - The purpose of *function-key-map* is to convert ESC-sequences to
+    function keys.
+
+** key translation map
+
+  - The purpose of *key-translation-map* is so that the user can remap
+    one key sequence (perhaps including function keys) into another.
+
+** keyboard-translate
+
+  - This function isn't sticky, see key translation map.
+ 

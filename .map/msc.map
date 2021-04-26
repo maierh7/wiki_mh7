@@ -1,0 +1,139 @@
+
+* ADFS.msc 	
+AD Federation Services
+* CERTMGR.msc
+Certificate Management –Current User
+* CERTSRV.msc
+Certification Authority
+* CERTTMPL.msc
+Certificate Templates
+* COMPMGMT.msc
+Computer Management
+* COMEXP.msc
+Component Services  C:windowssystem32com
+* DCOMCNFG
+Component Services
+* DSA.msc
+ADUC (AD Users and Computers)
+* DFSGUI.msc
+DFS Management
+* DFSMGMT.msc
+DFS Management R2
+* DNSMGMT.msc
+DNS Management
+* DOMAIN.msc
+Domains and Trusts
+* DSSITE.msc
+Sites and Services
+* EVENTVWR.msc
+Event Viewer
+* GPEDIT.msc
+Local Policy
+* GPMC.msc
+Group Policy Management Console
+* PKIVIEW.msc
+PKI management
+* RSOP.msc
+Resultant set of Policy
+* SECPOL.msc
+Local Security Policy
+* SERVICES.msc
+Services
+* SCHMMGMT.msc
+Schema Management
+* TASKMGR
+Task Manager
+* TSCC.msc
+TS Configuration
+
+.exe list
+
+* TSADMIN
+TS Administrator
+* LICMGR
+TS Licensing
+
+Windows Server 2003
+
+* ADMGMT.msc
+AD Management –Domains, Sites, DNS and ADUC
+* PKMGMT.msc
+PKI Management – Authorities, Templates
+* IPADDRMGMT.msc
+WINS,DNS and DHCP in one console
+
+Windows Server 2008
+
+* SERVERMANAGER.msc
+Server Manager
+* NAPCLCFG.msc
+Network Access Protection Client Configuration
+* STOREXPL.msc
+Storage Manager
+* TSCONFIG
+TS Configuration
+* WBADMIN
+Windows Server Backup
+* WF.msc
+Windows Firewall + Advanced Security
+
+Applets for Windows management
+
+* NCPA.CPL 
+Network Properties
+* APPWIZ.CPL
+Add remove programs
+* DEVMGMT.msc
+Device Manager
+* FSMGMT.msc
+File Share Management
+* SYSDM.CPL
+System Properties
+* FIREWALL.CPL
+Firewall applet
+* DESK.CPL
+Display Properties
+* CONTROL
+Control Panel
+* SYSDM.CPL
+System Properties       
+* ACCESS.CPL 
+Accessibility Options         
+* APPWIZ.CPL
+Add/Remove Programs           
+* TIMEDATE.CPL
+Date/Time Properties
+* DESK.CPL         
+Display Properties 
+* FINDFAST.CPL          
+FindFast                      
+* FONTS 
+Fonts Folder     
+* INETCPL.CPL 
+Internet Properties           
+* JOY.CPL 
+Joystick Properties
+* LUSRMGR.MSC
+Local Users and Groups           
+* MAIN.CP
+Keyboard Properties    
+* MLCFG32.CPL 
+Microsoft Exchange  
+* WGPOCPL.CPL 
+Microsoft Mail Post Office       
+* MAIN.CPL 
+Mouse Properties              
+* MMSYS.CPL 
+Multimedia Properties         
+* PASWORD.CPL
+Password Properties           
+* MAIN.CP
+PC CARD (pcmcia) PC Card 
+* PRINTERS 
+Printers Folder               
+* INTL.CPL 
+Regional Settings             
+* STICPL.CPL 
+Scanners and Cameras          
+* MMSYS.CP
+Sound Properties 

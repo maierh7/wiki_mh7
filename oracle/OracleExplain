@@ -1,0 +1,38 @@
+
+** Abbreviatons
+
+  - RS  (Row Source)
+  - SMJ (Sort Merge Join)
+
+** Operations
+
+  - FTS (Full Table Scan)
+
+  - Index Unique Scan    - looking up single value
+  - Index Range Scan     - looking up a range
+  - Index Full Scan      - looking up the complete index
+  - Index Fast Full Scan - looking up a second column of a composite 
+                           index
+  - Rowid
+
+  - Sort Merge Join (SMJ)- Sort RS1, SORT RS2, Merge
+  - Nested Loops         - LOOP RS1, LOOP RS2
+  - Hash Join            - Smaller RS Hash Table, Bigger RS lookup
+  - Cartesian Product
+
+  - Sorts (order by, group by, SMJ)
+
+** Other Terms
+
+  - Antijoin - not in
+  - Semijoin - exists
+
+** Index Range Scan
+
+  - clustering factor
+
+** Clustering Factor of an Index
+
+  - A lower clustering factor indicates that the rows are in fewer
+    blocks (costs less)
+

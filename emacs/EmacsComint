@@ -1,0 +1,29 @@
+
+** Keys
+
+  - C-c C-l       - prints the history
+  - C-c <SPC>/C-j - accumulate (inserts a newline)
+  - C-c C-c       - interrupt
+  - C-c C-z
+  - C-c C-o       - comint-flush-output (last output)
+  - C-c C-u       - comint-kill-input (alternative C-a C-k)
+  - C-c C-w       - backward-kill-word
+  - C-c C-s       - write last output to a file
+  - C-c C-r       - scroll to beginning of last output
+  - C-c C-e       - scroll to the end
+
+** To scroll down a shell buffer use
+
+  - comint-scroll-show-maximum-output
+  - comint-scroll-to-bottom-on-output
+
+** Change Coding System
+
+  - *C-x RET p* set-buffer-process-coding-system
+
+** Accumulate
+
+<example>
+  $ ls tmp
+    ls build
+</exampel>

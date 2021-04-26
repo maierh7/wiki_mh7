@@ -1,0 +1,27 @@
+
+** GPS
+
+  # Describe Object
+  PS> ls | gm
+  
+  PS> gps chrome | measure WS -Sum
+  
+  PS> gps chrome | ft name, path
+
+  PS> gsv | ? Status -eq Stopped
+  
+  PS> gsv | ? Name -match event.*
+
+  PS> ls | sort Length
+
+  PS> Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+  
+  PS> (Get-Date) + (New-TimeSpan -Days 5)
+
+  PS> $env:path -split ';'
+
+  PS> $test = ls .\.server*
+  PS> $test | % { move tmp/$_ }
+
+  PS> gps |% {"{0,10:n} {1}" -f $_.CPU, $_.name} | sort
+  

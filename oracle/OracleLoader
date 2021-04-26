@@ -1,0 +1,18 @@
+
+** Feautures
+
+  - multiple input files
+  - multiple tables
+  - character set
+  - selectively loads
+  - manipulate data
+  - generate numbers
+  - pipes
+  - error reports
+  - use sdf for lobs
+  - direct load path
+  - support for db2 loads
+
+** Truncate, Replace
+
+  - Deletes the table.

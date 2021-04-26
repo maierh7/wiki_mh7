@@ -1,0 +1,19 @@
+
+** Relink Problems
+
+<pre>
+<verbatim>
+
+I don't know much about IAS installs but libknlopt.a should not exist
+unless the RDBMS is being installed.  A relink all will try to relink
+the rdbms if the $ORACLE_HOME/rdbms directory exists.
+
+Possibly you can simply just ignore the relink errors.
+
+</verbatim>
+</pre>
+
+** IAS without Infrastructure
+
+- The **tnsping** program would not work because not all network files
+  are installed. sqlplus works fine.

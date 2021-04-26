@@ -1,0 +1,46 @@
+
+
+Here examples for the new elisp type hash.
+
+
+  - *makehash*
+  - *puthash*
+  - *remhash*
+  - *gethash*
+  - *clrhash*
+
+** Manipulation Functions
+
+<example>
+
+(setq table (makehash 'equal))
+
+(puthash key val table)
+
+(remhash key table)
+(gethash key table) ;; returns value
+
+</example>
+
+** Helpers
+
+  - *copy-hash-table*
+  - *hash-table-count*
+
+** Iteration 
+
+<example>
+(let ((x nil))
+  (maphash (lambda (a b) (setq x (cons a x))) HASHTABLE)
+  x)
+</example>
+
+<example>
+(loop for key being the hash-keys of HASHTABLE
+      collect key)
+</example>
+
+<example>
+(loop for val being the hash-values of HASHTABLE
+      collect val)
+</example>

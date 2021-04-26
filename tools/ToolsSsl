@@ -1,0 +1,8 @@
+
+** Encryption/Decryption
+
+  - openssl enc -aes256 -e -salt -in test.ps -out test.ps.ssl
+
+  - openssl enc -aes256 -d -salt -in test.ps.ssl -out test.ps
+
+See too ToolsGpg

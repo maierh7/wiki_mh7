@@ -1,0 +1,32 @@
+
+** Possible Problems
+
+  - To due hot spots RAC may not scale well
+
+** Advanced Queuing
+
+  - asign a queue table to a specific instance ID.
+
+** Other Pitfalls
+
+  - serialization
+    - monotonically increasing key
+    - frequent updates of small chached tables
+    - use sparse blocks (pctfree 99)
+    - use ASSM
+
+  - full table scans
+
+  - dictionary lookups
+    - frequent invalidation of object
+    - frequent parsing of cursors
+
+  - concurrent ddl
+
+  - indexes 
+    - right growing indexes
+    - too much indexes, delete unnecessary indexes
+
+  - SQL which scans large amount of data
+    - maybe should be parallelized
+    - direct reads because they don't need to be synchronized

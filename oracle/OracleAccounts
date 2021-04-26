@@ -1,0 +1,77 @@
+
+** Default Accounts (11g)
+
+  - sys
+  - system
+  - dbsnmp
+  - sysman
+
+*** 11gR1 - locked (includes example schema)
+
+  - anonymous
+  - apex_public_user
+  - bi
+  - ctxsys
+  - dip
+  - exfsys
+  - flows_030000
+  - flows_files
+  - hr
+  - ix
+  - mddata
+  - mdsys
+  - oe
+  - olapsys
+  - oraccle_ocm
+  - ordplugins
+  - ordsys
+  - outln
+  - owbsys
+  - pm
+  - scott
+  - sh
+  - si_informtn_schema
+  - spatial_csw_admin_usr
+  - spatial_wfs_admin_usr
+  - tsmsys
+  - wk_test
+  - wkproxy
+  - wksys
+  - wmsys  
+  - xdb
+  - xs$null
+
+*** 11gR2
+
+  - anonymous
+  - apex_public_user
+  - apex_030200
+  - appqossys
+  - bi
+  - ctxsys
+  - dip
+  - exfsys
+  - flows_files
+  - hr
+  - ix
+  - mddata
+  - mdsys
+  - mgmt_view
+  - oe
+  - olapsys
+  - oracle_ocm
+  - orddata
+  - ordplugins
+  - ordsys
+  - outln
+  - owbsys
+  - owbsys_audit
+  - pm
+  - scott
+  - sh
+  - si_informtn_schema
+  - spatial_csw_admin_usr
+  - spatial_wfs_admin_usr
+  - wmsys
+  - xdb
+  - xs$null

@@ -1,0 +1,16 @@
+
+** Administration
+
+  - *swat* http://localhost:901. Requirement for swat is enabling in the
+    inetd.conf file and a running web server.
+
+
+** Passwords
+
+The user name to the smbpasswd command is the unix user name and the
+unix passwd. Seems reasonable because we want to connect to the unix
+server.
+
+<example>
+# smbpasswd -a maierh
+</example>

@@ -1,0 +1,21 @@
+
+** Expand
+
+  - *add-to-list* accepts as last parameter a bool value that
+    determines whether the list will be prepended or appended.
+
+** alist
+
+  - *(cons "a" "b")* creates a association list entry.
+
+  <example>
+    (setq abc '( "a" "ü" "c")) ;; initial list
+    (setq a (cdr abc))         ;; move forward one elem
+    (setcar a "u")             ;; replace the Ü with u
+    (setq rest (cdr a))        ;; store the rest of the list    
+    (setcdr a (cons "e" rest)) ;; create a new list entry and set rest
+  </example>
+
+  - *assq* should be used only for symbols. For other data types use
+    assoc. 
+

@@ -1,0 +1,11 @@
+
+** Keymap
+
+*C-x r*
+
+  - *g* get with completion
+  - *l* list
+  - *m* set
+  - *s* save
+
+see too EmacsRegister

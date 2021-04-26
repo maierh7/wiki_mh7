@@ -1,0 +1,37 @@
+
+** memq
+
+Uses 'eq' as compare function.
+
+** memql
+
+Uses 'eql' as compare function.
+
+** member
+
+Uses 'equal' as compare functon.
+
+** member-ignore-case
+
+See 'member'.
+
+** delq
+
+Modifies list and returns it.
+
+** delete
+
+Uses 'equal' as compare function.
+
+** delete-dups
+
+See 'delete'.
+
+** remq
+
+Uses 'eq' as compare function.
+
+** remove
+
+Uses 'equal' as compare function.
+

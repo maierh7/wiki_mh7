@@ -1,0 +1,33 @@
+
+** Architectures
+
+  - Thread-Based on Windows. Disadvantage only one address space of 3
+    GB. (See too the note 46001.1)
+
+  - Process-Based on Unix. Advantage each process has it's own
+    address space.
+
+** LMT vs DMT
+
+  - *DMT* Directory Managed Tables stores the extend information in
+    the Database.
+
+  - *LMT* Locally Managed Tables stores the extend info in the
+    Datefile itself as a bitmap block. Since Oracle 9 default.
+
+** Reverse Key Index
+
+  - RAC as single Instance: Increasing sequence and many concurrent
+    sessions that accesses the same block. This cause contention on
+    that block. The increasing sequence numbers go to the same
+    block. With reverse key index it will go to different blocks.
+
+  - Deletion of old rows: In this case the free list will not be
+    reused.
+
+  - Bad about reversed keys: No range scans (Sigh!!!). Very bad !!!
+
+  - So only use reverse key indexes if lots of session use the same
+    keys, especially in a rac environment or if small range deletions
+    happens and if the column is not accessed with the like, >,<, or
+    between operator.

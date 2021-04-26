@@ -1,0 +1,10 @@
+
+** Instantclient
+
+ORACLE_HOME is only be needed if the TNSNAMES.ORA resides in the
+instant client directory. If TNS_ADMIN is set then ORACLE_HOME is not
+necessary.
+
+*** ODBC
+
+  $ odbc_install JA

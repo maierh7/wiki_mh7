@@ -1,0 +1,35 @@
+
+** Log File
+
+<example>
+  SQL> alter system switch logfile;
+</example>
+
+- Causes LGWR to start writing redo to the next log. If you happen to
+  be in archive log mode, it happens to also cause the log being
+  switched away from to be archived. Works whether in archive log mode
+  or not.
+
+<example>
+  SQL> alter system archive log current;
+</example>
+
+- Causes the current log to be archived, and happens to also induce a
+  log switch. Not a meaningful command if you're not in archive log
+  mode. In a RAC environment this causes all instances to switch the
+  log files.
+
+
+** Sessions
+
+<example>
+  SQL> alter system kill session 'sid,serial#' immediate;
+</example>
+
+- See to the file dba-v-session.sql.
+
+** Shared Pool
+
+<example>
+  SQL> alter system flush shared_pool;
+</example>

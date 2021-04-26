@@ -1,0 +1,15 @@
+
+** Command Line Options
+
+  - TARGET uid@service (sys)
+  - CATALOG uid        (rman)
+  - CMDFILE file (.rcv)
+  - LOG  file
+  - PIPE name
+  - TIMEOUT time
+
+** Commands
+
+  - backup database
+  - run {}
+  - { execute script <name> }

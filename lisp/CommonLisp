@@ -1,0 +1,43 @@
+
+** push
+
+push stores the given value in front of the list. E.g. 
+
+<example>
+
+  (setq a 4)
+  (push 2 a)
+---
+  (2 4)
+
+</example>
+
+** format
+
+  - *~S* and lisp object 
+  - *~D* integer
+  - *~%* newline
+  - *~~* ~
+
+** array
+
+An array is shown with a prefixed #.
+
+<example>
+
+  (make-array 3)
+
+</example>
+
+
+** structs
+
+<example>
+
+  (defstruct foo abc def)
+  (setq a (make-foo))
+  (setf (foo-abc) 4)
+  (setf (foo-def) 8)
+
+</example>
+

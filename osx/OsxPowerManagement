@@ -1,0 +1,6 @@
+
+** Display
+
+The following command switchs off the display in one minute:
+
+  - pmset displaysleep 1

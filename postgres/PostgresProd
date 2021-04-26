@@ -1,0 +1,5 @@
+
+** psql as root
+
+  /usr/local/pgsql/bin/psql EZBI ms_dba
+

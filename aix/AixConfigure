@@ -1,0 +1,8 @@
+
+** Configure Very Slow
+
+Use the follwing command:
+
+  $ CONFIG_SHELL=/bin/bash 
+     ./configure --prefix=/app/tools --disable-nls
+

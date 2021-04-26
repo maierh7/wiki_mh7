@@ -1,0 +1,9 @@
+** Flags
+
+  - *-f -U <user-name>* allows selection for a special user
+  - *-f -C <command>*
+
+** Showing as **Tree**
+
+  - *ps xf*
+  - see also ToolsPsTree

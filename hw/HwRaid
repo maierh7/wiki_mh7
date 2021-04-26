@@ -1,0 +1,10 @@
+
+** Raid Types
+
+  - *RAID 0* = performance (striping). One disk - multiple controlers
+    that access the disk in parallel.
+  - *RAID 1* = safety (mirrorring). most secure.
+  - *RAID 3* =
+  - *RAID 5* = compromise between performance and safety
+  - *RAID 7* =
+  - *RAID 0+1* = performance and safety without compromise

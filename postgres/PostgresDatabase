@@ -1,0 +1,7 @@
+
+** Create
+
+postgres=# create database nyd;
+postgres=# create user postgis with encrypted password 'xxx';
+postgres=# grant all privileges on database nyd to postgis;
+

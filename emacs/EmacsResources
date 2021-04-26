@@ -1,0 +1,5 @@
+
+Special X resources that can be applied via command line switch
+*-xrm*. Here som examples:
+
+  - xrm "*toolBar: 0"

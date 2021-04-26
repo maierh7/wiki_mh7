@@ -1,0 +1,37 @@
+
+
+** Memory
+
+  > 1024 MB
+
+** Appearance
+
+Create a customized theme with "Clearlooks". "Ambiance" and "Radiance"
+cause emacs to display a warning message.
+
+** Oracle 11gR2
+
+  - sysctl.pl and edit afterwards /etc/sysctl.conf
+  - see RedhatOel
+
+*** Additional Packages
+
+  - libaio1
+  - libaio-dev
+  - sysstat
+  - libelf-dev
+  - unixodbc
+  - unixodbc-dev
+  - pdksh
+
+*** Problems
+
+  - dg4odbc
+  - ctxhx
+  - agtctl
+  - extproc
+
+** awk link
+
+  - ln -s /usr/bin/awk /bin/awk
+

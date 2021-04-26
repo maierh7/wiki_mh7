@@ -1,0 +1,7 @@
+
+** MS_DBA
+
+  create user 'ms_dba'.'%' identified by '<pw>';
+  grant all on * to 'ms_dba';
+  
+  

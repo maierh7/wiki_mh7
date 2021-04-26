@@ -1,0 +1,13 @@
+
+** 3.8
+
+git clone https://github.com/python/cpython -b 3.8 python-3.8
+cd python-3.8
+./configure --prefix=$HOME/local
+make
+make install
+
+*** if "No module named '_ctypes'" then
+  dnf install libffi-devel
+
+see also PythonPackages

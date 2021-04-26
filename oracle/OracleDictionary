@@ -1,0 +1,5 @@
+
+** List all the X$ Tables
+
+  - select addr, indx, kqftanam from x$kqfta;
+  - select name from v$fixed_table

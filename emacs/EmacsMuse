@@ -1,0 +1,15 @@
+
+** Keys
+
+  - C-c C-a muse-index
+  - C-c C-f muse-project-find-file
+  - C-c C-s muse search [1]
+
+** Markup
+
+  EmacsMuseTest
+
+  EmacsMuseTable
+
+Footnotes: 
+[1] C-c C-s uses find. muse-local-grep uses only grep

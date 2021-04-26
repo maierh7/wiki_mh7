@@ -1,0 +1,5 @@
+
+** SSH
+
+  - svcadm  enable ssh
+  - svcadm disable ssh

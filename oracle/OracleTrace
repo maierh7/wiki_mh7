@@ -1,0 +1,52 @@
+
+** Set Maximum Trace Level
+
+alter session set tracefile_identifier='10046';
+
+alter session set timed_statistics = true;
+alter session set statistics_level=all;
+alter session set max_dump_file_size = unlimited;
+
+alter session set events '10046 trace name context forever,level 12';
+
+
+** Trace Values in PI1IDM
+
+ 10027 trace name context forever, level 1, 
+ 10028 trace name context forever, level 1,
+ 10142 trace name context forever, level 1,
+ 10183 trace name context forever, level 1,
+ 10191 trace name context forever, level 1,
+ 10411 trace name context forever, level 1,
+ 10629 trace name context forever, level 32,
+ 10753 trace name context forever, level 2,
+ 14532 trace name context forever, level 1,
+ 38068 trace name context forever, level 100,
+ 38085 trace name context forever, level 1,
+ 38087 trace name context forever, level 1,
+ 10027 trace name context forever, level 1,
+ 10028 trace name context forever, level 1,
+ 10142 trace name context forever, level 1,
+ 10183 trace name context forever, level 1,
+ 10191 trace name context forever, level 1,
+ 10411 trace name context forever, level 1,
+ 10629 trace name context forever, level 32,
+ 10753 trace name context forever, level 2,
+ 14532 trace name context forever, level 1,
+ 38068 trace name context forever, level 100,
+ 38085 trace name context forever, level 1,
+ 38087 trace name context forever, level 1
+
+'10027 trace name context forever, level 1',
+'10028 trace name context forever, level 1',
+'10142 trace name context forever, level 1',
+'10183 trace name context forever, level 1',
+'10191 trace name context forever, level 1',
+'10411 trace name context forever, level 1',
+'10629 trace name context forever, level 32',
+'10753 trace name context forever, level 2',
+'14532 trace name context forever, level 1',
+'38068 trace name context forever, level 100',
+'38085 trace name context forever, level 1',
+'38087 trace name context forever, level 1',
+'44951 trace name context forever, level 1024'

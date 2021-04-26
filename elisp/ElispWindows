@@ -1,0 +1,11 @@
+
+- *w32-shell-execute* See the ElispWindowsShell contains examples how
+  to execute native Windows programs in the Windows environment.
+
+- *(w32-send-sys-command #xf030)* maximies emacs under Windows
+
+- *w32-quote-process-args* quotes all the arguments with quotes. The
+  default value is t. Jason wrote that this variable should not be set
+  by the user. A value of t means that emacs tries to detect the
+  correct invocation mode. Primarily the variable was intended to
+  distinguish between DOS and cygwin calls.

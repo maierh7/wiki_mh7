@@ -1,0 +1,34 @@
+
+** Proxy
+
+  'ftp_proxy' => q[],
+  'http_proxy' => q[http://bluecoat:80],
+  'no_proxy' => q[localhost, 127.0.0.1],
+  'proxy_pass' => q[xxxxxxx],
+  'proxy_user' => q[svc_oem],
+
+  'urllist' => [q[http://www.cpan.org/]],
+
+OR use
+
+   /etc/wgetrc
+
+But this is slooower
+
+** Local Environment
+
+  use "sudo /usr/local/bin/perl -MCPAN -e ...
+
+** Command
+
+  - $ perl -MCPAN -e "install Crypt::CBC"
+  - $ perl -MCPAN -e shell
+
+  - cpan> install Crypt::CBC
+  - cpan> install Crypt::Blowfish
+
+** Substitute CPANPLUS
+
+  - $ perl -MCPAN -e "install CPANPLUS"
+
+

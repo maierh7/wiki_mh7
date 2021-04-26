@@ -1,0 +1,17 @@
+
+** Packages for Gtk2
+
+  ExtUtils::PkgConfig
+  ExtUtils::Depends
+  Glib
+  Pango
+  Gtk2
+
+** Objects
+
+  - Window
+  - VBox
+  - Frame
+  - HBox
+  - Button
+  - Label

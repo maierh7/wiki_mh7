@@ -1,0 +1,30 @@
+
+
+** General
+
+"Changing a buffer's text properties marks the buffer as modified,
+while moving an overlay or changing its properties does not. Unlike
+text property changes, overlay changes are not recorded in the
+buffer's undo list."
+
+<example>
+
+(defun abc ()
+
+  (interactive)
+  (let (
+	(mod (buffer-modified-p))
+	(buffer-undo-list)
+	)
+    (set-text-properties 1 5 '(face 'bold))
+    (restore-buffer-modified-p mod)))
+
+</example>
+
+
+
+- *put-text-property*
+- *add-text-properties*
+- *set-text-properties*
+- *remove-text-properties*
+- *list-text-properties-at* lists the properties at point

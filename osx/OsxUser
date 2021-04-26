@@ -1,0 +1,10 @@
+
+** DSCL
+
+  Direcotry Service Command Line Utility
+
+  sudo dscl . list users
+  sudo dscl . read /Users/maierh
+  sudo dscl . change UnixShell /bin/bash /usr/local/bin/bash
+
+

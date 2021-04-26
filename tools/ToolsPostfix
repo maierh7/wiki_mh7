@@ -1,0 +1,21 @@
+
+** Test Configuration
+
+  - postconf
+
+** Local Mail Gateway Server
+
+  - mydestintations = +$mydomain
+  - mynetworks = 192.168.1.0/24 127.0.0.0/8
+  - inet_interfaces = all (?)
+
+** Canonical Names
+
+  - Verify that the from-address is listed in the sender_canonical
+    file. In yast2 it's called masquerading under outgoing mails.
+
+  - This cause that local mails are also masqueraded.
+
+** Client
+
+  - On the client side only define a Mail Gateway.

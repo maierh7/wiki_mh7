@@ -1,0 +1,11 @@
+
+** Host Access
+
+  - SUN SSHD reads /etc/hosts.allow and /etc.hosts.deny. OpenSSH uses
+    AllowHosts and DenyHosts parameter.
+
+  
+** Root Login
+
+  - PermitRootLogin yes|no|without-password
+

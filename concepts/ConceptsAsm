@@ -1,0 +1,20 @@
+
+** ASM - RAC
+
+  - One ASM instance per RAC node
+
+*** Diskgroups
+
+  - one for data
+  - one for recovery area
+
+
+*** Redundancy
+
+  - high: 3 mirrors
+  - normal: mirrored
+  - external: normally used in a SAN environment
+
+*** striping
+
+  - One stripe is normally one extent

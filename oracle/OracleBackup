@@ -1,0 +1,54 @@
+
+** Archive Log
+
+  - If the archive log is enabled then it's possible to restore a
+    corrupted data file and recover the consistency of the database
+    with the recovery tools by rolling 'it forward in time by applying
+    archives to it'. So storing of the redo log files makes less
+    sense. Best would be to place the files to different disks.
+
+** Enable Logs
+
+  - SQL> shutdown;
+  - SQL> startup mount nine;
+  - SQL> alter database archivelog;
+  - SQL> alter database open;
+
+
+** Disable Logs
+
+  - SQL> alter database noarchivelog;
+
+** Backup
+
+  - SQL> alter tablespace midba begin backup;
+  - SQL> alter tablespace midba end backup;
+
+
+** Switch Logs
+
+  - SQL> archive log list;
+  - SQL> alter system switch logifle;
+  - SQL> select * from v$log;
+  - SQL> select * from v$logfile;
+
+** init.ora parameters
+
+  - = log_archive_start  = true (is mandatory)
+  - = log_archive_dest   = has defaults
+  - = log_archive_format = has defaults
+
+** Archive Destination: Method1
+
+  - = log_archive_dest        = /O1/oracle/oradata/arch
+  - = log_archive_duplex_dest = /O2/oracle/oradata/arch
+
+** Archive Destination: Method2
+
+  - = log_archive_dest_1      = 'Location = /O1/oracle/oradata/arch' =
+  - = log_archive_dest_2      = 'Service = standby ' =
+
+See too 
+  OracleBackupProcdure
+  OracleRman
+  OracleTerms

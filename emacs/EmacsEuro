@@ -1,0 +1,13 @@
+
+** eos exceed
+
+  - Set local x font path: local-fontpath.sh
+  - Start emacs
+  - Now switch to Latin-9 with the alias 'l9':
+
+    (set-local-environment "de_DE@euro")
+
+** eos cygwin xserver
+
+  - local-fontpath.sh hangs !!!
+  - See to the xdyinfo.sh script.

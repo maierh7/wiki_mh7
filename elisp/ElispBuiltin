@@ -1,0 +1,17 @@
+
+  - *subrp* OBJECT 
+
+Returns true if the OBJECT is a builtin function.
+
+  - *mapatoms* FUNCTION
+
+Maps all symbols. FUNCTION gets as argument SYMBOL. 
+
+  - *purecopy* OBJECT
+
+Copies object into pure storage. This function is _only_ intended for
+building emacs.
+
+  - *memq* ELT LIST
+
+Compares ELT against the list.

@@ -1,0 +1,15 @@
+
+** Servers
+
+  - mod_dav_svn
+  - svnserve
+
+** Create
+
+  - First create '/O1/svn' then
+  - $ svnadmin create /O1/svn/test
+
+** Checkout
+
+  - $ svn checkout file:///O1/svn/test
+  - $ svn checkout svn+ssh://maierh@rhea/O1/svn/test

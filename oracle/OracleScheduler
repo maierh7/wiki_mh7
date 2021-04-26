@@ -1,0 +1,13 @@
+
+** Types
+
+  - program   (dbms_scheduler.create_program)
+  - schedule  (dbms_scheduler.create_schedule)
+  - job       (dbms_scheduler.create_job)
+  - job_class
+  - window
+
+** Window
+
+  - activates different resource groups
+

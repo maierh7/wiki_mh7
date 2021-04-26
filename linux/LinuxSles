@@ -1,0 +1,47 @@
+
+** Proxyserver
+
+Disabling the proxy server needs an reboot.
+
+** User and SU
+
+  - The user should be added to the wheel group
+
+** Building Emacs GTK
+
+  - xorg-x11-devel
+  - gtk2_devel
+  - libjpeg-devel
+  - libtiff-devel
+  - libpng-devel
+  - giflib-devel
+  
+  - Fix /usr/X116/lib/X11/app-defaults/Emacs: missing comma
+
+** Workspace
+
+Add the program "Arbeitsbereichumschalter" to the control bar. 
+
+Verify in the gconf-editor the option "/apps/metacity/general/num_workspaces".
+
+
+** Oracle Installation
+
+*** 11g
+
+- 2 Warning, 1 Error (if DHCP)
+
+*** Oracle Groups
+
+  - dba
+  - disk
+
+*** Oracle EM
+
+  - https://hostname:1158/em
+
+*** Oracle Ports
+
+  - 1521
+  - 1158
+

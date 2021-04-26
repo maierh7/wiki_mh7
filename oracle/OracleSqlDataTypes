@@ -1,0 +1,24 @@
+
+** Oracle Builtin Data Types
+
+  - char
+  - nchar
+  - varchar2
+  - nvarchar2
+  - number
+  - long
+  - date
+  - timestamp
+  - timestamp with timezone
+  - timestamp with local timezone
+  - interval year to month  
+  - interval day to second
+  - raw
+  - long raw
+  - rowid
+  - urowid
+  - clob
+  - nclob
+  - blob
+  - bfile
+

@@ -1,0 +1,10 @@
+
+* Prevent User from Logging Into Oracle
+
+  <example>
+    SQL> alter user <user> account lock;
+    SQL> alter user <user> account unlock;
+  </example>
+
+  - Other possibilities are to use restricted sessions (see "grant"
+    and "alter system") or to shutdown the listener.

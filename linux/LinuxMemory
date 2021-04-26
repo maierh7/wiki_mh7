@@ -1,0 +1,14 @@
+
+** How to show used Memory
+
+The free command shows on linux how much memory is used.
+
+  - # free
+
+,----
+|              total       used       free     shared    buffers     cached
+| Mem:        635744     599952      35792          0     270424      33528
+| -/+ buffers/cache:     296000     339744
+| Swap:       730948          0     730948
+`----
+

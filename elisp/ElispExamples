@@ -1,0 +1,7 @@
+
+** current-line
+
+<example>
+   (count-lines (point-min) (point))
+</example>
+

@@ -1,0 +1,10 @@
+
+** Types
+
+  - c check
+  - p primary key
+  - u unique key
+  - r referential integrity
+
+  - v with check option, on a view
+  - o with read only,    on a view

@@ -1,0 +1,47 @@
+
+** Oracle Clusterware
+
+*** Shared Files
+
+  - voting disk
+  - oracle cluster registry (ocr)
+
+*** Storage
+
+  - iSCSI (yes)
+  - NAS (no), except NETAPP if it presents as iSCSI
+
+*** Processes
+
+  - css (cluster synchronization service)
+    - interfaces with thirdparty clusterware
+  - crs (cluster ready service)
+    - reads the configuration from the oracle cluster registry
+  - evm (event management)
+  - ons (oracle notification service)
+  - oprocd (process monitor daemon, fencing service)
+
+  - The processes, (r) indicates is startet by root:
+
+    oprocd (r)
+    racgmain
+    racgimon
+    ons
+    evmd (r)
+    evmd.bin
+    evmlogger
+    crsd.bin (r)
+    init.cssd (r),
+    ocssd (r)
+    ocssd.bin
+
+*** rconfig
+
+  - can convert single instance
+  - has too a "verify only" mode 
+  - works not with pure raw devices
+
+*** Compatipility
+
+  - 11g Clusterware can work with 10g ASM and Database
+

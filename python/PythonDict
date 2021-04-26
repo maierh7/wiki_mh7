@@ -1,0 +1,22 @@
+
+** Dict
+
+- len (d)
+- d[key]
+- d[key] = value
+- key in d
+- key not in d
+
+- iter (d)
+
+- clear
+- copy
+
+- get (key)
+- pop (key)
+- popitem ()
+- setdefault (key, value)
+
+- items ()
+- keys ()
+- values

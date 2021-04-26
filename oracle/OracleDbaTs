@@ -1,0 +1,24 @@
+
+** Remove Tablespace
+
+  - Clean all the TS data.
+  - Take the TS offline.
+  - Drop the TS.
+
+** Remove a OS File from The Tablespace
+
+  - It's not possible. The only solution would be to move the data to
+    another TS and then drop the TS entirely.
+
+  - See also 'alter table move ...'
+
+** OMF
+
+  <example>
+    -- autoextent is on
+    SQL> create tablespace ts;
+    SQL> create tablespace ts datafile maxsize 800m;
+    -- 2 datafiles
+    -- autoextent is off because of the size specifiaction.
+    SQL> create tablespace ts datafile size 200m, size 200m;
+  </example>

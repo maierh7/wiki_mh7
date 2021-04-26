@@ -1,0 +1,31 @@
+
+** Commands
+
+  \c    connect
+  \l 	list databases
+  \l+   list databases + size
+  \dt	list tables
+  \dl   list large objects
+  \q	quit
+  \du   list users
+
+
+** Describe
+
+  \d
+  \d+ abc
+
+** Functions
+
+  select current_user;
+  select version ();
+  
+** User / Roles
+
+  create role test login password 'einszwei';
+  grant all on abc to test;
+
+
+  create role ms_dba with login password 'xxxxxx';
+  alter role ms_dba superuser;
+  

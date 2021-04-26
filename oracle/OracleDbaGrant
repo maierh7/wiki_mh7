@@ -1,0 +1,95 @@
+
+** grant/revoke sysdba
+
+  - See also the 'Database Administrator Guide (SAG)'. The orapw<sid>
+  file will be created by default and is located under '?/dbs'.
+
+  <example>
+    SQL> grant  sysdba to ops$midba;
+    SQL> revoke sysdba from ops$midba;
+  </example>
+
+  - Another possibility is to give another user the *dba* or OSDBA
+    group id.
+
+  - Query v$pwfile_users.
+
+** connect as sysdba
+
+  <example>
+    SQL> connect scott/tiger as sysdba;
+  </example>
+
+** read only access
+
+  <example>
+    SQL> GRANT CREATE SESSION TO ...
+    SQL> GRANT SELECT ON ... TO ...
+  </example>
+
+** Create User
+
+  <example>
+    SQL> create user scott identified by tiger;
+  </example>
+
+
+** Remove whole User
+
+  <example>
+    SQL> drop user scott cascade;
+  </example>
+
+** General
+
+  <pre>
+  <verbatim>
+  Sybrand Bakker writes:
+  
+    No it isn't. According to the ANSI SQL standard, only the owner of
+    the schema has the privilege to administer grants for his own
+    objects, but can delegate the authority (grant with admin). That
+    is exactly what happened with all the precreated objects.
+
+  </verbatim>
+  </pre>
+
+** Granting the Connect Privilege
+
+  <example>
+    SQL> create user foo identified by foo;
+    SQL> grant create session to foo;
+    SQL> grant alter session to foo;
+  </example>
+
+  - Alter session it's necessary if someone wants to change the
+    password.
+
+
+** Password Checking
+
+  - $ORACLE_HOME/rdbms/admin/utlpwdmg.sql
+
+** Directories
+
+  - grant read on directory media_dir to public;
+
+
+** Dictionary
+
+  - *session_roles*
+  - *session_privs*
+
+  - grant select any dictionary to dbo;
+
+** Access to V$ Tables
+
+  <example>
+    SQL> grant select on v_$instance to dbo;
+  </example>
+
+  - This gives the user DBO the permission to select the dynamic view
+    v$instance.
+
+--
+Back to OracleDba

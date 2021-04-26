@@ -1,0 +1,27 @@
+
+** Steps to get the development area
+
+  <example>
+    $ dba-create-midba-817.sh
+    $ dba-add-user -r -a maierh
+    $ cd ~/impos-2.0/error
+    $ make -f lib.mke
+    $ sudo make -f lib.mke install
+    $ cd ~/impos-2.0/impos-src
+    $ make Y1 SQLCHECK=false
+  </example>
+
+** Database *Switch*
+
+  - see alis *ate-imp-dbs.sh*
+
+  - Databases: n1,n2,t1,efr,nfr
+
+  - Example
+
+  <example>
+    $ n1up
+    $ n1
+    $ ...
+    $ n1down
+  </example>

@@ -1,0 +1,38 @@
+
+** Rename
+
+  - Note: renaming of a temporaray file is not possible. It should be
+    dropped and created afterwards.
+
+<example>
+  SQL> alter database datafile 'abc.dbf' 
+  SQL> autextend on next 20 M
+  SQL> maxsize 1000M;
+</example>
+
+<example>
+  SQL> startup mount;
+  SQL> alter database rename file <oldfile> to <newfile>;
+</example>
+
+
+- After an 'alter database' the control file needs to be backuped.
+
+<example>
+  SQL> alter database backup controlfile to trace;
+</example>
+
+<example>
+  SQL> alter database rename global_name to abc;
+</example>
+
+<example>
+  SQL> alter database default temporary tablespece <ts>;
+</example>
+
+** Rename Global_Name
+
+
+  update sys.props$ set value$='<new global name>' 
+  where name='GLOBAL_DB_NAME'; 
+

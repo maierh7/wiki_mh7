@@ -1,0 +1,15 @@
+
+
+** Special Characters
+
+ - &  &amp; 
+ - <  &lt;
+ - >  &gt;
+ - "  &quot;
+ - '  &apos;
+
+** Character References
+
+ - &#65;  A
+ - &#176; Soft Hyphen
+

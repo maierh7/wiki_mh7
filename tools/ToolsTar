@@ -1,0 +1,5 @@
+
+** Permissions
+
+  - *-p* with the *-x* option preserves the permissions, otherwise
+    the permissions will be set to the users umask.

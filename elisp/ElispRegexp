@@ -1,0 +1,10 @@
+
+** Functions
+
+ - *regexp-quote* STRING
+ - *regexp-opt* STRINGS
+ - *regexp-opt-depth* regexp
+
+** Syntax
+
+  - *\sC* C is a syntax class. E.g '-' or ' ' for white spaces.

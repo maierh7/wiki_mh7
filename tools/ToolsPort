@@ -1,0 +1,14 @@
+
+* Darwinports
+
+  man port
+
+* Commands
+
+  port outdated
+  port installed <port>
+  port info <port>
+
+  port deactivate <port>
+
+

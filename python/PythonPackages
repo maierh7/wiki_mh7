@@ -1,0 +1,23 @@
+
+** Database Packages
+
+ cx_Oracle
+ psycopg2-2.7.3.1	PostgreSQL
+ setuptools-36.5.0
+ PyMySQL-0.7.11		MySQL
+
+** cx_Oracle (git)
+
+git clone https://github.com/oracle/python-cx_Oracle.git cx_Oracle
+cd cx_Oracle
+git submodule init
+git submodule update
+python setup.py install
+
+
+** Test-Contexte
+
+  - Oracle	test_mod/cx_ora.py
+  - MySql	test_mod/t_mysql.py
+  - PosgreSQL	test_mod/t_pg.py
+

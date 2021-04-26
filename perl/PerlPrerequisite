@@ -1,0 +1,6 @@
+
+** Packages
+
+ - HTML::Parser-3.27
+ - Term::Readlin::Gnu-1.14 - Apply too the patch for the key function
+   map.

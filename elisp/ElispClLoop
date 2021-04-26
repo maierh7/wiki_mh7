@@ -1,0 +1,150 @@
+
+The *loop for* macro needs additional a loop keyword such as *collect* or
+*do*. *collect* stands for 'building a list' that will be returned after
+the loop ends. *do* executes only the given body. Other loop keywords
+are *for var = ...*, *until ...* and *finally return var*. In this cases var
+can be either a atomar data type or a list.
+
+
+
+<example>
+
+(loop for buf in (buffer-list)
+      collect (buffer-file-name buf))
+
+
+(loop repeat 20 
+      do (progn ...))
+
+(loop for x to 10 
+      do (progn ...)) ;; starts from zero to ten
+
+(loop for x below 10
+      do (progn ...)) ;; starts from zero to nine
+
+(loop for x from 1 to 10
+      do (progn ...)) ;; starts from one
+
+</example>
+
+Instead of the use of *from* it's also possible to use *upfrom* or
+*downfrom* to indicate the direction of the loop. Otherwise it's
+possbile to replace *to* with *downto* or *upto*. The *to* keyword can also
+take the form *below* or *above*.
+
+<example>
+for var from ex1 to ex2 by ex3
+</example>
+
+The variants *in*, *on*, *across* ...
+
+<example>
+;; operates on list items
+(loop for x in '(1 2 3 4) collect x)
+=> (1 2 3 4)
+
+(setq abc '(1 2 3 4))
+(loop for x in-ref abc collect (incf x))
+=> '(2 3 4 5) ;; abc looks now '(2 3 4 5)
+
+;; operates on the list itself
+(loop for x on '(1 2 3 4) collect var)
+=> ((1 2 3 4) (2 3 4) (3 4) (4))
+
+(loop for x across "abc"
+      do (progn ...))
+</example>
+
+The variants *being the elements of[-ref]* ... Possible objects are
+sequences, symbols (of obarray).
+
+<example>
+(loop for x being the elements of "abc"
+      collect x)
+</example>
+
+The variant of *being the hash-keys of* hash-table
+
+The variant of *being the key-codes of* keymap
+
+The variant of *being the key-seqs of* keymap
+
+The variant of *beeing the overlays of* [buffer]
+
+The variant of *beeing the intervals of* [buffer]
+
+The variant of *beeing the frames*, windows [of buffer], buffers
+
+* Iteration Clauses
+
+- repeat *integer*
+- while *condition*
+- until *condition*. Returns nil.
+- always *condition*. Returns t if all condition none nil.
+- never *condition*. Returns t if any condition nil.
+- thereis *condition*. Returns the first non-nil condition or nil.
+
+<example>
+
+(loop while condition do form) ;; it's equal to
+(while condition form)
+
+(loop for x to 10
+      until (> x 5) 
+      until (> x 4)
+      do (progn (insert x))) ;; stops by 4
+
+</example>
+
+
+* Accummulation Clauses
+
+- *collect* form
+- *append* form
+- *nconc* form
+- *concat* form
+- *vconcat* form
+- *count* form
+- *sum* form
+- *maximize* form
+- *minimize* form
+
+<example>
+
+(loop for x to 10
+      collect x)
+
+(loop for x to 10
+      append (list x))
+
+(loop for x to 9
+      concat (list (+ 48 x))
+=> 0123456789
+
+(loop for x to 9
+      vconcat (list x))
+=> [0 1 2 3 4 5 6 7 8 9]
+
+</example>
+
+* Other Clauses
+
+- *for* var = val
+- *with* var = val
+- *if* condition clause
+- *when* condition clause. Synonym for *if*.
+- *unless* condition clause. Reversed *if*.
+- *named*
+- *initially* forms
+- *finally* forms
+- *finally return* form
+- *do* forms
+- *return* form
+
+<example>
+
+(loop for x to 9
+      if (equal x 5)
+        collect x)
+
+</example>

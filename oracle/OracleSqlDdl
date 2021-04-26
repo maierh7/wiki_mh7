@@ -1,0 +1,18 @@
+
+** Foreign Key
+
+<example>
+  create table emp (
+    ...
+    deptno number(2),
+    ...
+    foreign key (deptno) references dept(deptno)
+  );
+</example>
+
+
+** Sequences
+
+  - Dropping of a sequence invalidates all the Object that access the
+    sequence.
+

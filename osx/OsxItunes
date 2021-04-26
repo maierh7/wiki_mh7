@@ -1,0 +1,8 @@
+
+** Create a new Library
+
+  - hold down the Shift-key when launching iTunes
+
+** Hide Genre Window in Browse Mode
+
+  - defaults write com.apple.itunes show-genre-when-browsing -bool FALSE

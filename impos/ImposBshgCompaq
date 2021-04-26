@@ -1,0 +1,27 @@
+
+** Initial Data
+
+  - **Phone**: 0180 - 5252526
+
+  - *Wartungsvertragsnummer*: 730 B21593
+  - *Server-Modell*:          Alpha Server 1000A-5/500 (Ser.-Nr.98013876500)
+  - *UNAME*:                  OSF1 TRTVU01.trt.bshg.com V4.0 1229 alpha
+  - *DLT-Changer*:            TZ885NT
+
+
+<example>
+
+# The entry in uerf for the changer TZ885NT
+
+tz13 at scsi1 target 5 lun 0 (LID=2) 
+_(DEC     TZ885    (C) DEC CD50) 
+changer at scsi1 target 5 lun 1 
+_(LID=3) (DEC     TZ Media Changer _CD50)
+
+</example>
+
+** Last Calls
+
+  - *3141353 RE*
+  - *1816033 RE*
+  - *1904128 RE*

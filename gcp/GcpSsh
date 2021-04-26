@@ -1,0 +1,4 @@
+
+** SSH
+
+  gcloud compute ssh hm1-test --zone=europe-west3-c

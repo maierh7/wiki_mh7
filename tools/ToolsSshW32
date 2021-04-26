@@ -1,0 +1,15 @@
+
+** Problems
+
+  - ~/.ssh/ssh_config as per-user config file is ignored.
+
+
+** Configuration
+
+  - Specify in the */etc/ssh_config* file the following:
+
+  <example>
+    IdentityFile ~/.ssh/id_dsa
+    Protocol 2,1
+  </example>
+

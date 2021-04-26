@@ -1,0 +1,13 @@
+
+** Abbreviations
+
+  - A     - actual machine
+  - MX    - Mail Exchanger
+  - NS    - Nameserver
+  - CNAME - canonical name
+
+** DIG
+
+  - dig any <domain> [@server]
+  - dig <domain> axfr
+  - dig 1.168.192.in-addr.apra axfr

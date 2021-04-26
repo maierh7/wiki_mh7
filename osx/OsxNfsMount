@@ -1,0 +1,15 @@
+
+** NFS Mount
+
+  - sudo /sbin/mount -o "-P" ate:/O2 /mnt
+
+** NFS Server
+
+  - Add entries to /etc/exports
+  - start "nfsd start"
+
+  - "nfsd update"
+
+  - "showmount -e" shows the exported mount points on the localhost
+    (default) 
+

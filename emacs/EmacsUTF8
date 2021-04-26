@@ -1,0 +1,17 @@
+
+** List of Chars
+
+  - list-character-sets (Choose unicode-bmp)
+
+** UTF-8 Coding Cookie
+
+  - de_DE.UTF-8
+
+  - See too the *~/tmp/utf-8.txt* file
+
+<example>
+-*- coding: utf-8 -*-
+</example>
+
+  - See too the variable: *current-language-environment*
+

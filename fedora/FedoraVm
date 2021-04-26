@@ -1,0 +1,6 @@
+
+** Clipboard not Working
+
+dnf remove  open-vm-tools.x86_64 open-vm-tools-desktop.x86_64
+dnf install open-vm-tools.x86_64 open-vm-tools-desktop.x86_64
+

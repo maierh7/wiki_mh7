@@ -1,0 +1,8 @@
+
+** Kill Session
+
+  - ALTER SYSTEM KILL SESSION; See too OracleSqlSystem.
+  - orakill (windows)
+
+  --- SQL Trace for current session
+  - dbms_monitor.session_trace_enable (waits=>True, binds=>False)

@@ -1,0 +1,32 @@
+
+** Function Examples
+
+  set term x11;
+
+  plot sin(x);
+  plot exp(x);
+  plot log(x);
+  plot sqrt(x);
+
+
+** Sinuskurve
+
+  plot [0:pi*2] sin(x);
+
+** X ** 2
+
+  plot x**2;
+
+** Datafile Example
+
+  gnuplot> plot "test.data" with lines;
+
+** Multiplot
+
+  set multiplot;
+  plot sin(x);
+  plot cos(x);
+
+** 3D Plot Example
+
+  splot x*x-y*y with line palette;

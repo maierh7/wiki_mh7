@@ -1,0 +1,37 @@
+
+** Requirements
+
+  - instantclient-sqlplus-macosx-10.1.0.3.zip
+  - instantclient-sdk-macosx-10.1.0.3.zip
+  - instantclient-jdbc-macosx-10.1.0.3.zip
+  - instantclient-basic-macosx-10.1.0.3.zip
+
+** Directory to Installation
+
+  - /opt/oracle/10.1.0/client (ORACLE_HOME)
+
+** TNSNAMES.ORA
+
+  - In $ORACLE_HOME/network/admin
+
+** EZCONNECT
+
+Seems not to work!!!
+
+** ActivePerl
+
+  - /usr/local/ActivePerl-5.8/
+
+** Environment
+
+  - DYLD_LIBRARY_PATH = $ORACLE_HOME
+
+** DBD::Oracle
+
+Do not use the normal procedure with "make" and "make install". This
+changes the Make-Environment and then the second call to "make test"
+or "make install" will fail.
+
+  - perl.ppc Makefile.PL
+  - make install
+

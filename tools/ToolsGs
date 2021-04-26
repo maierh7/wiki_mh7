@@ -1,0 +1,9 @@
+
+** Documentation
+
+  /usr/share/ghostscript/6.53/doc/
+
+** Devices
+
+  *gs -h* produces a list with devices
+

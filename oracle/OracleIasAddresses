@@ -1,0 +1,10 @@
+
+** Default
+
+  - http://eos:7780/
+  - http://eos:1810/
+  - http://eos:7782/index.html - release information
+
+** Test Jserv
+
+  - http://eos:7780/servlets/IsItWorking

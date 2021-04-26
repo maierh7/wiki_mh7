@@ -1,0 +1,12 @@
+
+** PC to PDF
+
+
+  - scan to jpeg progressive in 300dpi
+  - put the scan to ate
+  - use convert  'convert abc.jpg abc.pdf'
+
+
+** Assemble PDFs with GS
+
+  - gs -sDEVICE=pdfwrite -sOutputFile=HD.pdf HD1.pdf HD2.pdf

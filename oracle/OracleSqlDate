@@ -1,0 +1,25 @@
+
+** Sysdate and Systimestamp
+
+  <example>
+    -- only 9.2.0
+    select to_char(systimestamp,'ss:ff3') from dual;
+  </example>
+
+** 00:00
+
+  - *trunc(date)*, returns the date to the beginning of the day.
+
+** RR Format
+
+  - 00-49 -> 20..
+  - 50-99 -> 19..
+
+** CC Format
+
+  - Returns the century portion.
+
+** Add Minutes
+
+  - Adding  1 day:     sysdate + 1
+  - Adding 10 minutes: sysdate + (10/(24*60))

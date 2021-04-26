@@ -1,0 +1,28 @@
+
+** Keys
+
+  - C-c $	Archive Mode
+  - C-c /	Occur Mode
+
+  - M-RET	Insert new heading same level
+  - M-S-RET	Insert TODO same level
+
+** Table
+
+  - M-x org-table-create
+  - TAB
+  - S-TAB
+  - C-c C-c
+
+** Calc
+
+  - C-c = 	Insert a formula
+  - C-c '       Edit the formula
+  - C-c *       Recalculate
+  - C-c ?	Display column number
+  - C-c |	Toggle display bars
+
+* Time
+
+  - C-u C-c .	Insert Timestamp
+

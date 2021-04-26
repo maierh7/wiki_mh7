@@ -1,0 +1,778 @@
+
+** Fundamentals II
+
+- OracleOcpOne
+- OracleOcpThree
+
+- Explain solutions included with Oracle 9i for managing complex
+  networks
+
+    * Connectivity
+    * Directory Services
+    * Manageability
+    * Scalability
+    * Accessibility
+    * Security
+
+- Networking components
+
+    * Oracle Net Services
+      - Transparent data conversion
+      - Configuration and administration
+      - Multiple network protocols
+      
+    * Oracle Advanced Security
+      - Data encryption
+      - User authentication
+
+- Manageability
+
+    * Location transparency by using naming methods
+    * Centralized Configuration and Management by using LDAP (OID)
+    * Internet and Intranet Scalability
+
+- Security
+
+    * Database Access Control (Firewall AC, Protocol AC)
+
+    * Enhanced Network Security (OAS) includes Data Encryption, User
+      Authentication and Single Sign-On, and Enterprise User Security
+      (OID)
+
+- Authentication Third-party services
+
+    * SSL
+    * RADIUS
+    * Cyber Safe
+    * Kerberos
+    * DCE
+
+- Describe Oracle networking add-on solutions
+
+    * Directory Services
+    * Connect-Time Failover
+    * Transparent Application Failover
+    * Client Load Balancing
+    * Connection Load Balancing
+
+- Explain the key components of the Oracle Net layered architecture
+
+    Oracle Net Foundation Layer
+    Oracle Protocol Support
+
+- Explain Oracle Net Services role in client server connections
+
+    Oracle Net Services resides on each side of the connection and ONS
+    acts as the data courier. ONS establishes the connections and
+    exchanges the messages. The JDBC Thin Driver don't uses Oracle Net
+    Services.
+
+- Describe how web client connections are established through Oracle
+  networking products
+
+    Web Client - <HTTP> - APP Server/ONS - <TCP> - ONS/RDMBS
+
+    Web Client - <HTTP> - ONS/RDBMS
+                 <IIOP>
+                 <WEBDAV>
+                 <TCP>
+
+- Identify how the listener responds to incoming connections
+
+    - Hands the connect recquest directly to a dispatcher if
+      configured.
+
+    - Spawns a dedicated server in case of a dedicated server
+      request.
+
+    - Sends a redirect message to the client. The client then connects
+      directly to the dispatcher or the dedicated server.
+
+- Configure the listener using Oracle Net Manager
+
+    $ netmgr
+
+- Control the listener using the lsnrctrl utility
+
+    start,stop,status,reload,trace
+
+- Describe Dynamic Service Registration
+
+    PMON registers a instance by the listener. This means it is not
+    necessary to add the database to the 'listener.ora' file. But OEM
+    needs the entries to find the databases.
+
+- Configure the listener for IIOP and HTTP connections
+
+    Choose the appropriate protocol and create a listener entry.
+
+- Describe the difference between host naming and local service name
+  resolution 
+
+    Local naming uses the names from tnsnames.ora. Host naming takes
+    the host name of the database server to connect to the database.
+    
+    On the client side the sqlnet.ora file must contain the following
+    entry:    
+
+        NAMES.DIRECTORY_PATH= (HOSTNAME,TNSNAMES)
+
+    On the server side one database entry of the listener.ora file
+    must contain a global_dbname that matches the hostname.
+
+- Use Oracle Net Configuration Assistant to configure: Host Naming,
+  Local naming method, Net service names.
+
+    * local naming (tnsnames.ora)
+    * dierectory naming (ldap)
+    * oracle names (deprecated)
+    * host naming (use only the host name)
+    * external naming (nis,dce)
+
+- Perform simple connection troubleshooting
+
+    * $TNS_ADMIN/sqlnet.ora
+    * sqlnet.log
+
+- Identify the components of the Oracle Shared Server architecture
+
+    * listener
+    * dispatcher
+    * shared server
+
+- Describe the Oracle Shared Server Architecture
+
+    The oracle shared server architecture allows connection of lots of
+    users. Client requests are routed to one or more dispatchers and
+    the dispatcher places the client request on a common queue from
+    which the shared servers picks up and processes the requests.
+
+    c1 -+
+    c2 -+             +- s1 -+
+    c3 -+- dispatcher +      + database
+    c4 -+             +- s2 -+
+    c5 -+
+
+
+The dispatchers routes a incoming connection to a shared
+    server. 
+
+    CLAUSE: '
+      (DISPATCHERS = 2)		; Two dispatchers
+      (PROTOCOL = TCP)
+      (SERVICE = nineXDB)
+      (SESSIONS = 20)           ; number of sessions allowed for
+                                ; each dispatcher
+      (CONNECTIONS = 10)        ; number of connections allowed for
+                                ; each dispatcher
+      (POOL = n|ON|YES|TRUE|BOTH|IN|OUT|NO|OFF|FALSE)
+                                ; enables connection pooling
+      (MULTIPLEX=1|0|ON|YES|TRUE|BOTH|OUT|NO|OFF)
+                                ; enables session multiplexing
+      (LISTENER=LOCAL_LISTENER|REMOTE_LISTENER)
+      '
+
+- Describe Connection Pooling
+
+    CP allows physical disconnection of idle sessions. Logically they
+    are still connected. Idle sessions are automatically reestablished
+    when the next request comes from that session.
+
+- Describe Session Multiplexing
+
+    Multiple client network sessions are funneled through a single
+    network connection.
+
+- Configure the Oracle Shared Server
+
+    INIT: dispatchers='(PROTOCOL=TCP) (SERVICE=nineXDB)'
+
+- Describe a connect descriptor
+
+    $ sqlplus \
+       'scott/tiger@(description=
+          (address=(host=eos)(protocol=tcp)(port=1521))
+          (connect_data=(sid=first)))'
+
+- Identify and explain usefulness of related dictionary views
+
+    ***???***
+
+- Describe the basics of database backup, restore and recovery
+
+    A backup is a copy of data and a safeguard against unexpected data
+    loss and application errors. The copy includes the control files.
+    data files, archived redo logs, online redo logs (in a consistent
+    backup), initialization files and administration files such as 
+    tnsnames.ora and listener.ora.
+
+    A restore operation is the process of making a backup available to
+    the database server.
+
+    A recover operation is the process of updating a restored control
+    file or datafile with the archived and online redo logs.
+
+- When is recovery required
+
+    Recovery is required whenever the checkpoint SCN in the datafile
+    header does not match the checkpoint SCN for the datafile that is
+    recorded in the control file.
+
+- What's the difference between crash, instance recovery and media
+  recovery
+
+    In crash (all nodes of a RAC are crashed) and instance (one node
+    of a RAC crashed) recovery the recovery is processed automatically
+    by the database. In this case recover brings back a transaction
+    consistent database.
+
+    If media recovery is required then an operator has to restore a
+    backup and then recover a database by applying the necessary
+    archived and online redo logs.
+
+- List the types of failure that may occur in an Oracle environment
+
+    * user error
+    * statement failure
+    * process failure
+    * instance failure
+    * network failure
+    * media failure
+
+- Types of media failures
+
+    * read errors
+    * write errors
+
+    If a write error occurs in a datafile of a non SYSTEM tablespace
+    then Oracle takes the database automatically offline. If the
+    datafile belongs to the SYSTEM tablespace then Oracle halts and
+    shuts down.
+
+- Type of instance failure
+
+    * hardware problem (power outage)
+    * software problem
+    * shutdown abort
+    * shutdown force
+
+- Instance recovery
+
+    * cache recovery (apply online redo logs)
+    * open datbase
+    * transaction recovery
+
+- Define a backup recovery strategy
+
+    * RMAN
+    * User-Managed Backup
+
+- Describe the Oracle processes, memory structures, and files related
+  to recovery
+
+    ***???***
+
+- Identify the importance of checkpoints, redo log files and archived
+  log files
+
+- Describe way to tune instance recovery
+
+    FAST_START_MTTR_TARGET. If this is set then disable (set to zero)
+    the following parameters.
+
+    - FAST_START_IO_TARGET
+    - LOG_CHECKPOINT_INTERVAL
+    - LOG_CHECKPOINT_TIMEOUT
+
+- Describe the redundancy set
+
+    * a backup of the last control file
+    * all data files
+    * all archived redo logs
+    * a multiplexed online redo logs
+    * a multiplexed control file
+    * parameter file, tnsnames.ora, listener.ora
+
+- Golden rule of backup and recovery
+
+    * The redundancy set should be on other media.
+
+- Consistent backup (noarchivelog)
+
+    Never do a consistent, cold backup if the database is not
+    shutdowned normally. A backup after a shutdown abort is not a safe
+    backup.
+
+- Describe the differences between Archivelog and Noarchivelog modes
+
+    Backup in noarchivelog mode need a database that is shutdowned
+    normally. It's called a consistent or cold backup. This backup can
+    only be restored to the time when the backup is taken. This backup
+    type needs no recovery, if the backup contains all the database
+    files.
+
+    Backup in archivelog mode doesn't need a database shutdown. Work
+    in this mode can continue.
+
+- Configure a database for Archivelog mode
+
+    SQL> alter database archivelog;
+    SQL> alter system archive log start;
+
+    -- Note the init parameter log_archive_start cannot be set via
+    -- the 'alter system set ...' statement.
+
+- Archive log clause
+
+    The archive log clause in the alter system command can be used
+    if the database is mounted or opened.
+
+- Enable automatic archiving
+
+    SQL> alter system archive log start;
+    SQL> alter system archive log stop;
+
+- Perform manual archiving of logs
+
+    SQL> alter system archive log all;
+    SQL> alter system archive log sequence <n>;
+    SQL> alter sytsem archive log change   <scn>;
+    SQL> alter sytsem archive log group    <group>;
+    SQL> alter sytsem archive log logfile  'file';
+    SQL> alter sytsem archive log current;
+
+- Configure multiple archive processes
+
+    SQL> ALTER SYSTEM SET LOG_ARCHIVE_MAX_PROCESSES=3;
+
+- Configure multiple destinations, including remote destinations
+
+    INIT: log_archive_dest_1='Location=/O2/oradata/manual'
+    INIT: log_archive_dest_2='service=dcopy'
+
+- Identify the features and components of RMAN
+
+    * Backup
+    * Recorvery
+    * Repository
+    * Standby
+
+- Benefits of the RMAN repository 
+
+    * metadata for multible databases
+    * metadata for multible incarnations
+    * Keep historical metadata
+    * report schema for noncurrent time
+    * store rman scripts
+    * no control file restoring if backup is to a none current time
+    * control file information always available
+
+- Describe the RMAN repository and control file usage
+
+    $ rman target /
+    RMAN> connect target /   -- control file usage
+
+    $ rman target / catalog rman@test
+    RMAN> connect target /   -- repository usage
+    RMAN> catalog rman@test
+
+- Describe channel allocation
+
+    CA selects a special device for output. CA can be done automatic
+    or manual. See the 'show device type' command for the automatic
+    allocated channels. Manual allocating will be done inside a run
+    block.
+
+    RMAN> run {
+      allocate channel c1 device type sbt;
+      backup database;
+      release channel  c1;
+    }
+
+- Describe the Media Management Library interface
+
+    It allows the use of third-party backup (media manager) products
+    inside RMAN. MM products load, label and unload sequential media.
+
+- Connect to RMAN without the recovery catalog
+
+    RMAN> connect target /
+
+- Configure the RMAN environment
+
+    ***???***
+
+- Describe user-managed backup and recovery operations (UM)
+
+    * copy datafile to destination
+    * restore datafile from copy destination
+
+- Discuss backup issues associated with read only tablespaces (UM)
+
+    Read only tablespace don't need any backup mode.
+
+- Perform closed database backups (UM)
+
+    SQL> select name from v$datafile;
+    SQL> select name from v$controlfile;
+    SQL> shutdown
+    $ for i in $res; do cp $i do $dest; done
+    SQL> startup
+
+- Perform open database backups (UM)
+
+    SQL> alter tablespace begin backup;
+    ! cp ts-d1.dbf to /backup
+    ! cp ts-d2.dbf to /backup
+    SQL> alter tablespace end backup;
+    SQL> alter system archive log current;
+    ! cp archived logs to /backup
+
+- Backup the control file (UM)
+
+    SQL> alter database backup controlfile to trace;
+    SQL> alter database backup controlfile to trace as 'abc.txt';
+    SQL> alter database backup controlfile to 'ctlmanual.ctl';
+
+    -- Default directory to place in the backup control file is
+    -- $ORACL_HOME/dbs.
+
+- Perform cleanup after a failed online backup (UM)
+
+    RMAN> backup database not backed up since time 
+          'sysdate-<time between failed backup>';
+
+- Use the dbverify utility to detect corruption (UM)
+
+    $ dbv bufsize=8192 file=/backup/ts-d1.dbf
+
+- Identify types of RMAN specific backups
+
+    * database
+    * tablespace
+    * datafile
+    * current controlfile
+    * archivelog
+
+- Use RMAN BACKUP command to create sets
+
+    RMAN> backup database;
+
+- Back up the control file
+
+    RMAN> backup current controlfile;
+
+- Back up the archived redo log files
+
+    RMAN> backup archivelog all;
+
+- Use the RMAN COPY command to create image copies
+
+    RMAN> copy datafile <number>;
+    RMAN> copy datafile '/O1/abc.dbf';
+    RMAN> copy archivelog '/O1/001.arc';
+
+- Describe media recovery (UM)
+
+    Unlike instance recovery media recovery needs restoring of
+    datafiles. The recover process applies the redo logs to the
+    restored datafiles.
+
+- Difference between complete an incomplete backup (UM)
+
+    Incomplete backup always requires resetlogs.
+
+- Perform recovery in Noarchivelog mode (UM)
+
+  * Lost all redo logs
+
+    SQL> startup mount;
+    SQL> recover database until cancel;
+    SQL> alter database open resetlogs;
+
+  * Lost all redo logs and control files.
+
+    -- Edit current pfile (if not exist then create it).
+       and remove the control_files parameter.
+
+    SQL> startup nomount pfile='...';
+
+    -- Take an 'backup controlfile to trace' and take the second
+       statement with resetlogs. Note: the trace file is not
+       executeable because the statement contains not valid comment
+       characters.
+
+    SQL> create controlfile ...
+    SQL> recover database until cancel using backup controlfile;
+
+    -- The command asks for a log file but instead of file name
+       type in 'CANCEL'.
+
+    SQL> alter database open resetlogs;
+
+- Perform complete recovery in Archivelog mode (UM)
+
+    ! restore datafiles and archived log files
+    SQL> startup mount;
+    SQL> recover database;
+    SQL> alter database open;
+
+- Restore datafiles to different locations (UM)
+
+    Use either 'alter database rename' file or the RMAN 'set newname'
+    and the 'switch datafile all' command.
+
+    RMAN> sql 'alter tablespace abc offline immediate';
+    RMAN> set newname for datafile '/O1/abc.dbf' to '/O5/abc.dbf';
+    RMAN> restore tablespace abc;
+    RMAN> switch datafile all;
+    RMAN> recover tablespace abc;
+    RMAN> sql 'alter tablespace abc online';
+
+- Relocate and recover a tablespace by using archive redo log files (UM)
+
+    SQL> alter tablespace scott offline immediate;
+    ! cp <damaged backup scott file> /O2/oracle/oradata/manual
+    SQL> recover tablespace scott;
+    SQL> alter tablespace scott online;
+
+    -- Immediate is required otherwise the system maybe reports
+       that the tablespace is in use.
+
+- Describe read-only tablespace recovery (UM)
+
+    SQL> alter tablespace history offline;
+    ! cp <damaged backup history file> /O2/oracle/oradata/manual
+    SQL> recover history;
+    SQL> alter tablespace history online;
+
+- Describe the use of RMAN for restoration and recovery
+
+    RMAN> restore database;
+    RMAN> recover database;
+    RMAN> atler database open;
+
+- Backup Types in RMAN
+
+    * Full		Not incremental, but not a whole backup.
+    * Incremental	Only the blocks that changed are backed up.
+    * Online		A backup when the database is opened.
+    * Closed		A backup when the database is closed.
+    * Consistent	A backup of a mounted database that is 
+			shutdowned normally.
+    * Inconsistent	A backup of a mounted database that is not
+			shutdowned normally.
+
+- Full Backup (RMAN)
+
+    A backup with archived logs 'backup database plus archivelog is
+    always a full backup.
+
+- Metadata of RMAN
+
+    * Backup sets and pieces
+    * Copies
+    * Target database schema
+    * Persistent configuration
+
+- Perform recovery of a tablespace in RMAN
+
+    RMAN> sql 'alter tablespace abc offline immediate';
+    RMAN> restore tablespace abc;
+    RMAN> recover tablespace abc;
+    RMAN> sql 'alter tablespace abc online';
+
+- Perform recovery in Noarchivelog mode in RMAN
+
+    In Noarchivelog mode only a consistent backup can be applied to
+    the database. Restore the consistent backup and startup the
+    database. No recovery is necessary because the backup is
+    consistent.
+
+- Perform complete recovery in Archivelog mode in RMAN
+
+    SQL> startup mount;
+    SQL> recover database;
+    SQL> alter database open resetlogs;
+    -- afterward a backup
+
+- Restore datafiles to different locations in RMAN
+
+    SQL> startup mount;
+    SQL> alter database rename file 
+       '/O2/oracle/oradata/manual/abc.dbf' to
+       '/O2/oracle/oradata/manual/restore/abc.dbf';
+    SQL> recover database;
+
+- Relocate and recover a tablespace by using archived redo log files
+  in RMAN
+
+    ! cp the tablespace datafiles to the new loacation
+    SQL> alter tablespace abc offline immediate;
+    SQL> alter database rename file '/O1/abc' to '/O3/abc';
+    SQL> recover tablespace abc;
+    SQL> alter tablespace abc online;
+
+- Descibe the steps of incomplete recovery (UM)
+
+    * restore files
+    * mount database
+    * recover database
+    * open with resetlogs
+
+- Perform an incomplete database recovery (UM)
+
+    ! restore the datbase files
+    SQL> startup mount;
+    SQL> recover database until time '2002-08-21:12:10:00';
+    SQL> recover database until cancel;
+    SQL> alter database open resetlogs;    
+
+- Identify the loss of current online redo log files (UM)
+
+    SQL> select member, a.status from v$log a, v$logfile b
+         where a.group# = b.group# and a.status = 'CURRENT';
+
+- Perform an incomplete database recovery using UNTIL time (UM)
+
+    SQL> recover database until time '2002-08-21:12:10:00';
+    SQL> alter database open resetlogs;
+
+- Perform an incomplete database recovery using UNTIL sequence (UM)
+
+    SQL> recover database until sequence 123;
+    SQL> alter database open resetlogs;
+
+- Perform disaster recovery (RMAN)
+
+    RMAN> startup nomount;
+    RMAN> restore controlfile;
+    RMAN> alter database mount;
+    RAMN> restore database;
+    -- Take as sequence number the last sequence + 1 from
+    -- list backup.
+    RMAN> recover database until sequence 3 thread 1;
+    RMAN> alter database open resetlogs;
+    RMAN> sql 'alter tablespace temp add tempfile';
+    RMAN> shutdown;
+    RMAN> startup mount;
+    RMAN> backup database;
+    RMAN> alter database open;
+
+- Perform an incomplete database recovery using UNTIL time with RMAN
+
+    RMAN> set until time ...;
+    RMAN> switch datafile ...;  -- optional
+    RMAN> restore ...;
+    RMAN> recover ...;
+    RMAN> sql 'alter database open resetlogs';
+
+- Perform cross checking of backup and copies
+
+    crosscheck backup;
+
+- Update the repository when backups have been deleted
+
+    ***???***
+
+- Change the availability status of backups and copies
+
+    RMAN> change backupset 231 nokeep;
+
+- Make a backup or copy exempt from the retention policy
+
+    RMAN> backup database keep until time "to_date()" nologs;
+    RMAN> backup database keep forever logs;
+
+    -- In the case of nologs the backup must be consistent.
+
+- Catalog backups made with operating system commands
+
+    ***???***
+
+- Describe the contents of the recovery catalog
+
+    ***???***
+
+- Create the recovery catalog
+
+    RMAN> drop catalog;
+    RMAN> create catalog;
+
+- Maintain the recovery catalog by using RMAN commands
+
+    ***???***
+
+- Use RMAN to register, resynchronize, and reset a database
+
+    RMAN> resync catalog;
+
+- Query the recovery catalog to generate reports and lists
+
+    ***???***
+
+- Create, store, and run scripts
+
+    ***???***
+
+- Describe methods of backing up and recovering the repository catalog
+
+    ***???***
+
+- Describe the uses of the EXP and IMP utility
+
+    ***???***
+
+- Describe the Export and Import concepts and structures
+
+    ***???***
+
+- Perform simple export and import operations
+
+    ***???***
+
+- List guidelines for using Export and Import
+
+    ***???***
+
+- Describe direct-load insert operations
+
+    SQL*Loader builds column arrays and this arrays are passed to a
+    block formatter. By this operation RDBMS processing is bypassed
+    and so the insert is much faster. Direct path load is part of the
+    OCI API.
+
+- Demonstrate usage of direct-load insert operations
+
+    ***???***
+
+- Describe the usage of SQL*Loader
+
+    SQL*Loader is used to import data from external sources.
+
+- Perform basic SQL*Loader operations
+
+    load data
+    infile 'TBT-3.csv'
+    into table tbt_ver truncate
+    fields terminated by ';'
+    (verans,calcflag)
+
+- List guidelines for using SQL*Loader and direct-load insert
+
+    ***???***
+
+- SQL*Loader
+
+  - INSERT - The table must be empty.
+
+  - TRAILING NULLCOLS. Missing fields will be treated as
+    null. Otherwise an error would occur.
+
+- Time Data Types
+
+  - Minus operator is not possible
+
+- Log Miner
+
+  - v$logmnr_contents

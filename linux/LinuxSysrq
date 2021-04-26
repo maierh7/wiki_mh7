@@ -1,0 +1,27 @@
+
+** Activate SYSRQ
+
+  - echo 1 > /proc/sys/kernel/sysrq
+
+** Tastenfolge
+
+  - ALT+Druck
+
+** Reboot (busier reverse)
+
+  - r 	X11 das Keyboard nehmen
+  - e	alle Prozesse außer Init beenden (SIGTERM)
+  - i   alle verbleibenden Prozesse außer Init abschießen (SIGKILL)
+  - s   sync
+  - u   FS read-only mounten
+  - b   reboot
+
+** weitere Funktionen
+
+  - k	alle Prozesse im aktuellen Terminal beenden
+  - f   speicherfressende Prozesse killen
+  0-9   Log-Level setzen
+  - o   System ausschalten
+  - lmpqtw	diverse Debug-Informationen dumpen
+  - c   Reboot via kexec
+  - n   Priorität von Echtzeit-Tasks ändern

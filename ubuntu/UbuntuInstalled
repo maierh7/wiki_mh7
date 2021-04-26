@@ -1,0 +1,21 @@
+
+** List
+
+To get a list off all installed packages
+
+  - dpkg-query -l
+
+  - dpkg.pl (~/local/sh)
+
+
+** Aptitude
+
+*** Search Patterns
+
+  - *~i* 		 displays all installed package
+  - *~nname, name* displays the packages name
+
+<code>
+aptitude show ~i
+aptitude show ~ngimp-data xulrunner-1.9
+</code>

@@ -1,0 +1,11 @@
+
+** Testing
+
+  - *ref* SCALAR|ARRAY|HASH|CODE|REF|GLOB|LVALUE
+
+<example>
+
+if( ref($obj) eq "HASH" ) {}
+
+</example>
+

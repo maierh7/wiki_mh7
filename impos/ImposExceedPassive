@@ -1,0 +1,26 @@
+
+** Konfiguration von Exceed Passive Modus
+
+Dieser Modus erlaubt es X11 Programme direkt ohne Root Window
+aufzurufen. Wird eventuell für den Betriebsrat benötigt.
+
+
+** Xconfig
+
+  - Kommunikation - Modus: Passive
+  - Bildschim - Fenstermodus: Mehrere
+
+** Xstart
+
+  Startmethode: REXEC (TCP/IP) oder TELNET(TCP/IP)
+  Programmtyp : X Window
+
+  Benutzerkennung: brat
+  Host:            blnuimp1
+  Passwort:        ***
+
+  Befehl: /home/midba/bin/Z_BRat -d @d
+
+  Unter Sonstiges:
+
+  [x] Host-Antwort anzeigen (fürs debuggen)

@@ -1,0 +1,65 @@
+
+** Modifiers
+
+  - m multiple line
+  - s single line, '.' matches new line
+  - i insensitive, A match a
+  - x, xx
+      permitting white space and comments
+      xx >= 5.26, white space in [] classes also ignored
+  - p ingored >= 5.20
+  - a, d, l, u
+    >= 5.14
+  - n does not fill $1, $2
+  
+** Escapes
+
+  \w	match a word
+  \W	match a non-word
+  \s	match a whitespace
+  \S	match a non-whitespace
+  \d	match a digit
+  \D	match a non-digit
+  \pP	match a named property
+  \p{P}
+  \pp	match non-P
+  \X	match unicode "eXtended grapheme cluster"
+  \1	backreference to capture group
+  \g1	dito
+  \g{1} dito
+  \g{-1}  	backreference relative
+  \g{name}	named backreference
+  \k<name>	named backreference
+  \K	Keep only the stuff left from \K in $& ($MATCH)
+  \N	Any character but not "\n"
+  \v	vertical whitespace
+  \V	not vertical whitespace
+  \h	horizontal whitespace
+  \H	not horizontal whitespace
+  \R	Linebreak (\r, \r\n, \n)
+  
+** Matches
+
+  $& 	match
+  $`	prematch
+  $'	postmatch
+  
+** Backslash
+
+   \000		octal
+   \a		character alarm
+   \b{}, \b	boundary, [] character backspace
+   \cX		control-x
+   \e		character escape
+   \E		turn off \Q, \L, \U
+   \f		formfeed
+   \F		foldcase till \E
+   \G		pos assertion
+   \l		lower case next character
+   \L		lower case till \E
+   \n		new line
+   \N{}		named unicode character
+   \o{}		octal sequence
+   \p{}, \pP	match any character with the given unicode property
+   \P{}, \PP	match any character without the given unicode property
+   \Q		disable pattern meta characters till \E

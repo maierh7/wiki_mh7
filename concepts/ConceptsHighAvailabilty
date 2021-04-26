@@ -1,0 +1,52 @@
+
+** Why HA
+
+  - lost productivity and revenue
+  - dissatisfied customers
+  - tarnished corporate image
+
+  - mission critical
+
+** What provides Oracle
+
+  - comprehensive technologies pre-integrated in the software stack
+
+** Concepts
+
+  - active-passive
+  - active-active
+  - failover
+  - I/O fencing
+
+  - shared nothing architecture
+  - shared disk and cache architecture
+
+** Products
+
+*** RAC
+
+  - easy to deploy and manage
+  - load balancing out of the box
+
+  - clusterware
+  - interconnect
+  - asm
+  - virtual internet protocol
+  - extended distance cluster < ~100km
+
+  - recoverability
+  - error detection
+  - continous operations
+
+**** Retail
+
+  - Retail batch job processing needs a huge server
+  - Parallel query and DML (but this should be supported by the
+    application) 
+
+*** Data Guard
+
+** Comparsion
+
+  - Performance of ASM seems better as GPFS
+

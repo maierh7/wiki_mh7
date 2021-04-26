@@ -1,0 +1,10 @@
+
+admin command 'status';
+admin command 'version';
+admin command 'report abc.lis';
+admin command 'throwout all';
+admin command 'shutdown';
+admin command 'shutdown force';
+
+admin command 'parameter'
+

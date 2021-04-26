@@ -1,0 +1,47 @@
+
+** Constraint Types
+
+  - c not null (SYS_%)
+  - p primary key 
+  - u unique
+  - r foreign key
+  - c check
+  - v with check option on a view
+  - o read only on a view
+
+** Check Type
+
+  - initially defered
+  - initially immediate
+
+** Constraint Checking
+
+  - If working on bulk of datas it might be good to set the
+    constraint checking to defered because the constraints are only
+    succeed on the end of the transaction. Use herefor the 'set
+    constraint' statement.
+
+  <example>
+    set constraint abc defered;
+    -- or
+    set constraints all defered;
+    -- or
+    alter session set ...
+  </example>
+
+** Check Before Commit
+
+  <example>
+  ...
+  set constraints all immediate;
+  </example>
+
+** Disable a Constraint
+
+  <example>
+    SQL> alter table <table> constraint disable <constraint>;
+  </example>
+
+** Constraint Failed
+
+  - see OracleSqlConstraintFailed

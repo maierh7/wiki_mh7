@@ -1,0 +1,36 @@
+*ccol$
+Column constraints
+*cdef$
+Definitions of constraints
+*clu$
+Clusters
+*col$
+Columns
+*con$
+Constraints
+*fet$
+Free extents
+*file$
+Database files
+*filext$
+Database files with autoextent.
+*icol$
+Index columns
+*ind$
+Indexes
+*obj$
+Objects
+*seg$
+Segments
+*tab$
+Tables
+*ts$
+Tablespaces
+*tsq$
+Tablespace quotas
+*uet$
+Extents
+*undo$
+Undo segments
+*user$
+Users

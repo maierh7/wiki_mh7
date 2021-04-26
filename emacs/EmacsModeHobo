@@ -1,0 +1,8 @@
+
+- *hobo-use-agent* nil
+
+This variable requires that ssh/scp is configured without interaction.
+
+- *hobo-after-save-transmit* auto
+
+This variable causes a transfers of the file after saving.

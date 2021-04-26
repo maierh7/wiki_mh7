@@ -1,0 +1,1050 @@
+
+** Performance Tuning
+
+- Describe the roles associated with the database tuning process
+
+    - Anwendungsdesigner
+    - Anwendungsentwickler
+    - Datenbankadministratoren
+    - Systemadministratioren
+
+- Describe the dependency between tuning in different development
+  phases
+
+    - Application-Design and -Development
+      - Normalize
+      - Afterward Denormalize
+
+    - Configuration of the database
+      - faster access
+      - faster recovery
+
+    - Additional Applications
+      - Workload changes
+
+    - Ongoing Tuning
+      - Improve a production system
+
+- Describe service level agreements
+
+    - A specific process should be complete within a specified time
+      period.
+    - A certain number of transaction per second have to be processed.
+
+- Describe the tuning goals
+
+    - Reducing or eliminate waits
+    - Accessing the least number of blocks
+    - Caching blocks in memory
+    - Reduce response time
+    - Better throughput
+    - Better load
+    - Faster Recovery time
+
+- Describe the most common tuning problems
+
+    - Bad session management
+    - Bad cursor management
+    - Bad relational design
+
+- List tuning steps
+
+    - Design
+    - Application
+    - Memory
+    - I/O
+    - Contention
+    - OS
+
+- Describe how the alert file is used
+
+    It logs chronical database operations and errors.
+
+    - Internal errors (ora-600)
+    - block corruption (ora-1578 ora ora-1498)
+    - database operations
+      - checkpoint start and end times
+      - incomplete checkpoints
+      - time to perform archiving
+      - recovery start and end times
+      - deadlock and timeout errors
+    - view the nondefault parameters
+
+- Describe the statistics kept in the dynamic performance views
+
+    v$fixed_table lists all the performace views.
+
+    - instance/database
+    - disk
+    - user/session
+    - memory
+    - contention
+
+- Analyzing a table
+
+    - analyze ... validate structure cascade does not interfere
+      with the dbms_stats pack. Or with other words the analyzed data
+      are not used by the Oracle optimizer. 'compute statistics' and 
+      'estimate statistics' are used by the optimizer.
+
+- Collect statistics using STATSPACK
+
+    - SQL> @spcreate.sql
+    - SQL> @spauto.sql or
+    - SQL> exec statspack.snap;
+    - SQL> @spreport.sql
+    - SQL> @sprepsql.sql
+    - SQL> @sppurge.sql
+    - SQL> @sptrunc.sql
+    - SQL> @spdrop.sql
+
+- Describe how the STATSPACK collects statistics
+
+    Statspack takes snapshots of performance data. With the spreport
+    script the user determines a range of snapshots. The min and max
+    snapshot of that range are the input for the report.
+
+- Describe other tools that can be used during tuning
+
+    - V$xxx views
+    - DBA_xxx views
+    - statspack
+    - Oracle wait events
+    - OEM/Oracle diagnostics and tuning packs
+
+- Describe the shared pool
+
+    The shared pool contains the library and dictionary cache and also
+    if large pool is not configured the user global area for shared
+    server connections.
+
+- Measure and tune the library cache hit ratio
+
+    SQL> select gethitratio from v$librarycache;
+    SQL> select sum(pinhits)/sum(pins) from v$librarycache; **???**
+
+    The library cache stores shared SQL and PL/SQL code. This includes
+    the statement text, parsed code and execution plan.
+
+- Measure and tune the dictionary cache hit ratio
+
+    v$rowcache
+
+- Size and pin objects in the shared pool
+
+    dbms_shared_pool.keep. keep the following objects:
+
+    - large PL/SQL objects
+    - triggers on frequently used tables
+    - sequneces
+
+- When is the large pool used
+
+    - parallel query
+    - recovery manager
+    - shared server
+
+    The large pool has not a LRU list.
+
+- Tune the shared pool reserve space
+
+    The reserved size should be in the range of 5 to 10 percent of the
+    shared pool size.
+
+- Describe user global area
+
+    The UGA is for dedicated server in the PGA and for shared server
+    inside thie shared pool. The UGA contains user session data and
+    cursor states.
+
+- List other tuning issues related to the shared pool
+
+- Describe how the buffer cache is used by different Oracle processes
+
+    The buffer cache stores the most recently used blocks of data. The
+    DBWn writes the modified or dirty blocks from the buffer cache to
+    the datafiles. The server processes reads the data blokcs into the
+    buffer cache.
+
+- Organisation of the Buffer Cache
+
+    The Buffer cache is divided into two list: the write list and the
+    lru list. The lru list holds free buffers, pinned buffers, and
+    dirty buffers that have not yet been moved to the write list. Free
+    buffers do not contain any useful data and are available for
+    use. Pinned buffers are currently being accessed. A second list is
+    the checkpoint queue. This list points to dirty buffers in the LRU
+    list that have not been written to disk.
+
+- Structure of a LRU list
+
+    MRU --------------------------- LRU
+
+- LRU Algorithm and FTS
+
+    The blocks of a FTS are placed to the end of the LRU list, because
+    they are used only briefly. The cache clause of the create table
+    and index statement moves the table or index blocks into the MRU
+    end of the LRU list.
+
+- Buffer Cache Pools
+
+    - DEFAULT
+    - KEEP
+    - RECYCLE
+    - DB_2K_CACHE_SIZE
+    - DB_4K_CACHE_SIZE
+    - DB_8K_CACHE_SIZE
+    - DB_16K_CACHE_SIZE
+    - DB_32K_CACHE_SIZE
+
+Use the buffer pool clause in the storage clause.
+
+    SQL> ... storage ( buffer pool recycle )
+
+    Use the KEEP pool for small warm segments. Use the RECYCLE pool
+    for seldom used large scans.
+
+- Small Segment vs. Large Segment
+
+    Two percent of the buffer cache is small. Segments greater than 10
+    percent of the buffer cache are very large.
+
+- Buffer Cache Hit Ratio
+
+    SQL> select 1 - physical_reads / session logical reads
+         from v$buffer_pool_statistics;
+
+    - session logical reads =  db_block_gets + consistent_gets
+    - physical reads = physical reads - direct reads
+
+    Note: The buffer cache hit ratio is only a starting point for
+    investigation.
+
+- Describe the tuning issues related to the buffer cache
+
+    - Reduce FTS scans
+    - Reduce repeated scanning of large tables or indexes.
+    - Avoid requerying the same data
+    - Increasing of the buffer cache by the previous operations has no
+      effect.
+
+- Monitor the use of the buffer cache, also the different pools within
+  the buffer cache
+
+    - session logical reads
+    - physical reads
+    - physical reads direct
+    - physical reads direct (lob)
+
+- Describe dynamic SGA allocation
+
+    The SHARED POOL, LARGE POOL and BUFFER CACHE can be sized
+    dynamically. If the init parameter SGA_MAX_SIZE is not set then
+    SGA_MAX_SIZE defaults to the actual size used by those components.
+    Note the JAVA_POOL and the REDO LOG BUFFERS cannot be resized.
+
+    manual
+    ------
+    variable: 60
+    others  : 36
+    shared  : 24 
+    db cache: 32
+
+    The pools and caches can be resized in granule units. See the view
+    v$sga_dynamic_components for the actual granule size. The granule
+    size if of sga_max_size <= 128MB 4MB. For a greater value the
+    granule size is on Unix 16MB and on Windows 8MB. Minimum SGA is
+
+    - one granule for fixed SGA
+    - one granule for buffer cache
+    - one granule for shared pool
+
+- Deprecated Buffer cache parameters
+
+    - db_block_buffers
+    - db_block_lru_latches
+    - buffer_pool_keep
+    - buffer_pool_recycle
+
+    If used in conjunction with the dynamic SGA feature Oracle throws
+    ORA-00381.
+
+- Set the DB_CACHE_ADVICE parameter
+
+    DB_CACHE_ADVICE=on
+
+- Create and size multiple buffer pools
+
+    - db_cache_size
+    - db_keep_cache_size
+    - db_recycle_cache_size
+
+- Sizing the recycle buffer pool
+
+    Disable db_recycle_cache_size. Then sum all the blocks that should
+    be kept in the recycle buffer as follows:
+
+    SQL> select owner#, name, count(*) from v$cache where name in
+         (<objects kept in the recycle buffer>);
+
+    size = result / 4 * db_block_size
+
+- LGWR writes
+
+    - A commit record when a user commits a transaction (fast
+      commit). Note: The dirty buffer may be later written by DBWn.
+
+    - redo log buffers 
+
+      - every three seconds
+      - when log buffer one third full
+      - when DBWn process writes modified buffers
+
+- Flushing of dirty buffers
+
+    - Checkpoint is signaled
+    - Checkpoint Queue Exceeds
+    - Search Threshold Exceeded
+    - alter tablespace offline or alter tablespace begin backup
+    - drop object
+    - clean shutdown
+
+- Other performance indicators of the buffer cache performance
+
+    - free buffer inspected statistic
+    - free buffer waits (wait event)
+    - buffer busy waits (wait event)
+
+- Detect and resolve free list contention
+
+    SQL> select class, count, time from v$waitstat
+         where class = 'segment header';
+
+    SQL> select event, total_waits from v$system_event
+         where event = 'buffer busy waits';
+
+    SQL> select s.segment_name, s.segment_type, s.freelists,
+                w.wait_time, w.seconds_in_wait, w.state
+         from dba_segments s, v$session_wait w
+         where w.event ='buffer busy waits'
+         and w.p1 = s.header_file
+         and w.p2 = s.header_block;
+
+
+    - Data blocks
+      - change PCTFREE and/or PCTUSED
+      - check for right-hand indexes
+        - many processes try to insert at the same point
+      - increase INITRANS
+      - reduce the number of rows per block
+
+    - Segment Header
+      - Use free lists or increase the number of free lists
+      - Use free list groups
+
+    - Free list blocks
+      - add more free lists
+      - each instance should have its own free list group
+
+    Resolving:
+
+    - increase the number of free lists (only useful in RAC)
+    - Use ASSM
+
+- Monitor and size the redo log buffer
+
+    Changes to the data blocks in the buffer cache generates redo data
+    in the log buffer. LGWR writes the log buffer if the following are
+    true:
+
+    - log buffer becomes on third full
+    - by commit or rollback
+    - DBWR posts LGWR to do so
+
+    SQL> select name, value from v$sysstat
+         where name = 'reod buffer allocation retries';
+
+    The selected value should be near zero over an interval. The wait
+    can be caused by a too small log buffer or by checkpointing.
+
+    Possibilities are:
+
+    - increase log buffer
+    - improve checkpointing
+    - improve archiving
+
+- Monitor and size the java pool
+
+    - JAVA_POOL_SIZE
+
+- Configure and use multiple DBW processors
+
+    DB_WRITER_PROCESSES.
+
+- List reasons for partitioning data in tablespaces
+
+    Types:
+
+    - Range
+    - Hash
+    - List
+    - Composite
+
+    - Tables greater 2GB
+    - Tables containing historical data
+
+- Diagnose tablespace usage problems
+
+    ???
+
+- Table Scan
+
+    - v$sysstat: long tables > 4 blocks. A large number of long table
+      scans indicate that indexes are missing.
+
+- Describe how checkpoints work
+
+    - Periodically Oracle records a checkpoint (highest SCN). The
+      checkpoint is written to the control files and to the data file
+      headers. At recovery only SCNs higher than the checkpoint need
+      to be applied.
+
+    - Incomplete Checkpoint: Every three seconds the CKPT process
+      records the first entry in the checkpoint queue to the control
+      file. At log switch the CKPT process will too update the data
+      file headers.
+
+    - Complete Checkpoint happens at shutdown and by 'alter system
+      checkpoint'.
+
+    - Tablespace Checkpoint happens at 'alter tablespace ... begin
+      backup'.
+
+- Monitor and tune checkpoints
+
+    - log_checkpoints_to_alert
+
+- Monitor and tune redo logs
+
+    SQL> select * from v$session_wait where event = 'log buffer space%';
+
+    - If 'log buffer space%' happens then filling of the log buffer is
+      faster than writing of the log buffer.
+
+    - v$sysstat: redo buffer allocation retries / redo entries < 1%
+
+    - v$sysstat: redo log space requests. Log file is full.
+
+    - v$system_event: event = 'log file switch%'
+
+      - Increase size of redo log files
+      - Change checkpointing (fast_start_mttr_target)
+      - Archiving medium full or needs more redo log groups
+
+    - LOG_ARCHIVE_MAX_PROCESSES. Monitor this with v$archive_processes.
+
+- Nologging Mode
+
+    - create table ... as select
+    - create index ...
+    - alter inex ... rebuild
+    - insert into ... /*+ append +/ select ...
+
+- Describe how sorts are performed
+
+    If the sort does not completely fit into the SORT_AREA_SIZE or the
+    work area then the sort is separated into phases. The temporary
+    output of the phases is stored in temporary segments on disk. 
+    After all the data has been received by the sort, Oracle merges
+    the runs (phases) to produce the final output.
+
+    select * from v$sysstat where name like 'sorts%';
+
+    LMT temporary tablespaces are faster because they don't modify
+    data outside of the temporary tablespace or generate any redo for
+    temporary tablespace data.
+
+
+- SORT_AREA_RETAINED_SIZE
+
+    For example if a statement has 3 sorts then the server keeps one
+    area with size SORT_AREA_SIZE and two areas with size
+    SORT_AREA_RETAINED_SIZE.
+
+    For parallel query a size of 1MB seems to be optimal. Larger value
+    do not improve performance significantly.
+
+- Identify the SQL operations which require sorting
+
+    - create index
+    - sort-merge joins
+    - select ... order by
+    - select distinct ...
+    - select ... group by
+    - select ... union
+    - select ... intersect
+    - select ... minus
+
+- Sorting hints
+
+    - NOSORT for presorted data.
+    - UNION ALL. This does not eliminate duplicates.
+    - Nested Loop Joins. Make sure to use indexes.
+    - ORDER BY. If indexes are used, avoid null values.
+
+- Create and monitor temporary tablespaces
+
+    SQL> create temporary tablespace ...;
+
+    - See v$sort_usage and v$tempstat.
+
+    - See v$sysstat 'sorts%'. sorts (disk) / sorts(memory) < 5%.
+
+    - By default the temporary tablespace is SYSTEM.
+
+    - Temporary tablespace don't need to be part of a backup strategy.
+
+    - INITIAL and NEXT should be  integer multiples of SORT_AREA_SIZE.
+      Don't use uniform. PCTINCREASE should be zero. The tablespace
+      should be striped.
+
+- Describe ways to reduce total sorts and disk sorts
+
+    - Investigate a SQL statement whether it can be tuned to avoid the
+      sort activity.
+
+- I/O issues
+
+    See the view v$filestat and there the columns phyrds and phywrts.
+
+    Average I/O per second = (phyrds + phywrts) / elapsed seconds.
+
+- Describe the purpose of latches
+
+    Latches are low-level serialization mechanisms to protect the
+    shared data in the SGA. Or in other words they are light weight
+    locks to protect the internal data structures.
+
+    Two modes: willing-to-wait and immediate.
+
+- Describe how to diagnose contention for latches
+
+    Look for the 'latch free' event in the statspack report in the
+    section 'Top 5'. Then go further and look for 'Latch Activity'.
+
+- Identify the resources to be tuned to minimize latch contention
+
+
+    - shared pool and library cache latch
+
+      - Tune the application (unnecessary parsing).
+        - Unshared SQL
+        - Reparsed Sharable SQL
+
+      - Based on other hit ratios change the buffer cache and the
+        shared pool. If a shared server configuration is used then a
+        large pool should be configured too.
+
+    - cache buffers LRU chain latch
+
+      - This signals extensive buffer cache throughput. Tune the
+        application.
+
+    - cache buffers chains latch
+
+      - Hot blocks. Some buffers are accessed repeatedly. Configure
+        maybe another DBWn. X$BH.TCH indicates a hot block.
+
+
+    - redo allocation latch
+    - redo copy latch
+
+- Use the dynamic performance views to check rollback segment
+  performance
+
+    The following views use the USN (undo segment number). v$rollname 
+    describes the USN.
+
+    - v$rollname
+    - v$rollstat: sum(waits) / sum(gets)
+    - v$system_event: undo segment tx slot shows contention on
+                      rollback segment header
+    - v$waitstat '%undo%'
+    - v$sysstat
+    - v$transaction
+
+    - statspack: Rollback Segment Stats
+
+- Reconfigure and monitor rollback segments
+
+    - SQL> create rollback segment rbs8 on rbs_ts
+           storage( initial 64 k next 64K minextents 20 
+                    pctincrease 0 optimal 1280 k);
+
+    - State 1: select usn, writes from v$rollstat;
+    - do a transaction 
+    - State 2: select usn, writes from v$rollstat;
+    - take the differences
+
+- Define the number and sizes of rollback segments
+
+    - OLTP : One RBS for four transaction.
+    - BATCH: One RBS for each job.
+
+    - SMALL:   8K to 64K, initial = next, minextents = 20
+    - LARGE: 128K to  4M, initial = next, minextents = 20
+
+    - OPTIMAL= 20 * initial
+
+- Explain the concepts of automatic undo management
+
+    AUM manages automatically undo space in the database. It needs
+    only one undo tablespace and it is activated with a single INIT
+    parameter.
+
+    v$undostat.undoblks columns displays the number of undo blocks
+    allocated.
+
+- Undo suppress errors
+
+    UNDO_SUPPRESS_ERRORS: Ignores errors by 'SET TRANSACTION USE
+    ROLLBACK SEGMENT'.
+
+- Undo retention
+
+    UNDO_RETENTION controls the amount of commited undo information to
+    retain.
+
+- Create and maintain automatic managed undo tablespace
+
+    UNDO_MANAGEMENT=auto
+
+    SQL> create database ... undo tablespace <ts name> ...;
+
+    SQL> create undo tablespace <ts name> ...;
+
+- Define levels of locking
+
+    - row level   (TX)
+    - table level (TM)
+
+    - exclusive lock: a resource cannot be shared (dml row)
+    - share lock:     a resource can be shared    (dml table)
+
+    A DML transaction acquires at least two locks. A shared lock on
+    table level (TM) and a exclusive lock on row level (TX).
+
+    If three users wants to update the same row then all three users
+    get the shared TM lock. But only the first user gets the exclusive
+    TX lock.
+
+    Parameters: DML_LOCKS ENQUEUE_RESOURCES
+
+
+- Lock Modes
+
+    Automatic: RS and RX
+    - RS: select ... for update
+    - RX: update, delete, insert
+
+    Manual   : S, SRX and X
+
+
+    Exclusive DDL
+    Shared DDL 
+    Breakable Parse lock (invalidates SQL statements)
+
+- List possible causes of contention
+
+    - shared pool contention
+    - library pool contention
+    - latch contention
+    - lock contention
+    - disk contention
+    - block contention
+    - rollback segment contention
+    - dispatcher contention
+    - shared server contention
+
+- Use Oracle utilities to detect lock contention
+
+    - v$lock
+    - v$locked_object
+    - dba_waiters
+    - dba_blockers
+      - @?/rdbms/admin/utllockt.sql
+
+    SQL> select * from v$lock where request > 0;
+
+- Resolve contention in an emergency
+
+    SQL> alter system kill session '<sid>,<serial#>';
+
+- Prevent locking problems
+
+    - Use 'select ... for update ...'.
+
+- Identify issues associated with managing users in a Oracle shared
+  server process
+
+    - Shared servers are started by PMON when the existing shared
+      servers are busy. When shared servers are idle PMON will remove
+      them to the number of shared_servers.
+
+    - Shared servers needs a configured large_pool.
+
+    - SORT_AREA_RETAINED_SIZE should be smaller than SORT_AREA_SIZE.
+
+    - Needs a running listener.
+
+    - The PROCESSES parameter should be high enough.
+
+    - startup and shutdown is not possible with a shared server
+      connection.
+
+    - Make shure that INSTANCE_NAME, SERVICE_NAMES or DB_DOMAIN are
+      set correctly. Otherwise automatic instance registration will
+      not work.
+
+- Diagnoes and resolve performance issues with Oracle shared server
+  processes
+
+    - v$session
+    - v$shared_server_monitor
+    - v$dispatcher
+    - v$dispatcher_rate
+    - v$shared_server
+    - v$circuit
+
+- Configure the Oracle shared server environment to optimize
+  performance
+
+    SQL> select sum(busy) / (sum(busy) + sum(idle)) from v$dispatcher;
+
+    - If the rate is over 50% then increase the number of
+      dispatchers. 
+
+    SQL> select busy / (busy + idle) from v$shared_server;
+
+    SQL> select wait / totalq from v$queue where type = 'COMMON';
+
+- Explain different storage structures, and why one storage structure
+  may be preferred over another
+
+    - LMT: They avoid recursive space management operations by extent
+      allocation.
+
+    - Table
+    - Index Organized Table
+    - Cluster
+    - Partitions
+
+- Explain the different types of indexes
+
+    - B-TREE indexes
+    - Reversed B-Tree Indexes
+    - Bitmap indexes
+    - Index organized tables
+    - Function Based Indexes
+
+- Explain index organized tables
+
+    An IOT is like a normal table. For the IOT the database maintains
+    only one segment.
+
+    - faster key based access
+    - reduced storage requirements
+    - logical rowid
+    - needs a primary key
+    - cannot be clustered
+
+    - overflow area (in percent)
+
+    - additional bitmap indexes must have a mapping table
+
+    SQL> create table .. organization index mapping table
+
+- Describe materialized views and the use of query rewrites
+
+    - dbms_mview.refresh()
+
+- Describe the correct usage of extents and Oracle blocks
+
+    - LMTs
+    - Size the segments appropriately
+    - Monitor segments ready to extend.
+
+    Pros and Cons of Large extents:
+
+    - Less likeley to extend dynamically
+    - Reading of the entire extent with a single I/O operation
+
+    - Free space may not be available
+    - Unused space
+
+    Pros and Cons of Smaller Block Size
+
+    - Reduce block contention
+    - Good for small rows
+    - Good for random access (efficienter use of buffer cache)
+
+    - Large overhead
+    - Only a small number of rows per block
+    - This can cause more index blocks to be read.
+
+
+    Pros and Cons of Larger Block Size
+
+    - Less overhead
+    - Good for sequential reads
+    - Good for very large rows
+    - Better performance by index reads (more index entries)
+
+    - Increased block contention
+    - Waste of space in buffer cache by random access
+
+- Explain space usage and the high water mark
+
+    The HWM is the marker that points to the unformatted space inside
+    a segment. 
+
+    SQL> analyze table <name> compute statistics;
+    SQL> select blocks, empty_blocks from dba_tables;
+
+- Describe the use of Oracle block parameters
+
+    - pctfree
+    - pctused
+
+- Recover space from sparsely populated segments
+
+    - Space above the HWM
+
+    SQL> alter table <name> deallocate unused;
+
+    - Space below the HWM
+
+      - exp -> drop/truncate -> imp
+      - alter table <name> move;
+
+    - Both drop and alter ... move needs afterward a rebuild of the
+      indexes.
+
+- Describe and detect chaining and migration of Oracle blocks
+
+    - Chaining happens if a record does not fit into one block. This
+      happens especially with LONG and LONG RAW types.
+
+    - Migration happens by update, if the record afterward did not fit
+      in the owning block. This is caused by setting PCTFREE to a too
+      low value.
+
+    - analyze table <name> compute statistics;
+      - dba_tables.chain_cnt
+    - @?/rdbms/admin/utlchain.sql or @?/rdbms/admin/utlchn1.sql
+    - analyze table <name> list chained rows;
+
+    - v$sysstat: Table Fetch Continued Row
+
+    - copy it to a tmp table > delete it from original table -> copy
+      it to the original table
+
+- Perform index reorganization
+
+    - create index <name> ... compute statistics;
+    - alter index <name> rebuild compute statistics;
+
+- Monitor indexes to determine usage
+
+    - alter index <name> monitoring usage;
+    - select * from v$object_usage; 
+
+- Describe how the optimizer is used
+
+    - choose
+    - rule
+    - first_row
+    - first_rows_100
+    - all_rows
+
+    Tu due statistics the CBO calculates the cheapest path and uses
+    that.
+
+- Use of stored outlines
+
+    - Session parameter CREATE_STORED_OUTLINES = <name>
+    - Session parameter use_stored_outlines = <name>
+    - Session parameter use_private_outlines
+      - see also dbms_outln_edit.create_edit_tables
+
+    - create outline ...
+    - create private outline ...
+
+- Use of SQL Trace and TKPROF
+
+- Collect statistics on indexes and tables
+
+    - gather_tables_stats
+    - gather_index_stats
+    - gather_schema_stats
+    - gather_stale_stats
+
+    - AUTO_SAMPLE_SIZE
+
+    - options:
+      - GATHER STALE: only for objects with MONITORING
+      - GATHER EMPTY: only for objects without statistics
+      - GATHER AUTO : oracle decides for which object to collect 
+                      statistics
+
+    - gather_system_stats
+    - set_system_stats
+
+- Histograms
+
+    - dba_histograms
+    - dba_tab_histograms
+
+    SQL> exec dbms_stats.gather_schema_stats(
+           ownname          => 'OE',
+           options          => 'GATHER AUTO',
+           estimate_percent => DBMS_STATS.AUT_SAMPLE_SIZE,
+           method_opt       => 'for all columns size auto');
+
+- Copy statistics between databases
+
+    - export_schema_stats
+    - import_schema_stats
+
+- Set up database resource manager
+
+    - Resource consumer group
+    - Resource plan
+    - Resource plan directives (group:plan|n:m)
+
+    - create_plan (parents)
+    - create_plan_directive
+      - parent, group, directives
+    - create_consumer_group (leaves)
+
+    - RESOURCE_MANGER_PLAN
+    - SYSTEM_PLAN
+      - SYS_GROUP
+      - OTHER_GROUP
+      - LOW_GROUP
+
+    - dba_rsrc_plans
+    - dba_rsrc_consumer_groups
+
+
+- Assign users to resource manager groups
+
+    - dbms_resource_manager.set_initial_consumer_group(user,group)
+    - dbms_session.switch_current_consumer_group(new,old,flag)
+    - dbms_resource_manager_privs.grant_switch_consumer_group(user, group)
+    - dbms_resource_manager_privs.revoke_switch_consumer_group(user, group)
+
+- A healthy system
+
+    - physical read waits
+    - idle waits
+    - others
+
+** Tables
+
+- v$sysstat
+- v$system_event (all sessions aggregated)
+
+- v$sesstat
+- v$session_event (all sessions)
+- v$session_wait (current sessions waiting)
+
+- v$cache
+- v$buffer_pool
+- v$buffer_pool_statistics
+
+- dba_tables (blocks) Lists the allocated blocks. To get this value
+  the table needs to be analyzed (analyze ... validate structure cascade).
+
+- dba_indexes (leaf_blocks). See also the package dbms_space.
+
+- v$session_longops. See to dbms_application_info set_session_longops
+  and set_session_longops_nohint (init function).
+
+** Wait Events
+
+- buffer busy waits       -> v$session_wait get the type of block
+- free buffer waits       -> check buffer cache statistic
+- db file scattered       -> poorly tuned SQL
+- db file sequential read -> poorly tuned SQL
+- enque                   -> depends on type of enqueue
+- latch free              -> depends on latch
+- log buffer space        -> log buffer small
+- log file sync           -> slow disks that stores online logs
+
+** Statistics
+
+- redo log space request  -> request for space in the online redo logs
+- read constistency       -> consistent changes
+                          -> consistent gets
+                          -> transaction tables %
+                          -> waits / gets in v$rollstat
+
+- table fetched by continued row
+                          -> a large percentage indicates chained rows
+- parse related statistics
+                          -> parse time CPU / parse time elapsed 
+                             - no contention if near to one
+                          -> parse time CPU / CPU used by this session
+                             - near to zero means is good
+** SYSTEM_EVENTS
+
+- SQL*Net.*               -> The network or the middle tier could be a
+                             bottle neck
+- buffer busy wait        -> segment header -> free list contention
+                          -> data block     -> unselective indexes
+                                            -> right hand indexes
+                          -> undo header    -> AUM or more rollback segments
+                          -> undo block     -> AUM
+
+- db file scattered read  -> reduce I/O     -> optimize SQL
+                                            -> missing Indexes
+                                            -> lack of statistics
+
+- db file sequential read 
+
+- direct path read (lob)  -> overloaded I/O system
+                          -> sorts to disk (pga_aggregate_target)
+                          -> full table scans
+
+- direct path write       -> ditto
+
+- enque                   -> query v$lock.
+
+                          -> ST enqueue     -> avoid auto extend allocation
+                             - use tempfiles and LMT
+                          -> HW enqueue
+                          -> TM enqueue     -> foreign key constraint
+                          -> TX:6           -> row level lock
+                          -> TX:4           -> ITL/INITTRANS + MAXTRANS
+
+- free buffer waits       -> DBWR           -> I/O is slow
+                                            -> latch contention
+                                            -> buffer cache is to small
+                                            -> buffer cache is to big
+
+                          -> examine DBWR session
+
+- latch free              -> see above latch contention
+
+- log buffer space        -> waiting for free space in the log buffer.
+                          -> LGWR is to slow. Disk contention or log
+                             buffer to small.
+
+- log file switch         -> Check archive destination. Increase archive
+                             processes. By 'checkpoint incomplete'.
+                             Disk contention or the online redo log
+                             files to small or too less groups.
+
+- log file sync           -> Do not so often commit.

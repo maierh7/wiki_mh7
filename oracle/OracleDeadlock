@@ -1,0 +1,37 @@
+
+** Modes
+
+Lock    Mode
+Mode    Req
+
+TX 	X (mode 6) 	
+
+Application row level conflict.
+Avoid by recoding the application to ensure  rows are always locked in
+a particular order.
+
+TX 	S (mode 4) 	
+
+There are a number of reasons that a TX lock may be requested in
+S mode. See Document 62354.1 for a list of when TX locks are requested 
+in mode 4.
+
+TM 	SSX (mode 5) or S (mode 4) 	
+
+This is usually related to the existence of foreign key constraints where the columns are not indexed on the child table. See Document 33453.1
+for how to locate such constraints. See below for locating the OBJECT being waited on
+
+** Types
+
+0 - none
+1 - null (NULL)
+2 - Row Share, also called a subshare table lock  (SS)
+3 - Row eXclusive Table Lock, also called a subexclusive table lock (SX)
+4 - Share Table Lock (S)
+5 - Share Row-eXclusive, also called a share-subexclusive table lock (SSX)
+6 - EXclusive (X)
+
+** Notes
+
+ - Document 15476.1   FAQ: Detecting and Resolving Locking Conflicts and Ora-00060 errors
+ - Document 1507093.1 How to Identify ORA-00060 Deadlock Types Using Deadlock Graphs in Trace

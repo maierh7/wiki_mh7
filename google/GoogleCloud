@@ -1,0 +1,18 @@
+
+** Config
+
+  gcloud config list
+
+** Boost Mode
+
+  # Schnellere Variante der Google Shell
+
+** GS
+
+  # Google Storage
+  gsutil ls
+  
+
+** DM
+
+  gcloud deployment-manager deployments create appserver --config appserver.yaml

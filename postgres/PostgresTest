@@ -1,0 +1,39 @@
+
+** Init and Starting
+
+  su postgres
+
+  $ initdb
+  $ pg_ctl -l logfile start
+  $ createdb testhm
+
+** Test Database
+
+  testhm
+  
+** Interpreter
+
+  su - postgres
+
+  psql testhm
+
+SQL> show data_directory;  
+   data_directory    
+---------------------
+ /var/lib/pgsql/data
+
+** Listings
+
+\dt
+\dt *
+\dt * . *
+
+\d+ abc
+
+select * from information_schema.tables;
+
+** Remote
+
+  - see pg_hba.conf
+
+  see also RedhatFirewall

@@ -1,0 +1,10 @@
+
+** Basic
+** Value Conversion
+** Padding and Aligning Strings
+
+printf('%10s', "test")
+print ('{:>10}'.format ("test"))
+printf('%-10s', "test")
+print ('{:<10}'.format ("test"))
+

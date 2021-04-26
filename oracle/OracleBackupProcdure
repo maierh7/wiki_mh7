@@ -1,0 +1,66 @@
+
+<pre>
+<verbatim>
+
+From: Norman Dunbar <Norman.Dunbar@lfs.co.uk>
+Subject: Archive logs? help?
+Newsgroups: comp.databases.oracle.server
+Date: Fri Mar 07 16:06:27 2003 +0100
+
+...
+
+when doing a hot backup you start (well, I do) by 'alter system archive
+log current' to get a fresh flush of the current logfile, which forces a
+new one to be used. You'll need to know the name, rank & serial number
+of this new one as it needs to stay with the hot backup files.
+
+Than slap each tablespace into backup mode ONE AT A TIME, copy it, take
+it out of backup mode. Repeat until finished. DON'T put all tablespaces
+into backup mode, copy them all etc - it just causes masses of archive
+logs to be generated ! (Read Only tablespaces should be dumped at the
+point they became read only, then they never need dumping again - unless
+you make them read-write again !)
+
+Do another' archive log current' at the end of the hot backup.
+
+Once you have taken the dump, all the hot backup files and all the
+archived logs from the start of the backup should be kept. The first one
+of course is the one you forced to be used with the initial 'archive log
+current' command. From this point onwards, until the next backup, you
+will need the datafile copies and the archived logs, all of them. 
+
+When a restore is required, simply restore the datafile(s) that are
+actually broken, and either recover database or recover tablespace or
+even recover datafile 'blah' at which point, Oracle will tell you which
+log file it needs to begin the recovery.
+
+(God help me if I've made any errors in the above - I'll get a severe
+and well deserved telling off from Howard !)
+
+Basically, to do a recovery from hot backup dump files taken at time X,
+you need all the archived log files since the START of that hot backup
+to be available.
+
+If you have a 'spare' database lying around, take a hot backup, add some
+data to a tables or three, shut it down and delete a/the/some datafiles
+using the OS commands applicable, then do a recovery from your hot
+backup. Practice makes perfect (sometimes) and it is best to have tried
+it out on a totally unimportant database before you have to do it for
+real. Trust me, I know - junior dba, first day on job, senior dba left
+on the Friday previous with instructions for me to 'delete file xxx from
+the source database as the tablespace has been dropped' so I did. You
+can imagine the panic that then ensued as I work in a software house and
+that database is where the source code lives !!!  I did, get a recovery
+with no loss of data in the end, but it took me a long time (until 02:00
+AM - I'd never heard of this NewsGroup then - wish I had !!)
+
+Cheers,
+Norman.
+
+</verbatim>
+</pre>
+
+** Estimates
+
+  - Some people suggest to use *RMAN* this would be easier.
+

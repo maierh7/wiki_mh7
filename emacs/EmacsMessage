@@ -1,0 +1,31 @@
+
+** Smileys
+
+  - :-) smile
+  - ;-) blink
+  - :-( sad
+  - :-] forced
+  - :-| indifferent
+  - :-{ frown
+
+
+** Emphasis
+
+<pre>
+<verbatim>
+
+  *bold*
+  /italics/
+  _underline_
+  _/underlineitalics/_
+  _*underlinebold*_
+
+  In the current gnus configuration (font selection) bolditalics is
+  the same as bold.
+
+  */bolditalics/*
+  _*/underlinebolditalics/*_
+
+</verbatim>
+</pre>
+

@@ -1,0 +1,11 @@
+
+** Projects
+
+  - *local*
+  - *impos*
+  - *yahoo*
+
+** Login
+
+  - cvs -d :pserver:athene:/home/cvsroot login
+  - cvs -d :pserver:athene:/home/cvsroot co abc

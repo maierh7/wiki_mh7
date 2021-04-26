@@ -1,0 +1,18 @@
+
+** Print a Special Format
+
+  - p j (calendar-julian-print-date)
+  - p d (calendar-print-day-of-year)
+
+** Iso Date and Week
+
+  see also cal-iso.el
+
+  - p c (calendar-iso-print-date)
+
+  - g w (calendar-goto-iso-week)
+
+** Europe in Diary
+
+  - (setq european-calendar-style t) ;; obsolete
+  - (setq calendar-date-style 'iso)

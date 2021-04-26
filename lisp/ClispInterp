@@ -1,0 +1,8 @@
+
+** Running
+
+  - clisp
+
+** Running in emacs
+
+  - (run-lisp "/usr/local/bin/clisp")

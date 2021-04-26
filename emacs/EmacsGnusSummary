@@ -1,0 +1,18 @@
+
+** Keys
+
+  - / o Access to the "hidden" news
+  - / t <num> Displays article older than or younger than (negative)
+
+  - M C mark all articles as read
+  - M H mark all articles up to point as read
+
+  - T H hide thread
+  - T S show thread
+
+** Copy Articels To EOS
+
+
+  - *M P a* - process mark for all unread articles
+  - *B c <nnml name>* - copy to folder
+  - *M C* - catchup all

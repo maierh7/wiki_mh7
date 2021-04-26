@@ -1,0 +1,29 @@
+
+- *w32-shell-execute* opens a document via the system open
+  facility. Note the function cannot handle the tilde in a document
+  name. To get a dos file syntax call 'cygpath -w <path>'.
+
+<example>
+(let ((s (shell-command-to-string "cygpath -w/cygdrive/c/tmp/abc.exe")))
+   (w32-shell-execute "open" s)
+   (w32-shell-execute "open" "f:/home/maierh/tmp/otl3.doc")
+   )
+</example>
+
+
+- *convert-standard-filename* is another possibility to translate the
+  file name in a DOS syntax. The disadvantage currently is that the
+  function looks too to the currently used shell.
+
+<example>
+(convert-standard-filename "c:/foo/bar")
+</example>
+
+  Another example sets the **directory-sep-char**:
+
+<example>
+(defun dos-canonical-name (filename)
+"Canonicalize filename forcing `\\' as directory-sep-char."
+  (let ((directory-sep-char ?\ ))
+    (expand-file-name filename)))
+</example>

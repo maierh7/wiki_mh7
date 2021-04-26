@@ -1,0 +1,5 @@
+
+  - *uerf -R -c oper* Displays the startup messages in reverse order.
+
+  - *vrestore*
+  - *vdump*

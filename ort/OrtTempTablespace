@@ -1,0 +1,13 @@
+
+
+** Temporary Tablespace
+
+<example>
+SQL>create temporary tablespace 
+    abc_tmp tempfile '/ora/oracle/oradata/O11G/abc_temp.dbf' 
+    size 500m reuse autoextend on next 200m;
+</example>
+
+For the MI installation each country needs it own TT or at best its
+own TT Group.
+

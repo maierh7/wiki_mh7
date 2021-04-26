@@ -1,0 +1,10 @@
+
+It' s a recommend way not to bother other user with requiring the cl
+package. Usage of the package in a byte compiled context is not a
+problem. So the cl package can be used as follows:
+
+<example>
+(eval-when-compile (require 'cl))
+</example>
+
+I assume that explicit requiring of the cl package would also work.

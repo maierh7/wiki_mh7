@@ -1,0 +1,20 @@
+
+** Bind Variables
+
+  - The schema cannot be set with bind variables.
+  - The bind argument are associated by position.
+
+
+** Tips
+
+  - Use bind variables whenever it's possible.
+  - Use sql%notfound for implicit cursors.
+  - The literal null is not valid in the using clause.
+
+
+** Dynamic SQL
+
+  - execute immediate '...'
+  - execute immediate '...' using p1, ...
+  - execute immediate '...' using in out p1, ...
+  - execute immediate '...' using in out p1 returning into r1

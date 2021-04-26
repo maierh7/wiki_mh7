@@ -1,0 +1,99 @@
+
+** Export Users
+
+  - Do not invoke expdp with SYSDBA
+
+** Roles
+
+  - 'EXPORT FULL DATABASE'
+  - 'IMPORT FULL DATABASE'
+
+** Modes
+
+  - schema
+  - table
+  - tablespace
+  - transportable tabelspace
+
+** Directories
+
+  - dir:file
+  - directory option
+  - environment DATA_PUMP_DIR
+  - object DATA_PUMP_DIR, if nothing is specified
+
+
+  SQL> create directory data_pump_dir as '/O1/oradata/data_pump';
+  SQL> grant read, write on directory data_pumb to ops$maierh;
+
+** Versions
+
+  - The version option needs to be specified if the data will be moved
+    from a newer database version to a older database version.
+
+** Options
+
+  - attach [=[schema_name.]job_name] See the jobs in
+    USER_DATAPUMP_JOBS.
+
+  - dumpfile = [directory_object:]file_name [, ...] Specify the %U
+    template with the PARALLEL option.
+
+  - extimate
+  - estimate_only=y
+
+  - exclude
+  - filesize
+  - flashback_scn
+  - flashback_time
+  - full
+  - help
+  - include
+
+  - job_name=jobname Default is a system generated job name
+
+  - schemas=schema_name [, ...]
+  - status[=seconds]
+  - tables
+  - version
+
+
+** Examples
+
+  - $ expdp direcotry=data_pump_dir userid=/
+  - exports the schema of the user '/'. The dump file is expdat.dmp.
+
+** Import
+
+** Options
+
+  - remap_datafile
+  - remap_schema
+  - remap_tablespace
+  - reuse_datafiles (possible loss of data)
+  - skip_unusable_indexes
+
+  - sqlfile = [directory_object:]file_name
+
+  - table_exists_action = {skip | append | truncate | replace}
+
+  - transform
+
+** NETWORK_LINK
+
+as DBA
+  - create directory logs ...
+  - create tablespace dbs datafile ...
+  - create user dbs identified by ...
+  - alter user dbs default tablespace dbs
+  - alter user dbs quota 1g on dbs
+  - grant write on directory ... to dbs
+  - grant read  on directory ... to dbs
+  - grant connect, resource to dbs
+  - grant create database link to dbs
+
+as USER
+  - create databse link ...
+
+  $ impdp userid=dbs/xxx@t1 network_link=hml schemas=dbs \
+      logfile=logs:dbs.log remap_tablespace=users:dbs

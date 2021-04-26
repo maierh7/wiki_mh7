@@ -1,0 +1,54 @@
+
+** Problems
+
+  - Listener 9.2.0 cannont etablish a connection to 10.1.0. Use
+    instead the Listener 10.1.0.
+
+** New Features
+
+  - OracleFeatureTen
+
+** Preparations
+
+  - Remove 1830-1840 from /etc/services.
+
+** SUSE SLES-9
+
+  - echo "1" > /proc/sys/vm/disable_cap_mlock 
+  - http://www.oracle.com/technology/tech/linux/install/files/installfest_guide.txt
+
+** J2EE Applications
+
+The following J2EE Applications have been deployed and are accessible
+at the URLs listed below.
+
+  - Ultra Search URL:
+  - http://eris.maierh:5620/ultrasearch
+
+  - Ultra Search Administration Tool URL:
+  - http://eris.maierh:5620/ultrasearch/admin
+
+  - iSQL*Plus URL:
+  - http://eris.maierh:5560/isqlplus
+
+  - Enteprise Manager 10g Database Control URL:
+  - http://eris.maierh:5505/em (10.1.0)
+  - http://eris.maierh:1158/em (10.2.0)
+
+** Options
+
+  - Storage Options
+
+  - Management Options
+
+  - Backup and Recovery Options (flash recovery area)
+
+    1) At 2 a.m.
+    2) Size 2 GB, depending on the storage option
+
+** Startup
+
+  - dbstart
+  - lsnrctl start
+  - emctl start dbconsole
+  - isqlplusctl start

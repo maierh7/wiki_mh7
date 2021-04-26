@@ -1,0 +1,35 @@
+
+** scanimage
+
+  <example>
+    # default is gray
+    $ scanimage --resolution 300 > out.pnm
+    $ scanimage --mode color --resolution 300 \
+       -l 0 -t 0 -x 210 -y 297 > out.pnm
+  </example>
+
+
+  - see to man *sane-epson*.
+  - see to scan.sh
+  - see to convert.sh
+
+** convert
+
+  <example>
+    $ convert --page 595x842 out.pnm out.pdf
+  </example>
+
+** sizes
+
+<example>
+  A4    : 595x842
+  Letter: 612x792
+</example>
+
+** mm to pts
+
+  - pts = size in mm / 25.4 * 72
+
+** scan to pdf
+
+  - MyScanPdf

@@ -1,0 +1,9 @@
+
+** Identify
+
+  - fdisk -lu
+  - blkid
+
+** /etc/fstab
+
+

@@ -1,0 +1,5 @@
+
+** Test for Existence of Graphic Support
+
+  - *image-type-available-p*
+     `xbm', `xpm', `gif', `postscript', `pbm', `jpeg', `tiff', `png'

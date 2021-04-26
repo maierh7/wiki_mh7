@@ -1,0 +1,14 @@
+
+** For Loops
+
+  $ for i in {ls -1}{echo $i}
+  $ for i in {ls -1}(message "%s" i)
+
+** {}
+
+  - shell command
+
+** ()
+
+  - elisp command
+

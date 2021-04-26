@@ -1,0 +1,27 @@
+
+** General
+
+Don't use uppercase lisp symbols in documentation strings such as
+'NIL'.
+
+Avoid passive wording such as 'and the Slovak tutorial is
+selected'. Use instead a active wording such as 'and selects the
+Slovak tutorial.
+
+
+RMS gives another example in emacs-devel:
+
+  "File %s is modified in buffer %s. Insert it? "
+
+Be VERY careful about using pronouns in writing, and especially in
+short statements like that one.
+ 
+  "File %s is being edited.  Insert the file anyway? "
+
+would be a clearer message.
+
+
+** Test
+
+Use 'checkdoc'. This tests the elisp code if all the documentation
+conventions are valid.

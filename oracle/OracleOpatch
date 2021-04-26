@@ -1,0 +1,5 @@
+
+** Rolling Upgrade
+
+  - cd <patch>
+  - opatch query -is_rolling

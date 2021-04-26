@@ -1,0 +1,6 @@
+
+** How to disable Window Maker Mouse Events
+
+- Select Attributes (Eigenschaften) at the window menu.
+- Then select Advanced Options (Weiterführende Eigenschaften).
+- And then activate 'Don't bind mouse clicks' (Keine Mauseklicks einbinden).

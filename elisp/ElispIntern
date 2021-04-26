@@ -1,0 +1,19 @@
+
+
+This files contains all the various test functions.
+
+
+*** commandp
+
+
+<example>
+
+(defun all-commands()
+  (let ((l))
+     (mapatoms (lambda (s) 
+                 (if (commandp s) 
+                    (setq l (cons s l)))))
+     l))
+
+</example>
+

@@ -1,0 +1,11 @@
+
+** How to Run?
+
+  - rxvt.exe has compiled in both supports for X11 and Windows. With
+    a DISPLAY environment it tries to start the X11 version otherwise
+    it starts the Window versions.
+
+** Problems
+
+  - How to start rxvt.exe so it finds the right ~/.bashrc. It looks
+    that the '~' does not point to '/f/home/maierh'.

@@ -1,0 +1,5 @@
+
+** Iterations
+
+Oliver Scholz did some experiments and there he figured out that
+*mapcar* seems to be very fast.

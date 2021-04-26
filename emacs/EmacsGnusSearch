@@ -1,0 +1,20 @@
+
+** Grepmail
+
+  - grepmail -R -q -l -e kanu Mail
+
+  - R recursive
+  - q quite
+  - l list only file names
+  - i case-insensitive
+  - e expression
+
+
+** Print
+
+  - H only the header
+
+** Ignores
+
+  - M ignore mime attachments
+  - S ignore signatures

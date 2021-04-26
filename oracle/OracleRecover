@@ -1,0 +1,8 @@
+
+<example>
+  SQL> recover database until cancel;
+  SQL> recover database until cancel using backup controlfile;
+</example>
+
+- *using backup controlfiles* means to use the control files from a
+  hotbackup. 

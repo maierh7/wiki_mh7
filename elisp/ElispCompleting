@@ -1,0 +1,3 @@
+
+- *completing-read* gets as argument a alist. The list can be look
+  either (("abc . 1)("bde" . 2) or (("abc")("bde")).

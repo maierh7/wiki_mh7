@@ -1,0 +1,24 @@
+
+** Statement
+
+<code>
+explain plan for
+  select ...
+</code>
+
+<code>
+explain plan set statement_id = 'abc' for
+  select ...
+</code>
+
+** Package
+
+  - dbms_xplan
+
+<code>
+select * from table(dbms_xplan.display);
+</code>
+
+<code>
+select * from table(dbms_xplan.display(statement_id => 'abc'));
+</code>

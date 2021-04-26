@@ -1,0 +1,37 @@
+
+
+
+<example>
+
+An example autoloads.in file:
+
+   ;;; -*-emacs-lisp-*-
+   ;;; autoloads.in --- define autoloads for a lisp directory
+   
+   (require 'cl)
+   
+   (defun generate-autoloads ()
+     (interactive)
+     (require 'autoload)
+     (setq generated-autoload-file (car command-line-args-left))
+     (setq command-line-args-left (cdr command-line-args-left))
+     (batch-update-autoloads))
+
+   ;;; put manual autoloads down here...
+
+And the follow GNU Makefile rules:
+
+    DIRS    = $(shell find . ! -name CVS -type d)
+    SPECIAL = autoloads.el
+    SOURCE  = $(filter-out $(SPECIAL),$(wildcard *.el))
+    EMACS   = emacs
+    
+    autoloads.el: autoloads.in $(SOURCE) cus-dirs.el
+    	cp autoloads.in autoloads.el
+    	-rm autoloads.elc
+    	$(EMACS) --no-init-file --no-site-file -batch \
+    		-l $(shell pwd)/autoloads \
+    		-f generate-autoloads \
+    		$(shell pwd)/autoloads.el $(DIRS)
+
+</example>

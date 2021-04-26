@@ -1,0 +1,70 @@
+
+** Problems
+
+  - Make sure that the ChangeLog file is checked out.
+
+  - *C* (commit) works either for the current file or the directory where
+    point is in.
+
+  - *A* (add change log entry in the cvs buffer) calls the toplevel
+    change log file not the change log file in the directory where
+    the file resides.
+
+** Flags
+
+  - *C-u* asks for additional flags
+  - *C-u C-u* makes the additional flags permanent
+
+** Keys
+
+  - *M-u* cvs-update
+  - *M-e* cvs-examine
+  - *M-s* cvs-status
+
+  - *t* tag selected files (normally on a directory)
+
+  - *O* cvs-update on the selected files. On the toplevel the same as
+      cvs-update
+  - *e* cvs-examine on the selected files
+  - *s* cvs-status on the selected files
+
+  - *M* mark all files
+  
+  - *f* find-file
+  - *o* find-file-other-window.
+  - *A* add-change-log-entry-other-window
+ 
+
+  - *a* add file
+  - *r* remove file
+  - *U* undo
+
+  - *i* adds the file to the .cvsignore file.
+
+** Diffs
+
+  - *=* diff
+  - *d b* diff against the conflict file.
+  - *d h* diff on the head
+  - *d v* diff on the head of the vendor branch
+  - *d e* ediff
+  - *d E* ediff merge
+
+** Variables
+
+  - *cvs-cvsroot* set this variable to switch to another CVS
+    repository.
+
+** See also
+
+  - ToolsCvs
+  - ToolsCvsSample
+
+** Disable CVS
+
+  <example>
+
+    (remove-hook 'find-file-hooks 'vc-find-file-hook)
+
+  </example>
+

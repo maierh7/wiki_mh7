@@ -1,0 +1,6 @@
+
+** xinitrc
+
+*** gdm
+
+  - See /etc/X11/gdm/Init/Default

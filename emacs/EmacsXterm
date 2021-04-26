@@ -1,0 +1,5 @@
+
+** Umlauts
+
+  *LANG=de_DE* works with umlaut.
+  *LANG=de_DE@euro* works not with umlaut.

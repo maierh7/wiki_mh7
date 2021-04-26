@@ -1,0 +1,6 @@
+
+** Euro Sign
+
+  - \usepackage{textcomp} -> \texteuro
+  - \usepackage{mathpazo} -> \ppleuro
+

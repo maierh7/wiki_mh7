@@ -1,0 +1,14 @@
+
+** Insert from Register
+
+       C-x r i - point is after insertion at the *beginning*
+   C-u C-x r i - point is after insertion at the *end*
+
+** Numbers
+
+   C-u NUMBER C-x r n REG put number into REG
+              C-x r + REG increment REG number by one
+   C-u NUMBER C-x r + REG increment REG number by NUMBER
+              C-x r g REG insert REG number
+
+see too EmacsBookmarks

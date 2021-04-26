@@ -1,0 +1,20 @@
+
+** DNF
+
+git
+emacs
+make
+
+*** Python3
+
+gcc-g++
+zlib-devel
+openssl-devel
+
+*** Emacs
+
+autoconf
+texinfo
+gnutls-devel
+ncurses-devel
+

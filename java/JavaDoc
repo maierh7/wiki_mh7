@@ -1,0 +1,16 @@
+
+
+
+<pre>
+<verbatim>
+
+doc:
+	javadoc -classpath . -d $(HOME)/tmp/java \
+          VFormatException.java \
+	  VFormat.java \
+	  VString.java \
+	  VBitSet.java
+
+</verbatim>
+</pre>
+

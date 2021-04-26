@@ -1,0 +1,4 @@
+
+** Restart
+
+ - systemctl restart NetworkManager

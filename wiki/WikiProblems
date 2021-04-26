@@ -1,0 +1,21 @@
+
+** Commands
+
+Added additional the publishing command to $LOCAL/Makefile
+*publish-wiki*.  Publishing inside a wiki mode with table.el made
+problems to due of table.el. To edit a table you have to *load* now
+explicitly the table.el package.
+
++-----+-----+
+|1    |2    |  
++-----+-----+
+|3    |4    |
++-----+-----+
+
+** Syntax
+
+<example>
+The usage of the string "\|" in a normal wiki sentence makes
+problems. Usage in the context of a example struct - as here
+demonstrated - works.
+</example>

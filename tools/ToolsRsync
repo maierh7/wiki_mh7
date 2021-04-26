@@ -1,0 +1,5 @@
+
+** ssh
+
+Use the *-e ssh* option to force ssh. Additional authentification is
+then not necessary. Uncomment the entry in /etc/inetd.conf.

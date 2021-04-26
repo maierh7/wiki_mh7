@@ -1,0 +1,35 @@
+
+** Aliases
+
+  cat		Get-Content
+  cd		Set-Location
+  cp		Copy-Item
+  echo		WriteOutput
+  env		
+  fl		Format-List  <Attrib1, ...>
+  ft		Format-Table <Attrib1, ...>
+  foreach, %	ForEachObject
+  gc		Get-Content
+  gci		Get-ChildItem
+  gm		Get-Member
+  gp		Get-Item-Property
+  gps		Get-Processes
+  gsv		Get-Service
+  help		Get-Help <string>
+  ls		Get-ChildItem
+  measure, wc	Measure-Object <attr> -Sum
+	Average
+	Sum
+  	Maximum
+	Line
+	Character
+	Word
+  mv		Move-Item
+  where, ?	Where-Object
+  	-eq, -ne, -lt, -gt, -le, -ge
+	-match <regex>
+  rm		Remove-Item
+  sl		Set-Location
+  sls		Select-String
+  sort		Sort-Object  
+	-desc

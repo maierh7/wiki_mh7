@@ -1,0 +1,24 @@
+
+** Program Index
+
+  - cmctl        Connection Manager Control
+  - csscan       Character Set Scanner
+  - dgmgrl       Data Guard Manager (cli)
+  - dbua         Database Upgrade Assistant
+  - dbv          Database Verifier
+  - genclntsh    builds the shared libraries
+  - genclntst    builds the static libraries
+  - loadpsp      Load PL/SQL server pages
+  - namesctl
+  - oradim (MIG) [1]
+  - orakill      [2]
+  - sqlldr (UTL) SQL*Loader
+  - sysresv
+
+  - trcroute
+  - tnsping
+
+
+[1] oradim (w32) creates and starts services.
+[2] orakill stops a thread inside the one oracle process under
+    Windows.

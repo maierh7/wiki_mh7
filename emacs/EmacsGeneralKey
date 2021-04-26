@@ -1,0 +1,146 @@
+
+** Undo
+
+  - *C-u undo* performs 'selective undo'. In transient-mark if region
+    is active, always 'selective undo' is used.
+
+** Mark
+
+  - *C-SPC* -> *C-@*
+  - *C-SPC C-SPC* set the mark but not in transient mode
+  - *C-u C-SPC ...* moves to previous marks
+  - *M-@* mark-word
+
+** Delete and Killing
+
+  - *M-\* delete \s about point
+  - *M-SPC* delete \s about point, leave one space
+  - *C-x C-o* delete blank line
+  - *M-^* delete-indentation (join lines)
+
+  - *C-k* kill-line
+
+** Pasting and Yanking
+
+  - *C-y M-y* yank previous kills
+  - *C-y C-u M-y* yank previous kills but first move to last yank
+
+  - *C-u C-y* does not move point by yanking
+  - *C-x C-v* find-alternate-file
+  - *C-x C-v C-a C-k C-g* puts the filename of the current buffer to the
+    kill ring
+  - *C-u 0 C-k* kills to the beginning of the line
+
+** Universal Arguments and Repeating
+
+  - *C-u 3*
+  - *C-u*     (C-u  4)
+  - *C-u C-u* (C-u 16)
+  - *M-3*     (C-u  3)
+  - *M--*     (C-u -1)
+  - *C-u 64 C-u 1* inserts 64 '1'
+
+  - *C-x z(z)* repeat
+  - *C-x e(e)* kbd macro
+  - *C-x ESC ESC* repeat-complex-command
+  - *M-x list-command-history*
+
+** Registers
+
+  - *C-x r SPC R* register point
+  - *C-x r j R*   jump to register point
+
+  - *C-u C-x s i R* With prefix argument deletes too the marked text
+
+** Counting Lines
+
+  - *M-=* count-lines-region
+
+** Pages
+
+  - *C-q C-l* inserts ^L
+
+** Frames
+
+  - *C-x 5 C-f* find-file-other-frame
+
+** Windows
+
+  - *C-x 0* deletes the current window.
+  - *C-x ^* enlarges the current window.
+  - *C-M-v*     scroll-other-window upward
+  - *M-- C-M-v* scroll-other-window downward
+
+** Commenting
+
+  - *M-;* comment-dwim
+
+** Eval
+
+  - *C-x C-e* eval-last-sexp. Prints the result in the mini buffer.
+
+** Paren
+
+  - *C-M-n* Move forward over a parenthetical group (`forward-list').
+  - *C-M-p* Move backward over a parenthetical group(`backward-list').
+  - *C-M-u* Move up in parenthesis structure (`backward-up-list').
+  - *C-M-d* Move down in parenthesis structure (`down-list').
+
+  - *C-M-a* Beginning of defun
+  - *C-M-e* End of defun
+  - *C-M-h* Mark defun
+  - *C-M-f* Move forward to the next sexp
+  - *C-M-b* Move backward to the next sexp
+
+  - *C-M-SPC* mark-sexp
+
+** Minibuffer
+
+
+** Special Characters
+
+  - *C-x 8 C-h* list all the special characters
+  - *C-x 8 C* ©
+
+** Scroll
+
+  - *C-v* scroll-up
+  - *M-v* scroll-down
+  - *C-p* previous-line
+  - *C-n* next-line
+  - *M-r* move-to-window-line. C-u 0 top line. C-u - bottom line.
+
+  - C-u M-< move n/10
+  - *C-x C-n* set-goal-column. Positions a fix column to which the
+    cursor moves by C-n and C-p.
+
+** Rect
+
+  - *C-x r t* replaces rectangle content with string
+
+** Shell
+
+  - see EmacsShell
+
+** Input Methods
+
+  - *C-x 8 " s* -> ß
+  - *C-x 8 " a* -> ä
+  - *C-x 8 " A* -> Ä
+
+** Fonts
+
+  - *S-mouse1* - Font dialogs
+  - *C-x C-+*  - Increases the current font
+  - *C-x C--*  - Decreases the current font
+  - *C-x C-0*  - Restores the default size
+
+** Simulate Modifiers
+
+  - C-x @ [Ssachm]
+    - S shift
+    - s super
+    - a alt
+    - c ctrl
+    - h hyper
+    - m meta

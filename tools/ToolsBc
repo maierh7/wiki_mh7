@@ -1,0 +1,27 @@
+
+** FAQ
+
+To get double precission use *-l* to enable the math mode. In the math
+mode the precission can be set with the scale operator.
+
+  - *scale 2*
+
+** In Shell
+
+<example>
+
+$ a=(echo 8*3 | bc -l)
+=> 24
+$ a=(echo 4*a(1) | bc -l)
+=> 3.14159...
+
+</example>
+
+** Functions
+
+  - *S(x)* sine
+  - *C(x)* cosine
+  - *A(x)* arctangent
+  - *L(x)* natural logarithm
+  - *E(x)* exponential function
+  - *J(N,X)* bessel function

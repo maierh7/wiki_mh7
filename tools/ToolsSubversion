@@ -1,0 +1,9 @@
+
+** Requirements
+
+  - apr (Apache Portable Runtime Library)
+  - httpd Apache 2.0
+  - neon  (WebDav interface)
+  - zlib
+  - berkley db
+  - expat (xml parser)

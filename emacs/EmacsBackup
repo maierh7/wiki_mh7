@@ -1,0 +1,4 @@
+
+** Suppress **ls** to show backup files
+
+  alias ls="ls -B"

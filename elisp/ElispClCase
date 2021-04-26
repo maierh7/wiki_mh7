@@ -1,0 +1,13 @@
+
+** Case Statement
+
+  <example>
+  
+  (setq abc ?a)
+  (case abc
+    ((?a) (message "a"))
+    ((?c) (message "c"))
+    (t  (message (char-to-string abc))))
+  
+  </example>
+

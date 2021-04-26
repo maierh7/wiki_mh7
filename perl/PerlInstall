@@ -1,0 +1,41 @@
+
+** Install Perl
+
+  see also GcpPerl
+
+  - get latest perl from perl.org
+
+$ ./conifgure.gnu
+$ make
+$ sudo make install
+
+
+** Oracle
+
+  https://github.com/perl5-dbi/DBD-Oracle
+
+*Make sure http_proxy is set as root!!!*
+
+$ sudo /usr/local/bin/perl -MCPAN -e "install DBI"
+$ sudo /usr/local/bin/perl -MCPAN -e "install Switch"
+
+  ORACLE_HOME: Database
+
+$ sudo \
+ORACLE_HOME=$ORACLE_HOME \
+PATH=$ORACLE_HOME/bin:$PATH \
+LD_LIBRARY_PATH=$ORACLE_HOME/lib \
+/usr/local/bin/perl -MCPAN -e "install DBD::Oracle"
+
+  ORACLE_HOME: Instant Client
+  
+$ sudo \
+ORACLE_HOME=$ORACLE_HOME \
+PATH=$ORACLE_HOME:$PATH \
+LD_LIBRARY_PATH=$ORACLE_HOME \
+/usr/local/bin/perl -MCPAN -e "install DBD::Oracle"
+
+** Test Installation
+
+  t_con.pl
+  t_switch1.pl

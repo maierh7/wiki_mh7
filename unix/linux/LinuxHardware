@@ -1,0 +1,5 @@
+
+  - *hwinfo*
+  - *hwinfo --cdrom*
+  - *hwinfo --help* lists all the possible arguments
+

@@ -1,0 +1,26 @@
+
+*** Emphasis
+
+  *emphasis*
+  **strong**
+  ***very strong***
+  _underlined_
+  =verbatim=
+
+*** Enum
+
+  - item 1
+  - item 2
+
+  1. item 1
+  2. item 2
+
+*** Definition
+
+  Term1 :: This is a first definition
+  Term2 :: This is a second definition
+
+  Attr1 || Attr2
+  abc    | bcd
+  
+

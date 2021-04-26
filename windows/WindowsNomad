@@ -1,0 +1,14 @@
+
+** Transfer
+
+  - mp3-list-find-random-cd
+  - C-c C copy to tmp directory
+  
+  - Start Nomad  
+  - On the *left* side choose my compute
+  - On the *right* side choose all tracks.
+  - *Delete* the heard CDs from CDs or *All Tracks*. Note Deleting from 
+    *Play Lists* has no effect.  
+  - Select all the files from temp directory and put it to *All Tracks*
+  - Transfer
+  - Afterward build the Play List from the Albums

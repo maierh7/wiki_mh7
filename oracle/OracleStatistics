@@ -1,0 +1,5 @@
+
+** System Statistics;
+
+  - exec DBMS_STATS.GATHER_DICTIONARY_STATS;
+  - exec DBMS_STATS.GATHER_FIXED_OBJECTS_STATS;

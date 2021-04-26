@@ -1,0 +1,22 @@
+
+** HACMP
+
+  /usr/es/sbin/cluster/utilities/clRGinfo -c
+  /usr/es/sbin/cluster/utilities/cltopinfo
+
+  /usr/es/sbin/cluster/utilities/cllsres
+  /usr/es/sbin/cluster/utilities/cllsgrp
+
+** Heartbeat
+
+  hb_a_vg
+  hb_b_vg
+
+** VG
+
+  lsvg           Lists all the volume groups
+  lsvg -l <lv>   Lists mountpoints for a VG
+  lsvg -p <lv>   Lists devices for a LV
+
+  lspv           Lists all devices and the status
+                 active, concurrent (hacmp)

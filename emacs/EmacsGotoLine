@@ -1,0 +1,5 @@
+
+** Goto Line in Lisp
+
+  (goto-char (point-min))
+  (forward-line n)

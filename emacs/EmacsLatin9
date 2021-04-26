@@ -1,0 +1,5 @@
+
+** Latin-9 on Windows
+
+Jasen wrote on 2002-05-30: Unfortunately only W/XP supports Latin-9
+out of the box. Emacs needs the codepage *28065*.

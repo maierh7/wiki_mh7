@@ -1,0 +1,5 @@
+
+** grep
+
+  -f <file>	reads pattern from file
+  -w		matched only whole words

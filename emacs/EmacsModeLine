@@ -1,0 +1,45 @@
+
+** Modeline
+
+*** Mouse Bindings
+
+Mouse-3 deletes the current window (C-x 0).
+Mouse-2 deletes the other windows (C-x 1).
+
+Mouse-3 at the beginning toggles read-only.
+
+Mouse-1 in the Buffer Name cycles to the next buffer.
+Mouse-3 in the Buffer Name cycles to the prev buffer.
+
+
+Mouse-3 in the Minor Modes list in the Modeline activates a popup
+window with all the active minor modes.
+
+*** Deleting Minor Modes
+
+How to remove from the *modeline* unwanted or always available minor
+mode entries such as "omit" or "abbrev"?
+
+Kevin Rodgers suggested to delete the unwanted entry.
+
+<example>
+
+(setq minor-mode-alist
+      (delq (assq 'abbrev-mode minor-mode-alist) 
+            minor-mode-alist))
+
+</example>
+
+In the case of *dired-omit-files-p* do not set this with the
+customization facility. This sets the variable in a global manner so
+that each buffer has then the string "Omit" in it. set the flag in the
+*dired-mode-hook*.
+
+The same can be done with the *diminish.el* package.
+
+<example>
+
+(diminish 'abbrev-mode)
+
+</example>
+

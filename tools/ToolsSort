@@ -1,0 +1,8 @@
+
+** sort
+
+ -g *numeric*
+ -b ingore white space
+ -u supress duplicate entries
+ -r reverse
+ -i ignore nonprinting characters

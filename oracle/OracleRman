@@ -1,0 +1,41 @@
+
+** Commands
+
+*** Command
+
+  - $ rman target / catalog rman@test
+
+  - RMAN> connect target /
+  - RMAN> connect catalog rman@test
+
+*** Backup
+
+  - RMAN> backup database
+  - RMAN> backup tablespace
+  - RMAN> backup datafile
+  - RMAN> backup archivelog
+  - RMAN> backup current controlfile
+
+*** Copy
+
+  - RMAN> copy datafile
+  - RMAN> copy current controlfile
+  - RMAN> copy archivelog
+
+*** Controlfile Autobackup
+
+  - RMAN> configure controlfile autobackup
+
+  1. With this feature restoring is possible without the RMAN
+     repository - *disaster recovery*.
+
+*** Rename Backupset
+
+  - RMAN> backup device type disk format '/O2/tmp/rman/%d/%U'  
+          backupset 1472 delete input;
+
+See too OracleRmanConcepts.
+See too OracleRmanCfg.
+See too OracleRmanCmd.
+See too OracleRmanRep.
+See too OracleRmanTest.

@@ -1,0 +1,45 @@
+*class,cla
+Warengruppe
+*subclass,scl
+Unterwarengruppe
+*item_master,iem
+Produkt
+*tran_data
+View to tran_data_a
+*tran_data_a,tda
+Transaktionen eines Tages
+*tran_data_b,tdb
+Transaktionen eines Tages
+*tran_data_history
+Sätze aus trans_data_a and tran_data_b
+*tran_data_codes,tdc
+Beschreibung der Transaktionen
+*deps,dep
+Waren-Abteilung
+*uom_class,umc
+Gruppen der Maßeinheiten
+*stg_fif_gl_data,sfa
+Gerneral Ledger,Hauptbuch
+*rpm_future_retail
+Verkaufspreise
+*item_loc,itl
+Bestände
+*ordhead,ohe
+Aufträge
+*ordloc,olo
+Auftragsposition
+*ordsku,osk
+Ähnlich wie ORDLOC, enthält aber die SKU (stock keeping unit)
+*item_loc_soh,ili
+Zusätzliche Bestandstabelle. Redundante Tabelle um Hotspots zu
+vermeiden.
+*item_supplier,isp
+Lieferanten
+*addr,adr
+Addressen
+*store,str
+Märkte
+*user_attrib,uat
+Users
+*lang,lan
+Sprache

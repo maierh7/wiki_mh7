@@ -1,0 +1,21 @@
+
+** Control Files
+
+  - Control files describes the physical structure of the
+    database. Each time the physical structure changes, the control
+    files should be backuped.
+
+  - The database name.
+  - The timestamp of database creation.
+  - The names and locations of the associated datafiles and redo log
+    files.
+  - Tablespace information.
+  - Datafile offline ranges.
+  - The log history.
+  - Archived log information.
+  - Backup set and backup piece information.
+  - Datafile copy information.
+  - The current log sequence number.
+  - Checkpoint information.
+
+

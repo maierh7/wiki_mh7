@@ -1,0 +1,4 @@
+
+** Convert
+
+  plutil -convert xml1 Bookmarks.plist

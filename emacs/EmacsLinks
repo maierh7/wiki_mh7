@@ -1,0 +1,6 @@
+
+** Mode
+
+  - goto-address-mode
+
+Scans the buffer and makes alle URLs clickable.

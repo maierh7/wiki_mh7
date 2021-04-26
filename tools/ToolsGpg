@@ -1,0 +1,8 @@
+
+** Encryption/Decryption
+
+  - gpg -c --cipher-algo AES256 <file>
+
+  - gpg -d -o <out-file> <file>.gpg
+
+see too ToolsSsl

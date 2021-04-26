@@ -1,0 +1,11 @@
+
+** Tools
+
+  - nc/netcat
+  - nmap (lists the open ports)
+  - netstat (ToolsNetstat)
+  - ngrep
+  - tcpdump (ToolsNetTcpdump)
+  - ethereal
+  - whieshark (nachfolger ethereal)
+

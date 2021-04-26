@@ -1,0 +1,8 @@
+
+** Define Temporary Tables
+
+  - 
+    create global temporary [on commit delete rows];
+  
+  - session specific
+    create global temporary [on commit preserve rows];

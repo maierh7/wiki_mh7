@@ -1,0 +1,24 @@
+
+  - *Howard J. Rogers*: All my boxes already have 2GB of RAM,
+    minimum. And yes, Windows ripped along. But Oracle on Linux is
+    making Oracle on Windows look like a slug in a wheelchair with its
+    brakes on, running over some freshly-poured tarmac on a really hot
+    day.
+
+  - *Thomas Kyte* at Ask Tom 01.12.2003: I think that the people who
+    will stay employed in the future will do one of two things:
+
+    1. Be both a developer and a DBA. This is hard to do, but the
+       number of jobs available is small enough that employers can
+       demand both. This increases efficiency of the position. So DBAs
+       will be responsible for keeping the database up, etc... and
+       handling the bulk of the complex PL/SQL, plus helping object
+       oriented developers with Oracle. Most DBAs are pretty weak in
+       PL/SQL and development. Many will have to change or they will
+       see themselves out of work or in lower paying positions.
+
+    2. Be both an object oriented and Oracle developer. This is easier
+       to break into if you are coming from the OO world, since few if
+       any employers will give oracle developers the opportunity to do
+       object oriented programming.
+

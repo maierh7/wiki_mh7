@@ -1,0 +1,12 @@
+
+** SuSE Linux 8.0
+
+Edit the file /etc/X11/fs/config and set in comment the following
+line: 
+
+<example>
+
+  #no-listen = tcp
+
+</example>
+

@@ -1,0 +1,63 @@
+
+** List
+
+  - dbms_aqadm
+  - dbms_application_info
+			Sets the client_info into v$session
+			Sets the module and action info into v$sqlarea
+			Provides an interface to v$session_longops
+  - dbms_alert
+  - dbms_debug
+  - dmbs_debug_jdwp     Remote debugging
+  - dbms_ijog		No documentation in Oracle 8. [2]
+  - dbms_java
+  - dbms_job
+  - dbms_lib		Large Objects Handling
+  - dbms_lob            OraclePlsqlLob
+  - dbms_logmnr*
+  - dbms_lock
+  - dbms_metadata
+  - dbms_mview
+  - dbms_obfuscation_toolkit 
+                        Encryption
+  - dbms_profiler
+  - dbms_pipe
+  - dbms_plugts		Transportable TS
+  - dbms_random		No secure random numbers
+  - dbms_redefinition   Online Table Redefinition
+  - dbms_refresh
+  - dbms_reputil
+  - dbms_resource_managger
+  - dbms_rls		Fine Grained Access
+  - dmbs_rowid          Displays information about a specified rowid
+  - dbms_session
+  - dbms_space  
+  - dbms_space_admin    Migrate from DMT to LMT and vice versa.
+  - dbms_sql		Dynamic Sql inside PL/SQL [1]
+  - dbms_stat		Use this instead of 'analyze table ...'.
+  - dbms_support        Enable/Disable tracing [3]
+  - dbms_system
+  - dbms_utility
+  - dbms_tts		Transportable TS
+  - owa_pattern
+  - utl_file
+  - utl_http
+  - utl_raw
+  - utl_smtp
+  - utl_tcp
+
+** Recompile
+
+  - @?/rdbms/admin/utlrp.sql
+
+** DBMS_SYSTEM
+
+  - = DBMS_SYSTEM.SET_SQL_TRACE_IN_SESSION = needs sid and serial#.
+
+[1] PL/SQL 8 introduces *native dynamic SQL* that might be used instead
+    of dbms_sql.
+
+[2] dbms_ijob is for internal use only. It provides a remove function
+    that can be used by a DBA to remove any job.
+
+[3] http://metalink.oracle.com/metalink/plsql/ml2_documents.showDocument?p_database_id=NOT&p_id=62294.1

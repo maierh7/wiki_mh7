@@ -1,0 +1,13 @@
+
+** Standard charsets
+
+  - US-ASCII
+  - ISO-8859-1
+  - UTF-8
+  - UTF-16BE 	- big-endian
+  - UTF-16LE	- low-endian
+  - UTF-16
+
+** Read a utf-8 file
+
+  /home/maierh/java/testNet/TestFile.java

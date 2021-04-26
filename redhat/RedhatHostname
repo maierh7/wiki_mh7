@@ -1,0 +1,12 @@
+
+** Change Hostname
+
+Change the following files
+
+  - /etc/sysconfig/network
+  - /etc/hosts
+
+Afterwards restart the network with:
+
+  - service network restart
+

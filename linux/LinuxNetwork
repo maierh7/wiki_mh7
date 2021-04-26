@@ -1,0 +1,15 @@
+
+** Commands
+
+  - hwinfo --netcard
+  - rcnetwork restart
+
+** See also
+
+  - /etc/sysconfig/network
+
+Make sure that the ifcfg-* files relates to the mac address or rename
+it to the interface name. The problem was by the macbook.
+
+
+

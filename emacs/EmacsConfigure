@@ -1,0 +1,9 @@
+
+
+** Reconfigure
+
+  $ ./config.status --recheck
+
+** Config Options
+
+  C-h v system-configuration-options

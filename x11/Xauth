@@ -1,0 +1,18 @@
+
+** su to another User
+
+  ssh root@muc04dbanmn05p
+
+  # echo $DISPLAY
+  <DISPLAY>
+  # xauth list
+  <root-auth>
+
+  $ su oracle@muc04dbanmn05p
+  $ xauth add <root-auth>
+  $ export DISPLAY=<DISPLAY>
+
+** Remove Entries
+
+  $ xauth remove :10
+  

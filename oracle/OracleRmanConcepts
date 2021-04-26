@@ -1,0 +1,16 @@
+
+** Noarchive Log
+
+  - A database in norarchive log mode cannot be backuped if the
+    database is open. So connecting to the database with ONS is not
+    possible. Target must be '/'.
+
+  <example>
+    $ rman TARGET=/ CATALOG=rman/rman@first
+    RMAN> shutdown;
+    RMAN> startup mount;
+    RMAN> backup database;
+    RMAN> alter database open;
+  </example>
+
+Back to OracleRman.

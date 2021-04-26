@@ -1,0 +1,78 @@
+
+** TWO_TASK
+
+  - The TWO TASK does not exist under Windows. Windows uses the *LOCAL*
+    environment variable or a registry entry.
+
+** Adding services
+
+  - netmgr (>= 9.2.0)
+  - netca  (>= 8.1.5)
+  - netasst(>= 8.1.5)
+
+** tnsping service (command)
+
+  - Try to connect to the specified oracle service. It does not
+    verify whether the database is alive. It only validates the
+    entries in *listener.ora*.
+
+** lsncrtl (command)
+
+  - help
+  - start
+  - stop
+  - status
+
+** tnsnames.ora (file)
+
+  - $TNS_ADMIN
+  - $ORACLE_HOME/network/admin
+  - /var/opt/oracle
+
+** TAF
+
+  - OracleNetTaf
+
+** sqlnet.ora (file)
+
+  - NAMES.DIRECTORY_PATH = (TNSNAMES,EZCONNECT)
+
+
+  - NAMES.DEFAULT_DOMAIN = local
+
+    Appends to each service name the string local. So usage of this
+    parameter makes only sense if the database are in one domain.
+
+  - SQLNET.AUTHENTICATION_SERVICES = (NTS
+
+    Uses Windows NT native authentication.
+
+  - SQLNET.CRYPTO_SEED
+
+    Uses the Oracle advance net option.
+
+  - TRACE_LEVEL_CLIENT = 16
+
+  - SQLNET.EXPIRE_TIME
+
+** Local Listener
+
+  - init parameter: *local_listener*
+
+  - listener aliases must be declared in the tnsnames.ora
+
+** DB Links
+
+  - The view v$dblink shows all the active db links.
+
+<example>
+SQL> create database link sand connect to 
+     rms13 identified by rms13 using 'sand';
+SQL> desc currencies@sand;
+</example>
+
+** EZCONNECT
+
+
+   user/pwd@//host[:port]/sid
+

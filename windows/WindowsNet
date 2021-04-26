@@ -1,0 +1,37 @@
+
+** USE
+
+  <example>
+    net use j: \\athene\tgz /user:maierh
+  </example>
+
+  - In the example *athene* is the server name and the *tgz* entry is the
+  name that is shared in smb.conf file.
+
+** USE /delete
+
+  - net use j: /delete
+
+** Password
+
+  - net user maierha /domain
+
+** START <service>
+
+  <example>
+    c:\> net start oracleservice<sid>
+  </example>
+
+
+** PRINT
+
+  - net print
+
+** HELP
+
+  - net /?
+  - net help print
+
+** Message IDs
+
+  - net helpmsg 6

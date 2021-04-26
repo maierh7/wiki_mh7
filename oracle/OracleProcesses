@@ -1,0 +1,132 @@
+
+** Oracle Database Processes
+
+** 12c
+
+http://docs.oracle.com/cloud/latest/db121/REFRN/bgprocesses.htm#REFRN104
+
+ABMR Auto Block Media Recovery -> BMRn
+BMRn Block Media Recovery
+ACFS ASM Cluster File System (ASM)
+ACMS Atomic Control File to Memory Service (RAC)
+APnn Database Apply Coordinator
+AQPC Adv. Queueing Coordinator
+ARBn ASM Rebalance
+ARCn Archiver
+ARSn ASM Recovery Slave
+ASMB ASM Background 
+ASnn Database Apply Reader or Server
+Bnnn ASM Blocing Slave, ASM maintenance
+BWnn Database Writer 
+CJQ0 Job Queue Coordinator
+CKPT Checkpoint 
+CPnn Database Capture  -> MSnn
+CSnn I/O Calibration 
+CTWR Change Tracking Writer 
+CXnn Streams Propagation Sender 
+DBRM Database Resource Manager 
+DBWn Databsae Writer  -> BWnn
+DIA0 Diagnostic 
+DIAG Diagnostic Capture 
+DMnn Data Pump Master 
+DMON
+Dnnn
+DSKM
+DWnn Data Pump Worker 
+EMNC
+Ennn
+FBDA
+FDnn
+FENC
+FMON
+FSFP
+GCRn
+GEN0
+GMON
+GTXn
+Innn
+IMCO
+INSV
+IPC0
+Jnnn
+LCNn
+LDDn
+LGnn
+LGWR
+LMDn
+LMHB
+LMON
+LMSn
+LREG
+LSP0
+LSP1
+LSP2
+Lnnn
+MARK
+MMAN
+MMNL
+MMON
+Mnnn
+MRP0
+MSnn
+Nnnn
+NSSn
+NSVn
+OCFn
+Onnn
+PING
+PMON
+Pnnn
+PRnn
+PSP0
+QMNC
+QMnn
+Qnnn AQ Server Class Process
+RBAL ASM Rebalance Master
+RCBG Result Cache Background
+RECO Recoverer
+RM   RAT Masking Slave
+RMON Rolling Migration Monitor
+RMSn Oracle RAC Management
+RMVn Global Caches Service Remaster
+Rnnn ASM Block Remap Slave
+RPnn Capture Processing Worker
+RPOP Instant Recoery Repopulation Daemon
+RSM0 Data Guard Broker Worker
+RSMN Remote Slave Monitor
+RVWR Recovery Writer
+SAnn SGA Allocator
+SCCn ASM Disc Scrubbing Slave Check
+SCRB ASM Disk Scrubbing Master
+SCRn ASM Disk Scrubbing Slave Repair 
+SCVn ASM Disk Scrubbing Slave Verify 
+SMCO Space Management Coordinator
+SMON System Monitor 
+Snnn Shared Server 
+TEMn ASM Disk Tset Error Emulation 
+TTnn Redo Transport Slave
+Unnn Container  for Threads
+VBGn Volume Background  (ASM)
+VDBG Volume Driver  (ASM)
+VIOn Volume I/O (ASM)
+VKRM Virtual Scheduler for Resource Manager
+VKTM Virtual Keeper of Time 
+VMB0 Volume Membership Porcess (ASM)
+VUBG Volume drive Umbilicus  (ASM)
+Wnnn Space Management Slave 
+XDMG Exadata Automation Manager (initiates) (ASM, Exadata)
+XDWK Exadata Automation Manager (performs) (ASM, Exadata)
+Xnnn ASM Disk Expel Slave Proces (ASM)
+
+*** Common
+
+*** RAC
+
+  - ACMS 	Atomic Controlfile to Memory Service
+  - GTXn 	Global Transaction Process
+  - LMON	Global Enqueue Service Monitor
+  - LMD		Global Enqueue Service Daemon
+  - LMS		Global Cache Service Process
+  - LCK0	Instance Enqueue Process
+  - RMSn	Oracle RAC Management Process
+  - RSMn	Remove Slave Monitor

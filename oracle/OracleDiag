@@ -1,0 +1,17 @@
+
+** Log File Viewer
+
+  - adrci
+
+** Emacs
+
+  - M-x server-start
+  - shell $ adrci
+  - show alert
+
+** Alert Log File
+
+  - The alert log file is on two places.
+
+  1. $ADR_HOME/rdbms/$sid/$SID/alert (xml)
+  2. $ADR_HOME/rdbms/$sid/$SID/trace (text)
