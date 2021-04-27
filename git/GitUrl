@@ -1,0 +1,6 @@
+
+** Show Url
+
+git remote -v
+
+git remote set-url origin [https...|git]
