@@ -1,0 +1,22 @@
+
+** ip
+
+Replacement for ifconfig
+
+** nmtui
+
+Frontend to nmcli
+
+** tcpdump
+
+tcpdump -i any
+
+** traceroute
+
+** nmap
+
+** netstat
+
+** See also
+
+https://www.techrepublic.com/article/9-network-commands-every-linux-admin-should-know/?ftag=TRE684d531&bhid=22497613394615201718090722706584&mid=13350341&cid=714298471
