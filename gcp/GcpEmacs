@@ -1,16 +1,12 @@
 
-** Init
-
-  - .emacs-light
-
 ** Build Emacs
 
-mkdir local
-mkdir build
-cd build
-git clone http://github.com/emacs-mirror/emacs
-cd emacs
-./autogen.sh
-./configure --prefix=$HOME/local --without-makeinfo --with-gnutls=no
-make
-make install
+    cd gcp-ms-maierha
+    make emacs_clean
+    make emacs
+
+** Emacs Packages
+
+Ensure the gnutls-bin package is installed!
+
+    apt-get install gnutls-bin
