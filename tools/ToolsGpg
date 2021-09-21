@@ -1,4 +1,10 @@
 
+** Create Key
+
+gpg --gen-key
+gpg --quiet --decrypt abc.gpg
+
+
 ** Encryption/Decryption
 
   - gpg -c --cipher-algo AES256 <file>
