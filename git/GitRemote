@@ -1,0 +1,5 @@
+
+** Remote URL
+
+git remote -v
+git remote set-url origin git://github.com/maierh7/local_mh7.git
