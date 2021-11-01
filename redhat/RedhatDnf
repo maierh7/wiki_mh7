@@ -4,3 +4,9 @@
   dnf check-update
 
   dnf update
+
+** Curl Error 77
+
+Execute the program 
+
+  update-ca-trust
