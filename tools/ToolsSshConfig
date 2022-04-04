@@ -1,0 +1,9 @@
+
+** Config
+
+Host *
+     UseKeychain yes
+     XAuthLocation /opt/X11/bin/xauth
+
+     ServerAliveInterval 120
+     ServerAliveCountMax 2160
